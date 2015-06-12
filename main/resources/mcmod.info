@@ -1,0 +1,15 @@
+[
+{
+  "modid": "soulforest",
+  "name": "Soul Forest Mod",
+  "description": "This mod adds a new dimension with an underground biome system, with lots of plants, new enemies and much more ores!",
+  "version": "1.9.3",
+  "url": "soul-forest-mod.wikia.com",
+  "updateUrl": "",
+  "authorList": ["OwnAgePau"],
+  "credits": "BansaiKiwi, MamiyaOtaru, robustushax",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

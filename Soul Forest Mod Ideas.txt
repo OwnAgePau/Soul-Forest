@@ -1,0 +1,146 @@
+Mobs:
+
+Hostile: 
+	Kotek: Jumps very far, lots of damage.
+	Yeti: Bit faster then a zombie, acts like zombie.
+	Exclos: Larger explode radius then a creeper, acts like a creeper.
+	Ice Fairy: Acts like a bat, but moves towards the player, high ammount of damage.
+	Mochan Eagle: acts like enderdragon, shoots many feathers, fast.
+	Groundhog: middle-sized spikey beast, acts like zombie-pigmen, non-hostile unless provoked, hurts when touched.
+	Demon: Acts like ghast (is a bit smaller), shoots fireballs (yes more then one (like a blazer shoots more fire). (colour is green)
+	Soul Firefly: Non-hostile unless provoked, like firefly but with more health and a possible attack (mini-boss).
+	Furivoli: 0 Movementspeed, high rate of fire, medium-far range.
+	X4O: Small robot which has medium-high speed and a little bit of damage. Drops Steel Bits.
+		X4O-C1: Creeper-like
+		X4O-S1: Stronger but slower.
+		X4O-B3: Bigger but much slower, bit stronger.
+(mini-boss) 	X4O-B10: Boss varient of X4O, much bigger, much stronger, much slower, possibly fire shooting.
+(mini-boss) Giant Kotek: Big variant of Kotek with lots of health and lots of damage
+(Boss)  Ice queen: Shoots ice balls, that explode and freeze/slow when hit, maybe also overlay the area with snow.
+
+Passive:
+	Firefly: Passive mob, like a bat (it will be really tiny).
+
+Biomes:
+
+Soul Forest Biome, Many vines, some trees. Contains Blue Slimes, Eagle, Laterite Grass & Dirt.
+Frost Caves Biome, Thick snow, ice towers with mob spawners, no trees, no plants, no vines (Most dangerous biome). Contains Yeti's, Snow Creepers, Ice Fairies and Ice Queen (Boss/Semi-Boss).
+Frozen Plains Biome, Frozen Grass, Contains Snow creepers, Yeti's.
+Peat Bog Biome, no trees, lots of grass (4 different types) and some flowers. Contains Groundhogs and Blue Slimes.
+Dark Caverns Biome, Lava falling down, fires, fire trees, "Houses", and some flowers, Fyrised Sand. Contains Demons, Blazers, Magma cubes, zombie-pigmen, fireflies. (very dark green-ish/grey-ish grass like burned grass)
+Black Forest Biome, Soul trees, Fyrised Sand, Tall trees. Contains Groundhogs.
+Marona Woods Biome, Hardwood Trees, Laterite Grass & Dirt, lots of grass.
+
+Trees:
+
+Soul Forest Tree: Like a normal tree except with grape leaves.
+Hardwood Tree: Special tree (with a nice trunk) and a cool treetop.
+Firetree: Wood that can't burn, has fire on some of the blocks.
+
+Plants:
+
+Purple grass, Brown grass, Grey Grass, Orange Grass, Black Grass, Burned Flower, A few colours of flowers, some 2/3 block high plants (Hedge, Fire Stick)
+
+Structures:
+
+Ice Tower: A Medium-Large tower made of ice-brick, has 3 layers (2 inside, 1 is the top of the tower) and inside a mob spawner and a ladder from the bottom to the top spawn.
+Dark House: A small house build out of dark bricks. (spawn in mid-air on a flying rock)
+Pools of soul water
+Temple
+
+Achievements:
+- Crafting of a new food .oncraft
+- Mining tin/copper -> To easy?
+- Getting Bronze -> Bronzius
+- Mining Steel, cobalt or uranium -> What's this?
+- Getting steel/cobalt (ingot) .onsmelt -> Master Blacksmith
+- Getting a new pickaxe (steel or cobalt) .oncraft -> Is diamond not enough for you?
+- Get a titanium/onyx stick -> Reinforced sticks
+- Though guy (mithril armor piece) .oncraft -> Best of the best
+
+
+Items: (mob related)
+
+[x]Blue Gel: Dropped by "Blue Slime".
+[x]Frost Shard: Dropped by "Ice Fairy, Snow Creeper, Ice Queen". Is used as ammo for the Frost Wand.
+[x]Frost Fragment: crafted with 9 frost shards.
+[x]Frozen Rod: Dropped by "Snow Creeper, Yeti, Ice Queen, Ice Fairy".
+[x]Frozen Stick: crafted with 8 frozen rods and 1 stick in the middle.
+[x]Soul: Dropped by "Soul Firefly".
+[x]Soul Fragment: Crafted with 9 souls.
+[x]Light Shard: Dropped by "Firefly, Soul Firefly".
+[x]Light Fragment: Crafted with 9 light shards.
+[x]Strenght Shard: Dropped by "Groundhogs".
+[x]Strenght Fragment: Crafted with 9 strenght shards.
+[x]Mochan Eagle Feather: Dropped by "Mochan Eagle".
+[x]Mochan Eagle Wing: Crafted with 6 Mochan Eagle Feathers (Like an upside down stairs).
+[x]Burned Shard: Dropped by "Demon".
+[x]Burned Fragment: Crafted with 9 burned shards.
+[x]Enhanced Soul Fragment: Crafted with 8 soul fragments and  1 diamond in the middle.
+\\\Magic Fragment: Crafted with (4 diamonds(+), 1 Titanium Gem, 1 Mochan Eagle Feather, 1 Onyx Gem, 1 Mithril Gem, 1 Black Diamond Gem in the middle)
+	
+	Verschillende soorten Magic Fragments: (all the magic items can only be crafted in the Soul Crafting Table)
+	Half:
+		Armor:
+		- [x]Half a Fire Magic Fragment -> Fire Protection II		(2 Strenght Shards (--), 2 Burned Shards (|), 1 Scarletite Block in 2 corners, 1 Ruby Block in 2 corners, 1 Chrome Block in the middle)
+		- [x]Half a Strong Magic Fragment -> Protection II			(4 Strenght Shards (+), 1 Amethyst Block in each corner (4 in total), 1 Silver Block in the middle)
+		- [x]Half a Hardened Magic Fragment -> Blast Protection II		(4 Strenght Shards (+), 1 Bronze Block in each corner (4 in total), 1 Topaz Block in the middle)
+		- [x]Half a Shiny Magic Fragment -> Projectile Protection II	(4 Light Shards (+), 1 Chrome Block in each corner (4 in total), 1 Citrine Block in the middle)
+		- [x]Half a Flight Magic Fragment -> Feather Falling I		(4 Mochan Eagle Feathers (+) 1 White Opal Block in each corner, 1 Jet Block in the middle)
+		Swords:
+		- [x]Sharp Magic Fragment -> Sharpness II				(4 Strenght Shards (+), 1 Tanzanite Block in each corner, 1 Jade Block in the middle)
+		- [x]Strenght Magic Fragment -> Smite II				(4 Strenght Shards (+), 1 Emerald Block in each corner, 1 Bronze Block in the middle)
+		- [x]Frozen Magic Fragment -> Frozen Sword II			(4 Frost Shards (+), 1 Aquamarine Block in each corner, 1 Sapphire Block in the middle)
+		- [x]Soul Magic Fragment -> Enhanced Sword II			(4 Soul Shards (+), 1 Lila Block in each corner, 1 Violet Block in the middle)
+		Tools:								
+		- [x]Enlighted Magic Fragment -> Efficiency II			(4 Light Shards (+), 1 Citrine Block in each corner, 1 Gold Block in the middle)
+		Bow:
+		- [x]Power Magic Fragment -> Power I				(2 Strenght Shards (--), 2 Soul Shards (|),1 Amethyst Block in each corner , 1 Olivine Block in the middle)
+	Normal:
+		Armor:
+		- [x]Fire Magic Fragment -> Fire Protection III			(2 Strenght Shards (--), 2 Burned Shards (|), 1 Scarletite Block in 2 corners, 1 Ruby Block in 2 corners, 1 Titanium Block in the middle)
+		- [x]Strong Magic Fragment -> Protection III			(4 Strenght Shards (+), 1 Amethyst Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Hardened Magic Fragment -> Blast Protection III		(4 Strenght Shards (+), 1 Bronze Block in each corner (4 in total), 1 Black Diamond Block in the middle) 
+		- [x]Shiny Magic Fragment -> Projectile Protection III		(4 Light Shards (+), 1 Chrome Block in each corner (4 in total), 1 Black Diamond Block in the middle)
+		- [x]Flight Magic Fragment -> Feather Falling II			(4 Mochan Eagle Feathers (+), 1 White Opal Block in each corner (4 in total), 1 Onyx Block in the middle)
+		Swords:
+		- [x]Sharp Magic Fragment -> Sharpness III				(4 Strenght Shards (+), 1 Tanzanite Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Burned Magic Fragment -> Fire Aspect I			(4 Burned Shards (+), 1 Scarletite Block in each corner (4 in total), 1 Mithril Block in the middle)
+		- [x]Strenght Magic Fragment -> Smite III				(4 Strenght Shards (+), 1 Emerald Block in each corner (4 in total), 1 Onyx Block in the middle)
+		- [x]Frozen Magic Fragment -> Frozen Sword III			(4 Frost Shards (+), 1 Aquamarine Block in each corner (4 in total), 1 Mithril Block in the middle)
+		- [x]Soul Magic Fragment -> Enhanced Sword III			(4 Soul Fragments (+), 1 Lila Block in each corner (4 in total), 1 Black Diamond Block in the middle)
+		Tools:	
+		- [x]Enlighted Magic Fragment -> Efficiency III			(4 Light Shards (+), 1 Silver Block in each corner (4 in total), 1 Mithril Block in the middle)
+		Bow:
+		- [x]Hot Magic Fragment -> Flame I					(4 Burned Shards (+), 1 Ruby Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Power Magic Fragment -> Power II				(2 Strenght Shards (--), 2 Soul Shards (|), 1 Amethyst Block in each corner (4 in total), 1 Black Diamond Block in the middle)
+	Advanced:
+		Armor:
+		- [x]Advanced Fire Magic Fragment -> Fire Protection IV		(2 Strenght Fragments (--), 2 Burned Fragments (|), 1 Scarletite Block in 2 corners, 1 Ruby Block in 2 corners, 1 Titanium Block in the middle)
+		- [x]Advanced Strong Magic Fragment -> Protection IV		(4 Strenght Fragments (+), 1 Amethyst Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Advanced Hardened Magic Fragment -> Blast Protection IV	(4 Strenght Fragments (+), 1 Bronze Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Advanced Shiny Magic Fragment -> Projectile Protection IV	(4 Light Fragments (+), 1 Chrome Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Advanced Flight Magic Fragment -> Feather Falling III		(4 Mochan Eagle Wings (+), 1 White Opal Block in each corner (4 in total), 1 Onyx Block in the middle)
+		Swords:
+		- [x]Advanced Sharp Magic Fragment -> Sharpness IV			(4 Strenght Fragments (+), 1 Tanzanite Block in each corner (4 in total), 1 Titanium Block in the middle)
+		- [x]Advanced Burned Magic Fragment -> Fire Aspect II		(4 Burned Fragments (+), 1 Scarletite Block in each corner (4 in total), 1 Mithril Block in the middle)
+		- [x]Advanced Strenght Magic Fragment -> Smite IV			(4 Strenght Fragments (+), 1 Emerald Block in each corner (4 in total), 1 Onyx Block in the middle)
+		- [x]Advanced Frozen Magic Fragment -> Frozen Sword IV		(4 Frost Fragments (+), 1 Aquamarine Block in each corner (4 in total), 1 Mithril Block in the middle)
+		- [x]Advanced Soul Magic Fragment -> Enhanced Sword IV		(4 Enhanced Soul Fragments (+), 1 Lila Block in each corner (4 in total), 1 Black Diamond Block in the middle)
+		Tools:
+		- [x]Advanced Enlighted Magic Fragment -> Efficiency IV		(4 Light Fragments (+), 1 Silver Block in each corner (4 in total), 1 Mithril Block in the middle)
+		Bow:
+		- [x]Advanced Power Magic Fragment -> Power III			(2 Strenght Fragments (--), 2 Soul Shards (|), 1 Amethyst Block in each corner (4 in total), 1 Black Diamond Block in the middle)
+
+[x]Magic Emblem: Crafted with (4 Enhanced Soul Fragments(+), 1 Frost Fragment, 1 Light Fragment, 1 Strenght Fragment, 1 Burned Fragment, 1 Obsidian in the middle)
+Ehchantment Book: Crafted with (4 Books(+), Magic Emblem in each corner (4 in total), 1 Magic Fragment in the middle)
+
+Weapons:
+- WarAxe
+- tin and copper throwing knifes
+- throwable spears
+
+NOTES:
+
+- Soul Tree spawn veranderen
+- Hardwood tree random spawn 2 van de 3 takken

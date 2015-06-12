@@ -1,0 +1,433 @@
+//Mobs
+entity.SoulKotek.name=Kotek
+entity.SoulKingKotek.name=King Kotek
+entity.SoulYeti.name=Yeti
+entity.SoulExclos.name=Exclos
+entity.SoulIceFairy.name=Ice Fairy
+entity.SoulGroundhog.name=Groundhog
+entity.SoulFurivoli.name=Furivoli
+entity.SoulIceQueen.name=Ice Queen
+entity.SoulIceQueenIllusion.name=Ice Queen Illusion
+
+//Other Entities
+entity.FrostShard.name=Frost Shard
+
+//Key Bindings
+key.tooldetail.category=Soul Forest
+key.tooldetail.desc=Show armor/tool details
+
+//Items
+item.Aquamarineaxe.name=Aquamarine Axe
+item.Bronzeaxe.name=Bronze Axe
+item.Chromiteaxe.name=Chromite Axe
+item.Cobaltaxe.name=Cobalt Axe
+item.Copperaxe.name=Copper Axe
+item.Mithrilaxe.name=Mithril Axe
+item.Silveraxe.name=Silver Axe
+item.Steelaxe.name=Steel Axe
+item.Tanzaniteaxe.name=Tanzanite Axe
+item.Tinaxe.name=Tin Axe
+
+item.Aquamarinehoe.name=Aquamarine Hoe
+item.Bronzehoe.name=Bronze Hoe
+item.Chromitehoe.name=Chromite Hoe
+item.Cobalthoe.name=Cobalt Hoe
+item.Copperhoe.name=Copper Hoe
+item.Mithrilhoe.name=Mithril Hoe
+item.Silverhoe.name=Silver Hoe
+item.Steelhoe.name=Steel Hoe
+item.Tanzanitehoe.name=Tanzanite Hoe
+item.Tinhoe.name=Tin Hoe
+
+item.Aquamarinepickaxe.name=Aquamarine Pickaxe
+item.Bronzepickaxe.name=Bronze Pickaxe
+item.Chromitepickaxe.name=Chromite Pickaxe
+item.Cobaltpickaxe.name=Cobalt Pickaxe
+item.Copperpickaxe.name=Copper Pickaxe
+item.Mithrilpickaxe.name=Mithril Pickaxe
+item.Silverpickaxe.name=Silver Pickaxe
+item.Steelpickaxe.name=Steel Pickaxe
+item.Tanzanitepickaxe.name=Tanzanite Pickaxe
+item.Tinpickaxe.name=Tin Pickaxe
+
+item.Aquamarineshovel.name=Aquamarine Shovel
+item.Bronzeshovel.name=Bronze Shovel
+item.Chromiteshovel.name=Chromite Shovel
+item.Cobaltshovel.name=Cobalt Shovel
+item.Coppershovel.name=Copper Shovel
+item.Mithrilshovel.name=Mithril Shovel
+item.Silvershovel.name=Silver Shovel
+item.Steelshovel.name=Steel Shovel
+item.Tanzaniteshovel.name=Tanzanite Shovel
+item.Tinshovel.name=Tin Shovel
+
+item.Aquamarinesword.name=Aquamarine Sword
+item.Bronzesword.name=Bronze Sword
+item.Chromitesword.name=Chromite Sword
+item.Cobaltsword.name=Cobalt Sword
+item.Mithrilsword.name=Mithril Sword
+item.Silversword.name=Silver Sword
+item.Steelsword.name=Steel Sword
+item.Tanzanitesword.name=Tanzanite Sword
+
+item.Aquamarinewaraxe.name=Aquamarine Waraxe
+item.TinthrowingKnife.name=Tin Throwing Knife
+item.CopperthrowingKnife.name=Copper Throwing Knife
+
+item.Amazonitegem.name=Amazonite Gem
+item.Amazoniteuncut.name=Amazonite Uncut
+item.Amethystgem.name=Amethyst Gem
+item.Amethystuncut.name=Amethyst Uncut
+item.Aquamarinegem.name=Aquamarine Gem
+item.Aquamarineuncut.name=Aquamarine Uncut
+item.Blackdiamondgem.name=Black Diamond Gem
+item.Blackdiamonduncut.name=Black Diamond Uncut
+item.Citrinegem.name=Citrine Gem
+item.Citrineuncut.name=Citrine Uncut
+item.Jadegem.name=Jade Gem
+item.Jadeuncut.name=Jade Uncut
+item.Jetgem.name=Jet Gem
+item.Jetuncut.name=Jet Uncut
+item.Lilagem.name=Lila Gem
+item.Lila_uncut.name=Lila Uncut
+item.Olivinegem.name=Olivine Gem
+item.Olivineuncut.name=Olivine Uncut
+item.Onyxgem.name=Onyx Gem
+item.Onyxuncut.name=Onyx Uncut
+item.Opalgem.name=Opal Gem
+item.Opaluncut.name=Opal Uncut
+item.Scarletemeraldgem.name=Scarletite Gem
+item.Scarletemeralduncut.name=Scarletite Uncut
+item.Titaniumgem.name=Titanium Gem
+item.Titaniumuncut.name=Titanium Uncut
+item.Topazgem.name=Topaz Gem
+item.Topazuncut.name=Topaz Uncut
+item.Turquoisegem.name=Turquoise Gem
+item.Turquoiseuncut.name=Turquoise Uncut
+item.Uraniumgem.name=Uranium Gem
+item.Violetgem.name=Violet Gem
+item.Violetuncut.name=Violet Uncut
+item.Whiteopalgem.name=White Opal Gem
+item.Whiteopaluncut.name=White Opal Uncut
+
+item.Grapesbushel.name=Grapes Bushel
+item.Baneberrybushel.name=Baneberry Bushel
+item.Blackberrybushel.name=Blackberry Bushel
+item.Blueberrybushel.name=Blueberry Bushel
+item.Cranberrybushel.name=Cranberry Bushel
+item.Raspberrybushel.name=Raspberrry Bushel
+item.Razzberrybushel.name=Razzberry Bushel
+item.Strawberries.name=Strawberries
+
+item.Blueberrymuffin.name=Blueberry Muffin
+item.Baneberrycake.name=Baneberry Cake
+item.Blackberrycrumble.name=Blackberry Crumble
+item.Cranberryjuice.name=Cranberry Juice
+item.Cranberrymuffin.name=Cranberry Muffin
+item.Raspberryjuice.name=Raspberry Juice
+item.Razzberryjuice.name=Razzberry Juice
+item.Razzberrypie.name=Razzberry Pie
+item.Strawberrypie.name=Strawberry Pie
+item.Wine.name=Wine
+
+item.Bronzeingot.name=Bronze Ingot
+item.Chromiteingot.name=Chromite Ingot
+item.Cobaltingot.name=Cobalt Ingot
+item.Copperingot.name=Copper Ingot
+item.Mithrilingot.name=Mithril Ingot
+item.Silveringot.name=Silver Ingot
+item.Steelingot.name=Steel Ingot
+item.Tanzaniteingot.name=Tanzanite Ingot
+item.Tiningot.name=Tin Ingot
+
+item.Bronze_helmet.name=Bronze Helmet
+item.Cobalt_helmet.name=Cobalt Helmet
+item.Mithril_helmet.name=Mithril Helmet
+item.Silver_helmet.name=Silver Helmet
+item.Steel_helmet.name=Steel Helmet
+item.Slime_helmet.name=Slime Helmet
+
+item.Bronze_chestplate.name=Bronze Chestplate
+item.Cobalt_chestplate.name=Cobalt Chestplate
+item.Mithril_chestplate.name=Mithril Chestplate
+item.Silver_chestplate.name=Silver Chestplate
+item.Steel_chestplate.name=Steel Chestplate
+item.Slime_chestplate.name=Slime Chestplate
+
+item.Bronze_legs.name=Bronze Legs
+item.Cobalt_legs.name=Cobalt Legs
+item.Mithril_legs.name=Mithril Legs
+item.Silver_legs.name=Silver Legs
+item.Steel_legs.name=Steel Legs
+item.Slime_legs.name=Slime Legs
+
+item.Bronze_boots.name=Bronze Boots
+item.Cobalt_boots.name=Cobalt Boots
+item.Mithril_boots.name=Mithril Boots
+item.Silver_boots.name=Silver Boots
+item.Steel_boots.name=Steel Boots
+item.Slime_boots.name=Slime Boots
+
+item.Berrycollector.name=Berrycollector
+item.soul_lighter.name=Soul Lighter
+item.Frost_wand.name=Frost Wand
+item.Polisher.name=Polisher
+item.PolisherTowel.name=Polisher Towel
+item.Uranium_liquid.name=Uranium Liquid
+item.Frost_shard.name=Frost Shard
+item.Burned_Shard.name=Burned Shard
+item.Light_Shard.name=Light Shard
+item.Strength_Shard.name=Strength Shard
+item.Soul_item.name=Soul Item
+item.Frozen_rod.name=Frozen Rod
+item.Blue_gel.name=Blue Gel
+item.Blue_molten_gel.name=Blue Molten Gel
+item.Gel_pot_empty.name=Gel Pot
+item.Gel_pot_filled.name=Filled Gel Pot
+item.King_gel_pot.name=King Gel Pot
+item.Ice_crystal.name=Ice Crystal
+item.Mochan_Eagle_Feather.name=Mochan Eagle Feather
+item.Mochan_Eagle_Wing.name=Mochan Eagle Wing
+item.Frozen_Stick.name=Frozen Stick
+item.Onyx_stick.name=Onyx Stick
+item.Titanium_stick.name=Titanium Stick
+item.Magic_Emblem.name=Magic Emblem
+
+item.Burned Fragment .name=Burned Fragment
+item.Frost Fragment .name=Frost Fragment
+item.Light Fragment .name=Light Fragment
+item.EnhancedSoul Fragment.name =Soul Fragment
+item.Strength Fragment .name=Strength Fragment
+item.Soul Fragment .name=Soul Fragment
+item.EnhancedSoul Fragment .name=Enhanced Soul Fragment
+item.Advanced Burned.name=Advanced Burned Fragment
+item.Advanced Enlighted.name=Advanced Enlighted Fragment
+item.Advanced Fire.name=Advanced Fire Fragment
+item.Advanced Flight.name=Advanced Flight Fragment
+item.Advanced Frozen.name=Advanced Frozen Fragment
+item.Advanced Hardened.name=Advanced Hardened Fragment
+item.Advanced Power.name=Advanced Power Fragment
+item.Advanced Sharp.name=Advanced Sharp Fragment
+item.Advanced Shiny.name=Advanced Shiny Fragment
+item.Advanced Soul.name=Advanced Soul Fragment
+item.Advanced Strength.name=Advanced Strength Fragment
+item.Advanced Strong.name=Advanced Strong Fragment
+item.Half Enlighted.name=Half Enlighted Fragment
+item.Half Fire.name=Half Fire Fragment
+item.Half Flight.name=Half Flight Fragment
+item.Half Frozen.name=Half Frozen Fragment
+item.Half Hardened.name=Half Hardened Fragment
+item.Half Power.name=Half Power Fragment
+item.Half Sharp.name=Half Sharp Fragment
+item.Half Shiny.name=Half Shiny Fragment
+item.Half Soul.name=Half Soul Fragment
+item.Half Strength.name=Half Strength Fragment
+item.Half Strong.name=Half Strong Fragment
+item.Burned.name=Burned Magical Fragment
+item.Enlighted.name=Enlighted Magical Fragment
+item.Fire.name=Fire Magical Fragment
+item.Flight.name=Flight Magical Fragment
+item.Frozen.name=Frozen Magical Fragment
+item.Hardened.name=Hardened Magical Fragment
+item.Hot.name=Hot Magical Fragment
+item.Power.name=Power Magical Fragment
+item.Sharp.name=Sharp Magical Fragment
+item.Shiny.name=Shiny Magical Fragment
+item.Soul.name=Soul Magical Fragment
+item.Strength.name=Strength Magical Fragment
+item.Strong.name=Strong Magical Fragment
+
+item.bucketSoulWater.name=Soul Water Bucket
+item.bucketSoul.name=Soul Bucket
+item.ItemVineplant.name=Vineplant
+
+//Blocks
+tile.Amazoniteore.name=Amazonite Ore
+tile.Amethystore.name=Amethyst Ore
+tile.Aquamarineore.name=Aquamarine Ore
+tile.Blackdiamondore.name=Black Diamond Ore
+tile.Citrineore.name=Citrine Ore
+tile.Chromiteore.name=Chromite Ore
+tile.Cobaltore.name=Cobalt Ore
+tile.Copperore.name=Copper Ore
+tile.Jadeore.name=Jade Ore
+tile.Jetore.name=Jet Ore
+tile.Lilaore.name=Lila Ore
+tile.Mithrilore.name=Mithril Ore
+tile.Olivineore.name=Olivine Ore
+tile.Onyxore.name=Onyx Ore
+tile.Opalore.name=Opal Ore
+tile.Scarletiteore.name=Scarletite Ore
+tile.Silverore.name=Silver Ore
+tile.Steelore.name=Steel Ore
+tile.Tanzaniteore.name=Tanzanite Ore
+tile.Tinore.name=Tin Ore
+tile.Titaniumore.name=Titanium Ore
+tile.Topazore.name=Topaz Ore
+tile.Turquoiseore.name=Turquoise Ore
+tile.Uraniumore.name=Uranium Ore
+tile.Violetore.name=Violet Ore
+tile.Whiteopalore.name=White Opal Ore
+
+tile.Amazoniteblock.name=Amazonite Block
+tile.Amethystblock.name=Amethyst Block
+tile.Aquamarineblock.name=Aquamarine Block
+tile.Blackdiamondblock.name=Black Diamond Block
+tile.Bronzeblock.name=Bronze Block
+tile.Citrineblock.name=Citrine Block
+tile.Chromiteblock.name=Chromite Block
+tile.Cobaltblock.name=Cobalt Block
+tile.Copperblock.name=Copper Block
+tile.Jadeblock.name=Jade Block
+tile.Jetblock.name=Jet Block
+tile.Lilablock.name=Lila Block
+tile.Mithrilblock.name=Mithril Block
+tile.Olivineblock.name=Olivine Block
+tile.Onyxblock.name=Onyx Block
+tile.Opalblock.name=Opal Block
+tile.Scarletiteblock.name=Scarletite Block
+tile.Silverblock.name=Silver Block
+tile.Steelblock.name=Steel Block
+tile.Tanzaniteblock.name=Tanzanite Block
+tile.Tinblock.name=Tin Block
+tile.Titaniumblock.name=Titanium Block
+tile.Topazblock.name=Topaz Block
+tile.Turquoiseblock.name=Turquoise Block
+tile.Uraniumblock.name=Uranium Block
+tile.Violetblock.name=Violet Block
+tile.Whiteopalblock.name=White Opal Block
+
+tile.Icebrick.name=Ice Brick
+tile.Bauxitebrick.name=Bauxite Brick
+tile.Porphyrybrick.name=Porphyry Brick
+tile.Slatebrick.name=Slate Brick
+tile.Titaniumbrick.name=Titanium Brick
+
+tile.soulhalfslab.name=Soul Half Slab
+tile.souldoubleslab.name=Soul Double Slab
+
+tile.Ice_workbench_side.name=Ice Workbench
+tile.gemcutterBench.name=Gemcutter
+tile.gemcutterBench Active.name=Gemcutter
+tile.Soul_Fire.name=Soul Fire
+tile.Blueish Dizzling Portal Passage.name=Teleporter
+tile.gelextractor.name=Gel Extractor
+
+tile.SoulFluid=Soul Fluid
+tile.Soul Water Flow.name=Soul Water Moving
+tile.Soul Water Still.name=Soul Water
+
+tile.Porphyrydark.name=Dark Porphyry
+tile.Porphyry.name=Porphyry
+tile.Slate.name=Slate
+tile.Bauxite.name=Bauxite
+tile.Mossybauxite.name=Bauxite Mossy
+
+tile.iceBrickStairs.name=Ice Brick Stairs
+tile.bauxiteBrickStairs.name=Bauxite Brick Stairs
+tile.porphyryBrickStairs.name=Porphyry Brick Stairs
+tile.slateBrickStairs.name=Slate Brick Stairs
+tile.titaniumBrickStairs.name=Titanium Brick Stairs
+
+tile.Laterite_grass_side.name=Laterite Grass
+tile.Laterite.name=Laterite Dirt
+tile.Fyrised_sand_side.name=Fyrite Sand
+tile.Fyrised_sand.name=Fyrised Sand
+tile.SnowTopLayer.name=Soul Snow
+tile.SnowBottomLayer.name=Thick Soul Snow
+tile.Bog_grass.name=Bog Grass
+tile.Bog_dirt.name=Bog Dirt
+tile.Frozen_grass.name=Frozen Grass
+tile.Bog_grass_tall_grey.name=Bog Tall Grass Grey
+tile.Bog_grass_tall_green.name=Bog Tall Grass Green
+tile.Bog_grass_tall_dark.name=Bog Tall Grass Dark
+tile.Bog_grass_tall_purple.name=Bog Tall Grass Purple
+tile.Frozen_tallgrass.name=Frozen Tall Grass
+
+tile.Hardwood_wood.name=Hardwood Planks
+tile.Soulwood.name=Soul Planks
+tile.Hardwood.name=Hardwood Log
+tile.SoulLog.name=Soul Log
+
+tile.hardwoodStairs.name=Hardwood Stairs
+tile.soulStairs.name=Soul Stairs
+
+tile.Grapes.name=Grapes Leaves
+tile.Hardwood_leaves.name=Hardwood Leaves
+tile.Soul_leaves.name=Soul Leaves
+tile.Soul_leaves_orange.name=Soul Leaves Orange
+tile.Soul_leaves_pink.name=Soul Leaves Pink
+tile.Soul_leaves_yellow.name=Soul Leaves Yellow
+tile.Soul_leaves_blue.name=Soul Leaves Blue
+tile.Sappling_soul.name=Sappling Grape
+
+tile.Cantaloupe_Flower.name=Cantaloupe
+tile.Fireblossom.name=Fireblossom
+tile.Vineplant.name=Vineplant
+tile.Vineplant_top.name=Vineplant Top
+
+tile.Baneberry.name=Baneberry
+tile.Blackberry.name=Blackberry
+tile.Blueberry.name=Blueberry
+tile.Cranberry.name=Cranberry
+tile.Raspberry.name=Raspberry
+tile.Razzberry.name=Razzberry
+tile.Strawberry.name=Strawberry
+
+tile.torchAmazonite.name=Amazonite Torch
+tile.torchAmethyst.name=Amethyst Torch
+tile.torchBronze.name=Bronze Torch
+tile.torchChromite.name=Chromite Torch
+tile.torchJet.name=Jet Torch
+tile.torchOlivine.name=Olivine Torch
+tile.torchTopaz.name=Topaz Torch
+tile.torchTurquoise.name=Turquoise Torch
+tile.torchViolet.name=Violet Torch
+tile.torchWhiteOpal.name=White Opal Torch
+
+//Achievement Tab
+itemGroup.tabSoulTools=Soul Tools
+itemGroup.tabSoulGems=Soul Gems
+itemGroup.tabSoulBlocks=Soul Blocks
+itemGroup.tabSoulOther=Soul Other
+itemGroup.tabSoulBerries=Soul Berries
+
+//Achievements
+achievement.soulForest=Dizzling Portal Passage
+achievement.soulForest.desc=Enter the Soul Forest Dimension!
+achievement.mineTinCopper=To Easy?
+achievement.mineTinCopper.desc=Simpel ores
+achievement.getBronze=Bronzius
+achievement.getBronze.desc=Ironic replacement
+achievement.getRareOverworldOre=What's this?
+achievement.getRareOverworldOre.desc=Strange green glowing stuff, SGGS or in other words, Uranium?
+achievement.getSteelOrCobaltIngot=Master Blacksmith
+achievement.getSteelOrCobaltIngot.desc=Master the skills of smelting and forge one of the greatest ingots.
+achievement.getSteelOrCobaltPickaxe=Is diamond not enough for you?
+achievement.getSteelOrCobaltPickaxe.desc=Upgraded pickaxe
+achievement.getMithrilArmorPiece=Best of the best
+achievement.getMithrilArmorPiece.desc=Strongest armor, it requires much patience and skill to craft such a strong piece.
+achievement.firstUncutFound=Soul Miner
+achievement.firstUncutFound.desc=You have discovered gems!
+achievement.firstGem=Gemcutter
+achievement.firstGem.desc=You have discovered a way of cutting gems.
+achievement.reinforcedSticks=Reinforced Sticks
+achievement.reinforcedSticks.desc=Stronger sticks?
+achievement.berryCollectorCraft=It all starts with effort
+achievement.berryCollectorCraft.desc=The upgraded shears, or not?
+achievement.berryCollector=Fantastic Farmer
+achievement.berryCollector.desc=You are a true collector!
+achievement.soulFood=Soul Food
+achievement.soulFood.desc=You have created some kind of special food!
+achievement.gel=Sticky Gel
+achievement.gel.desc=Easy to find, but easy to use?
+achievement.gelExtractor=It is all about the gel!
+achievement.gelExtractor.desc=Contain it, contain it!
+achievement.gelKing=Totally not a reference to some other game!
+achievement.gelKing.desc=The King of Koteks, well a small victory for you....
+achievement.shards=The more usefull stuff.
+achievement.shards.desc=It has more uses then most other things, but what do I use it for?
+achievement.wand=Strong and Powerful!
+achievement.wand.desc=This will certainly come in handy!
+achievement.iceQueen=The Evil Queen!
+achievement.iceQueen.desc=Will she reward your honourable altar?
