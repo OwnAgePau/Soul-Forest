@@ -226,7 +226,7 @@ public class InitItems {
 	SoulItems.BronzeChestplate = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),1, "Bronze_chestplate")).setTextureName("soulforest:Bronze_chestplate"));
 	SoulItems.CobaltChestplate = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),1, "Cobalt_chestplate")).setTextureName("soulforest:Cobalt_chestplate"));
 	SoulItems.MithrilChestplate = 		Optional.of((new ItemArmorMithril(InitMaterials.Mithril_Armor,soul_forest.proxy.addArmor("Mithril"),1, "Mithril_chestplate").setTextureName("soulforest:Mithril_chestplate")));
-	SoulItems.SilverChestplate = 		Optional.of((new ItemArmorSilver( InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),1, "Silver_chestplate")).setTextureName("soulforest:Silver_chestplate"));
+	SoulItems.SilverChestplate = 		Optional.of((new ItemArmorSilver(InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),1, "Silver_chestplate")).setTextureName("soulforest:Silver_chestplate"));
 	SoulItems.SteelChestplate =		Optional.of((new ItemArmorSteel(InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),1, "Steel_chestplate")).setTextureName("soulforest:Steel_chestplate"));
 	SoulItems.SlimeChestplate =		Optional.of((new ItemArmorSlime(InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),1, "Slime_chestplate")).setTextureName("soulforest:Slime_chestplate"));
 	// Leggings
@@ -234,8 +234,8 @@ public class InitItems {
 	SoulItems.CobaltLeggings = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),2, "Cobalt_legs")).setTextureName("soulforest:Cobalt_legs"));				
 	SoulItems.MithrilLeggings = 		Optional.of((new ItemArmorMithril(InitMaterials.Mithril_Armor,soul_forest.proxy.addArmor("Mithril"),2, "Mithril_legs").setTextureName("soulforest:Mithril_legs")));
 	SoulItems.SilverLeggings = 		Optional.of((new ItemArmorSilver(InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),2, "Silver_legs")).setTextureName("soulforest:Silver_legs"));
-	SoulItems.SteelLeggings = 		Optional.of((new ItemArmorSteel( InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),2, "Steel_legs")).setTextureName("soulforest:Steel_legs"));				
-	SoulItems.SlimeLeggings = 		Optional.of((new ItemArmorSlime( InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),2, "Slime_legs")).setTextureName("soulforest:Slime_legs"));				
+	SoulItems.SteelLeggings = 		Optional.of((new ItemArmorSteel(InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),2, "Steel_legs")).setTextureName("soulforest:Steel_legs"));				
+	SoulItems.SlimeLeggings = 		Optional.of((new ItemArmorSlime(InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),2, "Slime_legs")).setTextureName("soulforest:Slime_legs"));				
 	// Boots		
 	SoulItems.BronzeBoots = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),3, "Bronze_boots")).setTextureName("soulforest:Bronze_boots"));
 	SoulItems.CobaltBoots = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),3, "Cobalt_boots")).setTextureName("soulforest:Cobalt_boots"));		

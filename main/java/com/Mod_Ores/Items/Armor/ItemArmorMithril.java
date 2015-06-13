@@ -90,6 +90,7 @@ public class ItemArmorMithril extends ItemArmor{
 		par3List.add("\u00A73Max damage taken : " + damage + "/" + uses);
 		par3List.add("\u00A72Damage Reduction : " + damageRedu);
 		par3List.add("\u00A74Enchantability : " + ench);
+		par3List.add("\u00A71Set Bonus : " + "Fire Immunity" + ", \u00A74Side effects : Water is now your weakness.");
 	}
 	else{
 	    par3List.add("Press " + Keyboard.getKeyName(SoulForestKeyHandler.keyValues[SoulForestKeyHandler.CUSTOM_INV]) + " to show more details.");
