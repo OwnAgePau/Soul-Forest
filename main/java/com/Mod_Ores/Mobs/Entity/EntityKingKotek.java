@@ -126,13 +126,8 @@ public class EntityKingKotek extends EntitySlime implements IBossDisplayData
 
     @Override
     protected void dropFewItems(boolean isRecentHit, int enchantmentLootingModifier){
-	int j = this.rand.nextInt(30);
-	// Drop 10 + (1-20) blue gel, so you will get between 10-30 blue gel.
-	this.dropItem(SoulItems.BlueGel.get(), 10);
-
-	for (int k = 0; k < j; ++k){
-	    this.dropItem(SoulItems.BlueGel.get(), 1);
-	}
+	int j = this.rand.nextInt(21);
+	this.dropItem(SoulItems.BlueGel.get(), 10 + j);
 	for(int rareDropTimes = 0; rareDropTimes < 3; rareDropTimes++){
 	    switch (this.rand.nextInt(6))
 	    {

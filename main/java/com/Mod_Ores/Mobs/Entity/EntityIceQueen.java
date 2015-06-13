@@ -22,6 +22,7 @@ import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
@@ -130,6 +131,43 @@ public class EntityIceQueen extends EntityMob implements IBossDisplayData, IRang
 	case 1:
 	    this.dropItem(SoulItems.FrostShard.get(), 2);
 	    break;
+	}
+    }
+    
+    @Override
+    protected void dropFewItems(boolean isRecentHit, int enchantmentLootingModifier){
+	this.dropItem(SoulItems.FrostShard.get(), 10 + this.rand.nextInt(31));
+	this.dropItem(SoulItems.FrozenRod.get(), 3 + this.rand.nextInt(7));
+	for(int rareDropTimes = 0; rareDropTimes < 4; rareDropTimes++){
+	    switch (this.rand.nextInt(9)){
+	    case 0:
+		this.dropItem(SoulItems.MithrilIngot.get(), 1);
+		break;
+	    case 1:
+		this.dropItem(Items.nether_star, 1);
+		break;
+	    case 2:
+		this.dropItem(Items.glowstone_dust, 10 + this.rand.nextInt(11));
+		break;
+	    case 3:
+		this.dropItem(SoulItems.OnyxGem.get(), 1);
+		break;
+	    case 4:
+		this.dropItem(SoulItems.TitaniumGem.get(), 1);
+		break;
+	    case 5:
+		this.dropItem(SoulItems.AquamarineWaraxe.get(), 1);
+		break;
+	    case 6:
+		this.dropItem(SoulItems.ScarletiteGem.get(), 2 + this.rand.nextInt(4));
+		break;
+	    case 7:
+		this.dropItem(SoulItems.FrostFragment.get(), 8 + this.rand.nextInt(13));
+		break;
+	    case 8:
+		this.dropItem(SoulItems.FrostWand.get(), 1);
+		break;
+	    }
 	}
     }
 
