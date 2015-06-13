@@ -165,6 +165,20 @@ public class TheBiomeDeco extends BiomeDecorator
     public void genDecorations(BiomeGenBase base) {
 	MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(this.currentWorld, this.randomGenerator, this.chunk_X, this.chunk_Z));
 
+	//structures
+	for (int g1 = 0; g1 < this.icetowersperchunk; g1++){
+	    int g2 = chunk_X + randomGenerator.nextInt(16);
+	    int h1 = randomGenerator.nextInt(128);
+	    int g3 = chunk_Z + randomGenerator.nextInt(16);
+	    this.icetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	}
+	if(this.randomGenerator.nextInt(10) <= this.darkaltarsperchunk){
+	    int g2 = chunk_X + randomGenerator.nextInt(16);
+	    int h1 = randomGenerator.nextInt(128);
+	    int g3 = chunk_Z + randomGenerator.nextInt(16);
+	    this.darkAltarGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	}
+
 	//grass
 	for (int g1 = 0; g1 < this.tallgrassperchunk * 2; g1++){
 	    int g2 = chunk_X + randomGenerator.nextInt(16);
@@ -286,20 +300,6 @@ public class TheBiomeDeco extends BiomeDecorator
 	    int h1 = this.randomGenerator.nextInt(128);
 	    int g3 = chunk_Z + randomGenerator.nextInt(24);
 	    this.vineplantGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-
-	//structures
-	for (int g1 = 0; g1 < this.icetowersperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.icetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	if(this.randomGenerator.nextInt(10) <= this.darkaltarsperchunk){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.darkAltarGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 
 	//water\lava\fire

@@ -51,9 +51,6 @@ public class InitRecipes {
 	GameRegistry.addRecipe(new ItemStack(SoulBlocks.LilaBlock.get(), 1), new Object[] {
 	    "XXX", "XXX", "XXX",  'X', SoulItems.LilaGem.get()		//Crafting Line  
 	});
-	GameRegistry.addRecipe(new ItemStack(SoulBlocks.MithrilBlock.get(), 1), new Object[] {
-	    "XXX", "XXX", "XXX",  'X', SoulItems.MithrilIngot.get()		//Crafting Line  
-	});
 	GameRegistry.addRecipe(new ItemStack(SoulBlocks.OlivineBlock.get(), 1), new Object[] {
 	    "XXX", "XXX", "XXX",  'X', SoulItems.OlivineGem.get()		//Crafting Line  
 	});
@@ -160,9 +157,6 @@ public class InitRecipes {
 	});
 	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.CopperIngot.get(), 9), new Object[] {
 	    SoulBlocks.CopperBlock.get()			//Crafting Line  
-	});
-	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.MithrilIngot.get(), 9), new Object[] {
-	    SoulBlocks.MithrilBlock.get()			//Crafting Line  
 	});
 	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.SilverIngot.get(), 9), new Object[] {
 	    SoulBlocks.SilverBlock.get()			//Crafting Line  
@@ -533,27 +527,22 @@ public class InitRecipes {
 	    "XX "," Y " ," Y " ,  'Y', Items.stick, 'X', SoulItems.CopperIngot.get() 	  
 		});
 
-	// Mithril
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilAxe.get(), 1), new Object[] 
-		{
-	    "XX ","XY " ," Y " ,  'Y', Items.stick , 'X', SoulItems.MithrilIngot.get()				//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilShovel.get(), 1), new Object[] 
-		{
-	    " X "," Y " ," Y " ,  'Y', Items.stick , 'X', SoulItems.MithrilIngot.get()	
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilSword.get(), 1), new Object[] 
-		{
-	    " X "," X " ," Y " ,  'Y', Items.stick , 'X', SoulItems.MithrilIngot.get()	 	
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilPickaxe.get(), 1), new Object[] 
-		{
-	    "XXX"," Y " ," Y " ,  'Y', Items.stick , 'X', SoulItems.MithrilIngot.get()	 	 
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilHoe.get(), 1), new Object[] 
-		{
-	    "XX "," Y " ," Y " ,  'Y', Items.stick , 'X', SoulItems.MithrilIngot.get()	 	  
-		});
+	// Fyrised
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedAxe.get(), 1), new Object[] {
+	    "ZX ","XY " ," Y " ,  'Y', SoulItems.OnyxStick.get() , 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()				//Crafting Line  
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedShovel.get(), 1), new Object[] {
+	    " X "," Y " ," Y " ,  'Y', SoulItems.OnyxStick.get() , 'X', SoulItems.ScarletiteGem.get()
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedSword.get(), 1), new Object[] {
+	    " Z "," X " ," Y " ,  'Y', SoulItems.OnyxStick.get() , 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()	 	
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedPickaxe.get(), 1), new Object[] {
+	    "XZX"," Y " ," Y " ,  'Y', SoulItems.OnyxStick.get() , 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()	 	 
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedHoe.get(), 1), new Object[] {
+	    "XZ "," Y " ," Y " ,  'Y', SoulItems.OnyxStick.get() , 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()	 	  
+	});
 	// Silver
 	GameRegistry.addRecipe(new ItemStack(SoulItems.SilverAxe.get(), 1), new Object[] 
 		{
@@ -695,23 +684,19 @@ public class InitRecipes {
 		{
 	    "   ", "G G", "X X",  'X', SoulItems.CobaltIngot.get(), 'G', SoulItems.TitaniumGem.get()		//Crafting Line  
 		});
-	// Mithril
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilHelmet.get(), 1), new Object[] 
-		{
-	    "XXX", "G G", "   ",  'X', SoulItems.MithrilIngot.get(), 'G', SoulItems.OnyxGem.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilChestplate.get(), 1), new Object[] 
-		{
-	    "G G", "XGX", "XXX",  'X', SoulItems.MithrilIngot.get(), 'G', SoulItems.OnyxGem.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilLeggings.get(), 1), new Object[] 
-		{
-	    "XXX", "G G", "G G", 'X', SoulItems.MithrilIngot.get(), 'G', SoulItems.OnyxGem.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MithrilBoots.get(), 1), new Object[] 
-		{
-	    "   ", "G G", "X X",  'X', SoulItems.MithrilIngot.get(), 'G', SoulItems.OnyxGem.get()		//Crafting Line  
-		});
+	// Fyrised
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedHelmet.get(), 1), new Object[] {
+	    "XXX", "Z Z", "   ",  'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()			//Crafting Line  
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedChestplate.get(), 1), new Object[] {
+	    "Z Z", "XZX", "XXX", 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()			//Crafting Line  
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedLeggings.get(), 1), new Object[] {
+	    "XXX", "Z Z", "Z Z", 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()			//Crafting Line  
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FyrisedBoots.get(), 1), new Object[] {
+	    "   ", "Z Z", "X X", 'X', SoulItems.ScarletiteGem.get(), 'Z', SoulItems.TitaniumGem.get()			//Crafting Line  
+	});
 	// Silver
 	GameRegistry.addRecipe(new ItemStack(SoulItems.SilverHelmet.get(), 1), new Object[] {
 	    "XXX", "X X", "   ",  'X', SoulItems.SilverIngot.get(),		//Crafting Line  
@@ -761,7 +746,6 @@ public class InitRecipes {
 	GameRegistry.addSmelting(SoulBlocks.Cobaltore.get(), new ItemStack(SoulItems.CobaltIngot.get()), 1.0F);
 	GameRegistry.addSmelting(SoulBlocks.Chromiteore.get(), new ItemStack(SoulItems.ChromiteIngot.get()), 0.5F);
 	GameRegistry.addSmelting(SoulBlocks.Copperore.get(), new ItemStack(SoulItems.CopperIngot.get()), 0.3F);
-	GameRegistry.addSmelting(SoulBlocks.Mithrilore.get(), new ItemStack(SoulItems.MithrilIngot.get()), 1.5F);
 	GameRegistry.addSmelting(SoulBlocks.Silverore.get(), new ItemStack(SoulItems.SilverIngot.get()), 0.8F);
 	GameRegistry.addSmelting(SoulBlocks.Steelore.get(), new ItemStack(SoulItems.SteelIngot.get()), 1.0F);
 	GameRegistry.addSmelting(SoulBlocks.Tanzaniteore.get(), new ItemStack(SoulItems.TanzaniteIngot.get()), 0.5F);

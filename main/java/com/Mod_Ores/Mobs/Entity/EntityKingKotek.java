@@ -132,7 +132,7 @@ public class EntityKingKotek extends EntitySlime implements IBossDisplayData
 	    switch (this.rand.nextInt(6))
 	    {
 	    case 0:
-		this.dropItem(SoulItems.MithrilIngot.get(), 1);
+		this.dropItem(SoulItems.ScarletiteUncut.get(), 1);
 		break;
 	    case 1:
 		this.dropItem(Items.slime_ball, 10);
@@ -141,10 +141,10 @@ public class EntityKingKotek extends EntitySlime implements IBossDisplayData
 		this.dropItem(Items.ender_eye, 1);
 		break;
 	    case 3:
-		this.dropItem(SoulItems.OnyxGem.get(), 1);
+		this.dropItem(SoulItems.OnyxUncut.get(), 1);
 		break;
 	    case 4:
-		this.dropItem(SoulItems.TitaniumGem.get(), 1);
+		this.dropItem(SoulItems.TitaniumUncut.get(), 1);
 		break;
 	    case 5:
 		this.dropItem(Items.ghast_tear, 1);

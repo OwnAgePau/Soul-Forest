@@ -87,7 +87,7 @@ public class ItemArmorSteel extends ItemArmor{
 	int ench = mat.getEnchantability();
 	int damage = (uses - par1ItemStack.getItemDamage());
 	if(SoulForestKeyHandler.isKeyPressed){
-		par3List.add("\u00A73Max damage taken : " + damage + "/" + uses);
+		par3List.add("\u00A73Max Damage Taken : " + damage + "/" + uses);
 		par3List.add("\u00A72Damage Reduction : " + damageRedu);
 		par3List.add("\u00A74Enchantability : " + ench);
 	}

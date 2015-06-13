@@ -56,7 +56,7 @@ public class ForgeHookEventHelper {
 		    if(item.equals(Item.itemRegistry.getObject("diamond_sword")) || item.equals(Item.itemRegistry.getObject("gold_sword")) || item.equals(Item.itemRegistry.getObject("iron_sword")) || item.equals(Item.itemRegistry.getObject("stone_sword")) || item.equals(Item.itemRegistry.getObject("wood_sword"))){
 			itemIsSword = true;
 		    }
-		    else if(item.equals(SoulItems.AquamarineSword.get()) || item.equals(SoulItems.BronzeSword.get()) || item.equals(SoulItems.ChromiteSword.get()) || item.equals(SoulItems.CobaltSword.get()) || item.equals(SoulItems.MithrilSword.get()) || item.equals(SoulItems.SilverSword.get()) || item.equals(SoulItems.SteelSword.get()) || item.equals(SoulItems.TanzaniteSword.get())){
+		    else if(item.equals(SoulItems.AquamarineSword.get()) || item.equals(SoulItems.BronzeSword.get()) || item.equals(SoulItems.ChromiteSword.get()) || item.equals(SoulItems.CobaltSword.get()) || item.equals(SoulItems.FyrisedSword.get()) || item.equals(SoulItems.SilverSword.get()) || item.equals(SoulItems.SteelSword.get()) || item.equals(SoulItems.TanzaniteSword.get())){
 			itemIsSword = true;
 		    }
 		    else{

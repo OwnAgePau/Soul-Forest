@@ -123,7 +123,7 @@ public class soul_forest{
 	//Creative Tabs Icons
 	tabSoulTools = new CreativeTabs("tabSoulTools") {
 	    public Item getTabIconItem() {
-		return SoulItems.MithrilPickaxe.get();
+		return SoulItems.FyrisedHelmet.get();
 	    }};
 	    tabSoulGems = new CreativeTabs("tabSoulGems") {
 		public Item getTabIconItem() {
@@ -207,7 +207,6 @@ public class soul_forest{
 		    new WeightedRandomChestContent(SoulItems.BerryCollector.get(), 0, 1, 1, 5), 
 		    new WeightedRandomChestContent(SoulItems.CitrineGem.get(), 0, 4, 19, 10), 
 		    new WeightedRandomChestContent(SoulItems.SteelSword.get(), 0, 1, 1, 4), 
-		    new WeightedRandomChestContent(SoulItems.MithrilIngot.get(), 0, 1, 4, 3), 
 		    new WeightedRandomChestContent(SoulItems.OpalGem.get(), 0, 4, 19, 9), 
 		    new WeightedRandomChestContent(SoulItems.OlivineGem.get(), 0, 5, 14, 6)};
 

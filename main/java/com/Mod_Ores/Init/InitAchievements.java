@@ -15,7 +15,7 @@ public class InitAchievements
 	public static Achievement getRareOverworldOre;
 	public static Achievement getSteelOrCobaltIngot;
 	public static Achievement getSteelOrCobaltPickaxe;
-	public static Achievement getMithrilArmorPiece;	
+	public static Achievement getFyrisedArmorPiece;	
 	
 	//Gem collecting achievement tree		
 	public static Achievement firstUncutfound; 
@@ -58,7 +58,7 @@ public class InitAchievements
 			firstGem = 			(new Achievement("achievement.firstGem", "firstGem", 0, -4, SoulBlocks.GemcutterIdle.get(), firstUncutfound).registerStat());
 			reinforcedSticks = (new Achievement("achievement.reinforcedSticks", "reinforcedSticks", 0, -6, SoulItems.TitaniumStick.get(), firstGem).registerStat());
 			getSteelOrCobaltPickaxe = 	(new Achievement("achievement.getSteelOrCobaltPickaxe", "getSteelOrCobaltPickaxe", -2, -6, SoulItems.CobaltPickaxe.get(), reinforcedSticks).registerStat()); // Base achievement
-			getMithrilArmorPiece = 		(new Achievement("achievement.getMithrilArmorPiece", "getMithrilArmorPiece", -4, -6, SoulItems.MithrilChestplate.get(), getSteelOrCobaltPickaxe).setSpecial().registerStat()); // Base achievement
+			getFyrisedArmorPiece = 		(new Achievement("achievement.getFyrisedArmorPiece", "getFyrisedArmorPiece", -4, -6, SoulItems.FyrisedHelmet.get(), getSteelOrCobaltPickaxe).setSpecial().registerStat()); // Base achievement
 
 			//Gel collecting achievement tree
 			gel = (new Achievement("achievement.gel", "gel", 2, 0, SoulItems.BlueGel.get(), soulForest).registerStat());
@@ -79,7 +79,7 @@ public class InitAchievements
 			//Place all achievements above!! And add them right at the end of this ->
 			pageSoulforest = 	(new AchievementPage("Soul Forest", soulForest, mineTinCopper, getBronze, getRareOverworldOre, 
 					getSteelOrCobaltIngot, firstGem, firstUncutfound, reinforcedSticks, getSteelOrCobaltPickaxe, 
-					getMithrilArmorPiece, berryCollectorCraft, berryCollector, soulFood, gel, gelExtractor, gelKing, shards, wand, iceQueen));
+					getFyrisedArmorPiece, berryCollectorCraft, berryCollector, soulFood, gel, gelExtractor, gelKing, shards, wand, iceQueen));
 			AchievementPage.registerAchievementPage(pageSoulforest);
 			System.out.println("[Soul Forest] Achievements Initiated");
 		}

@@ -122,12 +122,6 @@ public class WorldGeneratorOres implements IWorldGenerator{
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Lilaore.get(), 9, SoulBlocks.Porphyry.get())).generate(world, random, randPosX, randPosY, randPosZ);
 	}
-	for(int i = 0; i < 8; i++){ // was random.nextInt(12)
-	    int randPosX = chunkX + random.nextInt(16);
-	    int randPosY = random.nextInt(128);				//Rarerity 9 (1-15) 1 is very common 15 is extremely rare
-	    int randPosZ = chunkZ + random.nextInt(16);
-	    (new WorldGenMinable(SoulBlocks.Mithrilore.get(), 6, SoulBlocks.Slate.get())).generate(world, random, randPosX, randPosY, randPosZ);
-	}
 	for (int i = 0; i < 8; i++){
 	    int randPosX = chunkX + random.nextInt(16);
 	    int randPosY = random.nextInt(128);				//Rarerity 4 (1-15) 1 is very common 15 is extremely rare

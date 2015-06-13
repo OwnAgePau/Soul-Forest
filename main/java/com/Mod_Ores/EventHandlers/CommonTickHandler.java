@@ -62,8 +62,8 @@ public class CommonTickHandler{
 	    // Player is wearing full silver set
 	    player.addPotionEffect(new PotionEffect(Potion.moveSpeed.getId(), 5, 4));
 	}
-	else if(this.checkPlayerIsWearingSetArmorType(InitMaterials.Mithril_Armor)){
-	    // Player is wearing full mithril set
+	else if(this.checkPlayerIsWearingSetArmorType(InitMaterials.Fyrised_Armor)){
+	    // Player is wearing full fyrised set
 	    player.addPotionEffect(new PotionEffect(Potion.fireResistance.getId(), 5, 4));
 	    if(player.isInWater()){
 		if(player.getHeldItem() != null){

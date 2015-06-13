@@ -22,7 +22,6 @@ public class SoulBlocks
 	public static Optional<? extends Block> Jadeore                         = Optional.absent();
 	public static Optional<? extends Block> Jetore                         = Optional.absent();
 	public static Optional<? extends Block> Lilaore                         = Optional.absent();
-	public static Optional<? extends Block> Mithrilore                         = Optional.absent();
 	public static Optional<? extends Block> Olivineore                         = Optional.absent();
 	public static Optional<? extends Block> Onyxore                         = Optional.absent();
 	public static Optional<? extends Block> Opalore                         = Optional.absent();
@@ -50,7 +49,6 @@ public class SoulBlocks
 	public static Optional<? extends Block> JadeBlock                         = Optional.absent();
 	public static Optional<? extends Block> JetBlock                         = Optional.absent();
 	public static Optional<? extends Block> LilaBlock                         = Optional.absent();
-	public static Optional<? extends Block> MithrilBlock                         = Optional.absent();
 	public static Optional<? extends Block> OlivineBlock                         = Optional.absent();
 	public static Optional<? extends Block> OnyxBlock                         = Optional.absent();
 	public static Optional<? extends Block> OpalBlock                         = Optional.absent();

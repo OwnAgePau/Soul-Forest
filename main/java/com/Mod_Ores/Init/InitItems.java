@@ -26,7 +26,7 @@ import com.Mod_Ores.Items.SoulItem;
 import com.Mod_Ores.Items.SoulPotion;
 import com.Mod_Ores.Items.Armor.ItemArmorBronze;
 import com.Mod_Ores.Items.Armor.ItemArmorCobalt;
-import com.Mod_Ores.Items.Armor.ItemArmorMithril;
+import com.Mod_Ores.Items.Armor.ItemArmorFyrised;
 import com.Mod_Ores.Items.Armor.ItemArmorSilver;
 import com.Mod_Ores.Items.Armor.ItemArmorSlime;
 import com.Mod_Ores.Items.Armor.ItemArmorSteel;
@@ -53,7 +53,7 @@ public class InitItems {
 	SoulItems.ChromiteAxe.get().setHarvestLevel("axe", 2);
 	SoulItems.CobaltAxe.get().setHarvestLevel("axe", 4);
 	SoulItems.CopperAxe.get().setHarvestLevel("axe", 1);
-	SoulItems.MithrilAxe.get().setHarvestLevel("axe", 5);
+	SoulItems.FyrisedAxe.get().setHarvestLevel("axe", 5);
 	SoulItems.SilverAxe.get().setHarvestLevel("axe", 3);
 	SoulItems.SteelAxe.get().setHarvestLevel("axe", 4);
 	SoulItems.TanzaniteAxe.get().setHarvestLevel("axe", 2);
@@ -66,7 +66,7 @@ public class InitItems {
 	SoulItems.ChromitePickaxe.get().setHarvestLevel("pickaxe", 2);
 	SoulItems.CobaltPickaxe.get().setHarvestLevel("pickaxe", 4);
 	SoulItems.CopperPickaxe.get().setHarvestLevel("pickaxe", 1);
-	SoulItems.MithrilPickaxe.get().setHarvestLevel("pickaxe", 5);
+	SoulItems.FyrisedPickaxe.get().setHarvestLevel("pickaxe", 5);
 	SoulItems.SilverPickaxe.get().setHarvestLevel("pickaxe", 3);
 	SoulItems.SteelPickaxe.get().setHarvestLevel("pickaxe", 4);
 	SoulItems.TanzanitePickaxe.get().setHarvestLevel("pickaxe", 2);
@@ -77,7 +77,7 @@ public class InitItems {
 	SoulItems.ChromiteShovel.get().setHarvestLevel("shovel", 2);
 	SoulItems.CobaltShovel.get().setHarvestLevel("shovel", 4);
 	SoulItems.CopperShovel.get().setHarvestLevel("shovel", 1);
-	SoulItems.MithrilShovel.get().setHarvestLevel("shovel", 5);
+	SoulItems.FyrisedShovel.get().setHarvestLevel("shovel", 5);
 	SoulItems.SilverShovel.get().setHarvestLevel("shovel", 3);
 	SoulItems.SteelShovel.get().setHarvestLevel("shovel", 4);
 	SoulItems.TanzaniteShovel.get().setHarvestLevel("shovel", 2);
@@ -91,7 +91,7 @@ public class InitItems {
 	SoulItems.ChromiteAxe = Optional.of(new ItemSoulAxe("Chromiteaxe", InitMaterials.toolChromite).setTextureName("soulforest:Chromite_axe"));
 	SoulItems.CobaltAxe = Optional.of(new ItemSoulAxe("Cobaltaxe", InitMaterials.toolCobalt).setTextureName("soulforest:Cobalt_axe"));
 	SoulItems.CopperAxe = Optional.of(new ItemSoulAxe("Copperaxe", InitMaterials.toolCopper).setTextureName("soulforest:Copper_axe"));
-	SoulItems.MithrilAxe = Optional.of(new ItemSoulAxe("Mithrilaxe", InitMaterials.toolMithril).setTextureName("soulforest:Mithril_axe"));
+	SoulItems.FyrisedAxe = Optional.of(new ItemSoulAxe("Fyrisedaxe", InitMaterials.toolFyrised).setTextureName("soulforest:Fyrised_axe"));
 	SoulItems.SilverAxe = Optional.of(new ItemSoulAxe("Silveraxe", InitMaterials.toolSilver).setTextureName("soulforest:Silver_axe"));
 	SoulItems.SteelAxe = Optional.of(new ItemSoulAxe("Steelaxe", InitMaterials.toolSteel).setTextureName("soulforest:Steel_axe"));
 	SoulItems.TanzaniteAxe = Optional.of(new ItemSoulAxe("Tanzaniteaxe", InitMaterials.toolTanzanite).setTextureName("soulforest:Tanzanite_axe"));
@@ -102,7 +102,7 @@ public class InitItems {
 	SoulItems.ChromiteHoe = Optional.of(new ItemSoulHoe("Chromitehoe", InitMaterials.toolChromite).setTextureName("soulforest:Chromite_hoe"));
 	SoulItems.CobaltHoe = Optional.of(new ItemSoulHoe("Cobalthoe", InitMaterials.toolCobalt).setTextureName("soulforest:Cobalt_hoe"));
 	SoulItems.CopperHoe = Optional.of(new ItemSoulHoe("Copperhoe", InitMaterials.toolCopper).setTextureName("soulforest:Copper_hoe"));
-	SoulItems.MithrilHoe = Optional.of(new ItemSoulHoe("Mithrilhoe", InitMaterials.toolMithril).setTextureName("soulforest:Mithril_hoe"));
+	SoulItems.FyrisedHoe = Optional.of(new ItemSoulHoe("Fyrisedhoe", InitMaterials.toolFyrised).setTextureName("soulforest:Fyrised_hoe"));
 	SoulItems.SilverHoe = Optional.of(new ItemSoulHoe("Silverhoe", InitMaterials.toolSilver).setTextureName("soulforest:Silver_hoe"));
 	SoulItems.SteelHoe = Optional.of(new ItemSoulHoe("Steelhoe", InitMaterials.toolSteel).setTextureName("soulforest:Steel_hoe"));
 	SoulItems.TanzaniteHoe = Optional.of(new ItemSoulHoe("Tanzanitehoe", InitMaterials.toolTanzanite).setTextureName("soulforest:Tanzanite_hoe"));
@@ -113,7 +113,7 @@ public class InitItems {
 	SoulItems.ChromitePickaxe = Optional.of(new ItemSoulPickaxe("Chromitepickaxe", InitMaterials.toolChromite).setTextureName("soulforest:Chromite_pickaxe"));
 	SoulItems.CobaltPickaxe = Optional.of(new ItemSoulPickaxe("Cobaltpickaxe", InitMaterials.toolCobalt).setTextureName("soulforest:Cobalt_pickaxe"));
 	SoulItems.CopperPickaxe = Optional.of(new ItemSoulPickaxe("Copperpickaxe", InitMaterials.toolCopper).setTextureName("soulforest:Copper_pickaxe"));
-	SoulItems.MithrilPickaxe = Optional.of(new ItemSoulPickaxe("Mithrilpickaxe", InitMaterials.toolMithril).setTextureName("soulforest:Mithril_pickaxe"));
+	SoulItems.FyrisedPickaxe = Optional.of(new ItemSoulPickaxe("Fyrisedpickaxe", InitMaterials.toolFyrised).setTextureName("soulforest:Fyrised_pickaxe"));
 	SoulItems.SilverPickaxe = Optional.of(new ItemSoulPickaxe("Silverpickaxe", InitMaterials.toolSilver).setTextureName("soulforest:Silver_pickaxe"));
 	SoulItems.SteelPickaxe = Optional.of(new ItemSoulPickaxe("Steelpickaxe", InitMaterials.toolSteel).setTextureName("soulforest:Steel_pickaxe"));
 	SoulItems.TanzanitePickaxe = Optional.of(new ItemSoulPickaxe("Tanzanitepickaxe", InitMaterials.toolTanzanite).setTextureName("soulforest:Tanzanite_pickaxe"));
@@ -124,7 +124,7 @@ public class InitItems {
 	SoulItems.ChromiteShovel = Optional.of(new ItemSoulShovel("Chromiteshovel", InitMaterials.toolChromite).setTextureName("soulforest:Chromite_shovel"));
 	SoulItems.CobaltShovel = Optional.of(new ItemSoulShovel("Cobaltshovel", InitMaterials.toolCobalt).setTextureName("soulforest:Cobalt_shovel"));
 	SoulItems.CopperShovel = Optional.of(new ItemSoulShovel("Coppershovel", InitMaterials.toolCopper).setTextureName("soulforest:Copper_shovel"));
-	SoulItems.MithrilShovel = Optional.of(new ItemSoulShovel("Mithrilshovel", InitMaterials.toolMithril).setTextureName("soulforest:Mithril_shovel"));
+	SoulItems.FyrisedShovel = Optional.of(new ItemSoulShovel("Fyrisedshovel", InitMaterials.toolFyrised).setTextureName("soulforest:Fyrised_shovel"));
 	SoulItems.SilverShovel = Optional.of(new ItemSoulShovel("Silvershovel", InitMaterials.toolSilver).setTextureName("soulforest:Silver_shovel"));
 	SoulItems.SteelShovel = Optional.of(new ItemSoulShovel("Steelshovel", InitMaterials.toolSteel).setTextureName("soulforest:Steel_shovel"));
 	SoulItems.TanzaniteShovel = Optional.of(new ItemSoulShovel("Tanzaniteshovel", InitMaterials.toolTanzanite).setTextureName("soulforest:Tanzanite_shovel"));
@@ -134,7 +134,7 @@ public class InitItems {
 	SoulItems.BronzeSword = Optional.of(new ItemSoulSword("Bronzesword", InitMaterials.toolBronze).setTextureName("soulforest:Bronze_sword"));
 	SoulItems.ChromiteSword = Optional.of(new ItemSoulSword("Chromitesword", InitMaterials.toolChromite).setTextureName("soulforest:Chromite_sword"));
 	SoulItems.CobaltSword = Optional.of(new ItemSoulSword("Cobaltsword", InitMaterials.toolCobalt, "R").setTextureName("soulforest:Cobalt_sword"));
-	SoulItems.MithrilSword = Optional.of(new ItemSoulSword("Mithrilsword", InitMaterials.toolMithril, "E").setTextureName("soulforest:Mithril_sword"));
+	SoulItems.FyrisedSword = Optional.of(new ItemSoulSword("Fyrisedsword", InitMaterials.toolFyrised, "E").setTextureName("soulforest:Fyrised_sword"));
 	SoulItems.SilverSword = Optional.of(new ItemSoulSword("Silversword", InitMaterials.toolSilver, "U").setTextureName("soulforest:Silver_sword"));
 	SoulItems.SteelSword = Optional.of(new ItemSoulSword("Steelsword", InitMaterials.toolSteel, "R").setTextureName("soulforest:Steel_sword"));
 	SoulItems.TanzaniteSword = Optional.of(new ItemSoulSword("Tanzanitesword", InitMaterials.toolTanzanite, "R").setTextureName("soulforest:Tanzanite_sword"));
@@ -209,7 +209,6 @@ public class InitItems {
 	SoulItems.ChromiteIngot = 		Optional.of((new ItemSoulIngot("Chromiteingot")).setTextureName("soulforest:Chromite_ingot"));
 	SoulItems.CobaltIngot = 		Optional.of(new ItemSoulIngot("Cobaltingot", "R").setTextureName("soulforest:Cobalt_ingot"));
 	SoulItems.CopperIngot = 		Optional.of((new ItemSoulIngot("Copperingot")).setTextureName("soulforest:Copper_ingot"));
-	SoulItems.MithrilIngot = 		Optional.of((new ItemSoulIngot("Mithrilingot", "E")).setTextureName("soulforest:Mithril_ingot"));
 	SoulItems.SilverIngot = 		Optional.of((new ItemSoulIngot("Silveringot", "U")).setTextureName("soulforest:Silver_ingot"));
 	SoulItems.SteelIngot = 			Optional.of(new ItemSoulIngot("Steelingot", "R").setTextureName("soulforest:Steel_ingot"));
 	SoulItems.TanzaniteIngot = 		Optional.of((new ItemSoulIngot("Tanzaniteingot")).setTextureName("soulforest:Tanzanite_ingot"));
@@ -218,28 +217,28 @@ public class InitItems {
 	// Helmets		
 	SoulItems.BronzeHelmet = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),0, "Bronze_helmet")).setTextureName("soulforest:Bronze_helmet"));
 	SoulItems.CobaltHelmet = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),0, "Cobalt_helmet")).setTextureName("soulforest:Cobalt_helmet"));
-	SoulItems.MithrilHelmet =		Optional.of((new ItemArmorMithril(InitMaterials.Mithril_Armor,soul_forest.proxy.addArmor("Mithril"),0, "Mithril_helmet").setTextureName("soulforest:Mithril_helmet")));
+	SoulItems.FyrisedHelmet =		Optional.of((new ItemArmorFyrised(InitMaterials.Fyrised_Armor,soul_forest.proxy.addArmor("Fyrised"),0, "Fyrised_helmet").setTextureName("soulforest:Fyrised_helmet")));
 	SoulItems.SilverHelmet = 		Optional.of((new ItemArmorSilver(InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),0, "Silver_helmet")).setTextureName("soulforest:Silver_helmet"));
 	SoulItems.SteelHelmet = 		Optional.of((new ItemArmorSteel(InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),0, "Steel_helmet")).setTextureName("soulforest:Steel_helmet"));
 	SoulItems.SlimeHelmet = 		Optional.of((new ItemArmorSlime(InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),0, "Slime_helmet")).setTextureName("soulforest:Slime_helmet"));
 	// Chestplates		
 	SoulItems.BronzeChestplate = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),1, "Bronze_chestplate")).setTextureName("soulforest:Bronze_chestplate"));
 	SoulItems.CobaltChestplate = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),1, "Cobalt_chestplate")).setTextureName("soulforest:Cobalt_chestplate"));
-	SoulItems.MithrilChestplate = 		Optional.of((new ItemArmorMithril(InitMaterials.Mithril_Armor,soul_forest.proxy.addArmor("Mithril"),1, "Mithril_chestplate").setTextureName("soulforest:Mithril_chestplate")));
+	SoulItems.FyrisedChestplate = 		Optional.of((new ItemArmorFyrised(InitMaterials.Fyrised_Armor,soul_forest.proxy.addArmor("Fyrised"),1, "Fyrised_chestplate").setTextureName("soulforest:Fyrised_chestplate")));
 	SoulItems.SilverChestplate = 		Optional.of((new ItemArmorSilver(InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),1, "Silver_chestplate")).setTextureName("soulforest:Silver_chestplate"));
 	SoulItems.SteelChestplate =		Optional.of((new ItemArmorSteel(InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),1, "Steel_chestplate")).setTextureName("soulforest:Steel_chestplate"));
 	SoulItems.SlimeChestplate =		Optional.of((new ItemArmorSlime(InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),1, "Slime_chestplate")).setTextureName("soulforest:Slime_chestplate"));
 	// Leggings
 	SoulItems.BronzeLeggings = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),2, "Bronze_legs")).setTextureName("soulforest:Bronze_legs"));
 	SoulItems.CobaltLeggings = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),2, "Cobalt_legs")).setTextureName("soulforest:Cobalt_legs"));				
-	SoulItems.MithrilLeggings = 		Optional.of((new ItemArmorMithril(InitMaterials.Mithril_Armor,soul_forest.proxy.addArmor("Mithril"),2, "Mithril_legs").setTextureName("soulforest:Mithril_legs")));
+	SoulItems.FyrisedLeggings = 		Optional.of((new ItemArmorFyrised(InitMaterials.Fyrised_Armor,soul_forest.proxy.addArmor("Fyrised"),2, "Fyrised_legs").setTextureName("soulforest:Fyrised_legs")));
 	SoulItems.SilverLeggings = 		Optional.of((new ItemArmorSilver(InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),2, "Silver_legs")).setTextureName("soulforest:Silver_legs"));
 	SoulItems.SteelLeggings = 		Optional.of((new ItemArmorSteel(InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),2, "Steel_legs")).setTextureName("soulforest:Steel_legs"));				
 	SoulItems.SlimeLeggings = 		Optional.of((new ItemArmorSlime(InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),2, "Slime_legs")).setTextureName("soulforest:Slime_legs"));				
 	// Boots		
 	SoulItems.BronzeBoots = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),3, "Bronze_boots")).setTextureName("soulforest:Bronze_boots"));
 	SoulItems.CobaltBoots = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),3, "Cobalt_boots")).setTextureName("soulforest:Cobalt_boots"));		
-	SoulItems.MithrilBoots = 		Optional.of((new ItemArmorMithril(InitMaterials.Mithril_Armor,soul_forest.proxy.addArmor("Mithril"),3, "Mithril_boots").setTextureName("soulforest:Mithril_boots")));
+	SoulItems.FyrisedBoots = 		Optional.of((new ItemArmorFyrised(InitMaterials.Fyrised_Armor,soul_forest.proxy.addArmor("Fyrised"),3, "Fyrised_boots").setTextureName("soulforest:Fyrised_boots")));
 	SoulItems.SilverBoots = 		Optional.of((new ItemArmorSilver(InitMaterials.Silver_Armor,soul_forest.proxy.addArmor("Silver"),3, "Silver_boots")).setTextureName("soulforest:Silver_boots"));
 	SoulItems.SteelBoots = 			Optional.of((new ItemArmorSteel(InitMaterials.Steel_Armor,soul_forest.proxy.addArmor("Steel"),3, "Steel_boots")).setTextureName("soulforest:Steel_boots"));
 	SoulItems.SlimeBoots = 			Optional.of((new ItemArmorSlime(InitMaterials.Slime_Armor,soul_forest.proxy.addArmor("Slime"),3, "Slime_boots")).setTextureName("soulforest:Slime_boots"));

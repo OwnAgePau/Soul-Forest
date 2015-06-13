@@ -88,10 +88,12 @@ public class ItemArmorSlime extends ItemArmor{
 	int ench = mat.getEnchantability();
 	int damage = (uses - par1ItemStack.getItemDamage());
 	if(SoulForestKeyHandler.isKeyPressed){
-		par3List.add("\u00A73Max damage taken : " + damage + "/" + uses);
+		par3List.add("\u00A73Max Damage Taken : " + damage + "/" + uses);
 		par3List.add("\u00A72Damage Reduction : " + damageRedu);
 		par3List.add("\u00A74Enchantability : " + ench);
-		par3List.add("\u00A71Set Bonus : " + "Higher Jumping, No Falling Damage" + ", \u00A74Side effect : None");
+		par3List.add("\u00A71Set Bonus : ");
+		par3List.add("	\u00A71Higher Jumping");
+		par3List.add("	\u00A71No Falling Damage");
 	}
 	else{
 	    par3List.add("Press " + Keyboard.getKeyName(SoulForestKeyHandler.keyValues[SoulForestKeyHandler.CUSTOM_INV]) + " to show more details.");

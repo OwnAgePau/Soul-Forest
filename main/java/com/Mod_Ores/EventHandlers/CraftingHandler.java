@@ -42,8 +42,8 @@ public class CraftingHandler{
 	    event.player.addStat(InitAchievements.reinforcedSticks, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.MithrilBoots.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.MithrilLeggings.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.MithrilChestplate.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.MithrilHelmet.get().getUnlocalizedName())){
-	    event.player.addStat(InitAchievements.getMithrilArmorPiece, 1);
+	if (craftedItem.equals(SoulItems.FyrisedBoots.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.FyrisedLeggings.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.FyrisedChestplate.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.FyrisedHelmet.get().getUnlocalizedName())){
+	    event.player.addStat(InitAchievements.getFyrisedArmorPiece, 1);
 	}
 
 	if(craftedItem.equals(SoulItems.FrostWand.get().getUnlocalizedName())){

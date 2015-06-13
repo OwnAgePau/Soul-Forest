@@ -141,7 +141,7 @@ public class EntityIceQueen extends EntityMob implements IBossDisplayData, IRang
 	for(int rareDropTimes = 0; rareDropTimes < 4; rareDropTimes++){
 	    switch (this.rand.nextInt(9)){
 	    case 0:
-		this.dropItem(SoulItems.MithrilIngot.get(), 1);
+		this.dropItem(SoulItems.OnyxUncut.get(), 1);
 		break;
 	    case 1:
 		this.dropItem(Items.nether_star, 1);
@@ -150,16 +150,16 @@ public class EntityIceQueen extends EntityMob implements IBossDisplayData, IRang
 		this.dropItem(Items.glowstone_dust, 10 + this.rand.nextInt(11));
 		break;
 	    case 3:
-		this.dropItem(SoulItems.OnyxGem.get(), 1);
+		this.dropItem(SoulItems.BlackdiamondUncut.get(), 1);
 		break;
 	    case 4:
-		this.dropItem(SoulItems.TitaniumGem.get(), 1);
+		this.dropItem(SoulItems.TitaniumUncut.get(), 1);
 		break;
 	    case 5:
 		this.dropItem(SoulItems.AquamarineWaraxe.get(), 1);
 		break;
 	    case 6:
-		this.dropItem(SoulItems.ScarletiteGem.get(), 2 + this.rand.nextInt(4));
+		this.dropItem(SoulItems.ScarletiteUncut.get(), 2 + this.rand.nextInt(4));
 		break;
 	    case 7:
 		this.dropItem(SoulItems.FrostFragment.get(), 8 + this.rand.nextInt(13));

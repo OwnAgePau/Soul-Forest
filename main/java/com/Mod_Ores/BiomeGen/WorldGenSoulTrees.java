@@ -61,26 +61,14 @@ public class WorldGenSoulTrees  extends WorldGenerator
 	    --y;
 	}
 
-	/*while (world.getBlockId(x, y, z) == mod_Ores.soulLiquidStillID && y > 2 && y < 100)
-		{
-			++y;
-			++y;
-		}*/
+	if(y > 100){
+	    return false;
+	}
 
 	Block l = world.getBlock(x, y, z);
 	if (l != SoulBlocks.LateriteGrass.get() && l != SoulBlocks.LateriteDirt.get()){
 	    return false;
 	}
-
-	/*if (l != mod_Ores.LateriteDirt.blockID)
-        {
-            return false;
-        }
-
-        if (l == mod_Ores.LateriteDirt.blockID)
-        {
-        	this.height += 3;
-        }*/
 
 	// This will generate the water under the tree
 	//waterBathGen(world, x, y, z);

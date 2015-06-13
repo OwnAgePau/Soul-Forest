@@ -38,6 +38,10 @@ public class WorldGenHardwoodTrees extends WorldGenerator
 	    --y;
 	    --y;
 	}
+	
+	if(y > 100){
+	    return false;
+	}
 
 	// Check the block to generate the tree on
 	Block l = world.getBlock(x, y, z);

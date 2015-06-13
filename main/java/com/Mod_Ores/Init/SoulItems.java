@@ -12,7 +12,7 @@ public class SoulItems
 	public static Optional<? extends Item> ChromiteAxe              = Optional.absent();
 	public static Optional<? extends Item> CobaltAxe              = Optional.absent();
 	public static Optional<? extends Item> CopperAxe              = Optional.absent();
-	public static Optional<? extends Item> MithrilAxe              = Optional.absent();
+	public static Optional<? extends Item> FyrisedAxe              = Optional.absent();
 	public static Optional<? extends Item> SilverAxe              = Optional.absent();
 	public static Optional<? extends Item> SteelAxe              = Optional.absent();
 	public static Optional<? extends Item> TanzaniteAxe              = Optional.absent();
@@ -22,7 +22,7 @@ public class SoulItems
 	public static Optional<? extends Item> BronzePickaxe              = Optional.absent();
 	public static Optional<? extends Item> ChromitePickaxe              = Optional.absent();
 	public static Optional<? extends Item> CopperPickaxe              = Optional.absent();
-	public static Optional<? extends Item> MithrilPickaxe              = Optional.absent();
+	public static Optional<? extends Item> FyrisedPickaxe              = Optional.absent();
 	public static Optional<? extends Item> SilverPickaxe              = Optional.absent();
 	public static Optional<? extends Item> TanzanitePickaxe              = Optional.absent();
 	public static Optional<? extends Item> TinPickaxe              = Optional.absent();
@@ -34,7 +34,7 @@ public class SoulItems
 	public static Optional<? extends Item> ChromiteHoe              = Optional.absent();
 	public static Optional<? extends Item> CobaltHoe              = Optional.absent();
 	public static Optional<? extends Item> CopperHoe              = Optional.absent();
-	public static Optional<? extends Item> MithrilHoe              = Optional.absent();
+	public static Optional<? extends Item> FyrisedHoe              = Optional.absent();
 	public static Optional<? extends Item> SilverHoe              = Optional.absent();
 	public static Optional<? extends Item> SteelHoe              = Optional.absent();
 	public static Optional<? extends Item> TanzaniteHoe              = Optional.absent();
@@ -45,7 +45,7 @@ public class SoulItems
 	public static Optional<? extends Item> ChromiteShovel              = Optional.absent();
 	public static Optional<? extends Item> CobaltShovel              = Optional.absent();
 	public static Optional<? extends Item> CopperShovel              = Optional.absent();
-	public static Optional<? extends Item> MithrilShovel              = Optional.absent();
+	public static Optional<? extends Item> FyrisedShovel              = Optional.absent();
 	public static Optional<? extends Item> SilverShovel              = Optional.absent();
 	public static Optional<? extends Item> SteelShovel              = Optional.absent();
 	public static Optional<? extends Item> TanzaniteShovel              = Optional.absent();
@@ -55,7 +55,7 @@ public class SoulItems
 	public static Optional<? extends Item> BronzeSword              = Optional.absent();
 	public static Optional<? extends Item> ChromiteSword              = Optional.absent();
 	public static Optional<? extends Item> CobaltSword              = Optional.absent();
-	public static Optional<? extends Item> MithrilSword              = Optional.absent();
+	public static Optional<? extends Item> FyrisedSword              = Optional.absent();
 	public static Optional<? extends Item> SilverSword              = Optional.absent();
 	public static Optional<? extends Item> SteelSword              = Optional.absent();
 	public static Optional<? extends Item> TanzaniteSword              = Optional.absent();
@@ -122,7 +122,6 @@ public class SoulItems
 	
 	public static Optional<? extends Item> ChromiteIngot              = Optional.absent();
 	public static Optional<? extends Item> CopperIngot              = Optional.absent();
-	public static Optional<? extends Item> MithrilIngot              = Optional.absent();
 	public static Optional<? extends Item> SilverIngot              = Optional.absent();
 	public static Optional<? extends Item> TanzaniteIngot              = Optional.absent();
 	public static Optional<? extends Item> TinIngot              = Optional.absent();
@@ -134,28 +133,28 @@ public class SoulItems
 	public static Optional<? extends Item> CobaltBoots              = Optional.absent();
 	public static Optional<? extends Item> SilverBoots              = Optional.absent();
 	public static Optional<? extends Item> SteelBoots              = Optional.absent();
-	public static Optional<? extends Item> MithrilBoots 		= Optional.absent();
+	public static Optional<? extends Item> FyrisedBoots 		= Optional.absent();
 	public static Optional<? extends Item> SlimeBoots 		= Optional.absent();
 		
 	public static Optional<? extends Item> BronzeLeggings              = Optional.absent();
 	public static Optional<? extends Item> CobaltLeggings              = Optional.absent();
 	public static Optional<? extends Item> SilverLeggings              = Optional.absent();
 	public static Optional<? extends Item> SteelLeggings              = Optional.absent();
-	public static Optional<? extends Item> MithrilLeggings 			= Optional.absent();
+	public static Optional<? extends Item> FyrisedLeggings 			= Optional.absent();
 	public static Optional<? extends Item> SlimeLeggings 		= Optional.absent();
 	
 	public static Optional<? extends Item> BronzeChestplate              = Optional.absent();
 	public static Optional<? extends Item> CobaltChestplate              = Optional.absent();
 	public static Optional<? extends Item> SilverChestplate              = Optional.absent();
 	public static Optional<? extends Item> SteelChestplate              = Optional.absent();
-	public static Optional<? extends Item> MithrilChestplate 		= Optional.absent();
+	public static Optional<? extends Item> FyrisedChestplate 		= Optional.absent();
 	public static Optional<? extends Item> SlimeChestplate 		= Optional.absent();
 	
 	public static Optional<? extends Item> BronzeHelmet              = Optional.absent();
 	public static Optional<? extends Item> CobaltHelmet              = Optional.absent();
 	public static Optional<? extends Item> SilverHelmet              = Optional.absent();
 	public static Optional<? extends Item> SteelHelmet              = Optional.absent();
-	public static Optional<? extends Item> MithrilHelmet 			= Optional.absent();
+	public static Optional<? extends Item> FyrisedHelmet 			= Optional.absent();
 	public static Optional<? extends Item> SlimeHelmet 		= Optional.absent();
 	
 	public static Optional<? extends Item> FrostWand              = Optional.absent();

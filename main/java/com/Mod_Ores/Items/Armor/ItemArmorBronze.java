@@ -81,10 +81,11 @@ public class ItemArmorBronze extends ItemArmor{
 	int ench = mat.getEnchantability();
 	int damage = (uses - par1.getItemDamage());
 	if(SoulForestKeyHandler.isKeyPressed){
-		par3List.add("\u00A73Max damage taken : " + damage + "/" + uses);
+		par3List.add("\u00A73Max Damage Taken : " + damage + "/" + uses);
 		par3List.add("\u00A72Damage Reduction : " + damageRedu);
 		par3List.add("\u00A74Enchantability : " + ench);
-		par3List.add("\u00A71Set Bonus : " + "Regenaration" + ", \u00A74Side effects : None");
+		par3List.add("\u00A71Set Bonus : ");
+		par3List.add("	\u00A71Regenaration");
 	}
 	else{
 	    par3List.add("Press " + Keyboard.getKeyName(SoulForestKeyHandler.keyValues[SoulForestKeyHandler.CUSTOM_INV]) + " to show more details.");
