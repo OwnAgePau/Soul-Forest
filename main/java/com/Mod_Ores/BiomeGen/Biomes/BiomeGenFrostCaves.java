@@ -30,6 +30,6 @@ public class BiomeGenFrostCaves extends BiomeGenBase
         this.temperature = 0.3F;
         theBiomeDecorator = new TheBiomeDeco(this);
         customBiomeDecorator = (TheBiomeDeco)theBiomeDecorator;
-        customBiomeDecorator.icetowerperchunk = 2;
+        customBiomeDecorator.icetowersperchunk = 2;
     }
 }

@@ -28,6 +28,7 @@ public class BiomeGenDarkCaverns extends BiomeGenBase
         customBiomeDecorator = (TheBiomeDeco)theBiomeDecorator;
         customBiomeDecorator.soulfiresperchunk = 0;
         customBiomeDecorator.fireblossomsperchunk = 20;
+        customBiomeDecorator.darkaltarsperchunk = 1;
     }
 }
 

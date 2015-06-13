@@ -14,6 +14,7 @@ import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.BiomeGen.WorldGenGrapeTree;
 import com.Mod_Ores.BiomeGen.WorldGenHardwoodTrees;
 import com.Mod_Ores.BiomeGen.WorldGenSoulTrees;
+import com.Mod_Ores.BiomeGen.Stuctures.WorldGenDarkAltar;
 import com.Mod_Ores.BiomeGen.Stuctures.WorldGenIceTower;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenCantaloupe;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenPeatBogWater;
@@ -72,12 +73,13 @@ public class TheBiomeDeco extends BiomeDecorator
 
     protected int soulfiresperchunk;
 
-    /** the type of the tall grass that is being spawned 1 == brown, grey & green, 2 == frozen, 3 == same as 1 + purple
+    /** the type of the tall grass that is being spawned 1 == brown, grey & green, 2 == frozen, 3 == same as 1 with the addition of purple
      * 
      */
     protected int tallgrasstype;
 
-    protected int icetowerperchunk;
+    protected int icetowersperchunk;
+    protected int darkaltarsperchunk;
 
     protected WorldGenerator baneberryVineGen;
     protected WorldGenerator blueberryVineGen;
@@ -101,6 +103,7 @@ public class TheBiomeDeco extends BiomeDecorator
     protected WorldGenerator vineplantGen;
 
     protected WorldGenerator icetowerGen;
+    protected WorldGenerator darkAltarGen;
 
     protected WorldGenerator lakeGen;
     protected WorldGenerator waterfallGen;
@@ -114,6 +117,7 @@ public class TheBiomeDeco extends BiomeDecorator
 	super();
 	this.randomGenerator = new Random();
 	this.icetowerGen = new WorldGenIceTower();
+	this.darkAltarGen = new WorldGenDarkAltar();
 	this.grapetreeGen = new WorldGenGrapeTree(false);    	
 	this.hardwoodtreeGen = new WorldGenHardwoodTrees(this.randomGenerator);
 	this.soultreeGen = new WorldGenSoulTrees(this.randomGenerator);
@@ -285,11 +289,17 @@ public class TheBiomeDeco extends BiomeDecorator
 	}
 
 	//structures
-	for (int g1 = 0; g1 < this.icetowerperchunk; g1++){
+	for (int g1 = 0; g1 < this.icetowersperchunk; g1++){
 	    int g2 = chunk_X + randomGenerator.nextInt(16);
 	    int h1 = randomGenerator.nextInt(128);
 	    int g3 = chunk_Z + randomGenerator.nextInt(16);
 	    this.icetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	}
+	if(this.randomGenerator.nextInt(10) <= this.darkaltarsperchunk){
+	    int g2 = chunk_X + randomGenerator.nextInt(16);
+	    int h1 = randomGenerator.nextInt(128);
+	    int g3 = chunk_Z + randomGenerator.nextInt(16);
+	    this.darkAltarGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 
 	//water\lava\fire

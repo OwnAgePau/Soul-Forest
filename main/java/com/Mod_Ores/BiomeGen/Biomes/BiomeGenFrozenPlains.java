@@ -30,7 +30,7 @@ public class BiomeGenFrozenPlains extends BiomeGenBase
         this.temperature = 0.3F;
         theBiomeDecorator = new TheBiomeDeco(this);
         customBiomeDecorator = (TheBiomeDeco)theBiomeDecorator;
-        customBiomeDecorator.icetowerperchunk = 1;
+        customBiomeDecorator.icetowersperchunk = 1;
         customBiomeDecorator.tallgrasstype = 2;
         customBiomeDecorator.tallgrassperchunk = 40;
     }

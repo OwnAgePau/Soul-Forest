@@ -5,6 +5,7 @@ import java.util.Random;
 import com.Mod_Ores.Init.SoulBlocks;
 
 import net.minecraft.block.Block;
+import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
@@ -30,9 +31,15 @@ public class WorldGenSoulBush extends WorldGenerator{
 	    --y;
 	    --y;
 	}
-	
+	if(y > 100){
+	    return false;
+	}
 	Block l = world.getBlock(x, y, z);
 	if (l != this.grassAllowed && l != this.dirtAllowed){
+	    return false;
+	}
+	
+	if(l == Blocks.water){
 	    return false;
 	}
 	
