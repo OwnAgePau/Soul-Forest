@@ -1,40 +1,45 @@
 Mobs:
 
 Hostile: 
-	Kotek: Jumps very far, lots of damage.
-	Yeti: Bit faster then a zombie, acts like zombie.
-	Exclos: Larger explode radius then a creeper, acts like a creeper.
-	Ice Fairy: Acts like a bat, but moves towards the player, high ammount of damage.
+	[x] Kotek: Jumps very far, lots of damage.
+	[x] Yeti: Bit faster then a zombie, acts like zombie.
+	[x] Exclos: Larger explode radius then a creeper, acts like a creeper.
+	[x] Ice Fairy: Acts like a bat, but moves towards the player, high ammount of damage.
 	Mochan Eagle: acts like enderdragon, shoots many feathers, fast.
-	Groundhog: middle-sized spikey beast, acts like zombie-pigmen, non-hostile unless provoked, hurts when touched.
+	[x]Groundhog: middle-sized spikey beast, acts like zombie-pigmen, non-hostile unless provoked, hurts when touched.
 	Demon: Acts like ghast (is a bit smaller), shoots fireballs (yes more then one (like a blazer shoots more fire). (colour is green)
 	Soul Firefly: Non-hostile unless provoked, like firefly but with more health and a possible attack (mini-boss).
-	Furivoli: 0 Movementspeed, high rate of fire, medium-far range.
+	[x]Furivoli: 0 Movementspeed, high rate of fire, medium-far range.
+	Siren: "floating" around, shooting rays at the player (each ray hurts a little) high rate of fire.
 	X4O: Small robot which has medium-high speed and a little bit of damage. Drops Steel Bits.
 		X4O-C1: Creeper-like
 		X4O-S1: Stronger but slower.
 		X4O-B3: Bigger but much slower, bit stronger.
 (mini-boss) 	X4O-B10: Boss varient of X4O, much bigger, much stronger, much slower, possibly fire shooting.
-(mini-boss) Giant Kotek: Big variant of Kotek with lots of health and lots of damage
-(Boss)  Ice queen: Shoots ice balls, that explode and freeze/slow when hit, maybe also overlay the area with snow.
+(mini-boss) [x] Giant Kotek: Big variant of Kotek with lots of health and lots of damage
+(Boss)  [x] Ice queen: Shoots ice balls, that explode and freeze/slow when hit, teleports closer to the player when you go to far away, puts up ice walls now and then.
 
 Passive:
 	Firefly: Passive mob, like a bat (it will be really tiny).
+	Illusion: Is passive mob.
 
 Biomes:
 
-Soul Forest Biome, Many vines, some trees. Contains Blue Slimes, Eagle, Laterite Grass & Dirt.
-Frost Caves Biome, Thick snow, ice towers with mob spawners, no trees, no plants, no vines (Most dangerous biome). Contains Yeti's, Snow Creepers, Ice Fairies and Ice Queen (Boss/Semi-Boss).
-Frozen Plains Biome, Frozen Grass, Contains Snow creepers, Yeti's.
-Peat Bog Biome, no trees, lots of grass (4 different types) and some flowers. Contains Groundhogs and Blue Slimes.
-Dark Caverns Biome, Lava falling down, fires, fire trees, "Houses", and some flowers, Fyrised Sand. Contains Demons, Blazers, Magma cubes, zombie-pigmen, fireflies. (very dark green-ish/grey-ish grass like burned grass)
-Black Forest Biome, Soul trees, Fyrised Sand, Tall trees. Contains Groundhogs.
-Marona Woods Biome, Hardwood Trees, Laterite Grass & Dirt, lots of grass.
+[x] Soul Forest Biome, Many vines, some trees. Contains Blue Slimes, Eagle, Laterite Grass & Dirt.
+[x] Frost Caves Biome, Thick snow, ice towers with mob spawners, no trees, no plants, no vines (Most dangerous biome). Contains Yeti's, Snow Creepers, Ice Fairies and Ice Queen (Boss/Semi-Boss).
+[x] Frozen Plains Biome, Frozen Grass, Contains Snow creepers, Yeti's.
+[x] Peat Bog Biome, no trees, lots of grass (4 different types) and some flowers. Contains Groundhogs and Blue Slimes.
+[x] Dark Caverns Biome, Lava falling down, fires, fire trees, "Houses", and some flowers, Fyrised Sand. Contains Demons, Blazers, Magma cubes, zombie-pigmen, fireflies. (very dark green-ish/grey-ish grass like burned grass)
+[x] Black Forest Biome, Soul trees, Fyrised Sand, Tall trees. Contains Groundhogs.
+[x] Marona Woods Biome, Hardwood Trees, Laterite Grass & Dirt, lots of grass.
+[x] Soul Shrubbery Biome, Small shrubberies and tall grass.
+[x] Fyrised Shrubbery Biome, Small shrubberies and fireblossems.
 
 Trees:
 
-Soul Forest Tree: Like a normal tree except with grape leaves.
-Hardwood Tree: Special tree (with a nice trunk) and a cool treetop.
+[x] Grape Tree: Like a normal tree except with grape leaves.
+[x] Soul Tree: Special tree (with a nice trunk) and a cool treetop.
+[x] Hardwood Tree: a big tree with a lot of red leaves (like a big pine tree)
 Firetree: Wood that can't burn, has fire on some of the blocks.
 
 Plants:
@@ -133,14 +138,28 @@ Items: (mob related)
 		- [x]Advanced Power Magic Fragment -> Power III			(2 Strenght Fragments (--), 2 Soul Shards (|), 1 Amethyst Block in each corner (4 in total), 1 Black Diamond Block in the middle)
 
 [x]Magic Emblem: Crafted with (4 Enhanced Soul Fragments(+), 1 Frost Fragment, 1 Light Fragment, 1 Strenght Fragment, 1 Burned Fragment, 1 Obsidian in the middle)
-Ehchantment Book: Crafted with (4 Books(+), Magic Emblem in each corner (4 in total), 1 Magic Fragment in the middle)
+[x] Ehchantment Book: Crafted with (4 Books(+), Magic Emblem in each corner (4 in total), 1 Magic Fragment in the middle)
 
 Weapons:
-- WarAxe
-- tin and copper throwing knifes
+- [x] WarAxe
+- [x] tin and copper throwing knifes
 - throwable spears
 
-NOTES:
+Ideas:
+- If i move the frozen stuff out to a new dimension, add a white fog colour and where you can only see close. Also see if i can add snow falling.
+- Add a use for fireblossems and cantaloupe
+- Upside down trees
+- Double JUMP
+- Mobs met "area damage" that effect you when getting closer to an enemy (like a fire mob that sets mobs that come close on fire).
+- Use certain gems to teleport (or magical shards) advanced uses it like a enderpearl but different, certain other effects on teleportation or use of shards
+- An enemy that fights most other mobs and can level up
+- Some less gems perhaps
+- Armor set bonuses (more, different) and or abilities, item abilities
+- Use different materials like redstone, glowstone, sugar or whatever to create magical stuff
+- Have gem dust (or something else magical) instead of blocks to use in recipes for magical fragments
+- Sword enchantment that applies a potion effect on enemies
+- Potion effect that randomly spawns creatures (like for the Ice Queen spawning Ice Fairy's)
+- Potion effect that allows the player to walk through lava/water)
 
-- Soul Tree spawn veranderen
-- Hardwood tree random spawn 2 van de 3 takken
+- Sub Mod: Ranking Tier system thingy
+- Sub Mod: Underground biomes, biome changing items (change biome type)

@@ -172,11 +172,13 @@ public class TheBiomeDeco extends BiomeDecorator
 	    int g3 = chunk_Z + randomGenerator.nextInt(16);
 	    this.icetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
-	if(this.randomGenerator.nextInt(10) <= this.darkaltarsperchunk){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.darkAltarGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	if(this.darkaltarsperchunk > 0){
+	    if(this.randomGenerator.nextInt(40) <= this.darkaltarsperchunk){
+		int g2 = chunk_X + randomGenerator.nextInt(16);
+		int h1 = randomGenerator.nextInt(128);
+		int g3 = chunk_Z + randomGenerator.nextInt(16);
+		this.darkAltarGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	    }
 	}
 
 	//grass

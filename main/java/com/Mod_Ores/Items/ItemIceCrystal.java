@@ -122,7 +122,8 @@ public class ItemIceCrystal extends Item{
 	int uses = this.getMaxDamage();
 	par3List.add("\u00A73Max Uses : " + uses);
 	if(SoulForestKeyHandler.isKeyPressed){
-	    par3List.add("Be sure to build an altar for your queen, so she might have mercy on your soul!");
+	    par3List.add("Be sure to build an altar for your queen, ");
+	    par3List.add("so she might have mercy on your soul!");
 	}
 	else{
 	    par3List.add("Press " + Keyboard.getKeyName(SoulForestKeyHandler.keyValues[SoulForestKeyHandler.CUSTOM_INV]) + " to show more details.");
