@@ -145,7 +145,42 @@ Weapons:
 - [x] tin and copper throwing knifes
 - throwable spears
 
+Gem Powers:
+	Active:
+// Right clicking uses
+// Teleportation
+- Aquamarine: Water - (Amulet of Water, an amount of uses to travel across water (teleportation perhaps))
+
+// Transmuting
+- Citrine: Wealth - (Amulet of Wealth, convert things to be more usefull) Perhaps make a cool block where you can combine citrine with other gems to convert them.
+
+// Healing/Curing
+- Amazonite: Healing - (Amulet of Healing, an amount of uses to fully heal yourself)
+- Lila: Healing - (same as amazonite, let there be more ways to craft the same amulet)
+- Amethyst: Cure Poison/Prevent poison - (Amulet of Poison, an mount of uses to cure from poison, or an amount of uses to prevent yourself from being poisoned)
+
+// Buffs, potioneffects
+- Jade: Blessing - (Amulet of Blessing, it gives you a small buff when used)
+- Topaz: Blessing - (Amulet of Blessing, same as jade)
+- Onyx: Invisibility - (Amulet of Invisibility, go invisible for a few seconds)
+- Opal: Invisibility - (Use this together with onxy to create the amulet)
+- Violet: Regeneration - (Amulet of Regeneration, use this to gain a regeneration buff)
+- White Opal: Invisiblity - (Can be used instead of opal to create the amulet of invisibility)
+
+// Uses other then right clicking
+- Scarletite: Enchanting - (Amulet of Enchanting, use this to enchant weapons with "random" enchantments) Extra block?
+- Jet: Reparation - (Amulet of Reparation, use the amulet to repar tools/armor) Perhaps make a cool block where you can repair the tools using the amulet.
+	
+	Passive (Amulet Rings):
+- Black Diamond: Strength - (Amulet of Strength, an amount of uses to double the attack power you have)
+- Olivine: Protection - (Amulet of Protection, protecting from incoming damage) - Peridot Amulet
+- Turquoise: Protection - (Amulet of Protection, same as olivine)
+
+- Change titanium to no longer be a gem, it can only be melted using lava. (perhaps remove?)
+- Perhaps let the Olivine be Peridot instead as Olivine is the mineral in which peridot exists.
+
 Ideas:
+- Potion effects being added from different altars making them usefull to fight bosses at.
 - If i move the frozen stuff out to a new dimension, add a white fog colour and where you can only see close. Also see if i can add snow falling.
 - Add a use for fireblossems and cantaloupe
 - Upside down trees

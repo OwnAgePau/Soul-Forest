@@ -110,6 +110,25 @@ item.Violetuncut.name=Violet Uncut
 item.Whiteopalgem.name=White Opal Gem
 item.Whiteopaluncut.name=White Opal Uncut
 
+item.Amazoniteamuletstone.name=Amulet Stone of Healing
+item.Amethystamuletstone.name=Amulet Stone of Cure Poison
+item.Aquamarineamuletstone.name=Amulet Stone of Water
+item.Blackdiamondamuletstone.name=Amulet Stone of Strength
+item.Citrineamuletstone.name=Amulet Stone of Wealth
+item.Jadeamuletstone.name=Amulet Stone of Blessing
+item.Jetamuletstone.name=Amulet Stone of Reperation
+item.Lilaamuletstone.name=Amulet Stone of Healing
+item.Olivineamuletstone.name=Amulet Stone of Protection
+item.Onyxamuletstone.name=Amulet Stone of Invisibility
+item.Scarletiteamuletstone.name=Amulet Stone of Enchanting
+item.Topazamuletstone.name=Amulet Stone of Blessing
+item.Turquoiseamuletstone.name=Amulet Stone of Protection
+item.Violetamuletstone.name=Amulet Stone of Regeneration
+
+item.Blackdiamondamuletring.name=Black Diamond Amulet Ring
+item.Olivineamuletring.name=Peridot Amulet Ring
+item.Turquoiseamuletring.name=Turquoise Amulet Ring
+
 item.Grapesbushel.name=Grapes Bushel
 item.Baneberrybushel.name=Baneberry Bushel
 item.Blackberrybushel.name=Blackberry Bushel
@@ -391,6 +410,7 @@ itemGroup.tabSoulGems=Soul Gems
 itemGroup.tabSoulBlocks=Soul Blocks
 itemGroup.tabSoulOther=Soul Other
 itemGroup.tabSoulBerries=Soul Berries
+itemGroup.tabAmulets=Soul Amulets
 
 //Achievements
 achievement.soulForest=Dizzling Portal Passage

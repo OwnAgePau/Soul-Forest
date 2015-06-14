@@ -96,6 +96,27 @@ public class IceWorkbenchCraftingRecipes{
     	this.addRecipe(new ItemStack(SoulBlocks.GelExtractor.get(), 1), new Object[] {"SSSS", "GGGG", "GGGG", "SSSS", 'G', SoulItems.BlueMoltenGel.get(), 'S', Block.getBlockFromName("stone")});
     	this.addRecipe(new ItemStack(SoulItems.IceCrystal.get(), 1), new Object[] {"SFRS", "RAHF", "FHMR", "SRFS", 'S', SoulItems.FrostShard.get(), 'F', SoulItems.FrostFragment.get(), 'R', SoulItems.FrozenRod.get(), 'A', SoulItems.FrozenMagicFragmentAdv.get(), 'H', SoulItems.FrozenMagicFragmentHalf.get(), 'M', SoulItems.FrozenMagicFragment.get()});
     	
+    	// Amulets
+    	this.addRecipe(new ItemStack(SoulItems.AmazoniteAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.AmazoniteGem.get(), 'D', Item.getItemById(264)});
+    	this.addRecipe(new ItemStack(SoulItems.AmethystAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.AmethystGem.get(), 'D', Item.getItemById(376)});
+    	this.addRecipe(new ItemStack(SoulItems.AquamarineAmuletStone.get(), 1), new Object[] {"AAAA", "ACCA", "ACDA", "AAAA", 'A', SoulItems.AquamarineGem.get(), 'C', Item.getItemById(381),'D', SoulItems.BucketSoulWater.get()});
+    	this.addRecipe(new ItemStack(SoulItems.BlackdiamondGem.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.AmethystGem.get(), 'D', SoulItems.StrengthFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.CitrineAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.CitrineGem.get(), 'D', SoulItems.LightFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.JadeAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.JadeGem.get(), 'D', SoulItems.BlueMoltenGel.get()});
+    	this.addRecipe(new ItemStack(SoulItems.JetAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.JetGem.get(), 'D', SoulBlocks.TinBlock.get()});
+    	this.addRecipe(new ItemStack(SoulItems.LilaAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.LilaGem.get(), 'D', Item.getItemById(264)});
+    	this.addRecipe(new ItemStack(SoulItems.OlivineAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.OlivineGem.get(), 'D', SoulItems.StrengthFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.OnyxAmuletStone.get(), 1), new Object[] {"BAAB", "ADDA", "ADDA", "BAAB", 'A', SoulItems.OnyxGem.get(), 'B', SoulItems.OpalGem.get() ,'D', SoulItems.LightFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.OnyxAmuletStone.get(), 1), new Object[] {"BAAB", "ADDA", "ADDA", "BAAB", 'A', SoulItems.OnyxGem.get(), 'B', SoulItems.WhiteopalGem.get() ,'D', SoulItems.LightFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.ScarletiteAmuletStone.get(), 1), new Object[] {"AAAA", "ADCA", "ACDA", "AAAA", 'A', SoulItems.ScarletiteGem.get(), 'D', Block.getBlockById(49),'C', Item.getItemById(264)});
+    	this.addRecipe(new ItemStack(SoulItems.TopazAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.TopazGem.get(), 'D', SoulItems.LightFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.TurquoiseAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.TurquoiseGem.get(), 'D', SoulItems.LightFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.VioletAmuletStone.get(), 1), new Object[] {"AAAA", "ADDA", "ADDA", "AAAA", 'A', SoulItems.VioletGem.get(), 'D', Item.getItemById(264)});
+    	
+    	this.addRecipe(new ItemStack(SoulItems.BlackdiamondAmuletRing.get(), 1), new Object[] {" AA ", "ADDA", "ADDA", " AA ", 'A', Item.getItemById(266), 'D', SoulItems.BlackdiamondAmuletStone.get()});
+    	this.addRecipe(new ItemStack(SoulItems.OlivineAmuletRing.get(), 1), new Object[] {" AA ", "ADDA", "ADDA", " AA ", 'A', Item.getItemById(266), 'D', SoulItems.OlivineAmuletStone.get()});
+    	this.addRecipe(new ItemStack(SoulItems.TurquoiseAmuletRing.get(), 1), new Object[] {" AA ", "ADDA", "ADDA", " AA ", 'A', Item.getItemById(266), 'D', SoulItems.TurquoiseAmuletStone.get()});
+    	
     	//Torches
     	this.addShapelessRecipe(new ItemStack(Blocks.torch, 1), new Object[] {Items.stick, SoulItems.BlueGel.get()});   
     	this.addShapelessRecipe(new ItemStack(SoulBlocks.AmazoniteTorch.get(), 1), new Object[] {SoulItems.AmazoniteGem.get(), Block.getBlockFromName("torch")});   

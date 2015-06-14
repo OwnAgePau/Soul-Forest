@@ -100,6 +100,25 @@ public class SoulItems
 	public static Optional<? extends Item> WhiteopalGem = Optional.absent();
 	public static Optional<? extends Item> WhiteopalUncut = Optional.absent();	
 	
+	public static Optional<? extends Item> AmazoniteAmuletStone = Optional.absent();
+	public static Optional<? extends Item> AmethystAmuletStone = Optional.absent();
+	public static Optional<? extends Item> AquamarineAmuletStone = Optional.absent();
+	public static Optional<? extends Item> BlackdiamondAmuletStone = Optional.absent();
+	public static Optional<? extends Item> CitrineAmuletStone = Optional.absent();
+	public static Optional<? extends Item> JadeAmuletStone = Optional.absent();
+	public static Optional<? extends Item> JetAmuletStone = Optional.absent();
+	public static Optional<? extends Item> LilaAmuletStone = Optional.absent();
+	public static Optional<? extends Item> OlivineAmuletStone = Optional.absent();
+	public static Optional<? extends Item> OnyxAmuletStone = Optional.absent();
+	public static Optional<? extends Item> ScarletiteAmuletStone = Optional.absent();
+	public static Optional<? extends Item> TopazAmuletStone = Optional.absent();
+	public static Optional<? extends Item> TurquoiseAmuletStone = Optional.absent();
+	public static Optional<? extends Item> VioletAmuletStone = Optional.absent();
+	
+	public static Optional<? extends Item> BlackdiamondAmuletRing = Optional.absent();
+	public static Optional<? extends Item> OlivineAmuletRing = Optional.absent();
+	public static Optional<? extends Item> TurquoiseAmuletRing = Optional.absent();
+	
 	public static Optional<? extends Item> BlueberryMuffin = Optional.absent();
 	public static Optional<? extends Item> BlackberryCrumble = Optional.absent();
 	public static Optional<? extends Item> BaneberryCake = Optional.absent();

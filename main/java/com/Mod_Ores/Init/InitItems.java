@@ -2,14 +2,17 @@ package com.Mod_Ores.Init;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPotion;
 import net.minecraft.item.ItemStack;
+import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Items.ItemAmuletStone;
 import com.Mod_Ores.Items.ItemBlackBucket;
 import com.Mod_Ores.Items.ItemFrostShard;
 import com.Mod_Ores.Items.ItemGelPot;
@@ -147,13 +150,13 @@ public class InitItems {
 	SoulItems.CopperThrowingknife = Optional.of(new ItemThrowingKnife("CopperthrowingKnife").setTextureName("soulforest:Copper_throwingKnife"));
 
 	//Gems - cuts and uncuts
-	SoulItems.AmazoniteGem = 		Optional.of(new ItemGem("Amazonitegem", "U").setTextureName("soulforest:Amazonite_gem"));
+	SoulItems.AmazoniteGem = 		Optional.of(new ItemGem("Amazonitegem", EnumRarity.uncommon).setTextureName("soulforest:Amazonite_gem"));
 	SoulItems.AmazoniteUncut = 		Optional.of(new ItemGem("Amazoniteuncut").setTextureName("soulforest:Amazonite_uncut"));
 	SoulItems.AmethystGem = 		Optional.of(new ItemGem("Amethystgem").setTextureName("soulforest:Amethyst_gem"));
 	SoulItems.AmethystUncut = 		Optional.of(new ItemGem("Amethystuncut").setTextureName("soulforest:Amethyst_uncut"));
-	SoulItems.AquamarineGem = 		Optional.of(new ItemGem("Aquamarinegem", "U").setTextureName("soulforest:Aquamarine_gem"));
+	SoulItems.AquamarineGem = 		Optional.of(new ItemGem("Aquamarinegem", EnumRarity.uncommon).setTextureName("soulforest:Aquamarine_gem"));
 	SoulItems.AquamarineUncut = 		Optional.of(new ItemGem("Aquamarineuncut").setTextureName("soulforest:Aquamarine_uncut"));
-	SoulItems.BlackdiamondGem = 		Optional.of(new ItemGem("Blackdiamondgem", "E").setTextureName("soulforest:Blackdiamond_gem"));
+	SoulItems.BlackdiamondGem = 		Optional.of(new ItemGem("Blackdiamondgem", EnumRarity.epic).setTextureName("soulforest:Blackdiamond_gem"));
 	SoulItems.BlackdiamondUncut = 		Optional.of(new ItemGem("Blackdiamonduncut").setTextureName("soulforest:Blackdiamond_uncut"));
 	SoulItems.CitrineGem = 			Optional.of(new ItemGem("Citrinegem").setTextureName("soulforest:Citrine_gem"));
 	SoulItems.CitrineUncut = 		Optional.of(new ItemGem("Citrineuncut").setTextureName("soulforest:Citrine_uncut"));
@@ -165,23 +168,44 @@ public class InitItems {
 	SoulItems.LilaUncut = 			Optional.of(new ItemGem("Lila_uncut").setTextureName("soulforest:Lila_uncut"));
 	SoulItems.OlivineGem = 			Optional.of(new ItemGem("Olivinegem").setTextureName("soulforest:Olivine_gem"));
 	SoulItems.OlivineUncut = 		Optional.of(new ItemGem("Olivineuncut").setTextureName("soulforest:Olivine_uncut"));
-	SoulItems.OnyxGem = 			Optional.of(new ItemGem("Onyxgem", "E").setTextureName("soulforest:Onyx_gem"));
+	SoulItems.OnyxGem = 			Optional.of(new ItemGem("Onyxgem", EnumRarity.epic).setTextureName("soulforest:Onyx_gem"));
 	SoulItems.OnyxUncut = 			Optional.of(new ItemGem("Onyxuncut").setTextureName("soulforest:Onyx_uncut"));
 	SoulItems.OpalGem = 			Optional.of(new ItemGem("Opalgem").setTextureName("soulforest:Opal_gem"));
 	SoulItems.OpalUncut = 			Optional.of(new ItemGem("Opaluncut").setTextureName("soulforest:Opal_uncut"));
-	SoulItems.ScarletiteGem = 		Optional.of(new ItemGem("Scarletemeraldgem", "U").setTextureName("soulforest:Scarletemerald_gem"));
+	SoulItems.ScarletiteGem = 		Optional.of(new ItemGem("Scarletemeraldgem", EnumRarity.uncommon).setTextureName("soulforest:Scarletemerald_gem"));
 	SoulItems.ScarletiteUncut = 		Optional.of(new ItemGem("Scarletemeralduncut").setTextureName("soulforest:Scarletemerald_uncut"));
-	SoulItems.TitaniumGem = 		Optional.of(new ItemGem("Titaniumgem", "E").setTextureName("soulforest:Titanium_gem"));
+	SoulItems.TitaniumGem = 		Optional.of(new ItemGem("Titaniumgem", EnumRarity.epic).setTextureName("soulforest:Titanium_gem"));
 	SoulItems.TitaniumUncut = 		Optional.of(new ItemGem("Titaniumuncut").setTextureName("soulforest:Titanium_uncut"));
 	SoulItems.TopazGem = 			Optional.of(new ItemGem("Topazgem").setTextureName("soulforest:Topaz_gem"));
 	SoulItems.TopazUncut = 			Optional.of(new ItemGem("Topazuncut").setTextureName("soulforest:Topaz_uncut"));
 	SoulItems.TurquoiseGem = 		Optional.of(new ItemGem("Turquoisegem").setTextureName("soulforest:Turquoise_gem"));
 	SoulItems.TurquoiseUncut = 		Optional.of(new ItemGem("Turquoiseuncut").setTextureName("soulforest:Turquoise_uncut"));
-	SoulItems.UraniumGem = 			Optional.of(new ItemGem("Uraniumgem", "E").setTextureName("soulforest:Uranium_gem"));
+	SoulItems.UraniumGem = 			Optional.of(new ItemGem("Uraniumgem", EnumRarity.epic).setTextureName("soulforest:Uranium_gem"));
 	SoulItems.VioletGem = 			Optional.of(new ItemGem("Violetgem").setTextureName("soulforest:Violet_gem"));
 	SoulItems.VioletUncut = 		Optional.of(new ItemGem("Violetuncut").setTextureName("soulforest:Violet_uncut"));
 	SoulItems.WhiteopalGem = 		Optional.of(new ItemGem("Whiteopalgem").setTextureName("soulforest:Whiteopal_gem"));
 	SoulItems.WhiteopalUncut = 		Optional.of(new ItemGem("Whiteopaluncut").setTextureName("soulforest:Whiteopal_uncut"));
+	
+	// Amulet Stones
+	SoulItems.AmazoniteAmuletStone = 	Optional.of(new ItemAmuletStone("Amazoniteamuletstone", 15, EnumRarity.rare).setAmuletStoneType("Amazonite").setTextureName("soulforest:Amazonite_amulet_stone"));
+	SoulItems.AmethystAmuletStone = 	Optional.of(new ItemAmuletStone("Amethystamuletstone", 30, EnumRarity.uncommon).setAmuletStoneType("Amethyst").setTextureName("soulforest:Amethyst_amulet_stone"));
+	SoulItems.AquamarineAmuletStone = 	Optional.of(new ItemAmuletStone("Aquamarineamuletstone", 15, EnumRarity.rare).setAmuletStoneType("Aquamarine").setTextureName("soulforest:Aquamarine_amulet_stone"));
+	SoulItems.BlackdiamondAmuletStone = 	Optional.of(new ItemAmuletStone("Blackdiamondamuletstone", Potion.damageBoost.getId(), 400, 5, EnumRarity.epic).setAmuletStoneType("Black Diamond").setTextureName("soulforest:Blackdiamond_amulet_stone"));
+	SoulItems.CitrineAmuletStone = 		Optional.of(new ItemAmuletStone("Citrineamuletstone", 50).setAmuletStoneType("Citrine").setTextureName("soulforest:Citrine_amulet_stone"));
+	SoulItems.JadeAmuletStone = 		Optional.of(new ItemAmuletStone("Jadeamuletstone", Potion.jump.getId(), 800, 50).setAmuletStoneType("Jade").setTextureName("soulforest:Jade_amulet_stone"));
+	SoulItems.JetAmuletStone = 		Optional.of(new ItemAmuletStone("Jetamuletstone", 1000).setAmuletStoneType("Jet").setTextureName("soulforest:Jet_amulet_stone"));
+	SoulItems.LilaAmuletStone = 		Optional.of(new ItemAmuletStone("Lilaamuletstone", 50).setAmuletStoneType("Lila").setTextureName("soulforest:Lila_amulet_stone"));
+	SoulItems.OlivineAmuletStone = 		Optional.of(new ItemAmuletStone("Olivineamuletstone", Potion.resistance.getId(), 800, 50).setAmuletStoneType("Olivine").setTextureName("soulforest:Olivine_amulet_stone"));
+	SoulItems.OnyxAmuletStone = 		Optional.of(new ItemAmuletStone("Onyxamuletstone", Potion.invisibility.getId(), 400, 5, EnumRarity.epic).setAmuletStoneType("Onyx").setTextureName("soulforest:Onyx_amulet_stone"));
+	SoulItems.ScarletiteAmuletStone = 	Optional.of(new ItemAmuletStone("Scarletiteamuletstone", 50, EnumRarity.uncommon).setAmuletStoneType("Scarletite").setTextureName("soulforest:Scarletite_amulet_stone"));
+	SoulItems.TopazAmuletStone = 		Optional.of(new ItemAmuletStone("Topazamuletstone", Potion.digSpeed.getId(), 800, 50).setAmuletStoneType("Topaz").setTextureName("soulforest:Topaz_amulet_stone"));
+	SoulItems.TurquoiseAmuletStone = 	Optional.of(new ItemAmuletStone("Turquoiseamuletstone", Potion.moveSpeed.getId(), 800, 50).setAmuletStoneType("Turquoise").setTextureName("soulforest:Turquoise_amulet_stone"));
+	SoulItems.VioletAmuletStone = 		Optional.of(new ItemAmuletStone("Violetamuletstone", Potion.regeneration.getId(), 800, 50).setAmuletStoneType("Violet").setTextureName("soulforest:Violet_amulet_stone"));
+	
+	// Amulet Rings
+	SoulItems.BlackdiamondAmuletRing = 	Optional.of(new ItemGem("Blackdiamondamuletring").setTextureName("soulforest:Blackdiamond_amulet_ring"));
+	SoulItems.OlivineAmuletRing = 		Optional.of(new ItemGem("Olivineamuletring").setTextureName("soulforest:Olivine_amulet_ring"));
+	SoulItems.TurquoiseAmuletRing = 	Optional.of(new ItemGem("Turquoiseamuletring").setTextureName("soulforest:Turquoise_amulet_ring"));
 	// Plants		
 	// Bushels
 	SoulItems.GrapesBushel = 		Optional.of((new ItemSoulBushel("Grapesbushel")).setTextureName("soulforest:Grapes_bushel"));
@@ -207,10 +231,10 @@ public class InitItems {
 	// Ingots		
 	SoulItems.BronzeIngot = 		Optional.of(new ItemSoulIngot("Bronzeingot").setTextureName("soulforest:Bronze_ingot"));
 	SoulItems.ChromiteIngot = 		Optional.of((new ItemSoulIngot("Chromiteingot")).setTextureName("soulforest:Chromite_ingot"));
-	SoulItems.CobaltIngot = 		Optional.of(new ItemSoulIngot("Cobaltingot", "R").setTextureName("soulforest:Cobalt_ingot"));
+	SoulItems.CobaltIngot = 		Optional.of(new ItemSoulIngot("Cobaltingot", EnumRarity.rare).setTextureName("soulforest:Cobalt_ingot"));
 	SoulItems.CopperIngot = 		Optional.of((new ItemSoulIngot("Copperingot")).setTextureName("soulforest:Copper_ingot"));
-	SoulItems.SilverIngot = 		Optional.of((new ItemSoulIngot("Silveringot", "U")).setTextureName("soulforest:Silver_ingot"));
-	SoulItems.SteelIngot = 			Optional.of(new ItemSoulIngot("Steelingot", "R").setTextureName("soulforest:Steel_ingot"));
+	SoulItems.SilverIngot = 		Optional.of((new ItemSoulIngot("Silveringot", EnumRarity.uncommon)).setTextureName("soulforest:Silver_ingot"));
+	SoulItems.SteelIngot = 			Optional.of(new ItemSoulIngot("Steelingot", EnumRarity.rare).setTextureName("soulforest:Steel_ingot"));
 	SoulItems.TanzaniteIngot = 		Optional.of((new ItemSoulIngot("Tanzaniteingot")).setTextureName("soulforest:Tanzanite_ingot"));
 	SoulItems.TinIngot = 			Optional.of((new ItemSoulIngot("Tiningot")).setTextureName("soulforest:Tin_ingot"));
 
@@ -257,11 +281,11 @@ public class InitItems {
 	SoulItems.BurnedShard = 		Optional.of((new SoulItem("Burned_Shard")).setTextureName("soulforest:Burned_Shard"));
 	SoulItems.LightShard = 			Optional.of((new SoulItem("Light_Shard")).setTextureName("soulforest:Light_Shard"));
 	SoulItems.StrengthShard = 		Optional.of((new SoulItem("Strength_Shard")).setTextureName("soulforest:Strength_Shard"));
-	SoulItems.Soul = 				Optional.of((new SoulItem("Soul_item")).setTextureName("soulforest:Soul_item"));	
+	SoulItems.Soul = 			Optional.of((new SoulItem("Soul_item")).setTextureName("soulforest:Soul_item"));	
 	SoulItems.FrozenRod = 			Optional.of((new SoulItem("Frozen_rod")).setTextureName("soulforest:Frozen_rod"));
 	SoulItems.BlueGel = 			Optional.of((new SoulItem("Blue_gel")).setTextureName("soulforest:Blue_gel"));
 	SoulItems.BlueMoltenGel = 		Optional.of((new SoulItem("Blue_molten_gel")).setTextureName("soulforest:Blue_molten_gel"));
-	SoulItems.GelPot = 				Optional.of((new ItemGelPot("Gel_pot_empty", false)).setTextureName("soulforest:Gel_pot_empty"));
+	SoulItems.GelPot = 			Optional.of((new ItemGelPot("Gel_pot_empty", false)).setTextureName("soulforest:Gel_pot_empty"));
 	SoulItems.GelPotFilled = 		Optional.of((new ItemGelPot("Gel_pot_filled", true)).setTextureName("soulforest:Gel_pot_filled"));		
 	SoulItems.GelPotKing = 			Optional.of((new ItemKingGelPot("King_gel_pot")).setTextureName("soulforest:King_gel_pot"));
 	SoulItems.IceCrystal =			Optional.of((new ItemIceCrystal("Ice_crystal")).setTextureName("soulforest:Ice_crystal"));
@@ -272,7 +296,7 @@ public class InitItems {
 	SoulItems.OnyxStick = 			Optional.of((new SoulItem("Onyx_stick")).setTextureName("soulforest:Onyx_stick"));
 	SoulItems.TitaniumStick = 		Optional.of((new SoulItem("Titanium_stick")).setTextureName("soulforest:Titanium_stick"));
 
-	SoulItems.MagicEmblem = 		Optional.of((new SoulItem("Magic_Emblem", "E", true)).setTextureName("soulforest:Magic_Emblem"));
+	SoulItems.MagicEmblem = 		Optional.of((new SoulItem("Magic_Emblem", EnumRarity.epic, true)).setTextureName("soulforest:Magic_Emblem"));
 
 	// Magic Fragments
 	SoulItems.BurnedFragment = Optional.of(new ItemMagicFragment("", "Burned", false).setTextureName("soulforest:Burned_Fragment"));

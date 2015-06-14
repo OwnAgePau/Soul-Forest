@@ -100,6 +100,7 @@ public class soul_forest{
     public static CreativeTabs tabSoulBlocks;
     public static CreativeTabs tabSoulOther;
     public static CreativeTabs tabSoulBerries;
+    public static CreativeTabs tabAmulets;
 
     // Biomes
     public static BiomeGenBase BlackForest;
@@ -144,7 +145,12 @@ public class soul_forest{
 		public Item getTabIconItem() {
 		    return Item.getItemFromBlock(SoulBlocks.Blackberry.get()); 
 		}
-	    };		
+	    };
+	    tabAmulets = new CreativeTabs("tabAmulets") {
+		public Item getTabIconItem() {
+		    return SoulItems.BlackdiamondAmuletRing.get(); 
+		}
+	    };	
 
 	    // Potion array length increased
 	    Potion[] potionTypes = null;

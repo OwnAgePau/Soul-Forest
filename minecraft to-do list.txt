@@ -1,40 +1,7 @@
-Changes for 1.9.6
-
-.....
-
-
-Please report any errors, glitches or alike as soon as you see one so I can fix it right away!
-Also if you want to show off something amazing you made, don't be afraid to share so I can post it (pictures, mod showcase or anything else)!!!
-
-Enjoy!!
+Changes:
+- Changed the texture of amethyst gem & uncut to be a bit better.
 
 To-do:
-- [x] Removed Mithril entirely from the mod!
-- [x] Added a new set of armor and tools (Fyrised) to replace the mithril armor and tools.
-- [x] Added Soul Forest mod source to Github at : https://github.com/OwnAgePau/Soul-Forest
-- [x] Added Set Bonus information to the item information that shows when you press the (default) F button.
-- [x] Added spawned in altars to the Dark Caverns biome that currently only look a bit fancy. They will be used in multiple ways later on.
-- [x] Added a new Achievement that can be achieved by killing the Ice Queen.
-- [x] Added 2 (quite similar) new biomes (Soul Shrubbery & Fyrised Shrubbery).
-- [x] Fixed the gemcutter only showing "burning particles" when not active, it instead shows it when the gemcutter is active.
-- [x] Did some refactoring and cleanup
-- [x] Reduced the rate at which Groundhog spawns reinforcements (as this was set to insanely fast by previous update).
-- [x] Reduced the health of koteks (red, blue & green) by 50%.
-- [x] Re-added fog into the dimension (green coloured fog) as it gives the dimension's atmosphere a little edge.
-- [x] Added caves to the dimension to make it a little bit easier (and much safer) to find gems.
-- [x] Changed Textures of : Hardwood (trees, leaves, planks, stairs), Laterite (dirt & grass) and the Ice Workbench.
-- [x] Removed the lighting effect of the Ice Workbench.
-- [x] Added a new boss: The Ice Queen.
-- [x] The Ice Queen will:
-	1. Summon a wall inbetween you and herself to block ranged attacks from coming in, and when she summons a new wall the old wall will explode and damage + slow you on hit.
-	2. Summon either 2 Exclos's, 2 Ice Fairies or 2 Illusions/copies of herself.
-		- The illusions will not summon anything, but they do teleport around. When you hit one of the illusions you will get blinded and damaged.
-	3. Teleport away from you when you get too close (before you get in your melee attack range) or teleport closer to you when too far away.
-- [x] Added a new item called the Ice Crystal that can be used to summon the Ice Queen. 
-	You will need to build an altar and use the Ice Crystal on the middle block. Look at the picture to see what altar looks like.
-- [x] Fixed different stuff generating above the world (on top of the netherack, including trees, flowers and structures).
-- [x] Custom leaves no longer drop the leaves on destruction without the proper tool (berrycutter).
-- [x] Made the custom leaves a bit less though to destroy by hand.
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
@@ -72,6 +39,7 @@ To-do:
 - [CLEAN]Remove SoulArmorMaterial
 - [CLEAN]Remove SoulConfigItems
 - [Clean]Remove SoulConfigBlocks
+- [MAJOR] UPDATE WIKI FOR F... SAKE.
 
 NEW IDEAS
 - Steel as ingot (not as ore)

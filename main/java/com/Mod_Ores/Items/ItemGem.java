@@ -12,7 +12,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class ItemGem extends Item{
-    private String Rarity;
+    private EnumRarity rarity;
 
     /**
      * ItemGem Constructor
@@ -34,23 +34,17 @@ public class ItemGem extends Item{
      * @param InGname This is the Name that you will see In game
      * @param rarity This will give the gem a color representing its rarity. "U" = uncommon, "R" = rare, "E" = epic
      */
-    public ItemGem(String Unlname, String rarity){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
+    public ItemGem(String Unlname, EnumRarity rarity){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
 	super(); //This super will load item ID and UName
 	this.setCreativeTab(soul_forest.tabSoulGems); //Set Tab in ModBase.class and plase it here (with many items its VERY code-shortening), this will load unlocalized name
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
-	this.Rarity = rarity;
+	this.rarity = rarity;
     }
 
     public EnumRarity getRarity(ItemStack par1ItemStack){
-	if(Rarity == "U"){
-	    return EnumRarity.uncommon;
-	}
-	else if(Rarity == "R"){
-	    return EnumRarity.rare;
-	}
-	else if(Rarity == "E"){
-	    return EnumRarity.epic;
+	if(this.rarity != null){
+	    return this.rarity;
 	}
 	else{
 	    return EnumRarity.common;
