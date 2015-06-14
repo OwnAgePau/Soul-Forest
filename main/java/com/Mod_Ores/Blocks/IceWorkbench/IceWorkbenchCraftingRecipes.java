@@ -94,7 +94,7 @@ public class IceWorkbenchCraftingRecipes{
     	
     	this.addRecipe(new ItemStack(SoulItems.GelPotKing.get(), 1), new Object[] {"GGG", "GPG", "MMM", 'G', Block.getBlockFromName("glass"), 'M', SoulItems.BlueMoltenGel.get(), 'P', SoulItems.GelPotFilled.get()});
     	this.addRecipe(new ItemStack(SoulBlocks.GelExtractor.get(), 1), new Object[] {"SSSS", "GGGG", "GGGG", "SSSS", 'G', SoulItems.BlueMoltenGel.get(), 'S', Block.getBlockFromName("stone")});
-    	this.addRecipe(new ItemStack(SoulItems.IceCrystal.get(), 1), new Object[] {"SFRS", "RAHF", "FHMR", "SRFS", 's', SoulItems.FrostShard.get(), 'F', SoulItems.FrostFragment.get(), 'R', SoulItems.FrozenRod.get(), 'A', SoulItems.FrozenMagicFragmentAdv.get(), 'H', SoulItems.FrozenMagicFragmentHalf.get(), 'M', SoulItems.FrozenMagicFragment.get()});
+    	this.addRecipe(new ItemStack(SoulItems.IceCrystal.get(), 1), new Object[] {"SFRS", "RAHF", "FHMR", "SRFS", 'S', SoulItems.FrostShard.get(), 'F', SoulItems.FrostFragment.get(), 'R', SoulItems.FrozenRod.get(), 'A', SoulItems.FrozenMagicFragmentAdv.get(), 'H', SoulItems.FrozenMagicFragmentHalf.get(), 'M', SoulItems.FrozenMagicFragment.get()});
     	
     	//Torches
     	this.addShapelessRecipe(new ItemStack(Blocks.torch, 1), new Object[] {Items.stick, SoulItems.BlueGel.get()});   
