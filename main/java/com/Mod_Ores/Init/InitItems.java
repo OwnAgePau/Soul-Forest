@@ -12,6 +12,7 @@ import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Items.ItemAmuletRing;
 import com.Mod_Ores.Items.ItemAmuletStone;
 import com.Mod_Ores.Items.ItemBlackBucket;
 import com.Mod_Ores.Items.ItemFrostShard;
@@ -203,9 +204,9 @@ public class InitItems {
 	SoulItems.VioletAmuletStone = 		Optional.of(new ItemAmuletStone("Violetamuletstone", Potion.regeneration.getId(), 800, 50).setAmuletStoneType("Violet").setTextureName("soulforest:Violet_amulet_stone"));
 	
 	// Amulet Rings
-	SoulItems.BlackdiamondAmuletRing = 	Optional.of(new ItemGem("Blackdiamondamuletring").setTextureName("soulforest:Blackdiamond_amulet_ring"));
-	SoulItems.OlivineAmuletRing = 		Optional.of(new ItemGem("Olivineamuletring").setTextureName("soulforest:Olivine_amulet_ring"));
-	SoulItems.TurquoiseAmuletRing = 	Optional.of(new ItemGem("Turquoiseamuletring").setTextureName("soulforest:Turquoise_amulet_ring"));
+	SoulItems.BlackdiamondAmuletRing = 	Optional.of(new ItemAmuletRing("Blackdiamondamuletring", 1000, "Black Diamond", EnumRarity.epic).setTextureName("soulforest:Blackdiamond_amulet_ring"));
+	SoulItems.OlivineAmuletRing = 		Optional.of(new ItemAmuletRing("Olivineamuletring", 1000, "Olivine").setTextureName("soulforest:Olivine_amulet_ring"));
+	SoulItems.TurquoiseAmuletRing = 	Optional.of(new ItemAmuletRing("Turquoiseamuletring", 1000, "Turquoise").setTextureName("soulforest:Turquoise_amulet_ring"));
 	// Plants		
 	// Bushels
 	SoulItems.GrapesBushel = 		Optional.of((new ItemSoulBushel("Grapesbushel")).setTextureName("soulforest:Grapes_bushel"));

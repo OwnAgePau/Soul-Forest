@@ -1,5 +1,7 @@
 Changes:
 - Changed the texture of amethyst gem & uncut to be a bit better.
+- Added Amulet Rings that will either increase the damage you do or decrease the damage you take (depending on the type of the ring).
+- Added Amulet Stones whereof most give you a potion buff for an amount (20 or 40 seconds) on every use. Some other stones have different purposes.
 
 To-do:
 
@@ -29,6 +31,7 @@ To-do:
 - THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
 - Paypal en/of adfly opzetten
 - Create slabs and double slabs
+- [OPT]Create a base file with basic functionality for your mod and perhaps other mods (API)
 - [OPT]Create a generic file for tallgrass
 - [OPT]Creating a generic file for custom plants
 - [OPT]soul tree random leave colour (case can be heavily optimised), orange and pink leaves (PLEASE REMOVE)

@@ -2,6 +2,7 @@ package com.Mod_Ores.EventHandlers;
 
 import java.util.List;
 import java.util.Random;
+import java.util.Set;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
@@ -13,6 +14,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
+import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
@@ -26,6 +28,7 @@ import net.minecraft.world.Explosion;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingEvent.LivingUpdateEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.world.ExplosionEvent;
 
 import com.Mod_Ores.soul_forest;
@@ -37,82 +40,69 @@ import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 
 public class ForgeHookEventHelper {
 
+
     @SubscribeEvent
     public void entityAttacked(LivingAttackEvent event){
-	boolean itemIsSword;
+	if(event.entityLiving.worldObj.isRemote){
+	    boolean itemIsSword;
 
-	if(!(event.entityLiving instanceof EntityPlayer)){
-	    EntityLiving attackedEnt = (EntityLiving) event.entityLiving;
-	    DamageSource attackSource = event.source;
-	    Entity player = event.source.getEntity();
+	    if(!(event.entityLiving instanceof EntityPlayer)){
+		EntityLiving attackedEnt = (EntityLiving) event.entityLiving;
+		DamageSource attackSource = event.source;
+		Entity player = event.source.getEntity();
 
-	    if(player instanceof EntityPlayer){
-		if(((EntityPlayer)player).getHeldItem() != null){
-		    ItemStack item = ((EntityPlayer)player).getHeldItem();
-		    //System.out.println(item.getDisplayName());
-		    if(item.getItem() instanceof ItemSword){
-			itemIsSword =  true;
-		    }
-		    if(item.equals(Item.itemRegistry.getObject("diamond_sword")) || item.equals(Item.itemRegistry.getObject("gold_sword")) || item.equals(Item.itemRegistry.getObject("iron_sword")) || item.equals(Item.itemRegistry.getObject("stone_sword")) || item.equals(Item.itemRegistry.getObject("wood_sword"))){
-			itemIsSword = true;
-		    }
-		    else if(item.equals(SoulItems.AquamarineSword.get()) || item.equals(SoulItems.BronzeSword.get()) || item.equals(SoulItems.ChromiteSword.get()) || item.equals(SoulItems.CobaltSword.get()) || item.equals(SoulItems.FyrisedSword.get()) || item.equals(SoulItems.SilverSword.get()) || item.equals(SoulItems.SteelSword.get()) || item.equals(SoulItems.TanzaniteSword.get())){
-			itemIsSword = true;
-		    }
-		    else{
-			itemIsSword = false;
-		    }
+		if(player instanceof EntityPlayer){
+		    EntityPlayer thePlayer = (EntityPlayer)player;
+		    ItemStack item = null;
+		    if(thePlayer.getHeldItem() != null){
+			item = thePlayer.getHeldItem();
+			if(item.getItem() instanceof ItemSword){
+			    itemIsSword =  true;
+			}
+			if(item.equals(Item.itemRegistry.getObject("diamond_sword")) || item.equals(Item.itemRegistry.getObject("gold_sword")) || item.equals(Item.itemRegistry.getObject("iron_sword")) || item.equals(Item.itemRegistry.getObject("stone_sword")) || item.equals(Item.itemRegistry.getObject("wood_sword"))){
+			    itemIsSword = true;
+			}
+			else if(item.equals(SoulItems.AquamarineSword.get()) || item.equals(SoulItems.BronzeSword.get()) || item.equals(SoulItems.ChromiteSword.get()) || item.equals(SoulItems.CobaltSword.get()) || item.equals(SoulItems.FyrisedSword.get()) || item.equals(SoulItems.SilverSword.get()) || item.equals(SoulItems.SteelSword.get()) || item.equals(SoulItems.TanzaniteSword.get())){
+			    itemIsSword = true;
+			}
+			else{
+			    itemIsSword = false;
+			}
 
-		    if(itemIsSword){
-			NBTTagList enchTag = item.getEnchantmentTagList();					
-			if (enchTag != null){
-			    for (int j = 0; j < enchTag.tagCount(); ++j){
-				short id = ((NBTTagCompound)enchTag.getCompoundTagAt(j)).getShort("id");
-				short lvl = ((NBTTagCompound)enchTag.getCompoundTagAt(j)).getShort("lvl");
-				int effectid = soul_forest.enchantmentFrost.effectId;
-				if (id == effectid){
-				    if(attackedEnt != null){
-					attackedEnt.addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 30, lvl));
+			if(itemIsSword){
+			    NBTTagList enchTag = item.getEnchantmentTagList();					
+			    if (enchTag != null){
+				for (int j = 0; j < enchTag.tagCount(); ++j){
+				    short id = ((NBTTagCompound)enchTag.getCompoundTagAt(j)).getShort("id");
+				    short lvl = ((NBTTagCompound)enchTag.getCompoundTagAt(j)).getShort("lvl");
+				    int effectid = soul_forest.enchantmentFrost.effectId;
+				    if (id == effectid){
+					if(attackedEnt != null){
+					    attackedEnt.addPotionEffect(new PotionEffect(Potion.moveSlowdown.getId(), 30, lvl));
 
-					int x = MathHelper.floor_double(attackedEnt.posX);
-					int z = MathHelper.floor_double(attackedEnt.posZ);
-					for (x = 0; x < 4; ++x){
-					    z = MathHelper.floor_double(attackedEnt.posX + (double)((float)(x % 2 * 2 - 1) * 0.25F));
-					    int k = MathHelper.floor_double(attackedEnt.posY);
-					    int l = MathHelper.floor_double(attackedEnt.posZ + (double)((float)(x / 2 % 2 * 2 - 1) * 0.25F));
-					    attackedEnt.worldObj.setBlock(z, k, l, Blocks.snow);
+					    int x = MathHelper.floor_double(attackedEnt.posX);
+					    int z = MathHelper.floor_double(attackedEnt.posZ);
+					    for (x = 0; x < 4; ++x){
+						z = MathHelper.floor_double(attackedEnt.posX + (double)((float)(x % 2 * 2 - 1) * 0.25F));
+						int k = MathHelper.floor_double(attackedEnt.posY);
+						int l = MathHelper.floor_double(attackedEnt.posZ + (double)((float)(x / 2 % 2 * 2 - 1) * 0.25F));
+						attackedEnt.worldObj.setBlock(z, k, l, Blocks.snow);
+					    }
 					}
 				    }
 				}
 			    }
 			}
-		    }
-
-		    if(item.equals(SoulItems.AquamarineSword.get()))
-		    {
-			System.out.println(attackedEnt.getCommandSenderName());
-			System.out.println(attackSource.getDamageType());
-			Random random = new Random();	
-			Vec3 vec3 = Vec3.createVectorHelper(((double)random.nextFloat() - 0.5D) * 0.1D, Math.random() * 0.1D + 0.1D, 0.0D);
-			vec3.rotateAroundX(-player.rotationPitch * (float)Math.PI / 180.0F);
-			vec3.rotateAroundY(-player.rotationYaw * (float)Math.PI / 180.0F);
-			Vec3 vec31 = Vec3.createVectorHelper(((double)random.nextFloat() - 0.5D) * 0.3D, (double)(-random.nextFloat()) * 0.6D - 0.3D, 0.6D);
-			vec31.rotateAroundX(-player.rotationPitch * (float)Math.PI / 180.0F);
-			vec31.rotateAroundY(-player.rotationYaw * (float)Math.PI / 180.0F);
-			vec31 = vec31.addVector(player.posX, player.posY + (double)player.getEyeHeight(), player.posZ);
-
-			player.worldObj.spawnParticle("bubble", vec31.xCoord, vec31.yCoord, vec31.zCoord, vec3.xCoord, vec3.yCoord + 0.05D, vec3.zCoord);
-
-			//float f1 = (float)MathHelper.floor_double(player.boundingBox.minY);
-
-
-			//double f2 = (random.nextFloat() * 2.0F - 1.0F) * player.width;
-			//double f3 = (random.nextFloat() * 2.0F - 1.0F) * player.width;
-			//player.worldObj.spawnParticle("bubble", MathHelper.floor_double(player.posX) + (double)f2, (double)(f1 + 1.5F), MathHelper.floor_double(player.posZ) + (double)f3, player.motionX, player.motionY, player.motionZ);
-			//attackedEnt.worldObj.spawnParticle("bubble", d0, d1, d2, f0, 0.0D, f1);
-			//attackedEnt.worldObj.spawnParticle("splash", d0, d1, d2, f0, 0.0D, f1);
-			//attackedEnt.worldObj.spawnParticle("splash", d0, d1, d2, f0, 0.0D, f1);
-			System.out.println("[Soul Forest] Blub");
+			if(item.getItem().equals(SoulItems.AquamarineSword.get())){
+			    Random rand = new Random();	
+			    for (int i = 0; i < 8; ++i){
+				float f = rand.nextFloat() - rand.nextFloat();
+				float f1 = rand.nextFloat() - rand.nextFloat() + 2f;
+				float f2 = rand.nextFloat() - rand.nextFloat();
+				attackedEnt.worldObj.spawnParticle("bubble", attackedEnt.posX + (double)f, attackedEnt.posY + (double)f1, attackedEnt.posZ + (double)f2, attackedEnt.motionX, attackedEnt.motionY, attackedEnt.motionZ);
+			    }
+			    //attackedEnt.worldObj.spawnParticle("bubble", vec31.xCoord, vec31.yCoord, vec31.zCoord, vec3.xCoord, vec3.yCoord + 0.05D, vec3.zCoord);
+			}
 		    }
 		}
 	    }
@@ -120,8 +110,56 @@ public class ForgeHookEventHelper {
     }
 
     @SubscribeEvent
+    public void entityHurt(LivingHurtEvent event){
+	if(!event.entity.worldObj.isRemote){
+	    Entity attacker = event.source.getEntity();
+	    if(attacker instanceof EntityPlayer){
+		EntityPlayer player = (EntityPlayer)attacker;
+		// Increase the damage done by the player by 50% against other mobs
+		if(this.checkPlayerHasAmulet(player, SoulItems.BlackdiamondAmuletRing.get())){
+		    float damage = event.ammount;
+		    float bonusDamage = event.ammount / 2;
+		    System.out.println("Total : " + (bonusDamage + damage) + ", Bonus : " + bonusDamage + ", Base : " + damage);
+		    event.ammount += event.ammount / 2;
+		}
+	    }
+	    if(!(attacker instanceof EntityPlayer)){
+		Entity attacked = event.entityLiving;
+		if(attacked instanceof EntityPlayer){
+		    EntityPlayer player = (EntityPlayer)attacked;
+		    // Decrease the damage done to the player by other mobs with 33,333%;
+		    if(this.checkPlayerHasAmulet(player, SoulItems.OlivineAmuletRing.get()) || 
+			    this.checkPlayerHasAmulet(player, SoulItems.TurquoiseAmuletRing.get())){
+			float damage = event.ammount;
+			float protectedDamage = event.ammount / 3F;
+			System.out.println("Total : " + (damage - protectedDamage) + ", Bonus : " + protectedDamage + ", Base : " + damage);
+			event.ammount -= event.ammount / 3F;
+		    }
+		}
+	    }
+	}
+    }
+
+    private boolean checkPlayerHasAmulet(EntityPlayer player, Item amulet){
+	ItemStack[] inventoryPlayer = player.inventory.mainInventory;
+	for(int i = 0; i < inventoryPlayer.length;i++){
+	    ItemStack stack = inventoryPlayer[i];
+	    if(stack != null){
+		if(stack.stackSize > 0){
+		    Item item = stack.getItem();
+		    // Check if Black Diamond Ring is in your hotbar
+		    if(item.equals(amulet) && i < 9){
+			item.setDamage(stack, item.getDamage(stack) + 1);
+			return true;
+		    }
+		}
+	    }
+	}
+	return true;
+    }
+
+    @SubscribeEvent
     public void onEntityUpdate(LivingUpdateEvent event) {
-	//entityLiving in fact refers to EntityLivingBase so to understand everything about this part go to EntityLivingBase instead
 	if(!event.entityLiving.worldObj.isRemote){
 	    if (event.entityLiving.isPotionActive(soul_forest.lavaImmunity)) {
 		if (event.entityLiving.worldObj.rand.nextInt(500) == 0) {

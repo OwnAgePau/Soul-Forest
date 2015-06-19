@@ -181,7 +181,7 @@ Gem Powers:
 
 Ideas:
 - Potion effects being added from different altars making them usefull to fight bosses at.
-- If i move the frozen stuff out to a new dimension, add a white fog colour and where you can only see close. Also see if i can add snow falling.
+- If i move the frozen stuff out to a new dimension, add a white fog colour and where you can only see close. Also see if i can add snow falling. (frozen could be a sky dimension)
 - Add a use for fireblossems and cantaloupe
 - Upside down trees
 - Double JUMP
