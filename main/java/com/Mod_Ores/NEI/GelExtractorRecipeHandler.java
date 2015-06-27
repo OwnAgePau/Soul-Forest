@@ -8,7 +8,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import com.Mod_Ores.Blocks.GelExtractor.*;
+import com.Mod_Ores.Blocks.GUI.GuiGelExtractor;
+import com.Mod_Ores.Blocks.Recipes.GelExtractorRecipes;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.inventory.GuiContainer;

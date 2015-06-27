@@ -9,7 +9,9 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
-import com.Mod_Ores.Blocks.Gemcutter.*;
+import com.Mod_Ores.Blocks.GUI.GuiGemcutter;
+import com.Mod_Ores.Blocks.Recipes.GemcutterRecipes;
+import com.Mod_Ores.Blocks.TileEntities.TileEntityGemcutter;
 import com.Mod_Ores.Init.SoulItems;
 
 import net.minecraft.block.Block;

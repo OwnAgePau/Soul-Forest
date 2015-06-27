@@ -6,6 +6,7 @@ import org.lwjgl.input.Keyboard;
 
 import com.Mod_Ores.SoulForestKeyHandler;
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Init.InitItems;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -23,12 +24,13 @@ public class ItemSoulHoe extends ItemHoe{
      * @param InGname This is the Name that you will see In game
      * @param EnumToolMaterial This will set the tools material
      */
-    public ItemSoulHoe(String Unlname, Item.ToolMaterial material){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
-	super(material); //This super will load item ID and UName
-	setCreativeTab(soul_forest.tabSoulTools); //Set Tab in ModBase.class and plase it here (with many items its VERY code-shortening), this will load unlocalized name
+    public ItemSoulHoe(String Unlname, Item.ToolMaterial material){
+	super(material);
+	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.mat = material;
+	InitItems.soulHoes.add(this);
     }
 
     @Override

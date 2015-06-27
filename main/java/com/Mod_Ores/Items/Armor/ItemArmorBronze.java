@@ -12,6 +12,7 @@ import net.minecraft.item.ItemStack;
 
 import com.Mod_Ores.SoulForestKeyHandler;
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Init.InitItems;
 import com.Mod_Ores.Init.SoulItems;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -40,6 +41,7 @@ public class ItemArmorBronze extends ItemArmor{
 	GameRegistry.registerItem(this, UnLname, soul_forest.MODID);
 	this.mat = par2EnumArmorMaterial;
 	this.armorSlot = par4;
+	InitItems.soulArmors.add(this);
     }
 
     @Override

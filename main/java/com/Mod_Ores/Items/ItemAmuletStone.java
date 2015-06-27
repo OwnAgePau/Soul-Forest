@@ -81,6 +81,7 @@ public class ItemAmuletStone extends Item{
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.setMaxDamage(durability);
 	this.isPotionBuff = isPotionBuff;
+	this.canRepair = true;
     }
 
     public EnumRarity getRarity(ItemStack par1ItemStack){
@@ -97,6 +98,18 @@ public class ItemAmuletStone extends Item{
 	return this;
     }
     
+    
+    
+    @Override
+    public boolean doesContainerItemLeaveCraftingGrid(ItemStack p_77630_1_) {
+	if(p_77630_1_.getItem() == SoulItems.CitrineAmuletStone.get() || 
+		p_77630_1_.getItem() == SoulItems.ScarletiteAmuletStone.get() || 
+		p_77630_1_.getItem() == SoulItems.JetAmuletStone.get()){
+	    return false;
+	}
+	return true;
+    }
+
     @SideOnly(Side.CLIENT)
     public boolean hasEffect(ItemStack par1ItemStack){
 	if(this.rarity == EnumRarity.epic){

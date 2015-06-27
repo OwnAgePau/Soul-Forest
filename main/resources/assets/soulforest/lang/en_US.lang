@@ -331,6 +331,9 @@ tile.gemcutterBench Active.name=Gemcutter
 tile.Soul_Fire.name=Soul Fire
 tile.Blueish Dizzling Portal Passage.name=Teleporter
 tile.gelextractor.name=Gel Extractor
+tile.GembleTable.name=Gemble Table
+tile.GemmerationTable.name=Gemmeration Table
+tile.GemmingTable.name=Gemming Table
 
 tile.SoulFluid=Soul Fluid
 tile.Soul Water Flow.name=Soul Water Moving
@@ -411,6 +414,9 @@ itemGroup.tabSoulBlocks=Soul Blocks
 itemGroup.tabSoulOther=Soul Other
 itemGroup.tabSoulBerries=Soul Berries
 itemGroup.tabAmulets=Soul Amulets
+
+enchantment.Frost.name=Frost
+enchantment.Enhanced.name=Enhanced
 
 //Achievements
 achievement.soulForest=Dizzling Portal Passage

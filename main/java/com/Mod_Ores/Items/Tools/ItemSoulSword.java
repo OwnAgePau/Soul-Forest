@@ -6,6 +6,7 @@ import org.lwjgl.input.Keyboard;
 
 import com.Mod_Ores.SoulForestKeyHandler;
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Init.InitItems;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -25,12 +26,13 @@ public class ItemSoulSword extends ItemSword{
      * @param InGname This is the Name that you will see In game
      * @param EnumToolMaterial This will set the tools material
      */
-    public ItemSoulSword(String Unlname, Item.ToolMaterial material){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
-	super(material); //This super will load item ID and UName
-	setCreativeTab(soul_forest.tabSoulTools); //Set Tab in ModBase.class and plase it here (with many items its VERY code-shortening), this will load unlocalized name
+    public ItemSoulSword(String Unlname, Item.ToolMaterial material){
+	super(material);
+	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.mat = material;
+	InitItems.soulSwords.add(this);
     }
 
     /**
@@ -41,13 +43,14 @@ public class ItemSoulSword extends ItemSword{
      * @param EnumToolMaterial This will set the tools material
      * @param rarity This will give the gem a color representing its rarity. "U" = uncommon, "R" = rare, "E" = epic
      */
-    public ItemSoulSword(String Unlname, Item.ToolMaterial material, String rarity){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
-	super(material); //This super will load item ID and UName
-	setCreativeTab(soul_forest.tabSoulTools); //Set Tab in ModBase.class and plase it here (with many items its VERY code-shortening), this will load unlocalized name
+    public ItemSoulSword(String Unlname, Item.ToolMaterial material, String rarity){
+	super(material);
+	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.Rarity = rarity;
 	this.mat = material;
+	InitItems.soulSwords.add(this);
     }
 
     public EnumRarity getRarity(ItemStack par1ItemStack){

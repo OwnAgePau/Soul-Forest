@@ -15,7 +15,7 @@ import com.Mod_Ores.BiomeGen.WorldGenGrapeTree;
 import com.Mod_Ores.BiomeGen.WorldGenHardwoodTrees;
 import com.Mod_Ores.BiomeGen.WorldGenSoulTrees;
 import com.Mod_Ores.BiomeGen.Stuctures.WorldGenDarkAltar;
-import com.Mod_Ores.BiomeGen.Stuctures.WorldGenIceTower;
+import com.Mod_Ores.BiomeGen.Stuctures.WorldGenTower;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenCantaloupe;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenPeatBogWater;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenPlant;
@@ -79,6 +79,8 @@ public class TheBiomeDeco extends BiomeDecorator
     protected int tallgrasstype;
 
     protected int icetowersperchunk;
+    protected int titaniumtowersperchunk;
+    protected int slatetowersperchunk;
     protected int darkaltarsperchunk;
 
     protected WorldGenerator baneberryVineGen;
@@ -103,6 +105,8 @@ public class TheBiomeDeco extends BiomeDecorator
     protected WorldGenerator vineplantGen;
 
     protected WorldGenerator icetowerGen;
+    protected WorldGenerator titaniumtowerGen;
+    protected WorldGenerator slatetowerGen;
     protected WorldGenerator darkAltarGen;
 
     protected WorldGenerator lakeGen;
@@ -116,7 +120,12 @@ public class TheBiomeDeco extends BiomeDecorator
     {
 	super();
 	this.randomGenerator = new Random();
-	this.icetowerGen = new WorldGenIceTower();
+	this.icetowerGen = new WorldGenTower(SoulBlocks.IceBrick.get(), SoulBlocks.IceBrickStairs.get(), 
+		SoulBlocks.SoulSnowTop.get());
+	this.titaniumtowerGen = new WorldGenTower(SoulBlocks.TitaniumBrick.get(), SoulBlocks.TitaniumBrickStairs.get(), 
+		SoulBlocks.FyrisedSandGrass.get());
+	this.slatetowerGen = new WorldGenTower(SoulBlocks.SlateBrick.get(), SoulBlocks.SlateBrickStairs.get(), 
+		SoulBlocks.BogGrass.get());
 	this.darkAltarGen = new WorldGenDarkAltar();
 	this.grapetreeGen = new WorldGenGrapeTree(false);    	
 	this.hardwoodtreeGen = new WorldGenHardwoodTrees(this.randomGenerator);
@@ -171,6 +180,20 @@ public class TheBiomeDeco extends BiomeDecorator
 	    int h1 = randomGenerator.nextInt(128);
 	    int g3 = chunk_Z + randomGenerator.nextInt(16);
 	    this.icetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	}
+	for (int g1 = 0; g1 < this.slatetowersperchunk; g1++){
+	    int g2 = chunk_X + randomGenerator.nextInt(16);
+	    int h1 = randomGenerator.nextInt(128);
+	    int g3 = chunk_Z + randomGenerator.nextInt(16);
+	    this.slatetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	}
+	if(this.titaniumtowersperchunk > 0){
+	    if(this.randomGenerator.nextInt(32) <= this.titaniumtowersperchunk){
+		int g2 = chunk_X + randomGenerator.nextInt(16);
+		int h1 = randomGenerator.nextInt(128);
+		int g3 = chunk_Z + randomGenerator.nextInt(16);
+		this.titaniumtowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	    }
 	}
 	if(this.darkaltarsperchunk > 0){
 	    if(this.randomGenerator.nextInt(40) <= this.darkaltarsperchunk){

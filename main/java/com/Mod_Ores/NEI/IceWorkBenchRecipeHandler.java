@@ -4,8 +4,10 @@ import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.Mod_Ores.Blocks.GelExtractor.GuiGelExtractor;
-import com.Mod_Ores.Blocks.IceWorkbench.*;
+import com.Mod_Ores.Blocks.GUI.GuiGelExtractor;
+import com.Mod_Ores.Blocks.GUI.GuiIceCrafting;
+import com.Mod_Ores.Blocks.Recipes.IceWorkbenchCraftingRecipes;
+import com.Mod_Ores.Blocks.Recipes.IceWorkbenchShapedRecipes;
 
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.inventory.Container;

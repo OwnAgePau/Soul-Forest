@@ -10,40 +10,9 @@ import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.Mod_Ores.soul_forest;
-import com.Mod_Ores.Blocks.BlockBogGrass;
-import com.Mod_Ores.Blocks.BlockBogTallGrassBrown;
-import com.Mod_Ores.Blocks.BlockBogTallGrassGreen;
-import com.Mod_Ores.Blocks.BlockBogTallGrassGrey;
-import com.Mod_Ores.Blocks.BlockBogTallGrassPurple;
-import com.Mod_Ores.Blocks.BlockCantaloupe;
-import com.Mod_Ores.Blocks.BlockFireblossom;
-import com.Mod_Ores.Blocks.BlockFrozenGrass;
-import com.Mod_Ores.Blocks.BlockFrozenTallGrass;
-import com.Mod_Ores.Blocks.BlockFyrisedSand;
-import com.Mod_Ores.Blocks.BlockLateriteGrass;
-import com.Mod_Ores.Blocks.BlockLogHardwood;
-import com.Mod_Ores.Blocks.BlockLogSoul;
-import com.Mod_Ores.Blocks.BlockSnowTopLayer;
-import com.Mod_Ores.Blocks.BlockSoulDirt;
-import com.Mod_Ores.Blocks.BlockSoulLeaves;
-import com.Mod_Ores.Blocks.BlockSoulSappling;
-import com.Mod_Ores.Blocks.BlockVineplant;
-import com.Mod_Ores.Blocks.GelExtractor.BlockGelExtractor;
-import com.Mod_Ores.Blocks.GelExtractor.TileEntityGelExtractor;
-import com.Mod_Ores.Blocks.Gemcutter.BlockGemcutterBench;
-import com.Mod_Ores.Blocks.Gemcutter.TileEntityGemcutter;
-import com.Mod_Ores.Blocks.IceWorkbench.BlockIceWorkbench;
-import com.Mod_Ores.Blocks.Special.BlockSoulStairs;
-import com.Mod_Ores.Blocks.Special.SoulBlock;
-import com.Mod_Ores.Blocks.Special.SoulFire;
-import com.Mod_Ores.Blocks.Special.SoulHalfslab;
-import com.Mod_Ores.Blocks.Special.SoulOre;
-import com.Mod_Ores.Blocks.Special.SoulStep;
-import com.Mod_Ores.Blocks.Special.SoulTorch;
-import com.Mod_Ores.Blocks.Special.SoulVine;
-import com.Mod_Ores.Blocks.Special.SoulWaterFlowing;
-import com.Mod_Ores.Blocks.Special.SoulWaterStationary;
-import com.Mod_Ores.Blocks.Special.SoulWood;
+import com.Mod_Ores.Blocks.*;
+import com.Mod_Ores.Blocks.Special.*;
+import com.Mod_Ores.Blocks.TileEntities.*;
 import com.Mod_Ores.Dimension.TeleportBlockSoulForest;
 import com.google.common.base.Optional;
 
@@ -125,6 +94,9 @@ public class InitBlocks {
 	SoulBlocks.SoulFire = 				Optional.of((new SoulFire("Soul_Fire")).setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setBlockTextureName(soul_forest.MODID + ":Soul_Fire"));  	//Teleporter
 	SoulBlocks.Teleporter =   			Optional.of((new TeleportBlockSoulForest("Blueish Dizzling Portal Passage").setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone).setBlockTextureName(soul_forest.MODID + ":Soulportal_inside")));  
 	SoulBlocks.GelExtractor =			Optional.of((new BlockGelExtractor("gelextractor")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks).setBlockTextureName("Gel_extractor_front"));
+	SoulBlocks.GemmerationTable =			Optional.of((new BlockGemmerationTable("GemmerationTable")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks).setBlockTextureName("Gemmeration_side"));
+	SoulBlocks.GemmingTable =			Optional.of((new BlockGemmingTable("GemmingTable")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks).setBlockTextureName("Gemming_side"));
+	SoulBlocks.GembleTable =			Optional.of((new BlockGembleTable("GembleTable")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks).setBlockTextureName("Gemmeble_table_front"));
 
 	//Water
 	SoulBlocks.SoulWaterMovingFluid = 		Optional.of((new Fluid("Soul Water Flow")));
@@ -218,6 +190,9 @@ public class InitBlocks {
     public static void registerTileEntities(){
 	GameRegistry.registerTileEntity(TileEntityGemcutter.class, "Gemcutter");
 	GameRegistry.registerTileEntity(TileEntityGelExtractor.class, "Gel Extractor");
+	GameRegistry.registerTileEntity(TileEntityGembleTable.class, "Gemble Table");
+	GameRegistry.registerTileEntity(TileEntityGemmingTable.class, "Gemming Table");
+	GameRegistry.registerTileEntity(TileEntityGemmerationTable.class, "Gemmeration Table");
     }
 
     public static void initItemBlockDependantBlocks(){

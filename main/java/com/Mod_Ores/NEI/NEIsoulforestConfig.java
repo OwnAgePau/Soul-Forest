@@ -1,9 +1,9 @@
 package com.Mod_Ores.NEI;
 
 import com.Mod_Ores.soul_forest;
-import com.Mod_Ores.Blocks.GelExtractor.GuiGelExtractor;
-import com.Mod_Ores.Blocks.Gemcutter.GuiGemcutter;
-import com.Mod_Ores.Blocks.IceWorkbench.GuiIceCrafting;
+import com.Mod_Ores.Blocks.GUI.GuiGelExtractor;
+import com.Mod_Ores.Blocks.GUI.GuiGemcutter;
+import com.Mod_Ores.Blocks.GUI.GuiIceCrafting;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;

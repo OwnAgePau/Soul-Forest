@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 
 import com.Mod_Ores.SoulForestKeyHandler;
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Init.InitItems;
 import com.google.common.collect.Multimap;
 
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -30,12 +31,14 @@ public class ItemWarAxe extends ItemAxe{
      * @param InGname This is the Name that you will see In game
      * @param EnumToolMaterial This will set the tools material
      */
-    public ItemWarAxe(String Unlname, Item.ToolMaterial material){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
-	super(material); //This super will load item ID and UName
-	setCreativeTab(soul_forest.tabSoulTools); //Set Tab in ModBase.class and plase it here (with many items its VERY code-shortening), this will load unlocalized name
+    public ItemWarAxe(String Unlname, Item.ToolMaterial material, int level){
+	super(material);
+	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.mat = material;
+	this.setHarvestLevel("waraxe", level);
+	InitItems.soulWarAxes.add(this);
     }
 
     /**
@@ -46,13 +49,15 @@ public class ItemWarAxe extends ItemAxe{
      * @param EnumToolMaterial This will set the tools material
      * @param rarity This will give the gem a color representing its rarity. "U" = uncommon, "R" = rare, "E" = epic
      */
-    public ItemWarAxe(String Unlname, Item.ToolMaterial material, String rarity){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
-	super(material); //This super will load item ID and UName
-	setCreativeTab(soul_forest.tabSoulTools); //Set Tab in ModBase.class and plase it here (with many items its VERY code-shortening), this will load unlocalized name
+    public ItemWarAxe(String Unlname, Item.ToolMaterial material, String rarity, int level){
+	super(material);
+	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.Rarity = rarity;
 	this.mat = material;
+	this.setHarvestLevel("axe", level);
+	InitItems.soulWarAxes.add(this);
     }
 
     public EnumRarity getRarity(ItemStack par1ItemStack){

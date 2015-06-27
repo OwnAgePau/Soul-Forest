@@ -22,13 +22,14 @@ public class BiomeGenDarkCaverns extends BiomeGenBase
         spawnableCreatureList.clear();
         spawnableCaveCreatureList.clear();
         spawnableWaterCreatureList.clear();
-        spawnableMonsterList.add(new SpawnListEntry(EntityFurivoli.class, SoulConfigCreatures.furivoliSpawnFreq, SoulConfigCreatures.furivoliMinGroup, SoulConfigCreatures.furivoliMaxGroup));
+        spawnableMonsterList.add(new SpawnListEntry(EntityFurivoli.class, SoulConfigCreatures.furivoliSpawnFreq * 4, SoulConfigCreatures.furivoliMinGroup, SoulConfigCreatures.furivoliMaxGroup));
         this.temperature = 1.0F;
         theBiomeDecorator = new TheBiomeDeco(this);
         customBiomeDecorator = (TheBiomeDeco)theBiomeDecorator;
         customBiomeDecorator.soulfiresperchunk = 0;
         customBiomeDecorator.fireblossomsperchunk = 20;
         customBiomeDecorator.darkaltarsperchunk = 1;
+        customBiomeDecorator.titaniumtowersperchunk = 1;
     }
 }
 

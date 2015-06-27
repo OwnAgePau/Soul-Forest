@@ -180,11 +180,15 @@ Gem Powers:
 - Perhaps let the Olivine be Peridot instead as Olivine is the mineral in which peridot exists.
 
 Ideas:
+- Think Traps & Fire when it comes to structures.
+- Use Custom blocks near the Enchanting, Wealth and Reapir tables to increase the outcome.
+- Make it possible to create your own amulets (needing items for the strength of the effect, items for the effect and items for the ring/stone itself)
 - Potion effects being added from different altars making them usefull to fight bosses at.
 - If i move the frozen stuff out to a new dimension, add a white fog colour and where you can only see close. Also see if i can add snow falling. (frozen could be a sky dimension)
 - Add a use for fireblossems and cantaloupe
 - Upside down trees
 - Double JUMP
+- Paintings with soul wooden frames (or even hardwood)
 - Mobs met "area damage" that effect you when getting closer to an enemy (like a fire mob that sets mobs that come close on fire).
 - Use certain gems to teleport (or magical shards) advanced uses it like a enderpearl but different, certain other effects on teleportation or use of shards
 - An enemy that fights most other mobs and can level up
