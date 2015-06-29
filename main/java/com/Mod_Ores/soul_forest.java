@@ -30,10 +30,12 @@ import com.Mod_Ores.BiomeGen.Biomes.BiomeGenFrozenPlains;
 import com.Mod_Ores.BiomeGen.Biomes.BiomeGenFyrisedShrubbery;
 import com.Mod_Ores.BiomeGen.Biomes.BiomeGenMaronaWoods;
 import com.Mod_Ores.BiomeGen.Biomes.BiomeGenPeatBog;
+import com.Mod_Ores.BiomeGen.Biomes.BiomeGenShinaiForest;
 import com.Mod_Ores.BiomeGen.Biomes.BiomeGenSoulForest;
 import com.Mod_Ores.BiomeGen.Biomes.BiomeGenSoulShrubbery;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenSoulGrass;
-import com.Mod_Ores.Dimension.WorldProviderSoulForest;
+import com.Mod_Ores.Dimension.FrozenHearth.WorldProviderFrozenHearth;
+import com.Mod_Ores.Dimension.SoulForest.WorldProviderSoulForest;
 import com.Mod_Ores.Enchantments.EnchantmentEnhanced;
 import com.Mod_Ores.Enchantments.EnchantmentFrost;
 import com.Mod_Ores.EventHandlers.CommonTickHandler;
@@ -112,45 +114,29 @@ public class soul_forest{
     public static BiomeGenBase SoulForest;
     public static BiomeGenBase SoulShrubbery;
     public static BiomeGenBase FyrisedShrubbery;
+    public static BiomeGenBase ShinaiForest;
 
     // Potions
     public static Potion lavaImmunity;
 
     // Random chest loot for inside Ice Towers
-    public static WeightedRandomChestContent[] iceTowerChestContent;
+    public static SoulForestChestContent soulForestChestContents;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {		
 	//Creative Tabs Icons
 	tabSoulTools = new CreativeTabs("tabSoulTools") {
-	    public Item getTabIconItem() {
-		return SoulItems.FyrisedHelmet.get();
-	    }};
+	    public Item getTabIconItem() { return SoulItems.FyrisedHelmet.get(); }};
 	    tabSoulGems = new CreativeTabs("tabSoulGems") {
-		public Item getTabIconItem() {
-		    return SoulItems.AquamarineGem.get();
-		}
-	    };					
+		public Item getTabIconItem() { return SoulItems.AquamarineGem.get(); }};					
 	    tabSoulBlocks = new CreativeTabs("tabSoulBlocks") {
-		public Item getTabIconItem() {
-		    return Item.getItemFromBlock(SoulBlocks.SoulSnowTop.get()); 
-		}
-	    };	
+		public Item getTabIconItem() { return Item.getItemFromBlock(SoulBlocks.SoulSnowTop.get()); }};	
 	    tabSoulOther = new CreativeTabs("tabSoulOther") {
-		public Item getTabIconItem() {
-		    return SoulItems.PolisherTowel.get(); 
-		}
-	    };	
+		public Item getTabIconItem() { return SoulItems.PolisherTowel.get(); }};	
 	    tabSoulBerries = new CreativeTabs("tabSoulBerries") {
-		public Item getTabIconItem() {
-		    return Item.getItemFromBlock(SoulBlocks.Blackberry.get()); 
-		}
-	    };
+		public Item getTabIconItem() { return Item.getItemFromBlock(SoulBlocks.Blackberry.get()); }};
 	    tabAmulets = new CreativeTabs("tabAmulets") {
-		public Item getTabIconItem() {
-		    return SoulItems.BlackdiamondAmuletRing.get(); 
-		}
-	    };	
+		public Item getTabIconItem() { return SoulItems.BlackdiamondAmuletRing.get(); }};	
 
 	    // Potion array length increased
 	    Potion[] potionTypes = null;
@@ -185,37 +171,7 @@ public class soul_forest{
 	    InitRecipes.init();
 	    InitAchievements.init();	
 	    InitEntities.init();
-
-	    // WeightedRandomChestContent(item, metadeta, min, max, chance)
-	    this.iceTowerChestContent = new WeightedRandomChestContent[] {
-		    new WeightedRandomChestContent(SoulItems.FrostShard.get(), 0, 3, 7, 10), 
-		    new WeightedRandomChestContent(SoulItems.BurnedShard.get(), 0, 3, 7, 10), 
-		    new WeightedRandomChestContent(SoulItems.Soul.get(), 0, 3, 7, 10), 
-		    new WeightedRandomChestContent(SoulItems.LightShard.get(), 0, 3, 7, 10), 
-		    new WeightedRandomChestContent(SoulItems.FrostFragment.get(), 0, 1, 2, 8), 
-		    new WeightedRandomChestContent(SoulItems.BurnedFragment.get(), 0, 1, 2, 8), 
-		    new WeightedRandomChestContent(SoulItems.SoulFragment.get(), 0, 1, 2, 8), 
-		    new WeightedRandomChestContent(SoulItems.LightFragment.get(), 0, 1, 2, 8), 
-		    new WeightedRandomChestContent(SoulItems.FrozenMagicFragmentHalf.get(), 0, 1, 1, 6), 
-		    new WeightedRandomChestContent(SoulItems.FrozenMagicFragmentAdv.get(), 0, 1, 1, 4), 
-		    new WeightedRandomChestContent(SoulItems.FrostWand.get(), 0, 1, 1, 1), 
-		    new WeightedRandomChestContent(SoulItems.FrozenRod.get(), 0, 1, 4, 7), 
-		    new WeightedRandomChestContent(SoulItems.FrozenStick.get(), 0, 1, 4, 7), 
-		    new WeightedRandomChestContent(SoulItems.BlackdiamondGem.get(), 0, 1, 3, 2), 
-		    new WeightedRandomChestContent(SoulItems.AmethystGem.get(), 0, 3, 6, 7), 
-		    new WeightedRandomChestContent(SoulItems.CranberryMuffin.get(), 0, 1, 5, 7), 
-		    new WeightedRandomChestContent(SoulItems.BaneberryCake.get(), 0, 1, 1, 8), 
-		    new WeightedRandomChestContent(SoulItems.WhiteopalGem.get(), 0, 4, 19, 10), 
-		    new WeightedRandomChestContent(SoulItems.Polisher.get(), 0, 3, 12, 7), 
-		    new WeightedRandomChestContent(SoulItems.PolisherTowel.get(), 0, 4, 19, 9), 
-		    new WeightedRandomChestContent(SoulItems.TitaniumGem.get(), 0, 1, 2, 1), 
-		    new WeightedRandomChestContent(SoulItems.OnyxGem.get(), 0, 1, 2, 1), 
-		    new WeightedRandomChestContent(SoulItems.BerryCollector.get(), 0, 1, 1, 5), 
-		    new WeightedRandomChestContent(SoulItems.CitrineGem.get(), 0, 4, 19, 10), 
-		    new WeightedRandomChestContent(SoulItems.SteelSword.get(), 0, 1, 1, 4), 
-		    new WeightedRandomChestContent(SoulItems.OpalGem.get(), 0, 4, 19, 9), 
-		    new WeightedRandomChestContent(SoulItems.OlivineGem.get(), 0, 5, 14, 6)};
-
+	    this.soulForestChestContents = new SoulForestChestContent();
 	    this.lavaImmunity = (new SoulPotion(50, false, 8356754)).setPotionName("potion.lavaimmunity");
     }
 
@@ -236,9 +192,11 @@ public class soul_forest{
 	MinecraftForge.EVENT_BUS.register(new ForgeHookEventHelper()); // Event Helper
 	proxy.registerRenderers();	
 
-	//Dimension
-	DimensionManager.registerProviderType(SoulConfig.SoulForestID, WorldProviderSoulForest.class, false); // Provider Registry
-	DimensionManager.registerDimension(SoulConfig.SoulForestID, SoulConfig.SoulForestID);	// Dimension Registry
+	//Dimensions
+	DimensionManager.registerProviderType(SoulConfig.SoulForestID, WorldProviderSoulForest.class, false);
+	DimensionManager.registerDimension(SoulConfig.SoulForestID, SoulConfig.SoulForestID);
+	DimensionManager.registerProviderType(SoulConfig.FrozenHearthID, WorldProviderFrozenHearth.class, false);
+	DimensionManager.registerDimension(SoulConfig.FrozenHearthID, SoulConfig.FrozenHearthID);
 
 	//Biomes
 	this.FrostCaves = 	(new BiomeGenFrostCaves(SoulConfig.BIOfrostCavesID).setBiomeName("Frost Caves").setEnableSnow().setTemperatureRainfall(0.03F, 1.0F).setHeight(new Height(0.9F, 0.1F)));
@@ -250,6 +208,7 @@ public class soul_forest{
 	this.MaronaWoods = 	(new BiomeGenMaronaWoods(SoulConfig.BIOmaronaWoodsID).setBiomeName("Marona Woods").setTemperatureRainfall(0.5F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
 	this.SoulShrubbery = 	(new BiomeGenSoulShrubbery(SoulConfig.BIOsoulShrubberyID).setBiomeName("Soul Shrubbery").setTemperatureRainfall(0.5F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
 	this.FyrisedShrubbery = (new BiomeGenFyrisedShrubbery(SoulConfig.BIOfyrisedShrubberyID).setBiomeName("Fyrised Shrubbery").setTemperatureRainfall(1.0F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
+	this.ShinaiForest = 	(new BiomeGenShinaiForest(SoulConfig.BIOshinaiForestID).setBiomeName("Shinai Forest").setTemperatureRainfall(0.3F, 1.0F).setHeight(new Height(0.5F, 0.8F)));
     }
 
     /**

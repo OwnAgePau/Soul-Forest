@@ -12,6 +12,7 @@ public class SoulConfig {
 
     //>>DIMENSION ID<<
     public static int SoulForestID;
+    public static int FrozenHearthID;
     // Enchantment ID's
     public static int ENCfrostID;
     public static int ENCenhancedID;
@@ -25,6 +26,7 @@ public class SoulConfig {
     public static int BIOblackForestID;
     public static int BIOsoulShrubberyID;
     public static int BIOfyrisedShrubberyID;
+    public static int BIOshinaiForestID;
 
     public static void init(File configFile){
 	config = new Configuration(configFile);
@@ -32,6 +34,7 @@ public class SoulConfig {
 	    config.load();			
 	    //>>DIMENSION ID<<
 	    SoulForestID = config.get("Dimension ID", "Soul Forest Dimension", 20).getInt();
+	    FrozenHearthID = config.get("Dimension ID", "Frozen Hearth Dimension", 21).getInt();
 
 	    // Enchantment ID's
 	    ENCfrostID = config.get("Enchantment ID's", "Frost Enchantment", 36).getInt();
@@ -47,7 +50,7 @@ public class SoulConfig {
 	    BIOblackForestID = config.get("Biome ID's", "Black Forest Biome", 106).getInt();		
 	    BIOsoulShrubberyID = config.get("Biome ID's", "Soul Shrubbery Biome", 107).getInt();
 	    BIOfyrisedShrubberyID = config.get("Biome ID's", "Fyrised Shrubbery Biome", 108).getInt();	
-	    //FMLCommonHandler.instance().getFMLLogger().log(Level.INFO, "[Soul Forest] [soulforest] Generated Config!");
+	    BIOshinaiForestID = config.get("Biome ID's", "Shinai Forest Biome", 109).getInt();
 	}
 	catch (Exception e){
 	    //FMLLog.Log(Level.SEVERE, e.toString(), new Object[]{"Soul Forest : ", " Has had a problem loading its configuration"});

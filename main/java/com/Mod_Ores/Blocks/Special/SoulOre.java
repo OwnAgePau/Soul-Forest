@@ -39,12 +39,12 @@ public class SoulOre extends Block
      * @param Resistance sets the resistance of the block
      * @param LightValue sets the blocks light value
      */
-    public SoulOre(int par3dropQuantity, String Unlname, float Hardness, float Resistance, Boolean LightValue) //id - item ID, UName - Unlocalized Name, IGName - IngameName
+    public SoulOre(int par3dropQuantity, String Unlname, float Hardness, float Resistance, Boolean LightValue)
     {
-	super(Material.rock); //This super will load item ID and UName
+	super(Material.rock);
 	setCreativeTab(soul_forest.tabSoulBlocks);
-	setHardness(Hardness); // Default 3.0F
-	setResistance(Resistance); // Default 2F		  
+	setHardness(Hardness);
+	setResistance(Resistance);		  
 	setStepSound(Block.soundTypeStone);
 
 	if(LightValue == true)
@@ -58,18 +58,18 @@ public class SoulOre extends Block
 	this.dropItem = Item.getItemFromBlock(this);
     }
 
-    public SoulOre(Item item, int par3dropQuantity, String Unlname, float Hardness, float Resistance, Boolean LightValue) //id - item ID, UName - Unlocalized Name, IGName - IngameName
+    public SoulOre(Item item, int par3dropQuantity, String Unlname, float Hardness, float Resistance, Boolean LightValue)
     {
-	super(Material.rock); //This super will load item ID and UName
+	super(Material.rock);
 	setCreativeTab(soul_forest.tabSoulBlocks);
-	setHardness(Hardness); // Default 3.0F
-	setResistance(Resistance); // Default 2F		  
+	setHardness(Hardness);
+	setResistance(Resistance);	  
 	setStepSound(Block.soundTypeStone);
 	this.dropItem = item;
 
 	if(LightValue == true)
 	{
-	    setLightLevel(1F); // Default 1F
+	    setLightLevel(1F);
 	}
 
 	this.dropQuantity = par3dropQuantity;

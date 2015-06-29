@@ -14,7 +14,7 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.Mod_Ores.Dimension.TeleportBlockSoulForest;
+import com.Mod_Ores.Dimension.SoulForest.TeleportBlockSoulForest;
 import com.Mod_Ores.Init.SoulBlocks;
 import com.google.common.collect.Maps;
 

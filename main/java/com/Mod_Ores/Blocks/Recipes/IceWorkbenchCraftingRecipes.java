@@ -117,6 +117,11 @@ public class IceWorkbenchCraftingRecipes{
     	this.addRecipe(new ItemStack(SoulItems.OlivineAmuletRing.get(), 1), new Object[] {" AA ", "ADDA", "ADDA", " AA ", 'A', Item.getItemById(266), 'D', SoulItems.OlivineAmuletStone.get()});
     	this.addRecipe(new ItemStack(SoulItems.TurquoiseAmuletRing.get(), 1), new Object[] {" AA ", "ADDA", "ADDA", " AA ", 'A', Item.getItemById(266), 'D', SoulItems.TurquoiseAmuletStone.get()});
     	
+    	this.addRecipe(new ItemStack(SoulBlocks.GembleTable.get(), 1), new Object[] {" CC ", "SCCS", "SMMS", "MMMM", 'C', SoulItems.CitrineGem.get(), 'S', SoulBlocks.SoulPlanks.get(), 'M', SoulItems.MagicEmblem.get()});
+    	this.addRecipe(new ItemStack(SoulBlocks.GemmerationTable.get(), 1), new Object[] {"TSST", "OTTO", "OOOO", "OOOO", 'T', SoulBlocks.TinBlock.get(), 'S', SoulItems.ScarletiteGem.get(), 'O', Block.getBlockById(49)});
+    	this.addRecipe(new ItemStack(SoulBlocks.GemmingTable	.get(), 1), new Object[] {"JCCJ", "OCCO", "OOOO", "OOOO", 'C', SoulItems.ChromiteIngot.get(), 'J', SoulItems.JadeGem.get(), 'O', Block.getBlockById(49)});
+    	this.addRecipe(new ItemStack(SoulBlocks.GemmingTable	.get(), 1), new Object[] {"JCCJ", "OCCO", "OOOO", "OOOO", 'C', SoulItems.ChromiteIngot.get(), 'J', SoulItems.OlivineGem.get(), 'O', Block.getBlockById(49)});
+    	
     	//Torches
     	this.addShapelessRecipe(new ItemStack(Blocks.torch, 1), new Object[] {Items.stick, SoulItems.BlueGel.get()});   
     	this.addShapelessRecipe(new ItemStack(SoulBlocks.AmazoniteTorch.get(), 1), new Object[] {SoulItems.AmazoniteGem.get(), Block.getBlockFromName("torch")});   

@@ -227,64 +227,50 @@ public class InitRecipes {
 	});					    	
 
 	//Custom Item Recipes
-	GameRegistry.addRecipe(new ItemStack(SoulBlocks.IceWorkbench.get(), 1), new Object[] 
-		{
-	    "ZZZ", "XXX", "ZZZ", 'X', SoulItems.FrostShard.get(),  'Z',	SoulItems.FrostFragment.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulBlocks.GemcutterIdle.get(), 1), new Object[] 
-		{
-	    "ZZZ", "YXY", "ZZZ",  'Y', SoulBlocks.SoulLog.get(), 'X', SoulItems.ScarletiteUncut.get(),  'Z',	SoulBlocks.SoulPlanks.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulBlocks.GemcutterIdle.get(), 1), new Object[] 
-		{
-	    "ZZZ", "YXY", "ZZZ",  'Y', SoulBlocks.SoulLog.get(), 'X', SoulItems.ScarletiteUncut.get(),  'Z',	SoulBlocks.HardwoodPlanks.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.Polisher.get(), 1), new Object[] 
-		{
-	    "CCC", "YXY", "YZY",  'Y', SoulItems.OpalUncut.get(), 'X', SoulItems.WhiteopalUncut.get(),  'Z',	Items.bucket, 'C', SoulItems.CitrineUncut.get()		//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.PolisherTowel.get(), 3), new Object[] 
-		{
-	    "YZY", "ZXZ", "YZY",  'Y', SoulItems.OpalUncut.get(), 'X', SoulItems.WhiteopalUncut.get(),	'Z', Blocks.wool,	//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.FrozenRod.get(), 1), new Object[] 
-		{
-	    " Y ", " Y ", " Y ",  'Y', SoulItems.FrostShard.get(),	//Crafting Line  
-		});
-	GameRegistry.addRecipe(new ItemStack(SoulItems.SoulBucket.get(), 3), new Object[] 
-		{
-	    "   ", "Y Y", " Y ",  'Y', SoulItems.TitaniumGem.get(),	//Crafting Line
-		});	
-	GameRegistry.addRecipe(new ItemStack(SoulItems.FrozenStick.get(), 1), new Object[] 
-		{
-	    "YXY", "YSY", "YXY",  'Y', SoulItems.FrozenRod.get(), 'X', SoulItems.FrostShard.get(), 'S', Items.stick	//Crafting Line
-		});	
-	GameRegistry.addRecipe(new ItemStack(SoulItems.MochanEagleWing.get(), 1), new Object[] 
-		{
-	    "YYY", " YY", "  Y",  'Y', SoulItems.MochanEagleFeather.get()	//Crafting Line
-		});
+	GameRegistry.addRecipe(new ItemStack(SoulBlocks.IceWorkbench.get(), 1), new Object[] {
+	    "ZZZ", "XXX", "ZZZ", 'X', SoulItems.FrostShard.get(),  'Z',	SoulItems.FrostFragment.get() 
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulBlocks.GemcutterIdle.get(), 1), new Object[] {
+	    "ZZZ", "YXY", "ZZZ",  'Y', SoulBlocks.SoulLog.get(), 'X', SoulItems.ScarletiteUncut.get(),  'Z',	SoulBlocks.SoulPlanks.get()
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulBlocks.GemcutterIdle.get(), 1), new Object[] {
+	    "ZZZ", "YXY", "ZZZ",  'Y', SoulBlocks.SoulLog.get(), 'X', SoulItems.ScarletiteUncut.get(),  'Z',	SoulBlocks.HardwoodPlanks.get()	
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.Polisher.get(), 1), new Object[] {
+	    "CCC", "YXY", "YZY",  'Y', SoulItems.OpalUncut.get(), 'X', SoulItems.WhiteopalUncut.get(),  'Z',	Items.bucket, 'C', SoulItems.CitrineUncut.get()	
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.PolisherTowel.get(), 3), new Object[] {
+	    "YZY", "ZXZ", "YZY",  'Y', SoulItems.OpalUncut.get(), 'X', SoulItems.WhiteopalUncut.get(),	'Z', Blocks.wool
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FrozenRod.get(), 1), new Object[] {
+	    " Y ", " Y ", " Y ",  'Y', SoulItems.FrostShard.get()
+	});
+	GameRegistry.addRecipe(new ItemStack(SoulItems.SoulBucket.get(), 3), new Object[] {
+	    "   ", "Y Y", " Y ",  'Y', SoulItems.TitaniumGem.get()
+	});	
+	GameRegistry.addRecipe(new ItemStack(SoulItems.FrozenStick.get(), 1), new Object[] {
+	    "YXY", "YSY", "YXY",  'Y', SoulItems.FrozenRod.get(), 'X', SoulItems.FrostShard.get(), 'S', Items.stick
+	});	
+	GameRegistry.addRecipe(new ItemStack(SoulItems.MochanEagleWing.get(), 1), new Object[] {
+	    "YYY", " YY", "  Y",  'Y', SoulItems.MochanEagleFeather.get()
+	});
 
-	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.SoulLighter.get(), 1), new Object[] 
-		{
-	    SoulItems.SteelIngot.get(), SoulItems.UraniumGem.get()	//Crafting Line  
-		});
-	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.BronzeIngot.get(), 2), new Object[] 
-		{
-	    SoulItems.CopperIngot.get(), SoulItems.TinIngot.get()				//Crafting Line  
-		});
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.SoulLighter.get(), 1), new Object[] {
+	    SoulItems.SteelIngot.get(), SoulItems.UraniumGem.get()
+	});
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.BronzeIngot.get(), 2), new Object[] {
+	    SoulItems.CopperIngot.get(), SoulItems.TinIngot.get()
+	});
 	//Liquid Uranium
-	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.UraniumLiquid.get(), 1), new Object[] 
-		{
-	    SoulItems.UraniumGem.get(), Items.lava_bucket					//Crafting Line  
-		});	
-	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.TitaniumStick.get(), 2), new Object[] 
-		{
-	    SoulItems.TitaniumGem.get(), Items.stick					//Crafting Line
-		});	
-	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.OnyxStick.get(), 2), new Object[] 
-		{
-	    SoulItems.OnyxGem.get(), Items.stick						//Crafting Line
-		});	
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.UraniumLiquid.get(), 1), new Object[] {
+	    SoulItems.UraniumGem.get(), Items.lava_bucket
+	});	
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.TitaniumStick.get(), 2), new Object[] {
+	    SoulItems.TitaniumGem.get(), Items.stick
+	});	
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.OnyxStick.get(), 2), new Object[] {
+	    SoulItems.OnyxGem.get(), Items.stick
+	});	
 
 	// Fragments
 	GameRegistry.addRecipe(new ItemStack(SoulItems.SoulFragment.get(), 1), new Object[] 
@@ -368,12 +354,18 @@ public class InitRecipes {
 	GameRegistry.addShapelessRecipe(new ItemStack(SoulBlocks.SoulPlanks.get(), 4), new Object[] {
 	    SoulBlocks.SoulLog.get()	//Crafting Line
 	});
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulBlocks.IcePlanks.get(), 4), new Object[] {
+	    SoulBlocks.IceLog.get()	//Crafting Line
+	});
 	GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object[] {
 	    "B", "B",  'B', SoulBlocks.SoulPlanks.get()	//Crafting Line  
 	});	
 	GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object[] {
 	    "B", "B",  'B', SoulBlocks.HardwoodPlanks.get()	//Crafting Line  
 	});	
+	GameRegistry.addRecipe(new ItemStack(Items.stick, 4), new Object[] {
+	    "B", "B",  'B', SoulBlocks.IcePlanks.get()	//Crafting Line  
+	});
 
 	// Wooden Stairs
 	GameRegistry.addRecipe(new ItemStack(SoulBlocks.SoulStairs.get(), 4), new Object[] {
@@ -387,6 +379,12 @@ public class InitRecipes {
 	});	
 	GameRegistry.addRecipe(new ItemStack(SoulBlocks.HardwoodStairs.get(), 4), new Object[] {
 	    "  B", " BB", "BBB",  'B', SoulBlocks.HardwoodPlanks.get()	//Crafting Line  
+	});	
+	GameRegistry.addRecipe(new ItemStack(SoulBlocks.IceStairs.get(), 4), new Object[] {
+	    "B  ", "BB ", "BBB",  'B', SoulBlocks.IcePlanks.get()	//Crafting Line  
+	});	
+	GameRegistry.addRecipe(new ItemStack(SoulBlocks.IceStairs.get(), 4), new Object[] {
+	    "  B", " BB", "BBB",  'B', SoulBlocks.IcePlanks.get()	//Crafting Line  
 	});	
 
 	// Custom Torches

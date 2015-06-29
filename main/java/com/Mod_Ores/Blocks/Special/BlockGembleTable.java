@@ -50,7 +50,7 @@ public class BlockGembleTable extends Block
     public void registerBlockIcons(IIconRegister par1IconRegister){
 	this.blockIcon = par1IconRegister.registerIcon("soulforest:Gemble_table_front");
 	this.workbenchIconTop = par1IconRegister.registerIcon("soulforest:Gemble_table_top");
-	this.workbenchIconFront = par1IconRegister.registerIcon("soulforest:Soulwood");
+	this.workbenchIconFront = par1IconRegister.registerIcon("soulforest:Soulwood_planks");
     }
 
     /**

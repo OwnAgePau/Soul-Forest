@@ -121,11 +121,11 @@ public class TheBiomeDeco extends BiomeDecorator
 	super();
 	this.randomGenerator = new Random();
 	this.icetowerGen = new WorldGenTower(SoulBlocks.IceBrick.get(), SoulBlocks.IceBrickStairs.get(), 
-		SoulBlocks.SoulSnowTop.get());
+		SoulBlocks.SoulSnowTop.get(), soul_forest.soulForestChestContents.iceTowerChestContent);
 	this.titaniumtowerGen = new WorldGenTower(SoulBlocks.TitaniumBrick.get(), SoulBlocks.TitaniumBrickStairs.get(), 
-		SoulBlocks.FyrisedSandGrass.get());
+		SoulBlocks.FyrisedSandGrass.get(), soul_forest.soulForestChestContents.titaniumTowerChestContent);
 	this.slatetowerGen = new WorldGenTower(SoulBlocks.SlateBrick.get(), SoulBlocks.SlateBrickStairs.get(), 
-		SoulBlocks.BogGrass.get());
+		SoulBlocks.BogGrass.get(), soul_forest.soulForestChestContents.slateTowerChestContent);
 	this.darkAltarGen = new WorldGenDarkAltar();
 	this.grapetreeGen = new WorldGenGrapeTree(false);    	
 	this.hardwoodtreeGen = new WorldGenHardwoodTrees(this.randomGenerator);

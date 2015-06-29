@@ -33,11 +33,13 @@ public class WorldGenTower extends WorldGenerator{
     private Block stairBlock;
     private Block topBlock;
     private Block bottomBlock;
+    private WeightedRandomChestContent[] chestContent;
     
-    public WorldGenTower(Block main, Block stairs, Block topBlock){
+    public WorldGenTower(Block main, Block stairs, Block topBlock, WeightedRandomChestContent[] chestContent){
 	this.mainBlock = main;
 	this.stairBlock = stairs;
 	this.topBlock = topBlock;
+	this.chestContent = chestContent;
     }
 
     @Override
@@ -119,7 +121,7 @@ public class WorldGenTower extends WorldGenerator{
 		    world.setBlock(x + 3, y + 7, z + 3, Blocks.chest, 0, 2);
 		    TileEntityChest tileentitychest = (TileEntityChest)world.getTileEntity(x + 3, y + 7, z + 3);
 		    if (tileentitychest != null) {
-			WeightedRandomChestContent.generateChestContents(random, soul_forest.iceTowerChestContent, tileentitychest, ChestGenHooks.getCount(DUNGEON_CHEST, random));
+			WeightedRandomChestContent.generateChestContents(random, this.chestContent, tileentitychest, ChestGenHooks.getCount(DUNGEON_CHEST, random));
 		    }
 		}
 	    }
@@ -130,7 +132,7 @@ public class WorldGenTower extends WorldGenerator{
 		    world.setBlock(x + 3, y + 1, z + 3, Blocks.chest, 0, 2);
 		    TileEntityChest tileentitychest = (TileEntityChest)world.getTileEntity(x + 3, y + 1, z + 3);
 		    if (tileentitychest != null) {
-			WeightedRandomChestContent.generateChestContents(random, soul_forest.iceTowerChestContent, tileentitychest, ChestGenHooks.getCount(DUNGEON_CHEST, random));
+			WeightedRandomChestContent.generateChestContents(random, this.chestContent, tileentitychest, ChestGenHooks.getCount(DUNGEON_CHEST, random));
 		    }
 		}
 	    }
@@ -439,7 +441,7 @@ public class WorldGenTower extends WorldGenerator{
 	    world.setBlock(xOffset + middleOffset, yOffset + 1, zOffset + middleOffset, Blocks.chest, Direction.facingToDirection[entranceSide], 2);
 	    TileEntityChest tileentitychest = (TileEntityChest)world.getTileEntity(xOffset + middleOffset, yOffset + 1, zOffset + middleOffset);
 	    if (tileentitychest != null) {
-		WeightedRandomChestContent.generateChestContents(random, soul_forest.iceTowerChestContent, tileentitychest, ChestGenHooks.getCount(DUNGEON_CHEST, random));
+		WeightedRandomChestContent.generateChestContents(random, this.chestContent, tileentitychest, ChestGenHooks.getCount(DUNGEON_CHEST, random));
 	    }
 	}
     }

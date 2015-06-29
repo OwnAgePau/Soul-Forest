@@ -105,10 +105,10 @@ public class BlockFyrisedSand extends Block{
      */
     @Override
     public void registerBlockIcons(IIconRegister par1IconRegister){
-	this.blockIcon = par1IconRegister.registerIcon("soulforest:fyrised_sand_side");
-	this.iconFyrisedTop = par1IconRegister.registerIcon("soulforest:fyrised_sand_top");
-	this.iconSnowSide = par1IconRegister.registerIcon("soulforest:fyrised_sand_side");
-	this.iconFyrisedSideOverlay = par1IconRegister.registerIcon("soulforest:fyrised_sand_side");
+	this.blockIcon = par1IconRegister.registerIcon("soulforest:Fyrised_sand_side");
+	this.iconFyrisedTop = par1IconRegister.registerIcon("soulforest:Fyrised_sand_top");
+	this.iconSnowSide = par1IconRegister.registerIcon("soulforest:Fyrised_sand_side");
+	this.iconFyrisedSideOverlay = par1IconRegister.registerIcon("soulforest:Fyrised_sand_side");
     }
 
     @Override

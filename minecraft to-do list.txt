@@ -9,33 +9,39 @@ Changes:
 - Added a block (Gemming Table) to enchant Soul Tools & Armor using the Scarletite Amulet Stone.
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
+- [CLEAN]Move WeightedChest stuff to a different file.
 
 To-do:
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
 
+- [OPT]Create a generic file for tallgrass
+- [OPT]Creata a generic file for ItemArmor's'
+- [OPT]Create a generic file for custom plants
+- [OPT]Create a generic file for logs
+- Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
+- Add an harvestlevel to the constructor of SoulOres so that they can be removed from the initialization seperate method
+- Add Ice Sapplings and Hardwood Sapplings
 - Make the hardwood trees prettier by cutting the corners (same goes for soul wood trees)
 - Move the DungeonChestContent into a different file and use an object reference in the soul_forest file to get to it.
 - Make the frost enchantment slow the attacked entity
+- Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.
 - Change the button to see information to shift
-- Use bog grass seeds ass drops for the bog grass, and make them grow into normal crops or perhaps other crops.
+- Use bog grass seeds as drops for the bog grass, and make them grow into normal crops or perhaps other crops.
 - Add an option to configure the information shown on tools/armor.
 - Grapes leaves do not decay
 - Thick soul snow on update checken zodat je door alle bovenste sneeuwblokken kan zakken.
 - Make ice queen attack player with frost shards (optional)
-- Add Dark Towers (just like ice towers but then darkish, perhaps use titanium brick with bauxite floors :P)
 - update Frozen Grass texture.
 - Add frozen trees & frozen shrubberies
 - Uranium Liquid als fuel
 - Making chests and sticks etc with soul forest wood types.
 - Tall grass does not get replaced when placing block on top.
-- Ga eens na wat je bij elke gem vind van de looks en doe wat research naar de echte gebruiken van de gem om vervolgens leuke ideeen op te doen voor in-game.
 - Kijk naar tallGrass en zorg dat mijn tall grass ook wat random verspreid zit
 - *Growing directions of vines is screwed up they can grow on air
 - Offset van ice fairy ff naar kijken
 - Add mineral spawning frequenty to the config (maybe)
-- Ff kijken naar frost crit particle
 - Add Ice fairies will now attack snow creepers.
 - Entity Movement (rotations)
 - Slabs not stacking (was allready like that)
@@ -44,15 +50,11 @@ To-do:
 - Paypal en/of adfly opzetten
 - Create slabs and double slabs
 - Fix all shift clicks in custom tilentities
+- Setting up git to the main map and using gitignore like biomes o plenty does.
 - Create custom GUI for gemble table, gemming table and gemmeration table.
-- Make the gemble, gemming and gemmeration table Crafting Tables instead of furnaces so that the crafting won't go automatically.
 - [OPT]Create a base file with basic functionality for your mod and perhaps other mods (API)
-- [OPT]Create a generic file for tallgrass
-- [OPT]Creata a generic file for ItemArmor's'
-- [OPT]Creating a generic file for custom plants
 - [OPT]soul tree random leave colour (case can be heavily optimised), orange and pink leaves (PLEASE REMOVE)
 - [OPT]Maak het opvragen van bepaalde blocks in de dimension (grass, dirt en de verschillende stones) makkelijker d.m.v. generale methode (o.a. in WorldGenCavesSoulForest)
-- [CLEAN]Move WeightedChest stuff to a different file.
 - [CLEAN]Remove BiomeGenBaseMarona
 - [CLEAN]Remove OldChunkProviderMarona
 - [CLEAN]Remove SoulArmorMaterial

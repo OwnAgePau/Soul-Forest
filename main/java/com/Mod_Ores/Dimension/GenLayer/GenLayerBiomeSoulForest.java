@@ -11,8 +11,9 @@ public class GenLayerBiomeSoulForest extends GenLayer {
     protected BiomeGenBase[] allowedBiomes = {
 	    soul_forest.SoulForest, soul_forest.FrostCaves, soul_forest.PeatBog, 
 	    soul_forest.BlackForest, soul_forest.DarkCaverns, soul_forest.FrozenPlains, 
-	    soul_forest.MaronaWoods, soul_forest.SoulShrubbery, soul_forest.FyrisedShrubbery
-	    };
+	    soul_forest.MaronaWoods, soul_forest.SoulShrubbery, soul_forest.FyrisedShrubbery,
+	    soul_forest.ShinaiForest
+    };
 
     public GenLayerBiomeSoulForest(long seed, GenLayer genlayer) {
 	super(seed);

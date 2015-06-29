@@ -129,9 +129,9 @@ public class BlockGemcutterBench extends BlockContainer
     @Override
     public void registerBlockIcons(IIconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("soulforest:gemcutter_side");
-        this.furnaceIconFront = par1IconRegister.registerIcon("soulforest:gemcutterBench");
-        this.furnaceIconTop = par1IconRegister.registerIcon("soulforest:gemcutter_top");
+        this.blockIcon = par1IconRegister.registerIcon("soulforest:Gemcutter_side");
+        this.furnaceIconFront = par1IconRegister.registerIcon("soulforest:Gemcutter");
+        this.furnaceIconTop = par1IconRegister.registerIcon("soulforest:Gemcutter_top");
     }
 
     /**

@@ -82,6 +82,7 @@ public class SoulBlocks {
     public static Optional<? extends Block> GemcutterActive                         = Optional.absent();
     public static Optional<? extends Block> SoulFire                         = Optional.absent();
     public static Optional<? extends Block> Teleporter                         = Optional.absent();
+    public static Optional<? extends Block> TeleporterFrozenHearth                         = Optional.absent();
     public static Optional<? extends Block> GemmerationTable                         = Optional.absent();
     public static Optional<? extends Block> GemmingTable                         = Optional.absent();
     public static Optional<? extends Block> GembleTable                         = Optional.absent();
@@ -117,15 +118,19 @@ public class SoulBlocks {
     public static Optional<? extends Block> BogTallGrassBrown                         = Optional.absent();
     public static Optional<? extends Block> BogTallGrassPurple                         = Optional.absent();
     public static Optional<? extends Block> FrozenTallGrass                        = Optional.absent();
+    public static Optional<? extends Block> SoulBush                         = Optional.absent();
 
     public static Optional<? extends Block> HardwoodPlanks                         = Optional.absent();
     public static Optional<? extends Block> SoulPlanks                         = Optional.absent();
+    public static Optional<? extends Block> IcePlanks				= Optional.absent();
 
     public static Optional<? extends Block> HardwoodLog                         = Optional.absent();
     public static Optional<? extends Block> SoulLog                         = Optional.absent();
-
+    public static Optional<? extends Block> IceLog				= Optional.absent();
+    
     public static Optional<? extends Block> HardwoodStairs                         = Optional.absent();
     public static Optional<? extends Block> SoulStairs                         = Optional.absent();
+    public static Optional<? extends Block> IceStairs				= Optional.absent();
 
     public static Optional<? extends Block> GrapesLeaves                         = Optional.absent();
     public static Optional<? extends Block> HardwoodLeaves                         = Optional.absent();
@@ -134,11 +139,13 @@ public class SoulBlocks {
     public static Optional<? extends Block> SoulLeavesOrange                         = Optional.absent();
     public static Optional<? extends Block> SoulLeavesYellow                         = Optional.absent();
     public static Optional<? extends Block> SoulLeavesBlue                         = Optional.absent();
+    public static Optional<? extends Block> IceLeaves				= Optional.absent();
 
     public static Optional<? extends Block> SapplingGrape                         = Optional.absent();
 
     public static Optional<? extends Block> PlantCantaloupe                         = Optional.absent();
     public static Optional<? extends Block> Fireblossom                         = Optional.absent();
+    public static Optional<? extends Block> FrozenSinai                         = Optional.absent();
     public static Optional<? extends Block> Vineplant                         = Optional.absent();
     public static Optional<? extends Block> VineplantTop                         = Optional.absent();
 

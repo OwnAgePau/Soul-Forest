@@ -322,22 +322,23 @@ tile.Porphyrybrick.name=Porphyry Brick
 tile.Slatebrick.name=Slate Brick
 tile.Titaniumbrick.name=Titanium Brick
 
-tile.soulhalfslab.name=Soul Half Slab
-tile.souldoubleslab.name=Soul Double Slab
+tile.Soul_half_slab.name=Soul Half Slab
+tile.Soul_double_slab.name=Soul Double Slab
 
 tile.Ice_workbench_side.name=Ice Workbench
-tile.gemcutterBench.name=Gemcutter
-tile.gemcutterBench Active.name=Gemcutter
-tile.Soul_Fire.name=Soul Fire
-tile.Blueish Dizzling Portal Passage.name=Teleporter
-tile.gelextractor.name=Gel Extractor
-tile.GembleTable.name=Gemble Table
-tile.GemmerationTable.name=Gemmeration Table
-tile.GemmingTable.name=Gemming Table
+tile.Gemcutter.name=Gemcutter
+tile.Gemcutter_active.name=Gemcutter
+tile.Soul_fire.name=Soul Fire
+tile.Blueish_dizzling_portal_passage.name=Soul Forest Teleporter
+tile.Blueish_dizzling_portal_passage_2.name=Frozen Hearth Teleporter
+tile.Gelextractor.name=Gel Extractor
+tile.Gemble_table.name=Gemble Table
+tile.Gemmeration_table.name=Gemmeration Table
+tile.Gemming_table.name=Gemming Table
 
-tile.SoulFluid=Soul Fluid
-tile.Soul Water Flow.name=Soul Water Moving
-tile.Soul Water Still.name=Soul Water
+tile.Soul_fluid=Soul Fluid
+tile.Sou_water_flow.name=Soul Water Moving
+tile.Soul_water_still.name=Soul Water
 
 tile.Porphyrydark.name=Dark Porphyry
 tile.Porphyry.name=Porphyry
@@ -345,11 +346,11 @@ tile.Slate.name=Slate
 tile.Bauxite.name=Bauxite
 tile.Mossybauxite.name=Bauxite Mossy
 
-tile.iceBrickStairs.name=Ice Brick Stairs
-tile.bauxiteBrickStairs.name=Bauxite Brick Stairs
-tile.porphyryBrickStairs.name=Porphyry Brick Stairs
-tile.slateBrickStairs.name=Slate Brick Stairs
-tile.titaniumBrickStairs.name=Titanium Brick Stairs
+tile.Ice_brick_stairs.name=Ice Brick Stairs
+tile.Bauxite_brick_stairs.name=Bauxite Brick Stairs
+tile.Porphyry_brick_stairs.name=Porphyry Brick Stairs
+tile.Slate_brick_stairs.name=Slate Brick Stairs
+tile.Titanium_brick_stairs.name=Titanium Brick Stairs
 
 tile.Laterite_grass_side.name=Laterite Grass
 tile.Laterite.name=Laterite Dirt
@@ -365,14 +366,18 @@ tile.Bog_grass_tall_green.name=Bog Tall Grass Green
 tile.Bog_grass_tall_dark.name=Bog Tall Grass Dark
 tile.Bog_grass_tall_purple.name=Bog Tall Grass Purple
 tile.Frozen_tallgrass.name=Frozen Tall Grass
+tile.Bush.name=Bush
 
 tile.Hardwood_wood.name=Hardwood Planks
-tile.Soulwood.name=Soul Planks
-tile.Hardwood.name=Hardwood Log
-tile.SoulLog.name=Soul Log
+tile.Soul_wood.name=Soul Planks
+tile.Frozen_wood.name=Frozen Wood
+tile.Hardwood_log.name=Hardwood Log
+tile.Soul_log.name=Soul Log
+tile.Frozen_log.name=Frozen Log
 
-tile.hardwoodStairs.name=Hardwood Stairs
-tile.soulStairs.name=Soul Stairs
+tile.Hardwood_stairs.name=Hardwood Stairs
+tile.Soul_stairs.name=Soul Stairs
+tile.Frozen_stairs.name=Frozenwood Stairs
 
 tile.Grapes.name=Grapes Leaves
 tile.Hardwood_leaves.name=Hardwood Leaves
@@ -381,10 +386,12 @@ tile.Soul_leaves_orange.name=Soul Leaves Orange
 tile.Soul_leaves_pink.name=Soul Leaves Pink
 tile.Soul_leaves_yellow.name=Soul Leaves Yellow
 tile.Soul_leaves_blue.name=Soul Leaves Blue
+tile.Frozen_leaves.name=Frozen Leaves
 tile.Sappling_soul.name=Sappling Grape
 
-tile.Cantaloupe_Flower.name=Cantaloupe
+tile.Cantaloupe_flower.name=Cantaloupe
 tile.Fireblossom.name=Fireblossom
+tile.Frozen_shinai.name=Frozen Shinai
 tile.Vineplant.name=Vineplant
 tile.Vineplant_top.name=Vineplant Top
 
@@ -396,16 +403,16 @@ tile.Raspberry.name=Raspberry
 tile.Razzberry.name=Razzberry
 tile.Strawberry.name=Strawberry
 
-tile.torchAmazonite.name=Amazonite Torch
-tile.torchAmethyst.name=Amethyst Torch
-tile.torchBronze.name=Bronze Torch
-tile.torchChromite.name=Chromite Torch
-tile.torchJet.name=Jet Torch
-tile.torchOlivine.name=Olivine Torch
-tile.torchTopaz.name=Topaz Torch
-tile.torchTurquoise.name=Turquoise Torch
-tile.torchViolet.name=Violet Torch
-tile.torchWhiteOpal.name=White Opal Torch
+tile.Torch_amazonite.name=Amazonite Torch
+tile.Torch_amethyst.name=Amethyst Torch
+tile.Torch_bronze.name=Bronze Torch
+tile.Torch_chromite.name=Chromite Torch
+tile.Torch_jet.name=Jet Torch
+tile.Torch_olivine.name=Olivine Torch
+tile.Torch_topaz.name=Topaz Torch
+tile.Torch_turquoise.name=Turquoise Torch
+tile.Torch_violet.name=Violet Torch
+tile.Torch_whiteOpal.name=White Opal Torch
 
 //Achievement Tab
 itemGroup.tabSoulTools=Soul Tools

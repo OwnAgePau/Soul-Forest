@@ -366,7 +366,7 @@ public class InitItems {
 	SoulItems.SoulBucket = 			Optional.of((new ItemBlackBucket(Blocks.air, "bucketSoul").setTextureName("soulforest:bucketSoul")));	
 	SoulItems.BucketSoulWater = 		Optional.of((new ItemBlackBucket(SoulBlocks.SoulWaterMoving.get(), "bucketSoulWater").setTextureName("soulforest:bucketSoulWater").setContainerItem(SoulItems.SoulBucket.get())));
 	SoulItems.ItemVineplant = 		Optional.of((new ItemVineplant(SoulBlocks.Vineplant.get(), "ItemVineplant")).setTextureName("soulforest:ItemVineplant"));
-	FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("soul water flow", 
+	FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("soul_water_flow", 
 		FluidContainerRegistry.BUCKET_VOLUME), 
 		new ItemStack(SoulItems.BucketSoulWater.get()), 
 		new ItemStack(SoulItems.SoulBucket.get()));

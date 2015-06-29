@@ -70,93 +70,93 @@ public class ContainerGemming extends Container{
      */
     public void onCraftMatrixChanged(IInventory par1IInventory){
 	ItemStack result = GemmingCraftingRecipes.getInstance().findMatchingRecipe(this.craftMatrix, this.worldObj);
-	if(!this.worldObj.isRemote){
-	    if(result != null){
-		ItemStack input = null;
-		if(this.getSlot(0).getStack() != null){
-		    input = this.getSlot(0).getStack();
-		} 
-		if(this.getSlot(1).getStack() != null){
-		    input = this.getSlot(1).getStack();
-		}
-		if(input != null){
-		    if(input.getItem() != SoulItems.ScarletiteAmuletStone.get()){
-			ArrayList<Enchantment> enchants = new ArrayList();
-			for(Enchantment e : Enchantment.enchantmentsList){
-			    if(e != null){
-				if(e.canApply(input)){
-				    enchants.add(e);
-				}
+	if(result != null){
+	    ItemStack input = null;
+	    if(this.getSlot(0).getStack() != null){
+		input = this.getSlot(0).getStack();
+	    } 
+	    if(this.getSlot(1).getStack() != null){
+		input = this.getSlot(1).getStack();
+	    }
+	    if(input != null){
+		if(input.getItem() != SoulItems.ScarletiteAmuletStone.get()){
+		    ArrayList<Enchantment> enchants = new ArrayList();
+		    for(Enchantment e : Enchantment.enchantmentsList){
+			if(e != null){
+			    if(e.canApply(input)){
+				enchants.add(e);
 			    }
 			}
-			System.out.println("--------------------------");
-			int random = new Random().nextInt(enchants.size());
-			Enchantment newEnchantment = enchants.get(random);
-			System.out.println("New Enchantment : " + newEnchantment.getName());
+		    }
+		    System.out.println("--------------------------");
+		    int random = new Random().nextInt(enchants.size());
+		    Enchantment newEnchantment = enchants.get(random);
+		    System.out.println("New Enchantment : " + newEnchantment.getName());
 
-			Map map = EnchantmentHelper.getEnchantments(input);
-			Iterator iterator = map.keySet().iterator();
-			int newEnchLevel = 0;
-			boolean flag = false;
+		    Map map = EnchantmentHelper.getEnchantments(input);
+		    Iterator iterator = map.keySet().iterator();
+		    int newEnchLevel = 0;
+		    boolean flag = false;
 
-			while (iterator.hasNext()){
-			    int i = ((Integer)iterator.next()).intValue();
-			    Enchantment ench = Enchantment.enchantmentsList[i];
-			    int enchLevel = map.containsKey(Integer.valueOf(i)) ? ((Integer)map.get(Integer.valueOf(i))).intValue() : 0;
-			    System.out.println(ench.effectId + ", " + newEnchantment.effectId);
-			    if(ench.effectId == newEnchantment.effectId){
-				flag = true;
-				enchLevel += 1;
-			    }
+		    while (iterator.hasNext()){
+			int i = ((Integer)iterator.next()).intValue();
+			Enchantment ench = Enchantment.enchantmentsList[i];
+			int enchLevel = map.containsKey(Integer.valueOf(i)) ? ((Integer)map.get(Integer.valueOf(i))).intValue() : 0;
+			System.out.println(ench.effectId + ", " + newEnchantment.effectId);
+			if(ench.effectId == newEnchantment.effectId){
+			    flag = true;
+			    enchLevel += 1;
+			}
 
-			    boolean flag1 = ench.canApply(result);
-			    if("enchantment.lootBonusDigger".equals(newEnchantment.getName())){
-				if("enchantment.untouching".equals(ench.getName())){
-				    flag1 = false;
-				}
-			    }
-			    if("enchantment.untouching".equals(newEnchantment.getName())){
-				if("enchantment.lootBonusDigger".equals(ench.getName())){
-				    flag1 = false;
-				}
-			    }
-			    if(!(newEnchantment.canApplyTogether(ench) && ench.canApplyTogether(newEnchantment))){
+			boolean flag1 = ench.canApply(result);
+			if("enchantment.lootBonusDigger".equals(newEnchantment.getName())){
+			    if("enchantment.untouching".equals(ench.getName())){
 				flag1 = false;
 			    }
-			    if(flag1){
-				if (enchLevel > ench.getMaxLevel()){
-				    enchLevel = ench.getMaxLevel();
-				}
-				System.out.println("ID : " + ench.getName() + ", lvl : " + enchLevel);
-				map.put(Integer.valueOf(ench.effectId), Integer.valueOf(enchLevel));
-			    }      
-			    else{
-				if (enchLevel > ench.getMaxLevel()){
-				    enchLevel = ench.getMaxLevel();
-				}
-				System.out.println("ID : " + ench.getName() + ", lvl : " + enchLevel);
-				map.put(Integer.valueOf(ench.effectId), Integer.valueOf(enchLevel));
+			}
+			if("enchantment.untouching".equals(newEnchantment.getName())){
+			    if("enchantment.lootBonusDigger".equals(ench.getName())){
+				flag1 = false;
 			    }
 			}
-			if(!flag){
-			    if (newEnchLevel > newEnchantment.getMaxLevel()){
-				newEnchLevel = newEnchantment.getMaxLevel();
-			    }
-			    if(newEnchLevel == 0){
-				newEnchLevel += 1;
-			    }
-			    boolean canApply = newEnchantment.canApply(result);
-			    if(canApply){
-				System.out.println("NEW -> ID : " + newEnchantment.getName() + ", lvl : " + newEnchLevel);
-				map.put(Integer.valueOf(newEnchantment.effectId), Integer.valueOf(newEnchLevel));
-			    }
+			if(!(newEnchantment.canApplyTogether(ench) && ench.canApplyTogether(newEnchantment))){
+			    flag1 = false;
 			}
-			EnchantmentHelper.setEnchantments(map, result);
+			if(flag1){
+			    if (enchLevel > ench.getMaxLevel()){
+				enchLevel = ench.getMaxLevel();
+			    }
+			    System.out.println("ID : " + ench.getName() + ", lvl : " + enchLevel);
+			    map.put(Integer.valueOf(ench.effectId), Integer.valueOf(enchLevel));
+			}      
+			else{
+			    if (enchLevel > ench.getMaxLevel()){
+				enchLevel = ench.getMaxLevel();
+			    }
+			    System.out.println("ID : " + ench.getName() + ", lvl : " + enchLevel);
+			    map.put(Integer.valueOf(ench.effectId), Integer.valueOf(enchLevel));
+			}
 		    }
+		    if(!flag){
+			if (newEnchLevel > newEnchantment.getMaxLevel()){
+			    newEnchLevel = newEnchantment.getMaxLevel();
+			}
+			if(newEnchLevel == 0){
+			    newEnchLevel += 1;
+			}
+			boolean canApply = newEnchantment.canApply(result);
+			if(canApply){
+			    System.out.println("NEW -> ID : " + newEnchantment.getName() + ", lvl : " + newEnchLevel);
+			    map.put(Integer.valueOf(newEnchantment.effectId), Integer.valueOf(newEnchLevel));
+			}
+		    }
+		    EnchantmentHelper.setEnchantments(map, result);
 		}
 	    }
 	}
-	this.craftResult.setInventorySlotContents(0, result);
+	if(this.worldObj.isRemote){
+	    this.craftResult.setInventorySlotContents(0, result);
+	}
     }
 
     /**
