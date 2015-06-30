@@ -23,8 +23,7 @@ import com.Mod_Ores.Particles.RenderParticles;
 import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class SoulOre extends Block
-{
+public class SoulOre extends Block{
     private int dropQuantity;
     private Item dropItem;
 
@@ -39,16 +38,14 @@ public class SoulOre extends Block
      * @param Resistance sets the resistance of the block
      * @param LightValue sets the blocks light value
      */
-    public SoulOre(int par3dropQuantity, String Unlname, float Hardness, float Resistance, Boolean LightValue)
-    {
+    public SoulOre(int par3dropQuantity, int harvestLevel, String Unlname, float Hardness, float Resistance, Boolean LightValue){
 	super(Material.rock);
 	setCreativeTab(soul_forest.tabSoulBlocks);
 	setHardness(Hardness);
 	setResistance(Resistance);		  
 	setStepSound(Block.soundTypeStone);
 
-	if(LightValue == true)
-	{
+	if(LightValue == true){
 	    setLightLevel(1F); // Default 1F
 	}
 
@@ -56,10 +53,10 @@ public class SoulOre extends Block
 	GameRegistry.registerBlock(this, Unlname);
 	setBlockName(Unlname);
 	this.dropItem = Item.getItemFromBlock(this);
+	this.setHarvestLevel("pickaxe", harvestLevel);
     }
 
-    public SoulOre(Item item, int par3dropQuantity, String Unlname, float Hardness, float Resistance, Boolean LightValue)
-    {
+    public SoulOre(Item item, int par3dropQuantity, int harvestLevel, String Unlname, float Hardness, float Resistance, Boolean LightValue){
 	super(Material.rock);
 	setCreativeTab(soul_forest.tabSoulBlocks);
 	setHardness(Hardness);
@@ -67,55 +64,46 @@ public class SoulOre extends Block
 	setStepSound(Block.soundTypeStone);
 	this.dropItem = item;
 
-	if(LightValue == true)
-	{
+	if(LightValue == true){
 	    setLightLevel(1F);
 	}
 
 	this.dropQuantity = par3dropQuantity;
 	GameRegistry.registerBlock(this, Unlname);
 	setBlockName(Unlname);
+	this.setHarvestLevel("pickaxe", harvestLevel);
     }
 
     @Override
-    public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_)
-    {
+    public Item getItemDropped(int p_149650_1_, Random p_149650_2_, int p_149650_3_){
 	return this.dropItem;
     }
 
     @Override
-    public int quantityDropped(Random par1Random) 
-    {
+    public int quantityDropped(Random par1Random) {
 	return this.dropQuantity;
     }
 
     @Override
-    public void onBlockHarvested(World par1World, int par2, int par3, int par4, int par5, EntityPlayer par6EntityPlayer) 
-    {
-	if(this == SoulBlocks.Uraniumore.get() || this == SoulBlocks.Steelore.get() || this == SoulBlocks.Cobaltore.get())
-	{
+    public void onBlockHarvested(World par1World, int par2, int par3, int par4, int par5, EntityPlayer par6EntityPlayer) {
+	if(this == SoulBlocks.Uraniumore.get() || this == SoulBlocks.Steelore.get() || this == SoulBlocks.Cobaltore.get()){
 	    super.onBlockHarvested(par1World, par2, par3, par4, par5, par6EntityPlayer);
 	    par6EntityPlayer.addStat(InitAchievements.getRareOverworldOre, 1);
 	}		
-	else if(this == SoulBlocks.Tinore.get() || this == SoulBlocks.Copperore.get())
-	{
+	else if(this == SoulBlocks.Tinore.get() || this == SoulBlocks.Copperore.get()){
 	    super.onBlockHarvested(par1World, par2, par3, par4, par5, par6EntityPlayer);
 	    par6EntityPlayer.addStat(InitAchievements.mineTinCopper, 1);
 	}
-	else
-	{
+	else{
 	    super.onBlockHarvested(par1World, par2, par3, par4, par5, par6EntityPlayer);
 	    par6EntityPlayer.addStat(InitAchievements.firstUncutfound, 1);
 	}
     }
 
     @Override
-    public void randomDisplayTick(World world, int x, int y, int z, Random random) 
-    {
-	if(this == SoulBlocks.Amazoniteore.get())
-	{
-	    if(random.nextInt(3) == 0)
-	    {
+    public void randomDisplayTick(World world, int x, int y, int z, Random random) {
+	if(this == SoulBlocks.Amazoniteore.get()){
+	    if(random.nextInt(3) == 0){
 		RenderParticles.spawnParticle("amazonite", x + random.nextDouble(), y + 1.1, z + random.nextDouble(), 5.0D, 1.0D, 1.0D);
 		RenderParticles.spawnParticle("amazonite", x + 1.1, y + random.nextDouble(), z + random.nextDouble(), 5.0D, 1.0D, 1.0D);
 		RenderParticles.spawnParticle("amazonite", x - 0.1, y + random.nextDouble(), z + random.nextDouble(), 5.0D, 1.0D, 1.0D);
@@ -123,10 +111,8 @@ public class SoulOre extends Block
 		RenderParticles.spawnParticle("amazonite", x + random.nextDouble(), y + random.nextDouble(), z - 0.1, 5.0D, 1.0D, 1.0D);	
 	    }
 	}
-	else if(this == SoulBlocks.Cobaltore.get())
-	{
-	    if(random.nextInt(3) == 0)
-	    {
+	else if(this == SoulBlocks.Cobaltore.get()){
+	    if(random.nextInt(3) == 0){
 		RenderParticles.spawnParticle("cobalt", x + random.nextDouble(), y + 1.1, z + random.nextDouble(), 5.0D, 1.0D, 1.0D);
 		RenderParticles.spawnParticle("cobalt", x + 1.1, y + random.nextDouble(), z + random.nextDouble(), 5.0D, 1.0D, 1.0D);
 		RenderParticles.spawnParticle("cobalt", x - 0.1, y + random.nextDouble(), z + random.nextDouble(), 5.0D, 1.0D, 1.0D);
@@ -137,8 +123,7 @@ public class SoulOre extends Block
     }
 
     @Override
-    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant) 
-    {
+    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant) {
 	return false;
     }
 }

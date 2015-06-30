@@ -218,30 +218,31 @@ public class soul_forest{
      * @return
      */
     public static WorldGenSoulGrass getRandomWorldGenForGrass(Random par1Random, int par2){
-	Block block = null;
+	Block block = SoulBlocks.Fauna.get();
+	int metadata = 0;
 
 	if(par2 == 1 || par2 == 3){	    	
 	    if(par1Random.nextInt(5) == 0){
-		block = SoulBlocks.BogTallGrassBrown.get();
+		metadata = 3;
 	    }
 	    else if(par1Random.nextInt(4) == 0){
-		block = SoulBlocks.BogTallGrassGrey.get();
+		metadata = 1;
 	    }
 	    else{
-		block = SoulBlocks.BogTallGrassGreen.get();
+		metadata = 2;
 	    }
 	}
 	else if(par2 == 2){
-	    block = SoulBlocks.FrozenTallGrass.get();
+	    metadata = 5;
 	}
 
 	if(par2 == 3){
 	    if(par1Random.nextInt(4) == 2){
-		block = SoulBlocks.BogTallGrassPurple.get();
+		metadata = 4;
 	    }
 	}
 
-	return new WorldGenSoulGrass(block, 0);
+	return new WorldGenSoulGrass(block, metadata);
     }
 
     /**

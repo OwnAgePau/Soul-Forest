@@ -361,12 +361,13 @@ tile.SnowBottomLayer.name=Thick Soul Snow
 tile.Bog_grass.name=Bog Grass
 tile.Bog_dirt.name=Bog Dirt
 tile.Frozen_grass.name=Frozen Grass
-tile.Bog_grass_tall_grey.name=Bog Tall Grass Grey
-tile.Bog_grass_tall_green.name=Bog Tall Grass Green
-tile.Bog_grass_tall_dark.name=Bog Tall Grass Dark
-tile.Bog_grass_tall_purple.name=Bog Tall Grass Purple
-tile.Frozen_tallgrass.name=Frozen Tall Grass
-tile.Bush.name=Bush
+
+tile.fauna_1.name=Bog Tall Grass Grey
+tile.fauna_2.name=Bog Tall Grass Green
+tile.fauna_3.name=Bog Tall Grass Dark
+tile.fauna_4.name=Bog Tall Grass Purple
+tile.fauna_5.name=Frozen Tall Grass
+tile.fauna_6.name=Bush
 
 tile.Hardwood_wood.name=Hardwood Planks
 tile.Soul_wood.name=Soul Planks

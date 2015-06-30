@@ -10,16 +10,17 @@ Changes:
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
 - [CLEAN]Move WeightedChest stuff to a different file.
+- [OPT]Created a generic file for logs.
+- [OPT]Created a generic file for plants.
+- [OPT]Created a generic file for custom tall grasses and bushes, they now also use meta data.
 
 To-do:
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
 
-- [OPT]Create a generic file for tallgrass
 - [OPT]Creata a generic file for ItemArmor's'
-- [OPT]Create a generic file for custom plants
-- [OPT]Create a generic file for logs
+- To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
 - Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
 - Add an harvestlevel to the constructor of SoulOres so that they can be removed from the initialization seperate method
 - Add Ice Sapplings and Hardwood Sapplings
@@ -55,6 +56,7 @@ To-do:
 - [OPT]Create a base file with basic functionality for your mod and perhaps other mods (API)
 - [OPT]soul tree random leave colour (case can be heavily optimised), orange and pink leaves (PLEASE REMOVE)
 - [OPT]Maak het opvragen van bepaalde blocks in de dimension (grass, dirt en de verschillende stones) makkelijker d.m.v. generale methode (o.a. in WorldGenCavesSoulForest)
+- [OPT]Make more blocks use meta data (like leaves, torches or vines)
 - [CLEAN]Remove BiomeGenBaseMarona
 - [CLEAN]Remove OldChunkProviderMarona
 - [CLEAN]Remove SoulArmorMaterial

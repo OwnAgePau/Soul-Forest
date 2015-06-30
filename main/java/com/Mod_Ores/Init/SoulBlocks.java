@@ -113,12 +113,7 @@ public class SoulBlocks {
 
     public static Optional<? extends Block> FrozenGrass                         = Optional.absent();
 
-    public static Optional<? extends Block> BogTallGrassGrey                         = Optional.absent();
-    public static Optional<? extends Block> BogTallGrassGreen                         = Optional.absent();
-    public static Optional<? extends Block> BogTallGrassBrown                         = Optional.absent();
-    public static Optional<? extends Block> BogTallGrassPurple                         = Optional.absent();
-    public static Optional<? extends Block> FrozenTallGrass                        = Optional.absent();
-    public static Optional<? extends Block> SoulBush                         = Optional.absent();
+    public static Optional<? extends Block> Fauna                         = Optional.absent();
 
     public static Optional<? extends Block> HardwoodPlanks                         = Optional.absent();
     public static Optional<? extends Block> SoulPlanks                         = Optional.absent();

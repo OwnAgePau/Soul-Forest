@@ -27,33 +27,7 @@ public class WorldGenSapplingGrape extends WorldGenerator
 		return false;
 	    }
             if (par1World.isAirBlock(i1, j1, k1) && this.plantBLock.canBlockStay(par1World, i1, j1, k1) && !par1World.isAirBlock(i1, (j1 - 1), k1)){
-            	if(par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.SoulWaterMoving.get()
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.BogTallGrassBrown.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.BogTallGrassGrey.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.BogTallGrassGreen.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.BogTallGrassPurple.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.SapplingGrape.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.PlantCantaloupe.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.GrapesLeaves.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.SoulLeaves.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.HardwoodLeaves.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.SoulLog.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.HardwoodLog.get()
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Slate.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Porphyry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Baneberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Blueberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Blackberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Cranberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Strawberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Razzberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.Raspberry.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.FyrisedSand.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.FyrisedSandGrass.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.SoulSnowTop.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.SoulSnowBottom.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.FrozenGrass.get() 
-            			&& par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.FrozenTallGrass.get()){
+        	if(par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.LateriteGrass.get() || par1World.getBlock(i1, j1 - 1, k1) != SoulBlocks.LateriteDirt.get()){
 	            	par1World.setBlock(i1, j1, k1, this.plantBLock, 0, 2);
             	}
             }
