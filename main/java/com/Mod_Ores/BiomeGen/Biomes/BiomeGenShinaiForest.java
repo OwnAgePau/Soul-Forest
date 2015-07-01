@@ -15,8 +15,8 @@ public class BiomeGenShinaiForest extends BiomeGenBase
     public BiomeGenShinaiForest(int par1)
     {
         super(par1);
-        this.topBlock = SoulBlocks.FyrisedSandGrass.get();
-        this.fillerBlock = SoulBlocks.FyrisedSand.get();
+        this.topBlock = SoulBlocks.FrozenGrass.get();
+        this.fillerBlock = SoulBlocks.BogDirt.get();
 
         spawnableMonsterList.clear();
         spawnableCreatureList.clear();
@@ -27,6 +27,10 @@ public class BiomeGenShinaiForest extends BiomeGenBase
         this.temperature = 1.0F;
         theBiomeDecorator = new TheBiomeDeco(this);
         customBiomeDecorator = (TheBiomeDeco)theBiomeDecorator;
+        this.customBiomeDecorator.shinaiperchunk = 60;
+        this.customBiomeDecorator.frozentreeperchunk = 60;
+        this.customBiomeDecorator.tallgrasstype = 2;
+        this.customBiomeDecorator.tallgrassperchunk = 50;
     }
 }
 

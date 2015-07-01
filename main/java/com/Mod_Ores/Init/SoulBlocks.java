@@ -140,7 +140,7 @@ public class SoulBlocks {
 
     public static Optional<? extends Block> PlantCantaloupe                         = Optional.absent();
     public static Optional<? extends Block> Fireblossom                         = Optional.absent();
-    public static Optional<? extends Block> FrozenSinai                         = Optional.absent();
+    public static Optional<? extends Block> FrozenShinai                         = Optional.absent();
     public static Optional<? extends Block> Vineplant                         = Optional.absent();
     public static Optional<? extends Block> VineplantTop                         = Optional.absent();
 

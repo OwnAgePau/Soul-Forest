@@ -8,6 +8,7 @@ Changes:
 - Added a block (Gemmeration Table) to repair Soul Tools & Armor using the Jet Amulet Stone.
 - Added a block (Gemming Table) to enchant Soul Tools & Armor using the Scarletite Amulet Stone.
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
+- Integrated the new blocks's recipes with NEI.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
 - [CLEAN]Move WeightedChest stuff to a different file.
 - [OPT]Created a generic file for logs.
@@ -19,13 +20,10 @@ To-do:
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
 
-- [OPT]Creata a generic file for ItemArmor's'
 - To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
 - Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
-- Add an harvestlevel to the constructor of SoulOres so that they can be removed from the initialization seperate method
 - Add Ice Sapplings and Hardwood Sapplings
 - Make the hardwood trees prettier by cutting the corners (same goes for soul wood trees)
-- Move the DungeonChestContent into a different file and use an object reference in the soul_forest file to get to it.
 - Make the frost enchantment slow the attacked entity
 - Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.
 - Change the button to see information to shift

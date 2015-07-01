@@ -1,26 +1,36 @@
 package com.Mod_Ores.NEI;
 
+import net.minecraft.client.gui.Gui;
+import net.minecraft.client.gui.inventory.GuiContainer;
+
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Blocks.GUI.GuiGelExtractor;
+import com.Mod_Ores.Blocks.GUI.GuiGembleTable;
 import com.Mod_Ores.Blocks.GUI.GuiGemcutter;
+import com.Mod_Ores.Blocks.GUI.GuiGemmerationTable;
+import com.Mod_Ores.Blocks.GUI.GuiGemmingTable;
 import com.Mod_Ores.Blocks.GUI.GuiIceCrafting;
 
 import codechicken.nei.api.API;
 import codechicken.nei.api.IConfigureNEI;
+import codechicken.nei.recipe.TemplateRecipeHandler;
 
 public class NEIsoulforestConfig implements IConfigureNEI{
 
     @Override
     public void loadConfig() {
-	API.registerRecipeHandler(new GemcutterRecipeHandler());
-	API.registerUsageHandler(new GemcutterRecipeHandler());
-	API.setGuiOffset(GuiGemcutter.class, 0, 0);
-	API.registerRecipeHandler(new IceWorkBenchRecipeHandler());
-	API.registerUsageHandler(new IceWorkBenchRecipeHandler());
-	API.setGuiOffset(GuiIceCrafting.class, 0, 0);
-	API.registerRecipeHandler(new GelExtractorRecipeHandler());
-	API.registerUsageHandler(new GelExtractorRecipeHandler());
-	API.setGuiOffset(GuiGelExtractor.class, 0, 0);
+	this.registerApiRecipes(new GemcutterRecipeHandler(), GuiGemcutter.class);
+	this.registerApiRecipes(new IceWorkBenchRecipeHandler(), GuiIceCrafting.class);
+	this.registerApiRecipes(new GelExtractorRecipeHandler(), GuiGelExtractor.class);
+	this.registerApiRecipes(new GembleTableRecipeHandler(), GuiGembleTable.class);
+	this.registerApiRecipes(new GemmerationTableRecipeHandler(), GuiGemmerationTable.class);
+	this.registerApiRecipes(new GemmingTableRecipeHandler(), GuiGemmingTable.class);
+    }
+    
+    private void registerApiRecipes(TemplateRecipeHandler recipeHandler, Class<? extends GuiContainer> gui){
+	API.registerRecipeHandler(recipeHandler);
+	API.registerUsageHandler(recipeHandler);
+	API.setGuiOffset(gui, 0, 0);
     }
 
     @Override

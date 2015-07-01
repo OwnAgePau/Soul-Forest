@@ -39,16 +39,24 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
         return SoulBlocks.AquamarineBlock.get().blockID;
     }*/
 
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
-    {
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random){
 	super.updateTick(par1World, par2, par3, par4, par5Random);
     }
 
     /**
      * Checks to see if this location is valid to create a portal and will return True if it does. Args: world, x, y, z
      */
-    public boolean tryToCreatePortal(World par1World, int par2, int par3, int par4)
-    {
+    public boolean tryToCreatePortal(World par1World, int par2, int par3, int par4){
+	for(int x = 0; x < 3; x++){
+	    for(int z = 0; z < 3; z++){
+		if(par1World.getBlock(par2 + x, par3, par4 - 1) == SoulBlocks.AquamarineBlock.get()){
+		    System.out.println("LEUK : " + (par2 + x) + ", " + par3 + ", " + (par4 - 1));
+		}
+	    }
+	}
+	
+	
+	
 	byte b0 = 0;
 	byte b1 = 0;
 

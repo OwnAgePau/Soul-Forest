@@ -527,13 +527,12 @@ public class ChunkProviderSoulForest implements IChunkProvider
 	    int randPosZ = l + soulRNG.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Slate.get(), 50, SoulBlocks.Porphyry.get())).generate(worldObj, soulRNG, randPosX, randPosY, randPosZ);
 	}	
-
-	/*for (int i = 0; i < 5; i++){
+	for (int i = 0; i < 15; i++){
 	    int randPosX = k + soulRNG.nextInt(16);
 	    int randPosY = soulRNG.nextInt(128);
 	    int randPosZ = l + soulRNG.nextInt(16);
-	    (new WorldGenMinable(SoulBlocks.SoulSnowTop.get(), 40, SoulBlocks.SoulSnowBottom.get())).generate(worldObj, soulRNG, randPosX, randPosY, randPosZ);
-	}*/
+	    (new WorldGenMinable(SoulBlocks.DarkPorphyry.get(), 20, SoulBlocks.Porphyry.get())).generate(worldObj, soulRNG, randPosX, randPosY, randPosZ);
+	}	
 
 	MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Post(worldObj, soulRNG, k, l));
 	MinecraftForge.EVENT_BUS.post(new PopulateChunkEvent.Post(p_73153_1_, worldObj, soulRNG, p_73153_2_, p_73153_3_, false));

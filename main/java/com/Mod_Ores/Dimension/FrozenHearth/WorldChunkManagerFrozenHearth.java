@@ -14,6 +14,7 @@ import net.minecraft.world.gen.layer.GenLayer;
 import net.minecraft.world.gen.layer.IntCache;
 
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Dimension.GenLayer.GenLayerFrozenHearth;
 import com.Mod_Ores.Dimension.GenLayer.GenLayerSoulForest;
 
 import cpw.mods.fml.relauncher.Side;
@@ -37,7 +38,7 @@ public class WorldChunkManagerFrozenHearth extends WorldChunkManager{
 	this();
 	//GenLayer[] agenlayer = GenLayerMarona.initializeAllBiomeGenerators(par1, par3WorldType);
 	//agenlayer = getModdedBiomeGenerators(par3WorldType, par1, agenlayer);
-	GenLayer[] agenlayer = GenLayerSoulForest.makeTheWorld(par1);
+	GenLayer[] agenlayer = GenLayerFrozenHearth.makeTheWorld(par1);
 	this.myGenBiomes = agenlayer[0];
 	this.myBiomeIndexLayer = agenlayer[1];
 

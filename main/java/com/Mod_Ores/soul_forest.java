@@ -65,7 +65,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(modid="soulforest", name="Soul Forest Mod", version="1.9.6")
+@Mod(modid="soulforest", name="Soul Forest Mod", version="1.9.7")
 /*@NetworkMod(clientSideRequired = true, serverSideRequired = false, clientPacketHandlerSpec =
 @SidedPacketHandler(channels = {"soul_forest" }, packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec =
@@ -76,7 +76,7 @@ public class soul_forest{
     public static soul_forest instance;
 
     public static String MODID = "soulforest";
-    public static String VERSION = "1.9.6";
+    public static String VERSION = "1.9.7";
 
     @SidedProxy(clientSide="com.Mod_Ores.ClientProxy", serverSide="com.Mod_Ores.CommonProxy")
     public static CommonProxy proxy;
@@ -121,6 +121,7 @@ public class soul_forest{
 
     // Random chest loot for inside Ice Towers
     public static SoulForestChestContent soulForestChestContents;
+    public static SoulForestRegistry registry;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {		
@@ -173,6 +174,7 @@ public class soul_forest{
 	    InitEntities.init();
 	    this.soulForestChestContents = new SoulForestChestContent();
 	    this.lavaImmunity = (new SoulPotion(50, false, 8356754)).setPotionName("potion.lavaimmunity");
+	    this.registry = new SoulForestRegistry();
     }
 
     @EventHandler

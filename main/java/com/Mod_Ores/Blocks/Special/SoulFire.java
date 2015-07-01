@@ -307,16 +307,12 @@ public class SoulFire extends BlockFire
      * The Portal to the dimension
      */
     @Override
-    public void onBlockAdded(World par1World, int par2, int par3, int par4)
-    {
-        if ((par1World.provider.dimensionId > 0 || par1World.getBlock(par2, par3 - 1, par4) != SoulBlocks.SilverBlock.get() || ((TeleportBlockSoulForest)SoulBlocks.Teleporter.get()).tryToCreatePortal(par1World, par2, par3, par4)))
-        {
-            if (!par1World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4) && !this.canNeighborBurn(par1World, par2, par3, par4))
-            {
+    public void onBlockAdded(World par1World, int par2, int par3, int par4){
+        if ((par1World.provider.dimensionId > 0 || par1World.getBlock(par2, par3 - 1, par4) != SoulBlocks.SilverBlock.get() || ((TeleportBlockSoulForest)SoulBlocks.Teleporter.get()).tryToCreatePortal(par1World, par2, par3, par4))){
+            if (!par1World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4) && !this.canNeighborBurn(par1World, par2, par3, par4)){
                 par1World.setBlockToAir(par2, par3, par4);
             }
-            else
-            {
+            else{
                 par1World.scheduleBlockUpdate(par2, par3, par4, this, this.tickRate(par1World) + par1World.rand.nextInt(10));
             }
         }
@@ -415,8 +411,7 @@ public class SoulFire extends BlockFire
      * is the only chance you get to register icons.
      */
     @Override
-    public void registerBlockIcons(IIconRegister par1IconRegister)
-    {
+    public void registerBlockIcons(IIconRegister par1IconRegister){
         this.iconArray = new IIcon[] {par1IconRegister.registerIcon("soulforest:Soul_Fire"), par1IconRegister.registerIcon("soulforest:Soul_Fire")};
     }
 
@@ -433,20 +428,17 @@ public class SoulFire extends BlockFire
      * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
      */
     @Override
-    public IIcon getIcon(int par1, int par2)
-    {
+    public IIcon getIcon(int par1, int par2){
         return this.iconArray[0];
     }
     
-    private static class FireInfo
-    {
+    private static class FireInfo{
         private int encouragement = 0;
         private int flammibility = 0;
     }
     private IdentityHashMap<Block, FireInfo> blockInfo = Maps.newIdentityHashMap();
     
-    public void setFireInfo(Block block, int encouragement, int flammibility)
-    {
+    public void setFireInfo(Block block, int encouragement, int flammibility){
         if (block == Blocks.air) throw new IllegalArgumentException("Tried to set air on fire... This is bad.");
         int id = Block.getIdFromBlock(block);
         this.chanceToEncourageFire[id] = encouragement;
@@ -457,32 +449,24 @@ public class SoulFire extends BlockFire
         info.flammibility = flammibility;
     }
     
-    private FireInfo getInfo(Block block, boolean garentee)
-    {
+    private FireInfo getInfo(Block block, boolean garentee){
         FireInfo ret = blockInfo.get(block);
-        if (ret == null && garentee)
-        {
+        if (ret == null && garentee){
             ret = new FireInfo();
             blockInfo.put(block, ret);
         }
         return ret;
     }
     
-    public void rebuildFireInfo()
-    {
-        for (int x = 0; x < 4096; x++)
-        {
-            //If we care.. we could detect changes in here and make sure we keep them, however 
-            //it's my thinking that anyone who hacks into the private variables should DIAF and we don't care about them.
+    public void rebuildFireInfo(){
+        for (int x = 0; x < 4096; x++) {
             abilityToCatchFire[x] = 0;
             chanceToEncourageFire[x] = 0;
         }
 
-        for (Entry<Block, FireInfo> e : blockInfo.entrySet())
-        {
+        for (Entry<Block, FireInfo> e : blockInfo.entrySet()){
             int id = Block.getIdFromBlock(e.getKey());
-            if (id >= 0 && id < 4096)
-            {
+            if (id >= 0 && id < 4096){
                 chanceToEncourageFire[id] = e.getValue().encouragement;
                 abilityToCatchFire[id] = e.getValue().flammibility;
             }
@@ -499,11 +483,9 @@ public class SoulFire extends BlockFire
      * @param face The side the fire is coming from
      * @return True if the face can catch fire.
      */
-    public boolean canBlockCatchFire(IBlockAccess world, int x, int y, int z, ForgeDirection face)
-    {
+    public boolean canBlockCatchFire(IBlockAccess world, int x, int y, int z, ForgeDirection face){
         Block block = world.getBlock(x, y, z);
-        if (block != null)
-        {
+        if (block != null){
             return block.isFlammable(world, x, y, z, face);
         }
         return false;
@@ -520,27 +502,22 @@ public class SoulFire extends BlockFire
      * @param face The side the fire is coming from
      * @return The chance of the block catching fire, or oldChance if it is higher
      */
-    public int getChanceToEncourageFire(World world, int x, int y, int z, int oldChance, ForgeDirection face)
-    {
+    public int getChanceToEncourageFire(World world, int x, int y, int z, int oldChance, ForgeDirection face){
         int newChance = 0;
         Block block = world.getBlock(x, y, z);
-        if (block != null)
-        {
+        if (block != null){
             newChance = block.getFireSpreadSpeed(world, x, y, z, face);
         }
         return (newChance > oldChance ? newChance : oldChance);
     }
     
-    public int getFlammability(Block block)
-    {
+    public int getFlammability(Block block){
         int id = Block.getIdFromBlock(block);
         return id >= 0 && id < 4096 ? abilityToCatchFire[id] : 0;
     }
 
-    public int getEncouragement(Block block)
-    {
+    public int getEncouragement(Block block){
         int id = Block.getIdFromBlock(block);
         return id >= 0 && id < 4096 ? chanceToEncourageFire[id] : 0;
     }
-
 }

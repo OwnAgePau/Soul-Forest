@@ -4,52 +4,19 @@ import java.util.ArrayList;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.EnumRarity;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemPotion;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
 import com.Mod_Ores.soul_forest;
-import com.Mod_Ores.Items.ItemAmuletRing;
-import com.Mod_Ores.Items.ItemAmuletStone;
-import com.Mod_Ores.Items.ItemBlackBucket;
-import com.Mod_Ores.Items.ItemFrostShard;
-import com.Mod_Ores.Items.ItemGelPot;
-import com.Mod_Ores.Items.ItemGem;
-import com.Mod_Ores.Items.ItemIceCrystal;
-import com.Mod_Ores.Items.ItemKingGelPot;
-import com.Mod_Ores.Items.ItemMagicFragment;
-import com.Mod_Ores.Items.ItemSoulBushel;
-import com.Mod_Ores.Items.ItemSoulFood;
-import com.Mod_Ores.Items.ItemSoulIngot;
-import com.Mod_Ores.Items.ItemSoulLighter;
-import com.Mod_Ores.Items.ItemVineplant;
-import com.Mod_Ores.Items.SoulItem;
-import com.Mod_Ores.Items.SoulPotion;
-import com.Mod_Ores.Items.Armor.ItemArmorBronze;
-import com.Mod_Ores.Items.Armor.ItemArmorCobalt;
-import com.Mod_Ores.Items.Armor.ItemArmorFyrised;
-import com.Mod_Ores.Items.Armor.ItemArmorSilver;
-import com.Mod_Ores.Items.Armor.ItemArmorSlime;
-import com.Mod_Ores.Items.Armor.ItemArmorSteel;
-import com.Mod_Ores.Items.Tools.ItemBerrycollector;
-import com.Mod_Ores.Items.Tools.ItemFrostWand;
-import com.Mod_Ores.Items.Tools.ItemSoulAxe;
-import com.Mod_Ores.Items.Tools.ItemSoulHoe;
-import com.Mod_Ores.Items.Tools.ItemSoulPickaxe;
-import com.Mod_Ores.Items.Tools.ItemSoulShovel;
-import com.Mod_Ores.Items.Tools.ItemSoulSword;
-import com.Mod_Ores.Items.Tools.ItemThrowingKnife;
-import com.Mod_Ores.Items.Tools.ItemWarAxe;
+import com.Mod_Ores.Items.*;
+import com.Mod_Ores.Items.Armor.*;
+import com.Mod_Ores.Items.Tools.*;
 import com.google.common.base.Optional;
 
 public class InitItems {	
-    
     public static ArrayList<ItemSoulPickaxe> soulPickaxes = new ArrayList();
     public static ArrayList<ItemSoulAxe> soulAxes = new ArrayList();
     public static ArrayList<ItemSoulHoe> soulHoes = new ArrayList();
@@ -62,43 +29,6 @@ public class InitItems {
     public static void init(){
 	InitMaterials.init();	
 	initializeItems();
-
-	// SetToolClass
-	// Axes
-	/*SoulItems.AquamarineAxe.get().setHarvestLevel("axe", 3);
-	SoulItems.BronzeAxe.get().setHarvestLevel("axe", 2);
-	SoulItems.ChromiteAxe.get().setHarvestLevel("axe", 2);
-	SoulItems.CobaltAxe.get().setHarvestLevel("axe", 4);
-	SoulItems.CopperAxe.get().setHarvestLevel("axe", 1);
-	SoulItems.FyrisedAxe.get().setHarvestLevel("axe", 5);
-	SoulItems.SilverAxe.get().setHarvestLevel("axe", 3);
-	SoulItems.SteelAxe.get().setHarvestLevel("axe", 4);
-	SoulItems.TanzaniteAxe.get().setHarvestLevel("axe", 2);
-	SoulItems.TinAxe.get().setHarvestLevel("axe", 1);*/
-	// War Axes
-	//SoulItems.AquamarineWaraxe.get().setHarvestLevel("waraxe", 4);
-	// Pickaxes
-	/*SoulItems.AquamarinePickaxe.get().setHarvestLevel("pickaxe", 3);
-	SoulItems.BronzePickaxe.get().setHarvestLevel("pickaxe", 2);
-	SoulItems.ChromitePickaxe.get().setHarvestLevel("pickaxe", 2);
-	SoulItems.CobaltPickaxe.get().setHarvestLevel("pickaxe", 4);
-	SoulItems.CopperPickaxe.get().setHarvestLevel("pickaxe", 1);
-	SoulItems.FyrisedPickaxe.get().setHarvestLevel("pickaxe", 5);
-	SoulItems.SilverPickaxe.get().setHarvestLevel("pickaxe", 3);
-	SoulItems.SteelPickaxe.get().setHarvestLevel("pickaxe", 4);
-	SoulItems.TanzanitePickaxe.get().setHarvestLevel("pickaxe", 2);
-	SoulItems.TinPickaxe.get().setHarvestLevel("pickaxe", 1);*/
-	// Shovels
-	/*SoulItems.AquamarineShovel.get().setHarvestLevel("shovel", 3);
-	SoulItems.BronzeShovel.get().setHarvestLevel("shovel", 2);
-	SoulItems.ChromiteShovel.get().setHarvestLevel("shovel", 2);
-	SoulItems.CobaltShovel.get().setHarvestLevel("shovel", 4);
-	SoulItems.CopperShovel.get().setHarvestLevel("shovel", 1);
-	SoulItems.FyrisedShovel.get().setHarvestLevel("shovel", 5);
-	SoulItems.SilverShovel.get().setHarvestLevel("shovel", 3);
-	SoulItems.SteelShovel.get().setHarvestLevel("shovel", 4);
-	SoulItems.TanzaniteShovel.get().setHarvestLevel("shovel", 2);
-	SoulItems.TinShovel.get().setHarvestLevel("shovel", 1);*/
     }
 
     private static void initializeItems(){
@@ -252,7 +182,7 @@ public class InitItems {
 	SoulItems.TanzaniteIngot = 		Optional.of((new ItemSoulIngot("Tanzaniteingot")).setTextureName("soulforest:Tanzanite_ingot"));
 	SoulItems.TinIngot = 			Optional.of((new ItemSoulIngot("Tiningot")).setTextureName("soulforest:Tin_ingot"));
 
-	// Helmets		
+	// Helmets
 	SoulItems.BronzeHelmet = 		Optional.of((new ItemArmorBronze(InitMaterials.Bronze_Armor,soul_forest.proxy.addArmor("Bronze"),0, "Bronze_helmet")).setTextureName("soulforest:Bronze_helmet"));
 	SoulItems.CobaltHelmet = 		Optional.of((new ItemArmorCobalt(InitMaterials.Cobalt_Armor,soul_forest.proxy.addArmor("Cobalt"),0, "Cobalt_helmet")).setTextureName("soulforest:Cobalt_helmet"));
 	SoulItems.FyrisedHelmet =		Optional.of((new ItemArmorFyrised(InitMaterials.Fyrised_Armor,soul_forest.proxy.addArmor("Fyrised"),0, "Fyrised_helmet").setTextureName("soulforest:Fyrised_helmet")));
