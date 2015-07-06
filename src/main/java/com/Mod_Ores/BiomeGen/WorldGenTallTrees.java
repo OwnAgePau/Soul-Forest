@@ -21,8 +21,6 @@ public class WorldGenTallTrees extends WorldGenerator
     private Block allowedBottom;
 
     public WorldGenTallTrees(Random par1random, Block leaves, Block log, Block allowedTop, Block allowedBottom){
-	//this.height += 0;
-	this.leavesStartLevel = 0;
 	this.leaves = leaves;
 	this.log = log;
 	this.allowedTop = allowedTop;

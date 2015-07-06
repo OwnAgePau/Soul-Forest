@@ -25,7 +25,7 @@ public class BiomeGenSoulShrubbery  extends BiomeGenBase {
 	theBiomeDecorator = new TheBiomeDeco(this);
 	customBiomeDecorator = (TheBiomeDeco)theBiomeDecorator;
 	customBiomeDecorator.tallgrasstype = 1;
-	customBiomeDecorator.tallgrassperchunk = 200;
+	customBiomeDecorator.tallgrassperchunk = 250;
 	customBiomeDecorator.soulbushperchunk = 100;
 	customBiomeDecorator.slatetowersperchunk = 1;
     }

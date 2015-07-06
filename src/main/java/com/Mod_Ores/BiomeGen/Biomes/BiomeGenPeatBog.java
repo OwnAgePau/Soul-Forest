@@ -26,8 +26,8 @@ public class BiomeGenPeatBog extends BiomeGenBase
         //theBiomeDecorator.grassPerChunk = 40;
         //theBiomeDecorator.mushroomsPerChunk = 10;
         customBiomeDecorator.tallgrasstype = 1;
-        customBiomeDecorator.tallgrassperchunk = 100;
+        customBiomeDecorator.tallgrassperchunk = 250;
         customBiomeDecorator.vineplantperchunk = 50;
-        customBiomeDecorator.bogwaterperchunk = 200;
+        customBiomeDecorator.bogwaterperchunk = 250;
     }
 }

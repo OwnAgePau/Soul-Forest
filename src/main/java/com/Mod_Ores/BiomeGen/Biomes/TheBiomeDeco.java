@@ -74,6 +74,8 @@ public class TheBiomeDeco extends BiomeDecorator
     protected int bogwaterperchunk;
 
     protected int soulfiresperchunk;
+    
+    protected Block blockToPlaceWaterIn;
 
     /** the type of the tall grass that is being spawned 1 == brown, grey & green, 2 == frozen, 3 == same as 1 with the addition of purple
      * 
@@ -137,7 +139,7 @@ public class TheBiomeDeco extends BiomeDecorator
 	this.frozentreeGen = new WorldGenTallTrees(this.randomGenerator, SoulBlocks.IceLeaves.get(), SoulBlocks.IceLog.get(), 
 		SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get());
 	this.soultreeGen = new WorldGenSoulTrees(this.randomGenerator);
-	this.shrubGen = new WorldGenSoulShrub(SoulBlocks.SoulLeaves.get());
+	this.shrubGen = new WorldGenSoulShrub(SoulBlocks.SoulLeaves.get(), SoulBlocks.SoulLog.get());
 	this.soulbushGen = new WorldGenSoulBush(SoulBlocks.SoulLog.get(), SoulBlocks.SoulLeaves.get(), 
 		SoulBlocks.BogGrass.get(), SoulBlocks.BogDirt.get(), 2);
 	this.fyrisedbushGen = new WorldGenSoulBush(SoulBlocks.HardwoodLog.get(), SoulBlocks.HardwoodLeaves.get(), 
@@ -148,9 +150,9 @@ public class TheBiomeDeco extends BiomeDecorator
 	this.shinaiGen =  new WorldGenPlant(SoulBlocks.FrozenShinai.get());
 	this.vineplantGen =  new WorldGenPlant(SoulBlocks.Vineplant.get());
 	this.lakeGen = new WorldGenSoulLakes(SoulBlocks.SoulWaterMoving.get());
-	this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), true);
 	this.bogwaterGen = new WorldGenPeatBogWater(SoulBlocks.SoulWaterMoving.get());
-	this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), true);
+	this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), this.blockToPlaceWaterIn, true);
+	this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), this.blockToPlaceWaterIn, true);
 	this.soulfireGen = new WorldGenSoulFire();
 	this.baneberryVineGen = new WorldGenSoulVine(SoulBlocks.Baneberry.get());
 	this.blueberryVineGen = new WorldGenSoulVine(SoulBlocks.Blueberry.get());
@@ -231,7 +233,6 @@ public class TheBiomeDeco extends BiomeDecorator
 	    int g2 = chunk_X + randomGenerator.nextInt(16);
 	    int h1 = this.randomGenerator.nextInt(128);
 	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    //this.soultreeGen = new WorldGenTallTrees(this.randomGenerator);
 	    this.hardwoodtreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.soultreeperchunk; g1++){
@@ -347,27 +348,26 @@ public class TheBiomeDeco extends BiomeDecorator
 	}
 
 	//water\lava\fire
-	/*for (int g1 = 0; g1 < this.lakesperchunk; g1++)
-        {
+	for (int g1 = 0; g1 < this.lakesperchunk; g1++){
             int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
             int h1 = randomGenerator.nextInt(128);
             int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
             this.lakeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
         }
-        for (int g1 = 0; g1 < this.waterfallsperchunk; g1++)
-        {
+        for (int g1 = 0; g1 < this.waterfallsperchunk; g1++){
         	int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
         	int h1 = randomGenerator.nextInt(108) + 10;
             int g3 = chunk_Z + randomGenerator.nextInt(16);
+            this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), this.blockToPlaceWaterIn, true);
             this.waterfallGen.generate(currentWorld, randomGenerator, g2, h1, g3);
         }      
-        for (int g1 = 0; g1 < this.lavafallsperchunk; g1++)
-        {
+        for (int g1 = 0; g1 < this.lavafallsperchunk; g1++){
         	int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
         	int h1 = randomGenerator.nextInt(108) + 10;
             int g3 = chunk_Z + randomGenerator.nextInt(16);
+            this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), this.blockToPlaceWaterIn, true);
             this.lavafallGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-        }    */
+        }
 	for (int g1 = 0; g1 < this.bogwaterperchunk * 30; g1++){
 	    int g2 = chunk_X + randomGenerator.nextInt(8);
 	    int h1 = randomGenerator.nextInt(98) + 25;

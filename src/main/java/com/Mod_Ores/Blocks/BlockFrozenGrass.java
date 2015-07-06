@@ -34,14 +34,14 @@ public class BlockFrozenGrass extends Block
 
     public BlockFrozenGrass(String Unlname)
     {
-        super(Material.grass);
-        this.setTickRandomly(true);
-        this.slipperiness = 0.98F;
-        this.setCreativeTab(soul_forest.tabSoulBlocks);
-        this.setStepSound(soundTypeGrass);
-        this.setHardness(0.2F);
-		GameRegistry.registerBlock(this, Unlname);
-		setBlockName(Unlname);
+	super(Material.grass);
+	this.setTickRandomly(true);
+	this.slipperiness = 0.98F;
+	this.setCreativeTab(soul_forest.tabSoulBlocks);
+	this.setStepSound(soundTypeGrass);
+	this.setHardness(0.2F);
+	GameRegistry.registerBlock(this, Unlname);
+	setBlockName(Unlname);
     }
 
     @SideOnly(Side.CLIENT)
@@ -52,50 +52,48 @@ public class BlockFrozenGrass extends Block
     @Override
     public IIcon getIcon(int par1, int par2)
     {
-        return par1 == 1 ? this.iconBogTop : (par1 == 0 ?  SoulBlocks.BogDirt.get().getBlockTextureFromSide(par1) : this.blockIcon);
+	return par1 == 1 ? this.iconBogTop : (par1 == 0 ?  SoulBlocks.BogDirt.get().getBlockTextureFromSide(par1) : this.blockIcon);
     }
 
     @Override
-	public boolean canSustainPlant(IBlockAccess world, int x, int y, int z,
-			ForgeDirection direction, IPlantable plant) 
-    {
-    	if(plant != Block.getBlockFromName("yellow_flower") || plant != Block.getBlockFromName("red_flower"))
-    	{
-    		return true;
-    	}
-    	else
-    	{
-    		return false;
-    	}
+    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant) {
+	if(plant != Block.getBlockFromName("yellow_flower") || plant != Block.getBlockFromName("red_flower"))
+	{
+	    return true;
 	}
+	else
+	{
+	    return false;
+	}
+    }
 
     /**
      * Ticks the block if it's been scheduled
      */
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
     {
-        if (!par1World.isRemote)
-        {
-            if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4 && par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2)
-            {
-                par1World.setBlock(par2, par3, par4, SoulBlocks.BogDirt.get());
-            }
-            else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9)
-            {
-                for (int l = 0; l < 4; ++l)
-                {
-                    int i1 = par2 + par5Random.nextInt(3) - 1;
-                    int j1 = par3 + par5Random.nextInt(5) - 3;
-                    int k1 = par4 + par5Random.nextInt(3) - 1;
-                    Block l1 = par1World.getBlock(i1, j1 + 1, k1);
+	if (!par1World.isRemote)
+	{
+	    if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4 && par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2)
+	    {
+		par1World.setBlock(par2, par3, par4, SoulBlocks.BogDirt.get());
+	    }
+	    else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9)
+	    {
+		for (int l = 0; l < 4; ++l)
+		{
+		    int i1 = par2 + par5Random.nextInt(3) - 1;
+		    int j1 = par3 + par5Random.nextInt(5) - 3;
+		    int k1 = par4 + par5Random.nextInt(3) - 1;
+		    Block l1 = par1World.getBlock(i1, j1 + 1, k1);
 
-                    if (par1World.getBlock(i1, j1, k1) == SoulBlocks.BogDirt.get() && par1World.getBlockLightValue(i1, j1 + 1, k1) >= 4 && par1World.getBlockLightOpacity(i1, j1 + 1, k1) <= 2)
-                    {
-                        par1World.setBlock(i1, j1, k1, SoulBlocks.BogDirt.get());
-                    }
-                }
-            }
-        }
+		    if (par1World.getBlock(i1, j1, k1) == SoulBlocks.BogDirt.get() && par1World.getBlockLightValue(i1, j1 + 1, k1) >= 4 && par1World.getBlockLightOpacity(i1, j1 + 1, k1) <= 2)
+		    {
+			par1World.setBlock(i1, j1, k1, SoulBlocks.BogDirt.get());
+		    }
+		}
+	    }
+	}
     }
 
     /**
@@ -113,19 +111,19 @@ public class BlockFrozenGrass extends Block
      */
     public IIcon getBlockTexture(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5)
     {
-        if (par5 == 1)
-        {
-            return this.iconBogTop;
-        }
-        else if (par5 == 0)
-        {
-            return SoulBlocks.BogDirt.get().getBlockTextureFromSide(par5);
-        }
-        else
-        {
-            Material material = par1IBlockAccess.getBlock(par2, par3 + 1, par4).getMaterial();
-            return material != Material.snow && material != Material.craftedSnow ? this.blockIcon : this.iconSnowSide;
-        }
+	if (par5 == 1)
+	{
+	    return this.iconBogTop;
+	}
+	else if (par5 == 0)
+	{
+	    return SoulBlocks.BogDirt.get().getBlockTextureFromSide(par5);
+	}
+	else
+	{
+	    Material material = par1IBlockAccess.getBlock(par2, par3 + 1, par4).getMaterial();
+	    return material != Material.snow && material != Material.craftedSnow ? this.blockIcon : this.iconSnowSide;
+	}
     }
 
     @SideOnly(Side.CLIENT)
@@ -137,10 +135,10 @@ public class BlockFrozenGrass extends Block
     @Override
     public void registerBlockIcons(IIconRegister par1IconRegister)
     {
-        this.blockIcon = par1IconRegister.registerIcon("soulforest:frozen_grass");
-        this.iconBogTop = par1IconRegister.registerIcon("soulforest:frozen_grass_top");
-        this.iconSnowSide = par1IconRegister.registerIcon("soulforest:frozen_grass");
-        this.iconBogSideOverlay = par1IconRegister.registerIcon("soulforest:frozen_grass");
+	this.blockIcon = par1IconRegister.registerIcon("soulforest:frozen_grass");
+	this.iconBogTop = par1IconRegister.registerIcon("soulforest:frozen_grass_top");
+	this.iconSnowSide = par1IconRegister.registerIcon("soulforest:frozen_grass");
+	this.iconBogSideOverlay = par1IconRegister.registerIcon("soulforest:frozen_grass");
     }
 }
 

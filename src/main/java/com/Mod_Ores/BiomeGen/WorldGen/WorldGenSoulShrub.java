@@ -10,11 +10,13 @@ import net.minecraft.world.gen.feature.WorldGenerator;
 import com.Mod_Ores.Init.SoulBlocks;
 
 public class WorldGenSoulShrub extends WorldGenerator{
-    private Block block;
+    private Block leaves;
+    private Block log;
     private int meta;
 
-    public WorldGenSoulShrub(Block par1){
-	this.block = par1;
+    public WorldGenSoulShrub(Block par1, Block par2){
+	this.leaves = par1;
+	this.log = par2;
 	this.meta = 0;
     }
 
@@ -42,7 +44,7 @@ public class WorldGenSoulShrub extends WorldGenerator{
 	    }
 
 	    int k2 = this.meta;
-
+	    
 	    for (int l = 0; k2 >= 0 && l < 3; ++l){
 		int i1 = k2 + par2Random.nextInt(2);
 		int j1 = k2 + par2Random.nextInt(2);
@@ -59,8 +61,10 @@ public class WorldGenSoulShrub extends WorldGenerator{
 				return false;
 			    }
 			    if (f1 * f1 + f2 * f2 + f3 * f3 <= f * f){
-				if(par1World.getBlock(l1, j2, i2) != SoulBlocks.SoulWaterMoving.get() && j2 > 35){
-				    par1World.setBlock(l1, j2, i2, this.block, 0, 4);
+				if(par1World.getBlock(l1, j2, i2) != SoulBlocks.SoulWaterMoving.get() && j2 > 33){
+				    if(par1World.getBlock(l1, j2, i2) == Blocks.air){
+					par1World.setBlock(l1, j2, i2, this.leaves, 0, 4);
+				    }
 				}
 			    }
 			}
@@ -70,8 +74,7 @@ public class WorldGenSoulShrub extends WorldGenerator{
 		par3 += -(k2 + 1) + par2Random.nextInt(2 + k2 * 2);
 		par5 += -(k2 + 1) + par2Random.nextInt(2 + k2 * 2);
 		par4 += 0 - par2Random.nextInt(2);
-	    }
-
+	    }	    
 	    return true;
 	}
     }

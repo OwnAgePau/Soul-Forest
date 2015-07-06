@@ -7,6 +7,7 @@ import java.util.Random;
 import javax.swing.Icon;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockBush;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -15,6 +16,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IIcon;
+import net.minecraft.world.ColorizerGrass;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.EnumPlantType;
@@ -29,13 +31,13 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class BlockSoulFaunaGround extends BlockFlower implements IScollectable{
+public class BlockSoulFaunaGround extends BlockBush implements IScollectable{
     private static final String[] grassTypes = new String[] {"Bog_grass_tall_grey", "Bog_grass_tall_grey", "Bog_grass_tall_green", "Bog_grass_tall_dark", "Bog_grass_tall_purple", "Frozen_tallgrass", "Bush"};
     @SideOnly(Side.CLIENT)
     private IIcon[] iconArray = new IIcon[6];
 
     public BlockSoulFaunaGround(String unlocalizedName){
-	super(0);
+	super(Material.vine);
 	float f = 0.4F;
 	this.setBlockName(unlocalizedName);
 	this.setStepSound(soundTypeGrass);
@@ -136,23 +138,21 @@ public class BlockSoulFaunaGround extends BlockFlower implements IScollectable{
 	super.harvestBlock(par1World, par2EntityPlayer, par3, par4, par5, par6);
     }
 
-    /*@SideOnly(Side.CLIENT)
-    public int getBlockColor()
-    {
+    @SideOnly(Side.CLIENT)
+    public int getBlockColor(){
         double d0 = 0.5D;
         double d1 = 1.0D;
         return ColorizerGrass.getGrassColor(d0, d1);
     }
 
-    @SideOnly(Side.CLIENT)*/
+    @SideOnly(Side.CLIENT)
 
     /**
      * Returns the color this block should be rendered. Used by leaves.
      */
-    /*public int getRenderColor(int par1)
-    {
+    public int getRenderColor(int par1){
         return 0;
-    }*/
+    }
 
     @SideOnly(Side.CLIENT)
 
@@ -161,8 +161,8 @@ public class BlockSoulFaunaGround extends BlockFlower implements IScollectable{
      * when first determining what to render.
      */
     public int colorMultiplier(IBlockAccess par1IBlockAccess, int par2, int par3, int par4){
-	int l = par1IBlockAccess.getBlockMetadata(par2, par3, par4);
-	return l == 0 ? 16777215 : par1IBlockAccess.getBiomeGenForCoords(par2, par4).getBiomeGrassColor(par2, par3, par4);
+	//int l = par1IBlockAccess.getBlockMetadata(par2, par3, par4);	
+	return 0xFFFFFF;
     }
 
     /**
