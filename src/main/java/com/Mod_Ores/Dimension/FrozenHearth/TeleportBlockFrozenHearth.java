@@ -36,7 +36,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
      */
     /*public int idDropped(int par1, Random par2Random, int par3)
     {
-        return SoulBlocks.AquamarineBlock.get().blockID;
+        return SoulBlocks.TurquoiseBlock.get().blockID;
     }*/
 
     public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random){
@@ -49,7 +49,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
     public boolean tryToCreatePortal(World par1World, int par2, int par3, int par4){
 	for(int x = 0; x < 3; x++){
 	    for(int z = 0; z < 3; z++){
-		if(par1World.getBlock(par2 + x, par3, par4 - 1) == SoulBlocks.AquamarineBlock.get()){
+		if(par1World.getBlock(par2 + x, par3, par4 - 1) == SoulBlocks.TurquoiseBlock.get()){
 		    System.out.println("LEUK : " + (par2 + x) + ", " + par3 + ", " + (par4 - 1));
 		}
 	    }
@@ -60,12 +60,12 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 	byte b0 = 0;
 	byte b1 = 0;
 
-	if (par1World.getBlock(par2 - 1, par3, par4) == SoulBlocks.AquamarineBlock.get() || par1World.getBlock(par2 + 1, par3, par4) == SoulBlocks.AquamarineBlock.get())
+	if (par1World.getBlock(par2 - 1, par3, par4) == SoulBlocks.TurquoiseBlock.get() || par1World.getBlock(par2 + 1, par3, par4) == SoulBlocks.TurquoiseBlock.get())
 	{
 	    b0 = 1;
 	}
 
-	if (par1World.getBlock(par2, par3, par4 - 1) == SoulBlocks.AquamarineBlock.get() || par1World.getBlock(par2, par3, par4 + 1) == SoulBlocks.AquamarineBlock.get())
+	if (par1World.getBlock(par2, par3, par4 - 1) == SoulBlocks.TurquoiseBlock.get() || par1World.getBlock(par2, par3, par4 + 1) == SoulBlocks.TurquoiseBlock.get())
 	{
 	    b1 = 1;
 	}
@@ -98,7 +98,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 
 			if (flag)
 			{
-			    if (j1 != SoulBlocks.AquamarineBlock.get())
+			    if (j1 != SoulBlocks.TurquoiseBlock.get())
 			    {
 				return false;
 			    }
@@ -203,7 +203,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 	    ;
 	}
 
-	if (par1World.getBlock(par2, i1 - 1, par4) != SoulBlocks.AquamarineBlock.get()){
+	if (par1World.getBlock(par2, i1 - 1, par4) != SoulBlocks.TurquoiseBlock.get()){
 	    par1World.setBlockToAir(par2, par3, par4);
 	}
 	else{
@@ -213,7 +213,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 		;
 	    }
 
-	    if (j1 == 3 && par1World.getBlock(par2, i1 + j1, par4) == SoulBlocks.AquamarineBlock.get()){
+	    if (j1 == 3 && par1World.getBlock(par2, i1 + j1, par4) == SoulBlocks.TurquoiseBlock.get()){
 		boolean flag = par1World.getBlock(par2 - 1, par3, par4) == this || par1World.getBlock(par2 + 1, par3, par4) == this;
 		boolean flag1 = par1World.getBlock(par2, par3, par4 - 1) == this || par1World.getBlock(par2, par3, par4 + 1) == this;
 
@@ -222,7 +222,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 		}
 		else
 		{
-		    if ((par1World.getBlock(par2 + b0, par3, par4 + b1) != SoulBlocks.AquamarineBlock.get() || par1World.getBlock(par2 - b0, par3, par4 - b1) != this) && (par1World.getBlock(par2 - b0, par3, par4 - b1) != SoulBlocks.AquamarineBlock.get() || par1World.getBlock(par2 + b0, par3, par4 + b1) != this))
+		    if ((par1World.getBlock(par2 + b0, par3, par4 + b1) != SoulBlocks.TurquoiseBlock.get() || par1World.getBlock(par2 - b0, par3, par4 - b1) != this) && (par1World.getBlock(par2 - b0, par3, par4 - b1) != SoulBlocks.TurquoiseBlock.get() || par1World.getBlock(par2 + b0, par3, par4 + b1) != this))
 		    {
 			par1World.setBlockToAir(par2, par3, par4);
 		    }
