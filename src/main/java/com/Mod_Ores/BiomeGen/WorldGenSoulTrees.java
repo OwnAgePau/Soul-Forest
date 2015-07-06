@@ -16,9 +16,14 @@ public class WorldGenSoulTrees  extends WorldGenerator
     private Boolean hasEnoughRoom;
     public String side;
     private Block leaves;
+    private Random rand;
 
-    public WorldGenSoulTrees(Random h){
-	this.height += h.nextInt(4);
+    public WorldGenSoulTrees(Random rand){
+	this.rand = rand;
+    }
+    
+    private void randomizeLeaves(Random rand){
+	this.height += rand.nextInt(4);
 	Random r = new Random();
 	switch(r.nextInt(10)){
 	case 0:
@@ -56,6 +61,7 @@ public class WorldGenSoulTrees  extends WorldGenerator
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z){
+	this.randomizeLeaves(this.rand);
 	while (world.isAirBlock(x, y, z) && y > 2 && y < 100){
 	    --y;
 	    --y;

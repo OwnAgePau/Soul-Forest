@@ -13,7 +13,7 @@ public class WorldGenTallTrees extends WorldGenerator
     private int height = 15;
     private int leavesStartLevel = 0;
     private int leavesLevel = 0;
-    private int leavesWidth = 4;
+    private int leavesWidth = 3;
     private int leavesCounter = 0;
     private Block leaves;
     private Block log;
@@ -31,11 +31,11 @@ public class WorldGenTallTrees extends WorldGenerator
 
     @Override
     public boolean generate(World world, Random random, int x, int y, int z){
-	this.leavesCounter = 0;
-	this.leavesWidth = 4;
+	this.leavesCounter = 1;
+	this.leavesWidth = 3;
 	this.leavesLevel = 0;
-	this.leavesStartLevel = 0;
-	this.height = 15;
+	this.height = 10 + random.nextInt(4);
+	this.leavesStartLevel = this.height - 7;
 	int x1 = 0;
 	int y1 = 0;
 	int z1 = 0;
@@ -71,18 +71,15 @@ public class WorldGenTallTrees extends WorldGenerator
 	}
 
 	// The tree
-	for(this.leavesLevel = 4 + this.leavesStartLevel; this.leavesLevel < (this.height + 1); this.leavesLevel += 2){
-	    for(x1 = -this.leavesWidth; x1 < this.leavesWidth; x1++){
-		for(z1 = -this.leavesWidth; z1 < this.leavesWidth; z1++){
+	for(this.leavesLevel = this.leavesStartLevel; this.leavesLevel < (this.height + 1); this.leavesLevel ++){
+	    for(x1 = -this.leavesWidth; x1 <= this.leavesWidth; x1++){
+		for(z1 = -this.leavesWidth; z1 <= this.leavesWidth; z1++){
 		    if(world.getBlock(x + x1, y + this.leavesLevel, z + z1) != this.log){
 			boolean flag = x1 == -this.leavesWidth || x1 == this.leavesWidth;
 			boolean flag1 = z1 == -this.leavesWidth || z1 == this.leavesWidth;
 			if(!(flag && flag1)){
 			    world.setBlock(x + x1, y + this.leavesLevel, z + z1, this.leaves);
 			}
-			//world.setBlock(x + x1, y + this.leavesLevel, z - z1, this.leaves);
-			//world.setBlock(x - x1, y + this.leavesLevel, z - z1, this.leaves);
-			//world.setBlock(x - x1, y + this.leavesLevel, z + z1, this.leaves);
 		    }
 		}
 	    }
@@ -93,6 +90,9 @@ public class WorldGenTallTrees extends WorldGenerator
 	    if(this.leavesCounter == 2){
 		this.leavesWidth -= 1;
 		this.leavesCounter = 0;
+	    }
+	    else{
+		this.leavesLevel++;
 	    }
 
 	    // The top of the tree

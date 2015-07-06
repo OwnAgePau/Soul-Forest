@@ -10,6 +10,7 @@ Changes:
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
 - Integrated the new blocks's recipes with NEI.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
+- Updated the looks of the Hardwood tree, cut off the corners and changed the height and some more.
 - Made the grass in the dimension grow up to a lower layer (from water-up) instead of starting with grass blocks halfway up the dimension, this looks much better.
 - Made the biomes in the dimension slightly larger.
 - [CLEAN]Move WeightedChest stuff to a different file.
@@ -22,7 +23,7 @@ To-do:
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
 
-- Make the hardwood trees prettier by cutting the corners (same goes for soul wood trees)
+- Make the soul wood trees more pretty.
 - THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
 
 - To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.

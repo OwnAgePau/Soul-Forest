@@ -77,12 +77,9 @@ public class GenLayerBiomeSoulForest extends GenLayerSoulForest {
 
     private int getWeightedBiomeFromList(List<BiomeEntry> biomeList){
 	int totalWeight = WeightedRandom.getTotalWeight(biomeList);
-	
 	long randomLong = this.nextLong(totalWeight / 10);
-	System.out.println("Total Weight : " + totalWeight + ", Random Long : " + randomLong);
 	int randomNr = (int)randomLong * 10;
 	BiomeEntry entry = (BiomeEntry)WeightedRandom.getItem(biomeList, randomNr);
-	System.out.println(entry.biome.biomeName);
 	int biomeID = entry.biome.biomeID;
 	return ((BiomeEntry)WeightedRandom.getItem(biomeList, (int)this.nextLong(WeightedRandom.getTotalWeight(biomeList) / 10) * 10)).biome.biomeID;
     }
