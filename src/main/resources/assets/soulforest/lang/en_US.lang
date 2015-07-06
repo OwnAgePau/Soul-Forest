@@ -339,6 +339,7 @@ tile.Gemming_table.name=Gemming Table
 tile.Soul_fluid=Soul Fluid
 tile.Sou_water_flow.name=Soul Water Moving
 tile.Soul_water_still.name=Soul Water
+tile.Soul_ice.name=Soul Ice
 
 tile.Porphyrydark.name=Dark Porphyry
 tile.Porphyry.name=Porphyry

@@ -17,6 +17,9 @@ public class WorldGeneratorOres implements IWorldGenerator{
 	if(world.provider.dimensionId == SoulConfig.SoulForestID){
 	    generateSoulForest(world, random, chunkX*16, chunkZ*16);
 	}
+	else if(world.provider.dimensionId == SoulConfig.FrozenHearthID){
+	    generateSoulForest(world, random, chunkX*16, chunkZ*16);
+	}
 	else if(world.provider.dimensionId == -1){
 	    generateNether(world, random, chunkX*16, chunkZ*16);
 	}

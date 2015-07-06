@@ -107,7 +107,7 @@ public class InitBlocks {
 	//SoulBlocks.SoulWater =				Optional.of((new SoulWaterStationary("Soul Water Still")).setBlockTextureName(soul_forest.MODID + ":Soul_Water"));
 
 	//Ice
-	//SoulBlocks.SoulIce = 				Optional.of((new BlockSoulIce(SoulConfigBlocks.soulIceID)).func_111022_d(soul_forest.MODID + ":soul_ice"));
+	SoulBlocks.SoulIce = 				Optional.of((new BlockSoulIce("Soul_ice")).setBlockTextureName(soul_forest.MODID + ":soul_ice"));
 
 	//Stones
 	SoulBlocks.DarkPorphyry =  			Optional.of((new SoulBlock("Porphyrydark", 5.0F, 2F, false, Material.rock)).setBlockTextureName(soul_forest.MODID + ":Porphyry_dark"));  	

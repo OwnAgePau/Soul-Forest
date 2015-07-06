@@ -143,17 +143,17 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 			    double d15 = d10;
 			    double d16 = (d11 - d10) * d14;
 
-			    for (int k2 = 0; k2 < 4; ++k2)
-			    {
+			    for (int k2 = 0; k2 < 4; ++k2){
 				Block block = null;
 
-				if (k1 * 8 + l1 < b1)
-				{
+				if (k1 * 8 + l1 < b1){
 				    block = SoulBlocks.SoulWaterMoving.get();
 				}
+				if(k1 * 8 + l1 == 31){
+				    block = SoulBlocks.SoulIce.get();
+				}
 
-				if (d15 > 0.0D)
-				{
+				if (d15 > 0.0D){
 				    block = SoulBlocks.Porphyry.get();
 				}
 
@@ -223,7 +223,7 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 				{
 				    if (i1 <= 0)
 				    {
-					block = null;
+					block = Blocks.air;
 					block1 = SoulBlocks.Porphyry.get();  
 				    }
 				    else if (k1 >= 0 - 4 && k1 <= b0 + 1)
@@ -236,26 +236,10 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 					    block = biomegenbase.topBlock;   
 					    block1 = biomegenbase.fillerBlock;
 					}
-
-					//System.out.println("Block1 : " + biomegenbase.topBlock);
-					//System.out.println("Block2 : " + biomegenbase.fillerBlock);
-
 					if (flag)
 					{
 					    block = biomegenbase.topBlock;
 					    block1 = biomegenbase.fillerBlock;
-					}
-				    }
-
-				    if (k1 < b0 && (block == null || block.getMaterial() == Material.air))
-				    {
-					if (biomegenbase == soul_forest.FrostCaves || biomegenbase == soul_forest.FrozenPlains) // Generate ice when temp below certain value
-					{
-					    //b1 = (byte) SoulBlocks.soulIceID;
-					} 
-					else 
-					{
-					    //block1 = SoulBlocks.SoulWaterMoving.get();
 					}
 				    }
 

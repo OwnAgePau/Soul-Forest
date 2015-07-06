@@ -5,6 +5,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.WorldProvider;
 import net.minecraft.world.WorldType;
+import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.IChunkProvider;
 
 import com.Mod_Ores.Init.Config.SoulConfig;
@@ -17,26 +18,6 @@ public class WorldProviderSoulForest extends WorldProvider{
     //The WorldProvider covers all the basics of the dimension. Look in WorldProviderBase.java and
     //WorldProvider.java for all the potential qualities you can assign to your dimension.
     public WorldType terrainType;
-
-    /*public WorldProviderMarona()
-	{
-		this.isHellWorld = false;
-		this.hasNoSky = true;
-		this.getDimensionID();
-		this.getDimensionName();
-		this.getWelcomeMessage();
-		this.getDepartMessage();
-		this.canRespawnHere();
-		this.isSkyColored();
-		this.setCloudRenderer(null);
-        this.registerWorldChunkManager();
-        this.generateLightBrightnessTable();
-	}*/
-
-    //The save file will be called DIM65 (DIM + id number).
-    public int getDimensionID(){			
-	return 65;		
-    }
 
     @SideOnly(Side.CLIENT)
     public boolean isSkyColored(){
@@ -85,10 +66,10 @@ public class WorldProviderSoulForest extends WorldProvider{
 	this.isHellWorld = false;
 	this.hasNoSky = true;
     }
-    
+
     @SideOnly(Side.CLIENT)
     public boolean doesXZShowFog(int p_76568_1_, int p_76568_2_){
-        return true;
+	return true;
     }
 
     //This is where you define your terrain generator.

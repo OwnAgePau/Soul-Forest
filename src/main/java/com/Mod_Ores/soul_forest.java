@@ -201,8 +201,8 @@ public class soul_forest{
 	DimensionManager.registerDimension(SoulConfig.FrozenHearthID, SoulConfig.FrozenHearthID);
 
 	//Biomes
-	this.FrostCaves = 	(new BiomeGenFrostCaves(SoulConfig.BIOfrostCavesID).setBiomeName("Frost Caves").setEnableSnow().setTemperatureRainfall(0.03F, 1.0F).setHeight(new Height(0.9F, 0.1F)));
-	this.FrozenPlains = 	(new BiomeGenFrozenPlains(SoulConfig.BIOfrozenPlainsID).setBiomeName("Frozen Plains").setEnableSnow().setTemperatureRainfall(0.03F, 1.0F).setHeight(new Height(0.0F, 0.9F)));
+	this.FrostCaves = 	(new BiomeGenFrostCaves(SoulConfig.BIOfrostCavesID).setBiomeName("Frost Caves").setEnableSnow().setTemperatureRainfall(0.3F, 0.0F).setHeight(new Height(0.9F, 0.1F)));
+	this.FrozenPlains = 	(new BiomeGenFrozenPlains(SoulConfig.BIOfrozenPlainsID).setBiomeName("Frozen Plains").setEnableSnow().setTemperatureRainfall(0.3F, 0.0F).setHeight(new Height(0.0F, 0.9F)));
 	this.DarkCaverns = 	(new BiomeGenDarkCaverns(SoulConfig.BIOdarkCavernsID).setBiomeName("Dark Caverns").setTemperatureRainfall(1.0F, 1.0F).setHeight(new Height(0.0F, 1.0F)));
 	this.BlackForest = 	(new BiomeGenBlackForest(SoulConfig.BIOblackForestID).setBiomeName("Black Forest").setTemperatureRainfall(1.0F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
 	this.PeatBog = 		(new BiomeGenPeatBog(SoulConfig.BIOpeatBogID).setBiomeName("Peat Bog").setTemperatureRainfall(0.5F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
@@ -210,7 +210,7 @@ public class soul_forest{
 	this.MaronaWoods = 	(new BiomeGenMaronaWoods(SoulConfig.BIOmaronaWoodsID).setBiomeName("Marona Woods").setTemperatureRainfall(0.5F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
 	this.SoulShrubbery = 	(new BiomeGenSoulShrubbery(SoulConfig.BIOsoulShrubberyID).setBiomeName("Soul Shrubbery").setTemperatureRainfall(0.5F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
 	this.FyrisedShrubbery = (new BiomeGenFyrisedShrubbery(SoulConfig.BIOfyrisedShrubberyID).setBiomeName("Fyrised Shrubbery").setTemperatureRainfall(1.0F, 1.0F).setHeight(new Height(0.0F, 0.5F)));
-	this.ShinaiForest = 	(new BiomeGenShinaiForest(SoulConfig.BIOshinaiForestID).setBiomeName("Shinai Forest").setTemperatureRainfall(0.3F, 1.0F).setHeight(new Height(0.5F, 0.8F)));
+	this.ShinaiForest = 	(new BiomeGenShinaiForest(SoulConfig.BIOshinaiForestID).setBiomeName("Shinai Forest").setEnableSnow().setTemperatureRainfall(0.3F, 0.0F).setHeight(new Height(0.5F, 0.8F)));
     }
 
     /**
