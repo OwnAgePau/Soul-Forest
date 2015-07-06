@@ -72,13 +72,17 @@ public class WorldGenTallTrees extends WorldGenerator
 
 	// The tree
 	for(this.leavesLevel = 4 + this.leavesStartLevel; this.leavesLevel < (this.height + 1); this.leavesLevel += 2){
-	    for(x1 = 0; x1 < this.leavesWidth; x1++){
-		for(z1 = 0; z1 < this.leavesWidth; z1++){
+	    for(x1 = -this.leavesWidth; x1 < this.leavesWidth; x1++){
+		for(z1 = -this.leavesWidth; z1 < this.leavesWidth; z1++){
 		    if(world.getBlock(x + x1, y + this.leavesLevel, z + z1) != this.log){
-			world.setBlock(x + x1, y + this.leavesLevel, z + z1, this.leaves);
-			world.setBlock(x + x1, y + this.leavesLevel, z - z1, this.leaves);
-			world.setBlock(x - x1, y + this.leavesLevel, z - z1, this.leaves);
-			world.setBlock(x - x1, y + this.leavesLevel, z + z1, this.leaves);
+			boolean flag = x1 == -this.leavesWidth || x1 == this.leavesWidth;
+			boolean flag1 = z1 == -this.leavesWidth || z1 == this.leavesWidth;
+			if(!(flag && flag1)){
+			    world.setBlock(x + x1, y + this.leavesLevel, z + z1, this.leaves);
+			}
+			//world.setBlock(x + x1, y + this.leavesLevel, z - z1, this.leaves);
+			//world.setBlock(x - x1, y + this.leavesLevel, z - z1, this.leaves);
+			//world.setBlock(x - x1, y + this.leavesLevel, z + z1, this.leaves);
 		    }
 		}
 	    }

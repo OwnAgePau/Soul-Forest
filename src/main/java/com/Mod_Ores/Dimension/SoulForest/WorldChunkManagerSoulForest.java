@@ -20,7 +20,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
 public class WorldChunkManagerSoulForest extends WorldChunkManager{
-    //public static ArrayList<BiomeGenBase> allowedBiomes = new ArrayList<BiomeGenBase>(Arrays.asList(mod_Ores.SoulForest, mod_Ores.FrostCaves));
     private GenLayer myGenBiomes;
     private GenLayer myBiomeIndexLayer;
     private BiomeCache myBiomeCache;
@@ -38,8 +37,6 @@ public class WorldChunkManagerSoulForest extends WorldChunkManager{
 
     public WorldChunkManagerSoulForest(long par1, WorldType par3WorldType){
 	this();
-	//GenLayer[] agenlayer = GenLayerMarona.initializeAllBiomeGenerators(par1, par3WorldType);
-	//agenlayer = getModdedBiomeGenerators(par3WorldType, par1, agenlayer);
 	GenLayer[] agenlayer = GenLayerSoulForest.makeTheWorld(par1);
 	this.myGenBiomes = agenlayer[0];
 	this.myBiomeIndexLayer = agenlayer[1];
@@ -55,12 +52,7 @@ public class WorldChunkManagerSoulForest extends WorldChunkManager{
     }
 
     public BiomeGenBase getBiomeGenAt(int par1, int par2){
-	BiomeGenBase biome = this.myBiomeCache.getBiomeGenAt(par1, par2);
-	if (biome == null){
-	    return soul_forest.SoulForest;
-	}
-
-	return biome;
+	return this.myBiomeCache.getBiomeGenAt(par1, par2);
     }
 
     public float[] getRainfall(float[] par1ArrayOfFloat, int par2, int par3, int par4, int par5){
@@ -75,8 +67,7 @@ public class WorldChunkManagerSoulForest extends WorldChunkManager{
 	for (int i1 = 0; i1 < par4 * par5; ++i1){
 	    float f = (float)BiomeGenBase.getBiomeGenArray()[aint[i1]].getIntRainfall() / 65536.0F;
 
-	    if (f > 1.0F)
-	    {
+	    if (f > 1.0F){
 		f = 1.0F;
 	    }
 
@@ -114,6 +105,7 @@ public class WorldChunkManagerSoulForest extends WorldChunkManager{
 	return par1ArrayOfFloat;
     }
 
+    @Override
     public BiomeGenBase[] getBiomesForGeneration(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5){
 	IntCache.resetIntCache();
 
@@ -121,15 +113,11 @@ public class WorldChunkManagerSoulForest extends WorldChunkManager{
 	    par1ArrayOfBiomeGenBase = new BiomeGenBase[par4 * par5];
 	}
 
-	int[] aint = this.myGenBiomes.getInts(par2, par3, par4, par5);
+	int[] var6 = this.myGenBiomes.getInts(par2, par3, par4, par5);
 
-	for (int i1 = 0; i1 < par4 * par5; ++i1){
-	    if (aint[i1] >= 0) {
-		par1ArrayOfBiomeGenBase[i1] = BiomeGenBase.getBiomeGenArray()[aint[i1]];
-	    } 
-	    else {
-		par1ArrayOfBiomeGenBase[i1] = soul_forest.SoulForest;
-	    }
+	for (int var7 = 0; var7 < par4 * par5; ++var7)
+	{
+	    par1ArrayOfBiomeGenBase[var7] = BiomeGenBase.getBiomeGenArray()[var6[var7]];
 	}
 
 	return par1ArrayOfBiomeGenBase;
@@ -139,28 +127,27 @@ public class WorldChunkManagerSoulForest extends WorldChunkManager{
 	return this.getBiomeGenAt(par1ArrayOfBiomeGenBase, par2, par3, par4, par5, true);
     }
 
-    public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] par1ArrayOfBiomeGenBase, int x, int y, int width, int length, boolean cacheFlag){
+    @Override
+    public BiomeGenBase[] getBiomeGenAt(BiomeGenBase[] par1ArrayOfBiomeGenBase, int par2, int par3, int par4, int par5, boolean par6)
+    {
 	IntCache.resetIntCache();
 
-	if (par1ArrayOfBiomeGenBase == null || par1ArrayOfBiomeGenBase.length < width * length) {
-	    par1ArrayOfBiomeGenBase = new BiomeGenBase[width * length];
+	if (par1ArrayOfBiomeGenBase == null || par1ArrayOfBiomeGenBase.length < par4 * par5){
+	    par1ArrayOfBiomeGenBase = new BiomeGenBase[par4 * par5];
 	}
 
-	if (cacheFlag && width == 16 && length == 16 && (x & 15) == 0 && (y & 15) == 0) {
-	    BiomeGenBase[] abiomegenbase1 = this.myBiomeCache.getCachedBiomes(x, y);
-	    System.arraycopy(abiomegenbase1, 0, par1ArrayOfBiomeGenBase, 0, width * length);
+	if (par6 && par4 == 16 && par5 == 16 && (par2 & 15) == 0 && (par3 & 15) == 0)
+	{
+	    BiomeGenBase[] var9 = this.myBiomeCache.getCachedBiomes(par2, par3);
+	    System.arraycopy(var9, 0, par1ArrayOfBiomeGenBase, 0, par4 * par5);
 	    return par1ArrayOfBiomeGenBase;
-	} 
-	else {
-	    int[] aint = this.myBiomeIndexLayer.getInts(x, y, width, length);
+	}
+	else
+	{
+	    int[] var7 = this.myBiomeIndexLayer.getInts(par2, par3, par4, par5);
 
-	    for (int i = 0; i < width * length; ++i) {
-		if (aint[i] >= 0) {
-		    par1ArrayOfBiomeGenBase[i] = BiomeGenBase.getBiomeGenArray()[aint[i]];
-		} 
-		else {
-		    par1ArrayOfBiomeGenBase[i] = soul_forest.SoulForest;
-		}
+	    for (int var8 = 0; var8 < par4 * par5; ++var8){
+		par1ArrayOfBiomeGenBase[var8] = BiomeGenBase.getBiomeGenArray()[var7[var8]];
 	    }
 
 	    return par1ArrayOfBiomeGenBase;

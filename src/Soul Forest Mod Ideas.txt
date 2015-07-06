@@ -180,6 +180,7 @@ Gem Powers:
 - Perhaps let the Olivine be Peridot instead as Olivine is the mineral in which peridot exists.
 
 Ideas:
+- A Green/blue temple in the peat bog biome (with rooftop)
 - Think Traps & Fire when it comes to structures.
 - Use Custom blocks near the Enchanting, Wealth and Reapir tables to increase the outcome.
 - Make it possible to create your own amulets (needing items for the strength of the effect, items for the effect and items for the ring/stone itself)

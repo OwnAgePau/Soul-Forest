@@ -188,7 +188,7 @@ public class ChunkProviderSoulForest implements IChunkProvider
 	MinecraftForge.EVENT_BUS.post(event);
 	if (event.getResult() == Result.DENY) return;
 
-	byte b0 = 64;
+	byte b0 = 33; // was 64
 	double d0 = 0.03125D;
 	this.lateriteGrassNoise = this.lateriteGrassPorphyryNoise.generateNoiseOctaves(this.lateriteGrassNoise, p_147418_1_ * 16, p_147418_2_ * 16, 0, 16, 16, 1, d0, d0, 1.0D);
 	this.porphyryNoise = this.lateriteGrassPorphyryNoise.generateNoiseOctaves(this.porphyryNoise, p_147418_1_ * 16, 109, p_147418_2_ * 16, 16, 1, 16, d0, 1.0D, d0);
@@ -199,8 +199,8 @@ public class ChunkProviderSoulForest implements IChunkProvider
 	    for (int l = 0; l < 16; ++l)
 	    {
 		BiomeGenBase biomegenbase = biomesForGeneration[l + k * 16];
+		//System.out.println(biomegenbase.biomeName);
 		//biomegenbase.genTerrainBlocks(this.worldObj, this.soulRNG, p_147418_3_, meta, p_147418_1_ * 16 + k, p_147418_2_ * 16 + l, this.porphyryExclusiveNoise[l + k * 16]);
-		float f = biomegenbase.getFloatTemperature(k, 1, l);
 		boolean flag = this.lateriteGrassNoise[k + l * 16] + this.soulRNG.nextDouble() * 0.2D > 0.0D;
 		boolean flag1 = this.porphyryNoise[k + l * 16] + this.soulRNG.nextDouble() * 0.2D > 0.0D;
 		int i1 = (int)(this.porphyryExclusiveNoise[k + l * 16] / 3.0D + 3.0D + this.soulRNG.nextDouble() * 0.25D);
@@ -215,7 +215,7 @@ public class ChunkProviderSoulForest implements IChunkProvider
 		    if (k1 < 127 - this.soulRNG.nextInt(5) && k1 > 0 + this.soulRNG.nextInt(5))
 		    {
 			Block block2 = p_147418_3_[l1];
-
+			
 			if (block2 != null && block2.getMaterial() != Material.air)
 			{
 			    if (block2 == SoulBlocks.Porphyry.get())

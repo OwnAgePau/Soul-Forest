@@ -10,6 +10,8 @@ Changes:
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
 - Integrated the new blocks's recipes with NEI.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
+- Made the grass in the dimension grow up to a lower layer (from water-up) instead of starting with grass blocks halfway up the dimension, this looks much better.
+- Made the biomes in the dimension slightly larger.
 - [CLEAN]Move WeightedChest stuff to a different file.
 - [OPT]Created a generic file for logs.
 - [OPT]Created a generic file for plants.
@@ -20,10 +22,13 @@ To-do:
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
 
+- Make the hardwood trees prettier by cutting the corners (same goes for soul wood trees)
+- THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
+
 - To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
 - Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
 - Add Ice Sapplings and Hardwood Sapplings
-- Make the hardwood trees prettier by cutting the corners (same goes for soul wood trees)
+-
 - Make the frost enchantment slow the attacked entity
 - Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.
 - Change the button to see information to shift
@@ -45,7 +50,6 @@ To-do:
 - Entity Movement (rotations)
 - Slabs not stacking (was allready like that)
 - Throwing Entities (weird image on fying entity) [ Can't get this to work yet ]
-- THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
 - Paypal en/of adfly opzetten
 - Create slabs and double slabs
 - Fix all shift clicks in custom tilentities
