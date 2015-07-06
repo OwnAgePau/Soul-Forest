@@ -103,9 +103,9 @@ public class WorldProviderFrozenHearth extends WorldProvider{
 	    f2 = 1.0F;
 	}
 
-	float f3 = 0.00000000F;
-	float f4 = 0.34705883F;
-	float f5 = 0.00000000F;
+	float f3 = 0.8F;
+	float f4 = 1.0F;
+	float f5 = 1.0F;
 	f3 *= f2 * 0.94F + 0.06F;
 	f4 *= f2 * 0.94F + 0.06F;
 	f5 *= f2 * 0.91F + 0.09F;
