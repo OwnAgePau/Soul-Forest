@@ -187,7 +187,7 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 	MinecraftForge.EVENT_BUS.post(event);
 	if (event.getResult() == Result.DENY) return;
 
-	byte b0 = 64;
+	byte b0 = 33; // Was 64
 	double d0 = 0.03125D;
 	this.lateriteGrassNoise = this.lateriteGrassPorphyryNoise.generateNoiseOctaves(this.lateriteGrassNoise, p_147418_1_ * 16, p_147418_2_ * 16, 0, 16, 16, 1, d0, d0, 1.0D);
 	this.porphyryNoise = this.lateriteGrassPorphyryNoise.generateNoiseOctaves(this.porphyryNoise, p_147418_1_ * 16, 109, p_147418_2_ * 16, 16, 1, 16, d0, 1.0D, d0);
@@ -508,7 +508,14 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 	int i2;
 
 	//doGen = TerrainGen.decorate(worldObj, frozenRNG, k, l, SHROOM);
-	// Everything not biome related       
+	// Everything not biome related      
+	
+	for (int i = 0; i < 7; i++){
+	    int randPosX = k + this.frozenRNG.nextInt(16);
+	    int randPosY = this.frozenRNG.nextInt(128);
+	    int randPosZ = l + this.frozenRNG.nextInt(16);
+	    (new WorldGenMinable(SoulBlocks.Slate.get(), 75, SoulBlocks.Porphyry.get())).generate(worldObj, this.frozenRNG, randPosX, randPosY, randPosZ);
+	}
 
 	// #region Ore Gen
 	//WorldGenMinable worldgenminable;
