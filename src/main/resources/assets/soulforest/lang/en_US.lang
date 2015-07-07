@@ -322,8 +322,16 @@ tile.Porphyrybrick.name=Porphyry Brick
 tile.Slatebrick.name=Slate Brick
 tile.Titaniumbrick.name=Titanium Brick
 
-tile.Soul_half_slab.name=Soul Half Slab
-tile.Soul_double_slab.name=Soul Double Slab
+tile.half_slab_0.name=Titanium Brick Half Slab
+tile.half_slab_1.name=Porphyry Brick Half Slab
+tile.half_slab_2.name=Slate Brick Half Slab
+tile.half_slab_3.name=Bauxite Brick Half Slab
+tile.half_slab_4.name=Ice Brick Half Slab
+tile.double_slab_0.name=Titanium Brick Double Slab
+tile.double_slab_1.name=Porphyry Brick Double Slab
+tile.double_slab_2.name=Slate Brick Double Slab
+tile.double_slab_3.name=Bauxite Brick Double Slab
+tile.double_slab_4.name=Ice Brick Double Slab
 
 tile.Ice_workbench_side.name=Ice Workbench
 tile.Gemcutter.name=Gemcutter
@@ -373,6 +381,7 @@ tile.fauna_6.name=Bush
 tile.Hardwood_wood.name=Hardwood Planks
 tile.Soul_wood.name=Soul Planks
 tile.Frozen_wood.name=Frozen Wood
+
 tile.Hardwood_log.name=Hardwood Log
 tile.Soul_log.name=Soul Log
 tile.Frozen_log.name=Frozen Log
@@ -384,12 +393,15 @@ tile.Frozen_stairs.name=Frozenwood Stairs
 tile.Grapes.name=Grapes Leaves
 tile.Hardwood_leaves.name=Hardwood Leaves
 tile.Soul_leaves.name=Soul Leaves
-tile.Soul_leaves_orange.name=Soul Leaves Orange
-tile.Soul_leaves_pink.name=Soul Leaves Pink
-tile.Soul_leaves_yellow.name=Soul Leaves Yellow
-tile.Soul_leaves_blue.name=Soul Leaves Blue
+tile.Soul_leaves_orange.name=Orange Soul Leaves
+tile.Soul_leaves_pink.name=Pink Soul Leaves
+tile.Soul_leaves_yellow.name=Yellow Soul Leaves
+tile.Soul_leaves_blue.name=Blue Soul Leaves
 tile.Frozen_leaves.name=Frozen Leaves
-tile.Sappling_soul.name=Sappling Grape
+
+tile.Sapling_soul.name=Grape Sapling
+tile.Sapling_hardwood.name=Hardwood Sapling
+tile.Sapling_frozen.name=Frozen Sapling
 
 tile.Cantaloupe_flower.name=Cantaloupe
 tile.Fireblossom.name=Fireblossom

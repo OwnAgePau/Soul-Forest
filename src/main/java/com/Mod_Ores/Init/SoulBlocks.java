@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 
+import com.Mod_Ores.Blocks.Special.BlockSoulSlab;
 import com.google.common.base.Optional;
 
 public class SoulBlocks {
@@ -67,8 +68,8 @@ public class SoulBlocks {
     public static Optional<? extends Block> SlateBrick                         = Optional.absent();
     public static Optional<? extends Block> TitaniumBrick                         = Optional.absent();
 
-    public static Optional<Block> SoulHalfSlab                         = Optional.absent();
-    public static Optional<Block> SoulDoubleSlab                         = Optional.absent();
+    public static Optional<? extends Block> SoulHalfSlab                         = Optional.absent();
+    public static Optional<? extends Block> SoulDoubleSlab                         = Optional.absent();
 
     public static Optional<? extends Block> IceBrickStairs                         = Optional.absent();
     public static Optional<? extends Block> BauxiteBrickStairs                         = Optional.absent();
@@ -101,20 +102,19 @@ public class SoulBlocks {
 
     public static Optional<? extends Block> LateriteGrass                         = Optional.absent();
     public static Optional<? extends Block> LateriteDirt                         = Optional.absent();
-
     public static Optional<? extends Block> FyrisedSand                         = Optional.absent();
     public static Optional<? extends Block> FyrisedSandGrass                         = Optional.absent();
-
     public static Optional<? extends Block> SoulSnowTop                         = Optional.absent();
     public static Optional<? extends Block> SoulSnowBottom                         = Optional.absent();
-
     public static Optional<? extends Block> BogGrass                         = Optional.absent();
     public static Optional<? extends Block> BogDirt                         = Optional.absent();
-
     public static Optional<? extends Block> FrozenGrass                         = Optional.absent();
-
+    
     public static Optional<? extends Block> Fauna                         = Optional.absent();
-
+    public static Optional<? extends Block> SaplingGrape                         = Optional.absent();
+    public static Optional<? extends Block> SaplingHardwood                         = Optional.absent();
+    public static Optional<? extends Block> SaplingFrozen                        = Optional.absent();
+    
     public static Optional<? extends Block> HardwoodPlanks                         = Optional.absent();
     public static Optional<? extends Block> SoulPlanks                         = Optional.absent();
     public static Optional<? extends Block> IcePlanks				= Optional.absent();
@@ -135,8 +135,6 @@ public class SoulBlocks {
     public static Optional<? extends Block> SoulLeavesYellow                         = Optional.absent();
     public static Optional<? extends Block> SoulLeavesBlue                         = Optional.absent();
     public static Optional<? extends Block> IceLeaves				= Optional.absent();
-
-    public static Optional<? extends Block> SapplingGrape                         = Optional.absent();
 
     public static Optional<? extends Block> PlantCantaloupe                         = Optional.absent();
     public static Optional<? extends Block> Fireblossom                         = Optional.absent();
