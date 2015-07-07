@@ -2,6 +2,7 @@ Changes:
 - Fixed the custom vines growing on air and destroying nearby vines when placed next to them.
 - Fixed custom leaves not decaying.
 - Fixed custom leaves not dropping saplings.
+- Fixed custom leaves being opaque while not opaque (being able to look through the entire tree or island) while attempting to breake the leave.
 - Fixed custom tall grass acting as normal blocks, thus being able to place blocks on them, this is now changed to normal grass being able to replace grass with any other block.
 - Changed the texture of amethyst gem & uncut to be a bit better.
 - Changed the textures of the armor so that they look a bit prettier.
@@ -39,9 +40,7 @@ To-do:
 - [IMPORTANT]THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
 - [IMPORTANT]Entity Movement (rotations)
 - [IMPORTANT]Throwing Entities (weird image on fying entity) [ Can't get this to work yet ]
-- [MINOR IMPORTANT]Grapes leaves do not decay
 - [MINOR IMPORTANT] Fix all shift clicks in custom tilentities
-
 
 - Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
 - Add a new fire and lighter to create the frozen hearth teleporter.

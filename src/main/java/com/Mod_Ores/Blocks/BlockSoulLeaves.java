@@ -57,16 +57,6 @@ public class BlockSoulLeaves extends BlockLeaves implements IScollectable{
 	return 0xFFFFFF;
     }
 
-    public int quanitityDropped(Random random){
-	return random.nextInt(5) != 0 ? 0 : 1;
-    }
-    public int getRenderBlockPass(){
-	return 1;
-    }
-    public boolean isOpaqueCube(){
-	return true; // Was false
-    }
-
     public int idDropped(int par1, Random random, int par2){
 	return -1;
     }
