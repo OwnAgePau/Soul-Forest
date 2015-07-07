@@ -140,7 +140,7 @@ public class TheBiomeDeco extends BiomeDecorator
 		SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get());
 	this.frozentreeGen = new WorldGenTallTrees(this.randomGenerator, SoulBlocks.IceLeaves.get(), SoulBlocks.IceLog.get(), 
 		SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get());
-	this.soultreeGen = new WorldGenSoulTrees(this.randomGenerator);
+	this.soultreeGen = new WorldGenSoulTrees();
 	this.shrubGen = new WorldGenSoulShrub(SoulBlocks.SoulLeaves.get(), SoulBlocks.SoulLog.get());
 	this.soulbushGen = new WorldGenSoulBush(SoulBlocks.SoulLog.get(), SoulBlocks.SoulLeaves.get(), 
 		SoulBlocks.BogGrass.get(), SoulBlocks.BogDirt.get(), 2);
@@ -233,13 +233,13 @@ public class TheBiomeDeco extends BiomeDecorator
 	}
 	//trees
 	for (int g1 = 0; g1 < this.grapetreeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = this.randomGenerator.nextInt(128);
 	    int g3 = chunk_Z + randomGenerator.nextInt(16);
 	    this.grapetreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.hardwoodtreeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = this.randomGenerator.nextInt(128);
 	    int g3 = chunk_Z + randomGenerator.nextInt(16);
 	    this.hardwoodtreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);

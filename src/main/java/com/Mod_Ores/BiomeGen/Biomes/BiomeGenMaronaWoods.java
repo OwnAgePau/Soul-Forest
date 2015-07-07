@@ -27,7 +27,7 @@ public class BiomeGenMaronaWoods extends BiomeGenBase{
 	customBiomeDecorator.shrubperchunk = 80;
 	customBiomeDecorator.soultreeperchunk = 200;
 	customBiomeDecorator.tallgrasstype = 1;
-	customBiomeDecorator.tallgrassperchunk = 100;
+	customBiomeDecorator.tallgrassperchunk = 200;
     }
 }
 

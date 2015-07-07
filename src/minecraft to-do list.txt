@@ -35,7 +35,6 @@ To-do:
 
 - Slabs not stacking (was allready like that)
 - Create slabs and double slabs
-- Add Ice Sapplings and Hardwood Sapplings
 
 - [IMPORTANT]THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
 - [IMPORTANT]Entity Movement (rotations)
@@ -46,7 +45,7 @@ To-do:
 - Add a new fire and lighter to create the frozen hearth teleporter.
 - Make the frozen hearth teleporter on the floor instead of the usual nether teleporter.
 
-- Make the soul wood trees more pretty.
+- Make the soul wood trees more pretty. (rework)
 - Make the frost enchantment slow the attacked entity
 - Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.
 - Change the button to see information to shift

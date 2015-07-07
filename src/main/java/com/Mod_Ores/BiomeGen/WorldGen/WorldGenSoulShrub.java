@@ -7,6 +7,7 @@ import net.minecraft.init.Blocks;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+import com.Mod_Ores.Blocks.Special.SoulBlock;
 import com.Mod_Ores.Init.SoulBlocks;
 
 public class WorldGenSoulShrub extends WorldGenerator{
@@ -61,7 +62,7 @@ public class WorldGenSoulShrub extends WorldGenerator{
 				return false;
 			    }
 			    if (f1 * f1 + f2 * f2 + f3 * f3 <= f * f){
-				if(par1World.getBlock(l1, j2, i2) != SoulBlocks.SoulWaterMoving.get() && j2 > 33){
+				if(par1World.getBlock(l1, j2, i2) != SoulBlocks.SoulWaterMoving.get() && !(par1World.getBlock(l1, j2, i2) instanceof SoulBlock) && j2 > 33){
 				    if(par1World.getBlock(l1, j2, i2) == Blocks.air){
 					par1World.setBlock(l1, j2, i2, this.leaves, 0, 4);
 				    }
