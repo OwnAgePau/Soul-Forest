@@ -237,7 +237,10 @@ public class soul_forest{
 	else if(par2 == 2){
 	    metadata = 5;
 	}
-
+	else if(par2 == 4){
+	    metadata = 6;
+	}
+	
 	if(par2 == 3){
 	    if(par1Random.nextInt(4) == 2){
 		metadata = 4;

@@ -63,6 +63,7 @@ public class TheBiomeDeco extends BiomeDecorator
     protected int cantaloupeperchunk;
     protected int shrubperchunk;
     protected int tallgrassperchunk;
+    protected int bushesperchunk;
     protected int grapesapplingperchunk;
     protected int fireblossomsperchunk;
     protected int shinaiperchunk;
@@ -105,6 +106,7 @@ public class TheBiomeDeco extends BiomeDecorator
     protected WorldGenerator cantaloupeGen;
     protected WorldGenerator shrubGen;
     protected WorldGenerator tallgrassGen;
+    protected WorldGenerator bushesGen;
     protected WorldGenerator grapesapplingGen;
     protected WorldGenerator fireblossomGen;
     protected WorldGenerator shinaiGen;
@@ -222,6 +224,13 @@ public class TheBiomeDeco extends BiomeDecorator
 	    this.tallgrassGen = soul_forest.getRandomWorldGenForGrass(randomGenerator, this.tallgrasstype);
 	    this.tallgrassGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
+	for (int g1 = 0; g1 < this.bushesperchunk * 2; g1++){
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
+	    int h1 = randomGenerator.nextInt(128);
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
+	    this.bushesGen = soul_forest.getRandomWorldGenForGrass(randomGenerator, 4);
+	    this.bushesGen.generate(currentWorld, randomGenerator, g2, h1, g3);
+	}
 	//trees
 	for (int g1 = 0; g1 < this.grapetreeperchunk; g1++){
 	    int g2 = chunk_X + randomGenerator.nextInt(16);
@@ -250,58 +259,58 @@ public class TheBiomeDeco extends BiomeDecorator
 	//vines
 	for (int g1 = 0; g1 < this.baneberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.baneberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.blackberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.blackberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.blueberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.cranberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.cranberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.blueberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.raspberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.raspberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.razzberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.razzberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.strawberryvineperchunk; g1++)
 	{
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.strawberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}       
 	//plants
 	for (int g1 = 0; g1 < this.cantaloupeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.cantaloupeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}     
 	for (int g1 = 0; g1 < this.shrubperchunk; g1++){
@@ -323,21 +332,21 @@ public class TheBiomeDeco extends BiomeDecorator
 	    this.fyrisedbushGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.grapesapplingperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.grapesapplingGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}		
 	for (int g1 = 0; g1 < this.fireblossomsperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.fireblossomGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.shinaiperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	    int g2 = chunk_X + randomGenerator.nextInt(32);
 	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	    int g3 = chunk_Z + randomGenerator.nextInt(32);
 	    this.shinaiGen.generate(currentWorld, randomGenerator, g2, h1, g3);
 	}
 	for (int g1 = 0; g1 < this.vineplantperchunk; g1++){

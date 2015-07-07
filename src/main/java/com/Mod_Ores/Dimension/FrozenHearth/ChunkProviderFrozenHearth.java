@@ -494,12 +494,12 @@ public class ChunkProviderFrozenHearth implements IChunkProvider{
 	//doGen = TerrainGen.decorate(worldObj, frozenRNG, k, l, SHROOM);
 	// Everything not biome related      
 	
-	for (int i = 0; i < 7; i++){
+	/*for (int i = 0; i < 7; i++){
 	    int randPosX = k + this.frozenRNG.nextInt(16);
 	    int randPosY = this.frozenRNG.nextInt(128);
 	    int randPosZ = l + this.frozenRNG.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Slate.get(), 75, SoulBlocks.Porphyry.get())).generate(worldObj, this.frozenRNG, randPosX, randPosY, randPosZ);
-	}
+	}*/
 
 	// #region Ore Gen
 	//WorldGenMinable worldgenminable;

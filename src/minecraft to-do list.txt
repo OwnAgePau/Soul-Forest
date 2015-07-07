@@ -13,7 +13,8 @@ Changes:
 - Updated the looks of the Hardwood tree, cut off the corners and changed the height and some more.
 - Made the grass in the dimension grow up to a lower layer (from water-up) instead of starting with grass blocks halfway up the dimension, this looks much better.
 - Made the biomes in the dimension slightly larger.
-- Re-added soul ice, made it spawn as the top layer on the water in the Frozen Hearth dimension.
+- Made small updates to the looks of the different biomes.
+- Re-added soul ice, it now spawns in the Frozen Hearth dimension naturally.
 - [CLEAN]Move WeightedChest stuff to a different file.
 - [OPT]Created a generic file for logs.
 - [OPT]Created a generic file for plants.
@@ -67,7 +68,8 @@ To-do:
 - [CLEAN]Remove SoulConfigItems
 - [CLEAN]Remove SoulConfigBlocks
 - [CLEAN]Remove SlotGelExtractor
-- [MAJOR] UPDATE WIKI FOR F... SAKE.
+- [CLEAN]Remove SoulWaterStationary
+- [MAJOR]UPDATE WIKI FOR F... SAKE.
 
 NEW IDEAS
 - Steel as ingot (not as ore)

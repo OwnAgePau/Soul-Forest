@@ -31,7 +31,8 @@ public class BiomeGenSoulForest extends BiomeGenBase{
 	customBiomeDecorator.grapetreeperchunk = 50;
 	customBiomeDecorator.cantaloupeperchunk = 40;
 	customBiomeDecorator.tallgrasstype = 1;
-	customBiomeDecorator.tallgrassperchunk = 100;
+	customBiomeDecorator.tallgrassperchunk = 200;
+	customBiomeDecorator.bushesperchunk = 50;
 	customBiomeDecorator.shrubperchunk = 100;
 	customBiomeDecorator.grapesapplingperchunk = 5;
 	this.temperature = 0.5F;

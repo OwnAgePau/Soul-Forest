@@ -25,7 +25,7 @@ public class BlockSoulIce extends BlockBreakable{
     
     public BlockSoulIce(String unlName){
         super("soulforest:soul_ice", Material.ice, false);
-        this.slipperiness = 0.9F;
+        this.slipperiness = 1.0F;
         this.setHardness(0.2F);
         this.setTickRandomly(true);
         this.setCreativeTab(soul_forest.tabSoulBlocks);
