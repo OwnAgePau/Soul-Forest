@@ -1,15 +1,22 @@
 Changes:
+- Fixed the custom vines growing on air and destroying nearby vines when placed next to them.
+- Fixed custom leaves not decaying.
+- Fixed custom leaves not dropping saplings.
+- Fixed custom tall grass acting as normal blocks, thus being able to place blocks on them, this is now changed to normal grass being able to replace grass with any other block.
 - Changed the texture of amethyst gem & uncut to be a bit better.
 - Changed the textures of the armor so that they look a bit prettier.
+- Changed the texture of the Gemcutter
+- Changed the texture of frozen grass.
 - Added Amulet Rings that will either increase the damage you do or decrease the damage you take (depending on the type of the ring).
 - Added Amulet Stones whereof most give you a potion buff for an amount (20 or 40 seconds) on every use. Some other stones have different purposes.
-- Changed the texture of the Gemcutter
 - Refactored the tool class settings, also changed chromite to be harvestlevel of diamond instead of iron.
 - Added a block (Gemmeration Table) to repair Soul Tools & Armor using the Jet Amulet Stone.
 - Added a block (Gemming Table) to enchant Soul Tools & Armor using the Scarletite Amulet Stone.
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
 - Integrated the new blocks's recipes with NEI.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
+- Added frozen trees and frozen flowers.
+- Added frozen sapling and a hardwood sapling.
 - Updated the looks of the Hardwood tree, cut off the corners and changed the height and some more.
 - Made the grass in the dimension grow up to a lower layer (from water-up) instead of starting with grass blocks halfway up the dimension, this looks much better.
 - Made the biomes in the dimension slightly larger.
@@ -25,41 +32,38 @@ To-do:
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
 
-- Make the soul wood trees more pretty.
-- THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
-
-- To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
-- Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
+- Slabs not stacking (was allready like that)
+- Create slabs and double slabs
 - Add Ice Sapplings and Hardwood Sapplings
--
+
+- [IMPORTANT]THe dimension's biome intersections are a tiny bit messed up (the dirt/grass of both biomes slightly overlaps)
+- [IMPORTANT]Entity Movement (rotations)
+- [IMPORTANT]Throwing Entities (weird image on fying entity) [ Can't get this to work yet ]
+- [MINOR IMPORTANT]Grapes leaves do not decay
+- [MINOR IMPORTANT] Fix all shift clicks in custom tilentities
+
+
+- Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
+- Add a new fire and lighter to create the frozen hearth teleporter.
+- Make the frozen hearth teleporter on the floor instead of the usual nether teleporter.
+
+- Make the soul wood trees more pretty.
 - Make the frost enchantment slow the attacked entity
 - Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.
 - Change the button to see information to shift
 - Use bog grass seeds as drops for the bog grass, and make them grow into normal crops or perhaps other crops.
-- Add an option to configure the information shown on tools/armor.
-- Grapes leaves do not decay
-- Thick soul snow on update checken zodat je door alle bovenste sneeuwblokken kan zakken.
 - Make ice queen attack player with frost shards (optional)
-- update Frozen Grass texture.
-- Add frozen trees & frozen shrubberies
 - Uranium Liquid als fuel
 - Making chests and sticks etc with soul forest wood types.
-- Tall grass does not get replaced when placing block on top.
 - Kijk naar tallGrass en zorg dat mijn tall grass ook wat random verspreid zit
-- *Growing directions of vines is screwed up they can grow on air
 - Offset van ice fairy ff naar kijken
 - Add mineral spawning frequenty to the config (maybe)
 - Add Ice fairies will now attack snow creepers.
-- Entity Movement (rotations)
-- Slabs not stacking (was allready like that)
-- Throwing Entities (weird image on fying entity) [ Can't get this to work yet ]
 - Paypal en/of adfly opzetten
-- Create slabs and double slabs
-- Fix all shift clicks in custom tilentities
-- Setting up git to the main map and using gitignore like biomes o plenty does.
 - Create custom GUI for gemble table, gemming table and gemmeration table.
-- [OPT]Create a base file with basic functionality for your mod and perhaps other mods (API)
+- [?]To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
 - [OPT]soul tree random leave colour (case can be heavily optimised), orange and pink leaves (PLEASE REMOVE)
+- [OPT]Create a base file with basic functionality for your mod and perhaps other mods (API)
 - [OPT]Maak het opvragen van bepaalde blocks in de dimension (grass, dirt en de verschillende stones) makkelijker d.m.v. generale methode (o.a. in WorldGenCavesSoulForest)
 - [OPT]Make more blocks use meta data (like leaves, torches or vines)
 - [CLEAN]Remove BiomeGenBaseMarona

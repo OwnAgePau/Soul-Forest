@@ -10,6 +10,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.util.IIcon;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.common.IPlantable;
 import net.minecraftforge.common.util.ForgeDirection;
 
 import com.Mod_Ores.soul_forest;
@@ -48,6 +49,16 @@ public class BlockFyrisedSand extends Block{
 	return par1 == 1 ? this.iconFyrisedTop : (par1 == 0 ?  SoulBlocks.FyrisedSand.get().getBlockTextureFromSide(par1) : this.blockIcon);
     }
 
+    @Override
+    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant){
+	if(plant != Block.getBlockFromName("red_flower") || plant != Block.getBlockFromName("yellow_flower")){
+	    return true;
+	}
+	else{
+	    return false;
+	}
+    }
+
     /**
      * Ticks the block if it's been scheduled
      */
@@ -56,7 +67,7 @@ public class BlockFyrisedSand extends Block{
 	    if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 4 && par1World.getBlockLightOpacity(par2, par3 + 1, par4) > 2){
 		par1World.setBlock(par2, par3, par4, SoulBlocks.FyrisedSand.get());
 	    }
-	    else if (par1World.getBlockLightValue(par2, par3 + 1, par4) >= 9){
+	    else if (par1World.getBlockLightValue(par2, par3 + 1, par4) < 5){
 		for (int l = 0; l < 4; ++l){
 		    int i1 = par2 + par5Random.nextInt(3) - 1;
 		    int j1 = par3 + par5Random.nextInt(5) - 3;

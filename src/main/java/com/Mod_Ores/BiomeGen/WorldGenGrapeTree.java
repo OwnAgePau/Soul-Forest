@@ -11,7 +11,7 @@ import net.minecraft.world.gen.feature.WorldGenAbstractTree;
 import net.minecraft.world.gen.feature.WorldGenerator;
 import net.minecraftforge.common.util.ForgeDirection;
 
-import com.Mod_Ores.Blocks.BlockSoulSappling;
+import com.Mod_Ores.Blocks.BlockSoulSapling;
 import com.Mod_Ores.Init.SoulBlocks;
 
 public class WorldGenGrapeTree extends WorldGenAbstractTree{
@@ -79,7 +79,7 @@ public class WorldGenGrapeTree extends WorldGenAbstractTree{
 	    else{
 		Block block2 = par1World.getBlock(par3, par4 - 1, par5);
 
-		boolean isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSoulSappling)SoulBlocks.SapplingGrape.get());
+		boolean isSoil = block2.canSustainPlant(par1World, par3, par4 - 1, par5, ForgeDirection.UP, (BlockSoulSapling)SoulBlocks.SaplingGrape.get());
 		if (isSoil && par4 < 256 - l - 1){
 		    block2.onPlantGrow(par1World, par3, par4 - 1, par5, par3, par4, par5);
 		    b0 = 3;

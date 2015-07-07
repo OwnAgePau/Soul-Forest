@@ -22,13 +22,13 @@ public class GenLayerBiomeSoulForest extends GenLayerSoulForest {
     };
 
     protected List<BiomeEntry> weightedBiomes = Arrays.asList(
-	    new BiomeEntry(soul_forest.SoulForest, 10),
+	    new BiomeEntry(soul_forest.SoulForest, 9),
 	    new BiomeEntry(soul_forest.PeatBog, 9),
 	    new BiomeEntry(soul_forest.BlackForest, 9),
-	    new BiomeEntry(soul_forest.DarkCaverns, 8),
-	    new BiomeEntry(soul_forest.MaronaWoods, 8),
+	    new BiomeEntry(soul_forest.DarkCaverns, 9),
+	    new BiomeEntry(soul_forest.MaronaWoods, 9),
 	    new BiomeEntry(soul_forest.SoulShrubbery, 9),
-	    new BiomeEntry(soul_forest.FyrisedShrubbery, 10)
+	    new BiomeEntry(soul_forest.FyrisedShrubbery, 9)
 	    );
 
     public GenLayerBiomeSoulForest(long seed, GenLayerSoulForest genlayer) {

@@ -147,7 +147,7 @@ public class TheBiomeDeco extends BiomeDecorator
 	this.fyrisedbushGen = new WorldGenSoulBush(SoulBlocks.HardwoodLog.get(), SoulBlocks.HardwoodLeaves.get(), 
 		SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get(), 2);
 	this.cantaloupeGen = new WorldGenCantaloupe(SoulBlocks.PlantCantaloupe.get());
-	this.grapesapplingGen = new WorldGenSapplingGrape(SoulBlocks.SapplingGrape.get());
+	this.grapesapplingGen = new WorldGenSapplingGrape(SoulBlocks.SaplingGrape.get());
 	this.fireblossomGen =  new WorldGenPlant(SoulBlocks.Fireblossom.get());
 	this.shinaiGen =  new WorldGenPlant(SoulBlocks.FrozenShinai.get());
 	this.vineplantGen =  new WorldGenPlant(SoulBlocks.Vineplant.get());
