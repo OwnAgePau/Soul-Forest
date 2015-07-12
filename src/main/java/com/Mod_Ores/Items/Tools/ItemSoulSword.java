@@ -26,12 +26,13 @@ public class ItemSoulSword extends ItemSword{
      * @param InGname This is the Name that you will see In game
      * @param EnumToolMaterial This will set the tools material
      */
-    public ItemSoulSword(String Unlname, Item.ToolMaterial material){
+    public ItemSoulSword(String Unlname, Item.ToolMaterial material, int level){
 	super(material);
 	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.mat = material;
+	this.setHarvestLevel("sword", level);
 	InitItems.soulSwords.add(this);
     }
 
@@ -43,13 +44,14 @@ public class ItemSoulSword extends ItemSword{
      * @param EnumToolMaterial This will set the tools material
      * @param rarity This will give the gem a color representing its rarity. "U" = uncommon, "R" = rare, "E" = epic
      */
-    public ItemSoulSword(String Unlname, Item.ToolMaterial material, String rarity){
+    public ItemSoulSword(String Unlname, Item.ToolMaterial material, int level, String rarity){
 	super(material);
 	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.Rarity = rarity;
 	this.mat = material;
+	this.setHarvestLevel("sword", level);
 	InitItems.soulSwords.add(this);
     }
 

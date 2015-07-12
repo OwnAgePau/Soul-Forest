@@ -16,19 +16,28 @@ Changes:
 - Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
 - Integrated the new blocks's recipes with NEI.
 - Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
-- Added frozen trees and frozen flowers.
-- Added frozen sapling and a hardwood sapling.
 - Updated the looks of the Hardwood tree, cut off the corners and changed the height and some more.
 - Made the grass in the dimension grow up to a lower layer (from water-up) instead of starting with grass blocks halfway up the dimension, this looks much better.
 - Made the biomes in the dimension slightly larger.
 - Made small updates to the looks of the different biomes.
+- Moved all cold snow-related biomes to a new dimension called the Frozen Hearth Dimension. (I have no intention of making tons of dimensions but found the white/green and white/red look extremely odd)
+	This dimension can be reached by building a portal the same size and shape as the Soul Forest Portal but using Turquoise Blocks and a frost lighter instead.
+	U can light this portal using a frost lighter, this can be made by combining a Uranium Gem with an Advanced Soul Magic Fragment
+	This portal can only be created in the soul forest dimension. Do not try to build it in the overworld or nether, this won't work.
 - Re-added soul ice, it now spawns in the Frozen Hearth dimension naturally.
+- Added a new biome (Shinai Forest) a frozen forest biome in the Frozen Hearth dimension. This biome also has a new tree of which the leaves/logs are subject to change. Also has a new flower called the Shinai Flower
+- Added a new tree - Frozen Tall tree with Frozen Leaves and Frozen logs (the textures are subject to change)
+- Added frozen trees and frozen flowers.
+- Added frozen sapling and a hardwood sapling.
 - [CLEAN]Move WeightedChest stuff to a different file.
 - [OPT]Created a generic file for logs.
 - [OPT]Created a generic file for plants.
 - [OPT]Created a generic file for custom tall grasses and bushes, they now also use meta data.
 
 To-do:
+
+- Ice queen remove walls check
+- Change the shape of the teleporter(s)
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
@@ -41,10 +50,7 @@ To-do:
 - [IMPORTANT]Throwing Entities (weird image on fying entity) [ Can't get this to work yet ]
 - [MINOR IMPORTANT] Fix all shift clicks in custom tilentities
 
-- Make it so you can only teleport from the soul forest to the frozen hearth dimension and back
-- Add a new fire and lighter to create the frozen hearth teleporter.
-- Make the frozen hearth teleporter on the floor instead of the usual nether teleporter.
-
+- Try to find out why the 2 nether like worlds generate exactly the same (in shape)
 - Make the soul wood trees more pretty. (rework)
 - Make the frost enchantment slow the attacked entity
 - Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.

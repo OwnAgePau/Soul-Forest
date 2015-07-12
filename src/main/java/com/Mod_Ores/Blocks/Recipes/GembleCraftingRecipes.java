@@ -208,7 +208,6 @@ public class GembleCraftingRecipes{
             for (j = 0; j < this.recipes.size(); ++j){
             	IRecipe irecipe = (IRecipe)this.recipes.get(j);
                 if (irecipe.matches(par1InventoryCrafting, par2World)){     
-                    System.out.println(irecipe.getCraftingResult(par1InventoryCrafting));
                     return irecipe.getCraftingResult(par1InventoryCrafting);
                 }
             }

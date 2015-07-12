@@ -60,7 +60,6 @@ public class WorldGenSoulTrees  extends WorldGenerator
     @Override
     public boolean generate(World world, Random random, int x, int y, int z){
 	this.randomizeLeaves(random);
-	System.out.println("Leaves : " + this.leaves + " Height : " + this.height);
 	while (world.isAirBlock(x, y, z) && y > 2 && y < 100){
 	    --y;
 	    --y;

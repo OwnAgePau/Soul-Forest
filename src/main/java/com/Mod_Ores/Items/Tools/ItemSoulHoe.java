@@ -24,12 +24,13 @@ public class ItemSoulHoe extends ItemHoe{
      * @param InGname This is the Name that you will see In game
      * @param EnumToolMaterial This will set the tools material
      */
-    public ItemSoulHoe(String Unlname, Item.ToolMaterial material){
+    public ItemSoulHoe(String Unlname, Item.ToolMaterial material, int level){
 	super(material);
 	setCreativeTab(soul_forest.tabSoulTools);
 	setUnlocalizedName(Unlname);
 	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
 	this.mat = material;
+	this.setHarvestLevel("hoe", level);
 	InitItems.soulHoes.add(this);
     }
 

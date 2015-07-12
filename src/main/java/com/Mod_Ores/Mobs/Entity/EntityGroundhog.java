@@ -37,7 +37,7 @@ import com.Mod_Ores.Init.Config.SoulConfigCreatures;
 import cpw.mods.fml.common.eventhandler.Event.Result;
 
 public class EntityGroundhog extends EntityZombie{
-    protected static final IAttribute groundhogReinforce = (new RangedAttribute("groundhog.spawnReinforcements", 0.3D, 0.2D, 0.8D)).setDescription("Spawn Reinforcements Chance");
+    protected static final IAttribute groundhogReinforce = (new RangedAttribute("groundhog.spawnReinforcements", 0.3D, 0.2D, 0.5D)).setDescription("Spawn Reinforcements Chance");
     private static final UUID field_110189_bq = UUID.fromString("49455A49-7EC5-45BA-B886-3B90B23A1718");
     private static final AttributeModifier attackingSpeedBoost = (new AttributeModifier(field_110189_bq, "Attacking speed boost", 0.30D, 0));
     private static final UUID field_110187_bq = UUID.fromString("B9766B59-9566-4402-BC1F-2EE2A276D836");

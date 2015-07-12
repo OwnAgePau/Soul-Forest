@@ -119,7 +119,6 @@ public class ForgeHookEventHelper {
 		if(this.checkPlayerHasAmulet(player, SoulItems.BlackdiamondAmuletRing.get())){
 		    float damage = event.ammount;
 		    float bonusDamage = event.ammount / 2;
-		    System.out.println("Total : " + (bonusDamage + damage) + ", Bonus : " + bonusDamage + ", Base : " + damage);
 		    event.ammount += event.ammount / 2;
 		}
 	    }
@@ -132,7 +131,6 @@ public class ForgeHookEventHelper {
 			    this.checkPlayerHasAmulet(player, SoulItems.TurquoiseAmuletRing.get())){
 			float damage = event.ammount;
 			float protectedDamage = event.ammount / 3F;
-			System.out.println("Total : " + (damage - protectedDamage) + ", Bonus : " + protectedDamage + ", Base : " + damage);
 			event.ammount -= event.ammount / 3F;
 		    }
 		}

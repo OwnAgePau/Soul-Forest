@@ -29,9 +29,9 @@ public class WorldGeneratorOres implements IWorldGenerator{
     }
 
     private void generateSurface(World world, Random random, int chunkX, int chunkZ){
-	if(random.nextInt(7) == 0){ // Was 11
+	if(random.nextInt(2) == 0){ // Was 11
 	    int randPosX = chunkX + random.nextInt(16);
-	    int randPosY = random.nextInt(14);				//Rarerity 11 (1-15) 1 is very common 15 is extremely rare
+	    int randPosY = random.nextInt(15);				//Rarerity 11 (1-15) 1 is very common 15 is extremely rare
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Cobaltore.get(), 8, Block.getBlockFromName("stone"))).generate(world, random, randPosX, randPosY, randPosZ);
 	}
@@ -41,15 +41,15 @@ public class WorldGeneratorOres implements IWorldGenerator{
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Copperore.get(), 12, Block.getBlockFromName("stone"))).generate(world, random, randPosX, randPosY, randPosZ);
 	}		
-	if(random.nextInt(7) == 0){ // Was 11
+	if(random.nextInt(2) == 0){ // Was 11
 	    int randPosX = chunkX + random.nextInt(16);
-	    int randPosY = random.nextInt(14);				//Rarerity 11 (1-15) 1 is very common 15 is extremely rare
+	    int randPosY = random.nextInt(20);				//Rarerity 11 (1-15) 1 is very common 15 is extremely rare
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Steelore.get(), 8, Block.getBlockFromName("stone"))).generate(world, random, randPosX, randPosY, randPosZ);
 	}
 	for (int i = 0; i < 6; i++){
 	    int randPosX = chunkX + random.nextInt(16);
-	    int randPosY = random.nextInt(26);				//Rarerity 5 (1-15) 1 is very common 15 is extremely rare
+	    int randPosY = random.nextInt(15);				//Rarerity 5 (1-15) 1 is very common 15 is extremely rare
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Silverore.get(), 6, Block.getBlockFromName("stone"))).generate(world, random, randPosX, randPosY, randPosZ);
 	}
@@ -59,12 +59,12 @@ public class WorldGeneratorOres implements IWorldGenerator{
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Tinore.get(), 12, Block.getBlockFromName("stone"))).generate(world, random, randPosX, randPosY, randPosZ);
 	}
-	if(random.nextInt(6) == 0){ // was 13
+	//if(random.nextInt(4) == 0){ // was 13
 	    int randPosX = chunkX + random.nextInt(16);
-	    int randPosY = random.nextInt(20);				//Rarerity 12 (1-15) 1 is very common 15 is extremely rare
+	    int randPosY = random.nextInt(35);				//Rarerity 12 (1-15) 1 is very common 15 is extremely rare
 	    int randPosZ = chunkZ + random.nextInt(16);
 	    (new WorldGenMinable(SoulBlocks.Uraniumore.get(), 4, Block.getBlockFromName("stone"))).generate(world, random, randPosX, randPosY, randPosZ);
-	}		
+	//}		
     }
 
     private void generateNether(World world, Random random, int chunkX, int chunkZ){

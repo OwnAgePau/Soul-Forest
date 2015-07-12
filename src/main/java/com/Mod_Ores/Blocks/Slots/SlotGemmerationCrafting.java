@@ -88,7 +88,6 @@ public class SlotGemmerationCrafting extends Slot{
 	    for(String toolClass : repair.getToolClasses(repairStack)){
 		int lvl = repair.getHarvestLevel(repairStack, toolClass);
 		damage = lvl * (input.getMaxDamage() / 10);
-		System.out.println(repairStack.getDisplayName() + ", Tool : "  + toolClass + " : " + lvl + " -> " + damage);
 	    }
 	}
 	return damage;
