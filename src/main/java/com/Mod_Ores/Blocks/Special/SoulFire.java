@@ -22,23 +22,20 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class SoulFire extends BlockFire
-{
+public class SoulFire extends BlockFire{
     private int[] chanceToEncourageFire = new int[256];
     private int[] abilityToCatchFire = new int[256];
     @SideOnly(Side.CLIENT)
     private IIcon[] iconArray;
 
-    public SoulFire(String Unlname)
-    {
+    public SoulFire(String Unlname){
         super();
         this.setTickRandomly(true);
-		GameRegistry.registerBlock(this, Unlname);
-		setBlockName(Unlname);
+	GameRegistry.registerBlock(this, Unlname);
+	setBlockName(Unlname);
     }
 
-    public void initializeBlock()
-    {
+    public void initializeBlock(){
         this.setBurnRate(Blocks.planks, 5, 20);
         this.setBurnRate(Blocks.double_wooden_slab, 5, 20);
         this.setBurnRate(Blocks.wooden_slab, 5, 20);
@@ -58,43 +55,35 @@ public class SoulFire extends BlockFire
         this.setBurnRate(Blocks.vine, 15, 100);
     }
 
-    private void setBurnRate(Block par1, int par2, int par3)
-    {
+    private void setBurnRate(Block par1, int par2, int par3){
     	this.setFireInfo(par1, par2, par3);
     }
 
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
-    {
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4){
         return null;
     }
 
-    public boolean isOpaqueCube()
-    {
+    public boolean isOpaqueCube(){
         return false;
     }
 
-    public boolean renderAsNormalBlock()
-    {
+    public boolean renderAsNormalBlock(){
         return false;
     }
 
-    public int getRenderType()
-    {
+    public int getRenderType(){
         return 3;
     }
 
-    public int quantityDropped(Random par1Random)
-    {
+    public int quantityDropped(Random par1Random){
         return 0;
     }
 
-    public int tickRate(World par1World)
-    {
+    public int tickRate(World par1World){
         return 30;
     }
 
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
-    {
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random){
         if (par1World.getGameRules().getGameRuleBooleanValue("doFireTick"))
         {
             Block base = par1World.getBlock(par2, par3 - 1, par4);
@@ -243,7 +232,7 @@ public class SoulFire extends BlockFire
         }
     }
 
-    private boolean canNeighborBurn(World par1World, int par2, int par3, int par4)
+    protected boolean canNeighborBurn(World par1World, int par2, int par3, int par4)
     {
         return canBlockCatchFire(par1World, par2 + 1, par3, par4, ForgeDirection.WEST ) ||
                canBlockCatchFire(par1World, par2 - 1, par3, par4, ForgeDirection.EAST ) ||

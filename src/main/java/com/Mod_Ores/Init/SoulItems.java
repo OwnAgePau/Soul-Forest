@@ -196,6 +196,7 @@ public class SoulItems
 	public static Optional<? extends Item> MochanEagleFeather              = Optional.absent();
 	public static Optional<? extends Item> MochanEagleWing              = Optional.absent();
 	public static Optional<? extends Item> SoulLighter = Optional.absent();
+	public static Optional<? extends Item> FrostLighter = Optional.absent();
 	public static Optional<? extends Item> BucketSoulWater = Optional.absent();
 	public static Optional<? extends Item> SoulBucket = Optional.absent();
 	public static Optional<? extends Item> FrostShard = Optional.absent();

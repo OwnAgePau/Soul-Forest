@@ -17,17 +17,15 @@ import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 
-public class ItemSoulLighter extends Item
-{
-    public ItemSoulLighter()
-    {
+public class ItemSoulLighter extends Item{
+    
+    public ItemSoulLighter(String unlName, int maxDamage){
 	super();
 	this.maxStackSize = 1;
-	this.setMaxDamage(2);
+	this.setMaxDamage(maxDamage);
 	this.setCreativeTab(soul_forest.tabSoulTools);
-	this.setUnlocalizedName("soul_lighter");
-	GameRegistry.registerItem(this, "soul_lighter", soul_forest.MODID);
-	//LanguageRegistry.addName(this, "Soul Lighter");
+	this.setUnlocalizedName(unlName);
+	GameRegistry.registerItem(this, unlName, soul_forest.MODID);
     }
 
     /**

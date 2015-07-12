@@ -12,6 +12,7 @@ import net.minecraft.util.LongHashMap;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.Teleporter;
+import net.minecraft.world.Teleporter.PortalPosition;
 import net.minecraft.world.WorldServer;
 
 import com.Mod_Ores.Init.SoulBlocks;
@@ -42,7 +43,8 @@ public class TeleporterFrozenHearth extends Teleporter{
      * Place an entity in a nearby portal, creating one if necessary.
      */
     public void placeInPortal(Entity par1Entity, double par2, double par4, double par6, float par8){
-        if (this.worldServerInstance.provider.dimensionId != SoulConfig.SoulForestID){
+	int dimID = this.worldServerInstance.provider.dimensionId;
+        if (dimID == SoulConfig.SoulForestID || dimID == SoulConfig.FrozenHearthID){
             if (!this.placeInExistingPortal(par1Entity, par2, par4, par6, par8)){
                 this.makePortal(par1Entity);
                 this.placeInExistingPortal(par1Entity, par2, par4, par6, par8);
@@ -260,7 +262,7 @@ public class TeleporterFrozenHearth extends Teleporter{
 
     public boolean makePortal(Entity par1Entity)
     {
-        byte b0 = 16;
+	byte b0 = 16;
         double d0 = -1.0D;
         int i = MathHelper.floor_double(par1Entity.posX);
         int j = MathHelper.floor_double(par1Entity.posY);

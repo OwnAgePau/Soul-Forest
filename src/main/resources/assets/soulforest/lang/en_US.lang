@@ -189,6 +189,7 @@ item.Slime_boots.name=Slime Boots
 
 item.Berrycollector.name=Berrycollector
 item.soul_lighter.name=Soul Lighter
+item.frost_lighter.name=Frozen Lighter
 item.Frost_wand.name=Frost Wand
 item.Polisher.name=Polisher
 item.PolisherTowel.name=Polisher Towel
@@ -337,6 +338,7 @@ tile.Ice_workbench_side.name=Ice Workbench
 tile.Gemcutter.name=Gemcutter
 tile.Gemcutter_active.name=Gemcutter
 tile.Soul_fire.name=Soul Fire
+tile.Soul_fire_frozen_hearth.name=Soul Fire
 tile.Blueish_dizzling_portal_passage.name=Soul Forest Teleporter
 tile.Blueish_dizzling_portal_passage_2.name=Frozen Hearth Teleporter
 tile.Gelextractor.name=Gel Extractor

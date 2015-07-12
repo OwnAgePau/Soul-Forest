@@ -39,7 +39,8 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
         return SoulBlocks.TurquoiseBlock.get().blockID;
     }*/
 
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random){
+    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random)
+    {
 	super.updateTick(par1World, par2, par3, par4, par5Random);
     }
 
@@ -47,16 +48,9 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
      * Checks to see if this location is valid to create a portal and will return True if it does. Args: world, x, y, z
      */
     public boolean tryToCreatePortal(World par1World, int par2, int par3, int par4){
-	for(int x = 0; x < 3; x++){
-	    for(int z = 0; z < 3; z++){
-		if(par1World.getBlock(par2 + x, par3, par4 - 1) == SoulBlocks.TurquoiseBlock.get()){
-		    System.out.println("LEUK : " + (par2 + x) + ", " + par3 + ", " + (par4 - 1));
-		}
-	    }
+	if(par1World.provider.dimensionId != SoulConfig.SoulForestID){
+	    return false;
 	}
-	
-	
-	
 	byte b0 = 0;
 	byte b1 = 0;
 
@@ -103,7 +97,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 				return false;
 			    }
 			}
-			else if (!isAirBlock && j1 != SoulBlocks.SoulFire.get())
+			else if (!isAirBlock && j1 != SoulBlocks.SoulFireFrozenHearth.get())
 			{
 			    return false;
 			}
@@ -129,41 +123,44 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
     public void onEntityCollidedWithBlock(World var1, int var2, int var3, int var4, Entity var5){
 	if ((var5.ridingEntity == null) && (var5.riddenByEntity == null) && ((var5 instanceof EntityPlayerMP))){
 	    EntityPlayerMP var6 = (EntityPlayerMP)var5;
-	    //var1.getMinecraftServerInstance(); 
 	    MinecraftServer mServer = MinecraftServer.getServer();
 
 	    if (var6.timeUntilPortal > 0){
 		var6.timeUntilPortal = 10;
 	    } 
-	    else if (var6.dimension != SoulConfig.FrozenHearthID){
+	    else if (var6.dimension == SoulConfig.SoulForestID){
 		var6.timeUntilPortal = 10;
 		var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, SoulConfig.FrozenHearthID, new TeleporterFrozenHearth(mServer.worldServerForDimension(SoulConfig.FrozenHearthID)));
 		//var6.addStat(InitAchievements.soulForest, 1);
 	    }
 	    else {
 		var6.timeUntilPortal = 10;
-		var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, 0, new TeleporterFrozenHearth(mServer.worldServerForDimension(SoulConfig.SoulForestID)));
+		var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, SoulConfig.SoulForestID, new TeleporterFrozenHearth(mServer.worldServerForDimension(SoulConfig.SoulForestID)));
 	    }
 	}
     }
 
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4){
+    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4)
+    {
 	return null;
     }
 
     /**
      * Updates the blocks bounds based on its current state. Args: world, x, y, z
      */
-    public void setBlockBoundsBasedOnState(IBlockAccess par1IBlockAccess, int par2, int par3, int par4){
+    public void setBlockBoundsBasedOnState(IBlockAccess par1IBlockAccess, int par2, int par3, int par4)
+    {
 	float f;
 	float f1;
 
-	if (par1IBlockAccess.getBlock(par2 - 1, par3, par4) != this && par1IBlockAccess.getBlock(par2 + 1, par3, par4) != this){
+	if (par1IBlockAccess.getBlock(par2 - 1, par3, par4) != this && par1IBlockAccess.getBlock(par2 + 1, par3, par4) != this)
+	{
 	    f = 0.125F;
 	    f1 = 0.5F;
 	    this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f1, 0.5F + f, 1.0F, 0.5F + f1);
 	}
-	else{
+	else
+	{
 	    f = 0.5F;
 	    f1 = 0.125F;
 	    this.setBlockBounds(0.5F - f, 0.0F, 0.5F - f1, 0.5F + f, 1.0F, 0.5F + f1);
@@ -174,50 +171,60 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
      * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
      */
-    public boolean isOpaqueCube(){
+    public boolean isOpaqueCube()
+    {
 	return false;
     }
 
     /**
      * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
      */
-    public boolean renderAsNormalBlock(){
+    public boolean renderAsNormalBlock()
+    {
 	return false;
     }
     /**
      * Lets the block know when one of its neighbor changes. Doesn't know which neighbor changed (coordinates passed are
      * their own) Args: x, y, z, neighbor blockID
      */
-    public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5){
+    public void onNeighborBlockChange(World par1World, int par2, int par3, int par4, int par5)
+    {
 	byte b0 = 0;
 	byte b1 = 1;
 
-	if (par1World.getBlock(par2 - 1, par3, par4) == this || par1World.getBlock(par2 + 1, par3, par4) == this){
+	if (par1World.getBlock(par2 - 1, par3, par4) == this || par1World.getBlock(par2 + 1, par3, par4) == this)
+	{
 	    b0 = 1;
 	    b1 = 0;
 	}
 
 	int i1;
 
-	for (i1 = par3; par1World.getBlock(par2, i1 - 1, par4) == this; --i1){
+	for (i1 = par3; par1World.getBlock(par2, i1 - 1, par4) == this; --i1)
+	{
 	    ;
 	}
 
-	if (par1World.getBlock(par2, i1 - 1, par4) != SoulBlocks.TurquoiseBlock.get()){
+	if (par1World.getBlock(par2, i1 - 1, par4) != SoulBlocks.TurquoiseBlock.get())
+	{
 	    par1World.setBlockToAir(par2, par3, par4);
 	}
-	else{
+	else
+	{
 	    int j1;
 
-	    for (j1 = 1; j1 < 4 && par1World.getBlock(par2, i1 + j1, par4) == this; ++j1){
+	    for (j1 = 1; j1 < 4 && par1World.getBlock(par2, i1 + j1, par4) == this; ++j1)
+	    {
 		;
 	    }
 
-	    if (j1 == 3 && par1World.getBlock(par2, i1 + j1, par4) == SoulBlocks.TurquoiseBlock.get()){
+	    if (j1 == 3 && par1World.getBlock(par2, i1 + j1, par4) == SoulBlocks.TurquoiseBlock.get())
+	    {
 		boolean flag = par1World.getBlock(par2 - 1, par3, par4) == this || par1World.getBlock(par2 + 1, par3, par4) == this;
 		boolean flag1 = par1World.getBlock(par2, par3, par4 - 1) == this || par1World.getBlock(par2, par3, par4 + 1) == this;
 
-		if (flag && flag1){
+		if (flag && flag1)
+		{
 		    par1World.setBlockToAir(par2, par3, par4);
 		}
 		else

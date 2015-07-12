@@ -82,6 +82,7 @@ public class SoulBlocks {
     public static Optional<? extends Block> GemcutterIdle                         = Optional.absent();
     public static Optional<? extends Block> GemcutterActive                         = Optional.absent();
     public static Optional<? extends Block> SoulFire                         = Optional.absent();
+    public static Optional<? extends Block> SoulFireFrozenHearth                         = Optional.absent();
     public static Optional<? extends Block> Teleporter                         = Optional.absent();
     public static Optional<? extends Block> TeleporterFrozenHearth                         = Optional.absent();
     public static Optional<? extends Block> GemmerationTable                         = Optional.absent();

@@ -258,6 +258,9 @@ public class InitRecipes {
 	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.SoulLighter.get(), 1), new Object[] {
 	    SoulItems.SteelIngot.get(), SoulItems.UraniumGem.get()
 	});
+	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.SoulLighter.get(), 1), new Object[] {
+	    SoulItems.SoulMagicFragmentAdv.get(), SoulItems.UraniumGem.get()
+	});
 	GameRegistry.addShapelessRecipe(new ItemStack(SoulItems.BronzeIngot.get(), 2), new Object[] {
 	    SoulItems.CopperIngot.get(), SoulItems.TinIngot.get()
 	});
