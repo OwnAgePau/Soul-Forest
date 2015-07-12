@@ -5,6 +5,7 @@ import java.util.Random;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockStairs;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -239,5 +240,7 @@ public class InitBlocks {
 	hardwoodleaves.setSapling(SoulBlocks.SaplingHardwood.get());
 	BlockSoulLeaves frozenleaves = (BlockSoulLeaves)SoulBlocks.IceLeaves.get();
 	frozenleaves.setSapling(SoulBlocks.SaplingFrozen.get());
+	BlockSoulLeaves soulLeaves = (BlockSoulLeaves)SoulBlocks.SoulLeaves.get();
+	soulLeaves.setSapling(Blocks.air);
     }
 }

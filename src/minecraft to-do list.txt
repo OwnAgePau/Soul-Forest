@@ -27,7 +27,7 @@ Changes:
 - Re-added soul ice, it now spawns in the Frozen Hearth dimension naturally.
 - Added a new biome (Shinai Forest) a frozen forest biome in the Frozen Hearth dimension. This biome also has a new tree of which the leaves/logs are subject to change. Also has a new flower called the Shinai Flower
 - Added a new tree - Frozen Tall tree with Frozen Leaves and Frozen logs (the textures are subject to change)
-- Added frozen trees and frozen flowers.
+- Added a new flower - Frozen Shinai
 - Added frozen sapling and a hardwood sapling.
 - [CLEAN]Move WeightedChest stuff to a different file.
 - [OPT]Created a generic file for logs.
@@ -38,6 +38,7 @@ To-do:
 
 - Ice queen remove walls check
 - Change the shape of the teleporter(s)
+- Add achievements for frozen hearth dimension
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
