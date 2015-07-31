@@ -135,10 +135,10 @@ public class BlockFrozenGrass extends Block
     @Override
     public void registerBlockIcons(IIconRegister par1IconRegister)
     {
-	this.blockIcon = par1IconRegister.registerIcon("soulforest:frozen_grass");
-	this.iconBogTop = par1IconRegister.registerIcon("soulforest:frozen_grass_top");
-	this.iconSnowSide = par1IconRegister.registerIcon("soulforest:frozen_grass");
-	this.iconBogSideOverlay = par1IconRegister.registerIcon("soulforest:frozen_grass");
+	this.blockIcon = par1IconRegister.registerIcon("soulforest:Frozen_grass");
+	this.iconBogTop = par1IconRegister.registerIcon("soulforest:Frozen_grass_top");
+	this.iconSnowSide = par1IconRegister.registerIcon("soulforest:Frozen_grass");
+	this.iconBogSideOverlay = par1IconRegister.registerIcon("soulforest:Frozen_grass");
     }
 }
 
