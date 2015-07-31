@@ -1,38 +1,6 @@
 Changes:
-- Fixed the custom vines growing on air and destroying nearby vines when placed next to them.
-- Fixed custom leaves not decaying.
-- Fixed custom leaves not dropping saplings.
-- Fixed custom leaves being opaque while not opaque (being able to look through the entire tree or island) while attempting to breake the leave.
-- Fixed custom tall grass acting as normal blocks, thus being able to place blocks on them, this is now changed to normal grass being able to replace grass with any other block.
-- Changed the texture of amethyst gem & uncut to be a bit better.
-- Changed the textures of the armor so that they look a bit prettier.
-- Changed the texture of the Gemcutter
-- Changed the texture of frozen grass.
-- Added Amulet Rings that will either increase the damage you do or decrease the damage you take (depending on the type of the ring).
-- Added Amulet Stones whereof most give you a potion buff for an amount (20 or 40 seconds) on every use. Some other stones have different purposes.
-- Refactored the tool class settings, also changed chromite to be harvestlevel of diamond instead of iron.
-- Added a block (Gemmeration Table) to repair Soul Tools & Armor using the Jet Amulet Stone.
-- Added a block (Gemming Table) to enchant Soul Tools & Armor using the Scarletite Amulet Stone.
-- Added a block (Gemble Table) to transform certain items into more useful stuff (Iron Block > Gold Block) using the Citrine Amulet Stone.
-- Integrated the new blocks's recipes with NEI.
-- Made Uranium, Cobalt and Steel less rare again (this time uranium is even less rare then cobalt and steel)
-- Updated the looks of the Hardwood tree, cut off the corners and changed the height and some more.
-- Made the grass in the dimension grow up to a lower layer (from water-up) instead of starting with grass blocks halfway up the dimension, this looks much better.
-- Made the biomes in the dimension slightly larger.
-- Made small updates to the looks of the different biomes.
-- Moved all cold snow-related biomes to a new dimension called the Frozen Hearth Dimension. (I have no intention of making tons of dimensions but found the white/green and white/red look extremely odd)
-	This dimension can be reached by building a portal the same size and shape as the Soul Forest Portal but using Turquoise Blocks and a frost lighter instead.
-	U can light this portal using a frost lighter, this can be made by combining a Uranium Gem with an Advanced Soul Magic Fragment
-	This portal can only be created in the soul forest dimension. Do not try to build it in the overworld or nether, this won't work.
-- Re-added soul ice, it now spawns in the Frozen Hearth dimension naturally.
-- Added a new biome (Shinai Forest) a frozen forest biome in the Frozen Hearth dimension. This biome also has a new tree of which the leaves/logs are subject to change. Also has a new flower called the Shinai Flower
-- Added a new tree - Frozen Tall tree with Frozen Leaves and Frozen logs (the textures are subject to change)
-- Added a new flower - Frozen Shinai
-- Added frozen sapling and a hardwood sapling.
-- [CLEAN]Move WeightedChest stuff to a different file.
-- [OPT]Created a generic file for logs.
-- [OPT]Created a generic file for plants.
-- [OPT]Created a generic file for custom tall grasses and bushes, they now also use meta data.
+- Changed harvestlevel of Black Diamond, Onyx, Titanium and especially Uranium back to 4 (it was 5 so you would have to get a Fyrised Pickaxe before you could even get to the Soul Forest)
+
 
 To-do:
 
