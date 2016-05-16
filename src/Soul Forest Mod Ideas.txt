@@ -190,7 +190,7 @@ Ideas:
 - Upside down trees
 - Double JUMP
 - Paintings with soul wooden frames (or even hardwood)
-- Mobs met "area damage" that effect you when getting closer to an enemy (like a fire mob that sets mobs that come close on fire).
+- Mobs with "area damage" that effect you when getting closer to an enemy (like a fire mob that sets mobs that come close on fire).
 - Use certain gems to teleport (or magical shards) advanced uses it like a enderpearl but different, certain other effects on teleportation or use of shards
 - An enemy that fights most other mobs and can level up
 - Some less gems perhaps

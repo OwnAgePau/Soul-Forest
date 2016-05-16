@@ -131,25 +131,25 @@ public class InitItems {
 	SoulItems.WhiteopalUncut = 		Optional.of(new ItemGem("Whiteopaluncut").setTextureName("soulforest:Whiteopal_uncut"));
 	
 	// Amulet Stones
-	SoulItems.AmazoniteAmuletStone = 	Optional.of(new ItemAmuletStone("Amazoniteamuletstone", 15, EnumRarity.rare).setAmuletStoneType("Amazonite").setTextureName("soulforest:Amazonite_amulet_stone"));
-	SoulItems.AmethystAmuletStone = 	Optional.of(new ItemAmuletStone("Amethystamuletstone", 30, EnumRarity.uncommon).setAmuletStoneType("Amethyst").setTextureName("soulforest:Amethyst_amulet_stone"));
-	SoulItems.AquamarineAmuletStone = 	Optional.of(new ItemAmuletStone("Aquamarineamuletstone", 15, EnumRarity.rare).setAmuletStoneType("Aquamarine").setTextureName("soulforest:Aquamarine_amulet_stone"));
-	SoulItems.BlackdiamondAmuletStone = 	Optional.of(new ItemAmuletStone("Blackdiamondamuletstone", Potion.damageBoost.getId(), 400, 5, EnumRarity.epic).setAmuletStoneType("Black Diamond").setTextureName("soulforest:Blackdiamond_amulet_stone"));
-	SoulItems.CitrineAmuletStone = 		Optional.of(new ItemAmuletStone("Citrineamuletstone", 50).setAmuletStoneType("Citrine").setTextureName("soulforest:Citrine_amulet_stone"));
-	SoulItems.JadeAmuletStone = 		Optional.of(new ItemAmuletStone("Jadeamuletstone", Potion.jump.getId(), 800, 50).setAmuletStoneType("Jade").setTextureName("soulforest:Jade_amulet_stone"));
-	SoulItems.JetAmuletStone = 		Optional.of(new ItemAmuletStone("Jetamuletstone", 1000).setAmuletStoneType("Jet").setTextureName("soulforest:Jet_amulet_stone"));
-	SoulItems.LilaAmuletStone = 		Optional.of(new ItemAmuletStone("Lilaamuletstone", 50).setAmuletStoneType("Lila").setTextureName("soulforest:Lila_amulet_stone"));
-	SoulItems.OlivineAmuletStone = 		Optional.of(new ItemAmuletStone("Olivineamuletstone", Potion.resistance.getId(), 800, 50).setAmuletStoneType("Olivine").setTextureName("soulforest:Olivine_amulet_stone"));
-	SoulItems.OnyxAmuletStone = 		Optional.of(new ItemAmuletStone("Onyxamuletstone", Potion.invisibility.getId(), 400, 5, EnumRarity.epic).setAmuletStoneType("Onyx").setTextureName("soulforest:Onyx_amulet_stone"));
-	SoulItems.ScarletiteAmuletStone = 	Optional.of(new ItemAmuletStone("Scarletiteamuletstone", 50, EnumRarity.uncommon).setAmuletStoneType("Scarletite").setTextureName("soulforest:Scarletite_amulet_stone"));
-	SoulItems.TopazAmuletStone = 		Optional.of(new ItemAmuletStone("Topazamuletstone", Potion.digSpeed.getId(), 800, 50).setAmuletStoneType("Topaz").setTextureName("soulforest:Topaz_amulet_stone"));
-	SoulItems.TurquoiseAmuletStone = 	Optional.of(new ItemAmuletStone("Turquoiseamuletstone", Potion.moveSpeed.getId(), 800, 50).setAmuletStoneType("Turquoise").setTextureName("soulforest:Turquoise_amulet_stone"));
-	SoulItems.VioletAmuletStone = 		Optional.of(new ItemAmuletStone("Violetamuletstone", Potion.regeneration.getId(), 800, 50).setAmuletStoneType("Violet").setTextureName("soulforest:Violet_amulet_stone"));
+	SoulItems.AmazoniteAmuletStone = 	Optional.of(new ItemAmuletStone("Amazoniteamuletstone", 15, EnumRarity.rare, "Can heal the player for 2 hearts.", "Right click").setAmuletStoneType("Amazonite").setTextureName("soulforest:Amazonite_amulet_stone"));
+	SoulItems.AmethystAmuletStone = 	Optional.of(new ItemAmuletStone("Amethystamuletstone", 30, EnumRarity.uncommon, "Can cure the player from poison.", "Right click").setAmuletStoneType("Amethyst").setTextureName("soulforest:Amethyst_amulet_stone"));
+	SoulItems.AquamarineAmuletStone = 	Optional.of(new ItemAmuletStone("Aquamarineamuletstone", 15, EnumRarity.rare, "Is pretty.", "None").setAmuletStoneType("Aquamarine").setTextureName("soulforest:Aquamarine_amulet_stone"));
+	SoulItems.BlackdiamondAmuletStone = 	Optional.of(new ItemAmuletStone("Blackdiamondamuletstone", Potion.damageBoost.getId(), 400, 5, EnumRarity.epic, "Can increase the player's damage.", "Right click").setAmuletStoneType("Black Diamond").setTextureName("soulforest:Blackdiamond_amulet_stone"));
+	SoulItems.CitrineAmuletStone = 		Optional.of(new ItemAmuletStone("Citrineamuletstone", 50, "Can be used to increase the value of certain items.", "Gemble Table").setAmuletStoneType("Citrine").setTextureName("soulforest:Citrine_amulet_stone"));
+	SoulItems.JadeAmuletStone = 		Optional.of(new ItemAmuletStone("Jadeamuletstone", Potion.jump.getId(), 800, 50, "Can increase the player's jump height.", "Right click").setAmuletStoneType("Jade").setTextureName("soulforest:Jade_amulet_stone"));
+	SoulItems.JetAmuletStone = 		Optional.of(new ItemAmuletStone("Jetamuletstone", 1000, "Can be used to repair certain items.", "Gemmeration Table").setAmuletStoneType("Jet").setTextureName("soulforest:Jet_amulet_stone"));
+	SoulItems.LilaAmuletStone = 		Optional.of(new ItemAmuletStone("Lilaamuletstone", 50, "Can heal the player for 1 heart.", "Right click").setAmuletStoneType("Lila").setTextureName("soulforest:Lila_amulet_stone"));
+	SoulItems.OlivineAmuletStone = 		Optional.of(new ItemAmuletStone("Olivineamuletstone", Potion.resistance.getId(), 800, 50, "Can increase the player's resistance.", "Right click").setAmuletStoneType("Olivine").setTextureName("soulforest:Olivine_amulet_stone"));
+	SoulItems.OnyxAmuletStone = 		Optional.of(new ItemAmuletStone("Onyxamuletstone", Potion.invisibility.getId(), 400, 5, EnumRarity.epic, "Can make the player invisible.", "Right click").setAmuletStoneType("Onyx").setTextureName("soulforest:Onyx_amulet_stone"));
+	SoulItems.ScarletiteAmuletStone = 	Optional.of(new ItemAmuletStone("Scarletiteamuletstone", 50, EnumRarity.uncommon, "Can be used to enchant certain items.", "Gemming Table").setAmuletStoneType("Scarletite").setTextureName("soulforest:Scarletite_amulet_stone"));
+	SoulItems.TopazAmuletStone = 		Optional.of(new ItemAmuletStone("Topazamuletstone", Potion.digSpeed.getId(), 800, 50, "Can increase the player's dig speed.", "Right click").setAmuletStoneType("Topaz").setTextureName("soulforest:Topaz_amulet_stone"));
+	SoulItems.TurquoiseAmuletStone = 	Optional.of(new ItemAmuletStone("Turquoiseamuletstone", Potion.moveSpeed.getId(), 800, 50, "Can increase the player's movement speed.", "Right click").setAmuletStoneType("Turquoise").setTextureName("soulforest:Turquoise_amulet_stone"));
+	SoulItems.VioletAmuletStone = 		Optional.of(new ItemAmuletStone("Violetamuletstone", Potion.regeneration.getId(), 800, 50, "Can increase the player's health regeneration.", "Right click").setAmuletStoneType("Violet").setTextureName("soulforest:Violet_amulet_stone"));
 	
 	// Amulet Rings
-	SoulItems.BlackdiamondAmuletRing = 	Optional.of(new ItemAmuletRing("Blackdiamondamuletring", 1000, "Black Diamond", EnumRarity.epic).setTextureName("soulforest:Blackdiamond_amulet_ring"));
-	SoulItems.OlivineAmuletRing = 		Optional.of(new ItemAmuletRing("Olivineamuletring", 1000, "Olivine").setTextureName("soulforest:Olivine_amulet_ring"));
-	SoulItems.TurquoiseAmuletRing = 	Optional.of(new ItemAmuletRing("Turquoiseamuletring", 1000, "Turquoise").setTextureName("soulforest:Turquoise_amulet_ring"));
+	SoulItems.BlackdiamondAmuletRing = 	Optional.of(new ItemAmuletRing("Blackdiamondamuletring", 1000, "Black Diamond", EnumRarity.epic, "Increases the player's damage.").setTextureName("soulforest:Blackdiamond_amulet_ring"));
+	SoulItems.OlivineAmuletRing = 		Optional.of(new ItemAmuletRing("Olivineamuletring", 1000, "Olivine", "Increases the player's resistance.").setTextureName("soulforest:Olivine_amulet_ring"));
+	SoulItems.TurquoiseAmuletRing = 	Optional.of(new ItemAmuletRing("Turquoiseamuletring", 1000, "Turquoise", "Increases the player's resistance.").setTextureName("soulforest:Turquoise_amulet_ring"));
 	// Plants		
 	// Bushels
 	SoulItems.GrapesBushel = 		Optional.of((new ItemSoulBushel("Grapesbushel")).setTextureName("soulforest:Grapes_bushel"));
