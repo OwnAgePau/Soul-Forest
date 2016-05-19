@@ -65,7 +65,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 import cpw.mods.fml.common.registry.LanguageRegistry;
 import cpw.mods.fml.relauncher.Side;
 
-@Mod(modid="soulforest", name="Soul Forest Mod", version="1.9.7")
+@Mod(modid="soulforest", name="Soul Forest Mod", version="1.9.75")
 /*@NetworkMod(clientSideRequired = true, serverSideRequired = false, clientPacketHandlerSpec =
 @SidedPacketHandler(channels = {"soul_forest" }, packetHandler = ClientPacketHandler.class),
 serverPacketHandlerSpec =
@@ -76,7 +76,7 @@ public class soul_forest{
     public static soul_forest instance;
 
     public static String MODID = "soulforest";
-    public static String VERSION = "1.9.7";
+    public static String VERSION = "1.9.75";
 
     @SidedProxy(clientSide="com.Mod_Ores.ClientProxy", serverSide="com.Mod_Ores.CommonProxy")
     public static CommonProxy proxy;

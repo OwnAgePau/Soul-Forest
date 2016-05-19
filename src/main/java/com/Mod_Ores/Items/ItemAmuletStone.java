@@ -23,16 +23,20 @@ public class ItemAmuletStone extends Item{
     private int potionID;
     private int durability;
     private String amuletType;
+    private String amuletDescription;
     private boolean isPotionBuff;
+    private String usage;
 
     /** Create an amulet without a rarity and a different use then a potion effect
      * 
      * @param Unlname the name of the amulet
      * @param durability the durability of the potion
      */
-    public ItemAmuletStone(String Unlname, int durability){
+    public ItemAmuletStone(String Unlname, int durability, String description, String usage){
 	super();
 	this.registerItem(Unlname, durability, false);
+	this.amuletDescription = description;
+	this.usage = usage;
     }
 
     /** Create an amulet with a rarity and a different use then a potion effect.
@@ -41,10 +45,12 @@ public class ItemAmuletStone extends Item{
      * @param durability the durability of the potion
      * @param rarity the rarity of the amulet
      */
-    public ItemAmuletStone(String Unlname, int durability, EnumRarity rarity){
+    public ItemAmuletStone(String Unlname, int durability, EnumRarity rarity, String description, String usage){
 	super();
 	this.registerItem(Unlname, durability, false);
 	this.rarity = rarity;
+	this.amuletDescription = description;
+	this.usage = usage;
     }
 
     /** Create an amulet with a potion and without a rarity
@@ -53,11 +59,13 @@ public class ItemAmuletStone extends Item{
      * @param durability the durability of the potion
      * @param potionID the id of the potion
      */
-    public ItemAmuletStone(String Unlname, int potionID, int potionDurability, int durability){
+    public ItemAmuletStone(String Unlname, int potionID, int potionDurability, int durability, String description, String usage){
 	super();
 	this.registerItem(Unlname, durability, true);
 	this.potionID = potionID;
 	this.durability = potionDurability;
+	this.amuletDescription = description;
+	this.usage = usage;
     }
 
     /** Create an amulet with a potion effect and rarity
@@ -67,12 +75,14 @@ public class ItemAmuletStone extends Item{
      * @param potionID the id of the potion
      * @param rarity the rarity of the amulet
      */
-    public ItemAmuletStone(String Unlname, int potionID, int potionDurability, int durability, EnumRarity rarity){
+    public ItemAmuletStone(String Unlname, int potionID, int potionDurability, int durability, EnumRarity rarity, String description, String usage){
 	super();
 	this.registerItem(Unlname, durability, true);
 	this.rarity = rarity;
 	this.potionID = potionID;
 	this.durability = potionDurability;
+	this.amuletDescription = description;
+	this.usage = usage;
     }
     
     private void registerItem(String Unlname, int durability, boolean isPotionBuff){
@@ -126,7 +136,12 @@ public class ItemAmuletStone extends Item{
 	int damage = (uses - par1ItemStack.getItemDamage());
 	par3List.add(this.amuletType);
 	if(this.getMaxDamage() > 0){
+	    par3List.add("\u00A73" + this.amuletDescription);
 	    par3List.add("\u00A73Max Uses : " + damage + "/" + uses);
+	    par3List.add("Usage: " + this.usage);
+	    if(this.durability > 0){
+		par3List.add("Duration: " + this.durability);
+	    }
 	}
     }
 
@@ -157,16 +172,6 @@ public class ItemAmuletStone extends Item{
 	    player.setHealth(player.getHealth() + 2);
 	    isUsed = true;
 	}
-	// use the below 3 in a different way
-	/*else if(this == SoulItems.CitrineAmuletStone.get()){
-	    isUsed = true;
-	}
-	else if(this == SoulItems.ScarletiteAmuletStone.get()){
-	    isUsed = true;
-	}
-	else if(this == SoulItems.JetAmuletStone.get()){
-	    isUsed = true;
-	}*/
 	if(isUsed){
 	    item.damageItem(1, player);
 	}

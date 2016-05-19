@@ -14,16 +14,19 @@ public class ItemAmuletRing extends Item{
     
     private EnumRarity rarity;
     private String amuletType;
+    private String amuletDescription;
     
-    public ItemAmuletRing(String unlname, int durability, String name){
+    public ItemAmuletRing(String unlname, int durability, String name, String description){
 	this.registerItem(unlname, durability);
 	this.amuletType = name;
+	this.amuletDescription = description;
     }
  
-    public ItemAmuletRing(String unlname, int durability, String name, EnumRarity rarity){
+    public ItemAmuletRing(String unlname, int durability, String name, EnumRarity rarity, String description){
 	this.registerItem(unlname, durability);
 	this.rarity = rarity;
 	this.amuletType = name;
+	this.amuletDescription = description;
     }
     
     private void registerItem(String unlname, int durability){
@@ -48,7 +51,9 @@ public class ItemAmuletRing extends Item{
 	int damage = (uses - par1ItemStack.getItemDamage());
 	par3List.add(this.amuletType);
 	if(this.getMaxDamage() > 0){
+	    par3List.add("\u00A73" + this.amuletDescription);
 	    par3List.add("\u00A73Max Uses : " + damage + "/" + uses);
+	    par3List.add("Location: Hotbar");
 	}
     }
 }

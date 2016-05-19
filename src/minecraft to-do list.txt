@@ -1,6 +1,6 @@
 Changes:
 - Changed harvestlevel of Black Diamond, Onyx, Titanium and especially Uranium back to 4 (it was 5 so you would have to get a Fyrised Pickaxe before you could even get to the Soul Forest)
-
+- Added descriptions toe the Amulet Stones & Rings
 
 To-do:
 Setting up Paypal payment link on mod page.
