@@ -3,10 +3,12 @@ Changes:
 
 
 To-do:
-
+Setting up Paypal payment link on mod page.
+- Update item info to show what it is used for (more info), amulets for example don't make sense at all.
 - Ice queen remove walls check
 - Change the shape of the teleporter(s)
 - Add achievements for frozen hearth dimension
+- Find out what items can be found where so that there is a reason to go to both dimensions.
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
@@ -24,6 +26,7 @@ To-do:
 - Make the frost enchantment slow the attacked entity
 - Make the enchantment show up on the weapon that is going to be enchanted in the gemming table.
 - Change the button to see information to shift
+- Maybe even implement a setting that lets players enable or disable the use of the button information (so either permanent showing the information or on button click)
 - Use bog grass seeds as drops for the bog grass, and make them grow into normal crops or perhaps other crops.
 - Make ice queen attack player with frost shards (optional)
 - Uranium Liquid als fuel
