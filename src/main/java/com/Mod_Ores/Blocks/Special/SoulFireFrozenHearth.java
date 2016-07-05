@@ -8,7 +8,7 @@ import com.Mod_Ores.Dimension.SoulForest.TeleportBlockSoulForest;
 import com.Mod_Ores.Init.SoulBlocks;
 import com.Mod_Ores.Init.Config.SoulConfig;
 
-public class SoulFireFrozenHearth extends SoulFire{
+public class SoulFireFrozenHearth extends SoulFire {
 
     public SoulFireFrozenHearth(String Unlname) {
 	super(Unlname);

@@ -117,9 +117,8 @@ public class ForgeHookEventHelper {
 		EntityPlayer player = (EntityPlayer)attacker;
 		// Increase the damage done by the player by 50% against other mobs
 		if(this.checkPlayerHasAmulet(player, SoulItems.BlackdiamondAmuletRing.get())){
-		    float damage = event.ammount;
 		    float bonusDamage = event.ammount / 2;
-		    event.ammount += event.ammount / 2;
+		    event.ammount += bonusDamage;
 		}
 	    }
 	    if(!(attacker instanceof EntityPlayer)){
@@ -129,15 +128,15 @@ public class ForgeHookEventHelper {
 		    // Decrease the damage done to the player by other mobs with 33,333%;
 		    if(this.checkPlayerHasAmulet(player, SoulItems.OlivineAmuletRing.get()) || 
 			    this.checkPlayerHasAmulet(player, SoulItems.TurquoiseAmuletRing.get())){
-			float damage = event.ammount;
 			float protectedDamage = event.ammount / 3F;
-			event.ammount -= event.ammount / 3F;
+			event.ammount -= protectedDamage;
 		    }
 		}
 	    }
 	}
     }
 
+    // Check the player's hotbar for an amulet, could also be used to check for any other item
     private boolean checkPlayerHasAmulet(EntityPlayer player, Item amulet){
 	ItemStack[] inventoryPlayer = player.inventory.mainInventory;
 	for(int i = 0; i < inventoryPlayer.length;i++){
@@ -145,7 +144,7 @@ public class ForgeHookEventHelper {
 	    if(stack != null){
 		if(stack.stackSize > 0){
 		    Item item = stack.getItem();
-		    // Check if Black Diamond Ring is in your hotbar
+		    // Check if the amulet is in your hotbar
 		    if(item.equals(amulet) && i < 9){
 			item.setDamage(stack, item.getDamage(stack) + 1);
 			return true;
@@ -158,13 +157,13 @@ public class ForgeHookEventHelper {
 
     @SubscribeEvent
     public void onEntityUpdate(LivingUpdateEvent event) {
+	// Potion effect that spawns zombies, custom potion test
 	if(!event.entityLiving.worldObj.isRemote){
 	    if (event.entityLiving.isPotionActive(soul_forest.lavaImmunity)) {
 		if (event.entityLiving.worldObj.rand.nextInt(500) == 0) {
 		    EntityZombie entityzombie = new EntityZombie(event.entityLiving.worldObj);
 		    entityzombie.copyLocationAndAnglesFrom(event.entityLiving);
 		    entityzombie.onSpawnWithEgg((IEntityLivingData)null);
-
 		    event.entityLiving.worldObj.spawnEntityInWorld(entityzombie);
 		}
 	    }
@@ -173,6 +172,7 @@ public class ForgeHookEventHelper {
 
     @SubscribeEvent
     public void onExplosionStart(ExplosionEvent.Detonate event){
+	// Make the explosions by the Ice Queen slow the player.
 	Explosion explosion = event.explosion;
 	if(explosion.exploder instanceof EntityIceQueen){
 	    EntityIceQueen queen = (EntityIceQueen)explosion.exploder;
@@ -189,6 +189,7 @@ public class ForgeHookEventHelper {
 
     @SubscribeEvent
     public void onEntityDeath(LivingDeathEvent event){
+	// Check if the player killed the ice queen, and give the player the achievement.
 	if(!event.entityLiving.worldObj.isRemote){
 	    EntityPlayer player = null;
 	    DamageSource source = event.source;

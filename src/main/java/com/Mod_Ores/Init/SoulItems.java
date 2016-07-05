@@ -1,5 +1,7 @@
 package com.Mod_Ores.Init;
 
+import java.util.List;
+
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemPotion;
 
@@ -114,7 +116,7 @@ public class SoulItems
 	public static Optional<? extends Item> TopazAmuletStone = Optional.absent();
 	public static Optional<? extends Item> TurquoiseAmuletStone = Optional.absent();
 	public static Optional<? extends Item> VioletAmuletStone = Optional.absent();
-	
+
 	public static Optional<? extends Item> BlackdiamondAmuletRing = Optional.absent();
 	public static Optional<? extends Item> OlivineAmuletRing = Optional.absent();
 	public static Optional<? extends Item> TurquoiseAmuletRing = Optional.absent();

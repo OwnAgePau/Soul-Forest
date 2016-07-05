@@ -1,12 +1,19 @@
 Changes:
 - Changed harvestlevel of Black Diamond, Onyx, Titanium and especially Uranium back to 4 (it was 5 so you would have to get a Fyrised Pickaxe before you could even get to the Soul Forest)
 - Added descriptions toe the Amulet Stones & Rings
+- Fixed mining silver ore no longer gives you the "First Uncut Found" achievement.
+- Added a bunch of new achievements to fill the gap between the soul forest and the frozen dimension and to give more of a direction of what to build since there are some very usefull crafting tables there!
+- Added a donation button for people who are willing to donate!
+
 
 To-do:
 
+- Frost shards should only be found in ice towers and not the other various, with other words it should only be acquired in the Frozen Dimension.
+
+- Fix block lag and lag around Furivoli's!
+
 - Ice queen remove walls check
 - Change the shape of the teleporter(s)
-- Add achievements for frozen hearth dimension
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)
@@ -32,7 +39,7 @@ To-do:
 - Offset van ice fairy ff naar kijken
 - Add mineral spawning frequenty to the config (maybe)
 - Add Ice fairies will now attack snow creepers.
-- Paypal en/of adfly opzetten
+- [x]Paypal en/of adfly opzetten
 - Create custom GUI for gemble table, gemming table and gemmeration table.
 - [?]To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
 - [OPT]soul tree random leave colour (case can be heavily optimised), orange and pink leaves (PLEASE REMOVE)

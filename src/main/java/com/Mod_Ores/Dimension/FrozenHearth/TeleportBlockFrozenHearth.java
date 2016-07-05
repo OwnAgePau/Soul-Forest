@@ -131,7 +131,7 @@ public class TeleportBlockFrozenHearth extends BlockBreakable
 	    else if (var6.dimension == SoulConfig.SoulForestID){
 		var6.timeUntilPortal = 10;
 		var6.mcServer.getConfigurationManager().transferPlayerToDimension(var6, SoulConfig.FrozenHearthID, new TeleporterFrozenHearth(mServer.worldServerForDimension(SoulConfig.FrozenHearthID)));
-		//var6.addStat(InitAchievements.soulForest, 1);
+		var6.addStat(InitAchievements.frozenHearth, 1);
 	    }
 	    else {
 		var6.timeUntilPortal = 10;

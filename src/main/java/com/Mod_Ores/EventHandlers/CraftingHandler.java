@@ -7,6 +7,9 @@ import net.minecraft.item.ItemStack;
 import com.Mod_Ores.Init.InitAchievements;
 import com.Mod_Ores.Init.SoulBlocks;
 import com.Mod_Ores.Init.SoulItems;
+import com.Mod_Ores.Items.*;
+import com.Mod_Ores.Items.Armor.*;
+import com.Mod_Ores.Blocks.*;
 
 import cpw.mods.fml.common.eventhandler.SubscribeEvent;
 import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
@@ -17,41 +20,69 @@ public class CraftingHandler{
 
     @SubscribeEvent
     public void onCrafting(ItemCraftedEvent event){		
-	String craftedItem = event.crafting.getItem().getUnlocalizedName();
-	if (craftedItem.equals(SoulItems.BaneberryCake.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.BlueberryMuffin.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.BlackberryCrumble.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.CranberryMuffin.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.CranberryJuice.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.RaspberryJuice.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.RazzberryJuice.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.RazzberryPie.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.StrawberryPie.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.Wine.get().getUnlocalizedName())){
+	Item itemCrafted = event.crafting.getItem();
+	String itemName = event.crafting.getItem().getUnlocalizedName();
+	if(itemCrafted instanceof ItemSoulFood){
 	    event.player.addStat(InitAchievements.soulFood, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.BerryCollector.get().getUnlocalizedName())){
+	if (itemName.equals(SoulItems.BerryCollector.get().getUnlocalizedName())){
 	    event.player.addStat(InitAchievements.berryCollectorCraft, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.CranberryBushel.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.RaspberryBushel.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.RazzberryBushel.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.BlueberryBushel.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.BlackberryBushel.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.BaneberryBushel.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.GrapesBushel.get().getUnlocalizedName())){
+	if(itemCrafted instanceof ItemSoulBushel){
 	    event.player.addStat(InitAchievements.berryCollector, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.BronzeIngot.get().getUnlocalizedName())){
+	if (itemName.equals(SoulItems.BronzeIngot.get().getUnlocalizedName())){
 	    event.player.addStat(InitAchievements.getBronze, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.SteelPickaxe.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.CobaltPickaxe.get().getUnlocalizedName())){
+	if (itemName.equals(SoulItems.SteelPickaxe.get().getUnlocalizedName()) || itemName.equals(SoulItems.CobaltPickaxe.get().getUnlocalizedName())){
 	    event.player.addStat(InitAchievements.getSteelOrCobaltPickaxe, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.TitaniumStick.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.OnyxStick.get().getUnlocalizedName())){
+	if (itemName.equals(SoulItems.TitaniumStick.get().getUnlocalizedName()) || itemName.equals(SoulItems.OnyxStick.get().getUnlocalizedName())){
 	    event.player.addStat(InitAchievements.reinforcedSticks, 1);
 	}
 
-	if (craftedItem.equals(SoulItems.FyrisedBoots.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.FyrisedLeggings.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.FyrisedChestplate.get().getUnlocalizedName()) || craftedItem.equals(SoulItems.FyrisedHelmet.get().getUnlocalizedName())){
+	if(itemCrafted instanceof ItemArmorFyrised){
 	    event.player.addStat(InitAchievements.getFyrisedArmorPiece, 1);
 	}
 
-	if(craftedItem.equals(SoulItems.FrostWand.get().getUnlocalizedName())){
+	if(itemName.equals(SoulItems.FrostWand.get().getUnlocalizedName())){
 	    event.player.addStat(InitAchievements.wand, 1);
 	}
 
-	if(craftedItem.equals(SoulBlocks.GelExtractor.get().getUnlocalizedName())){
+	if(itemName.equals(SoulBlocks.GelExtractor.get().getUnlocalizedName())){
 	    event.player.addStat(InitAchievements.gelExtractor, 1);
+	}
+	
+	if(itemName.equals((SoulBlocks.IceWorkbench.get().getUnlocalizedName()))){
+	    event.player.addStat(InitAchievements.iceWorkbench, 1);
+	}
+	
+	if(itemName.equals((SoulBlocks.GemmerationTable.get().getUnlocalizedName()))){
+	    event.player.addStat(InitAchievements.gemmerationTable, 1);
+	}
+	
+	if(itemName.equals((SoulBlocks.GemmingTable.get().getUnlocalizedName()))){
+	    event.player.addStat(InitAchievements.gemmingTable, 1);
+	}
+	
+	if(itemName.equals((SoulBlocks.GembleTable.get().getUnlocalizedName()))){
+	    event.player.addStat(InitAchievements.gembleTable, 1);
+	}
+	
+	if(itemCrafted instanceof ItemAmuletStone){
+	    event.player.addStat(InitAchievements.amuletStone, 1);
+	}
+	
+	if(itemCrafted instanceof ItemAmuletRing){
+	    event.player.addStat(InitAchievements.amuletRing, 1);
+	}
+	if(itemName.equals((SoulItems.MagicEmblem.get().getUnlocalizedName()))){
+	    event.player.addStat(InitAchievements.magicEmblem, 1);
 	}
     }
 

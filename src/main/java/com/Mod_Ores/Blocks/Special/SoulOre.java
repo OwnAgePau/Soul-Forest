@@ -94,7 +94,7 @@ public class SoulOre extends Block{
 	    super.onBlockHarvested(par1World, par2, par3, par4, par5, par6EntityPlayer);
 	    par6EntityPlayer.addStat(InitAchievements.mineTinCopper, 1);
 	}
-	else{
+	else if(!(this == SoulBlocks.Silverore.get())){
 	    super.onBlockHarvested(par1World, par2, par3, par4, par5, par6EntityPlayer);
 	    par6EntityPlayer.addStat(InitAchievements.firstUncutfound, 1);
 	}
