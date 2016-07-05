@@ -1,6 +1,7 @@
 Changes:
 - Changed harvestlevel of Black Diamond, Onyx, Titanium and especially Uranium back to 4 (it was 5 so you would have to get a Fyrised Pickaxe before you could even get to the Soul Forest)
-- Added descriptions toe the Amulet Stones & Rings
+- Changed Frost related items no longer can be found in titanium tower or slate tower chest rooms.
+- Added descriptions to the Amulet Stones & Rings
 - Fixed mining silver ore no longer gives you the "First Uncut Found" achievement.
 - Added a bunch of new achievements to fill the gap between the soul forest and the frozen dimension and to give more of a direction of what to build since there are some very usefull crafting tables there!
 - Added a donation button for people who are willing to donate!
@@ -14,8 +15,6 @@ To-do:
 
 - Ice queen remove walls check
 - Change the shape of the teleporter(s)
-
-- Find out what items can be found where so that there is a reason to go to both dimensions.
 
 - Thaumcraft api
 - Buildcraft/Galacticraft/IC2 api (for tin/copper/silver)

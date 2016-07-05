@@ -37,7 +37,6 @@ public class SoulForestChestContent {
 	new WeightedRandomChestContent(SoulItems.OlivineGem.get(), 0, 5, 14, 6)};
     
     public static WeightedRandomChestContent[] titaniumTowerChestContent = new WeightedRandomChestContent[] {
-	new WeightedRandomChestContent(SoulItems.FrostShard.get(), 0, 3, 7, 10), 
 	new WeightedRandomChestContent(SoulItems.BurnedShard.get(), 0, 3, 7, 10), 
 	new WeightedRandomChestContent(SoulItems.Soul.get(), 0, 3, 7, 10), 
 	new WeightedRandomChestContent(SoulItems.LightShard.get(), 0, 3, 7, 10), 
@@ -48,9 +47,6 @@ public class SoulForestChestContent {
 	new WeightedRandomChestContent(SoulItems.FireMagicFragmentHalf.get(), 0, 1, 1, 6), 
 	new WeightedRandomChestContent(SoulItems.FireMagicFragmentAdv.get(), 0, 1, 1, 4), 
 	new WeightedRandomChestContent(SoulItems.BurnedMagicFragmentAdv.get(), 0, 1, 1, 4), 
-	new WeightedRandomChestContent(SoulItems.FrostWand.get(), 0, 1, 1, 1), 
-	new WeightedRandomChestContent(SoulItems.FrozenRod.get(), 0, 1, 4, 7), 
-	new WeightedRandomChestContent(SoulItems.FrozenStick.get(), 0, 1, 4, 7), 
 	new WeightedRandomChestContent(SoulItems.BlackdiamondGem.get(), 0, 1, 3, 2), 
 	new WeightedRandomChestContent(SoulItems.AmethystGem.get(), 0, 3, 6, 7), 
 	new WeightedRandomChestContent(SoulItems.CranberryMuffin.get(), 0, 1, 5, 7), 
@@ -67,7 +63,6 @@ public class SoulForestChestContent {
 	new WeightedRandomChestContent(SoulItems.OlivineGem.get(), 0, 5, 14, 6)};
     
     public static WeightedRandomChestContent[] slateTowerChestContent = new WeightedRandomChestContent[] {
-	new WeightedRandomChestContent(SoulItems.FrostShard.get(), 0, 3, 7, 10), 
 	new WeightedRandomChestContent(SoulItems.BurnedShard.get(), 0, 3, 7, 10), 
 	new WeightedRandomChestContent(SoulItems.Soul.get(), 0, 3, 7, 10), 
 	new WeightedRandomChestContent(SoulItems.LightShard.get(), 0, 3, 7, 10), 
@@ -75,10 +70,7 @@ public class SoulForestChestContent {
 	new WeightedRandomChestContent(SoulItems.LightFragment.get(), 0, 1, 2, 8), 
 	new WeightedRandomChestContent(SoulItems.SoulMagicFragment.get(), 0, 1, 1, 6), 
 	new WeightedRandomChestContent(SoulItems.SoulMagicFragmentHalf.get(), 0, 1, 1, 6), 
-	new WeightedRandomChestContent(SoulItems.SoulMagicFragmentAdv.get(), 0, 1, 1, 4), 
-	new WeightedRandomChestContent(SoulItems.FrostWand.get(), 0, 1, 1, 1), 
-	new WeightedRandomChestContent(SoulItems.FrozenRod.get(), 0, 1, 4, 7), 
-	new WeightedRandomChestContent(SoulItems.FrozenStick.get(), 0, 1, 4, 7), 
+	new WeightedRandomChestContent(SoulItems.SoulMagicFragmentAdv.get(), 0, 1, 1, 4),  
 	new WeightedRandomChestContent(SoulItems.BlackdiamondGem.get(), 0, 1, 3, 2), 
 	new WeightedRandomChestContent(SoulItems.AmethystGem.get(), 0, 3, 6, 7), 
 	new WeightedRandomChestContent(SoulItems.CranberryMuffin.get(), 0, 1, 5, 7), 
@@ -93,5 +85,4 @@ public class SoulForestChestContent {
 	new WeightedRandomChestContent(SoulItems.SteelSword.get(), 0, 1, 1, 4), 
 	new WeightedRandomChestContent(SoulItems.OpalGem.get(), 0, 4, 19, 9), 
 	new WeightedRandomChestContent(SoulItems.OlivineGem.get(), 0, 5, 14, 6)};
-
 }
