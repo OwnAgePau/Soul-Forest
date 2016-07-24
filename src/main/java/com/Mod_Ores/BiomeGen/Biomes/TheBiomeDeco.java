@@ -3,6 +3,7 @@ package com.Mod_Ores.BiomeGen.Biomes;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeDecorator;
 import net.minecraft.world.biome.BiomeGenBase;
@@ -28,9 +29,9 @@ import com.Mod_Ores.BiomeGen.WorldGen.WorldGenSoulVine;
 import com.Mod_Ores.BiomeGen.WorldGen.WorldGenSoulWaterfalls;
 import com.Mod_Ores.Init.SoulBlocks;
 
-public class TheBiomeDeco extends BiomeDecorator
-{	
-    /** The world the BiomeDecorator is currently decorating */
+public class TheBiomeDeco extends BiomeDecorator{	
+    
+	/** The world the BiomeDecorator is currently decorating */
     public World currentWorld;
 
     /** The Biome Decorator's random number generator. */
@@ -124,271 +125,293 @@ public class TheBiomeDeco extends BiomeDecorator
 
     protected WorldGenerator soulfireGen;
 
-    public TheBiomeDeco(BiomeGenBase biomeGenBaseMarona)
-    {
-	super();
-	this.randomGenerator = new Random();
-	this.icetowerGen = new WorldGenTower(SoulBlocks.IceBrick.get(), SoulBlocks.IceBrickStairs.get(), 
-		SoulBlocks.SoulSnowTop.get(), soul_forest.soulForestChestContents.iceTowerChestContent);
-	this.titaniumtowerGen = new WorldGenTower(SoulBlocks.TitaniumBrick.get(), SoulBlocks.TitaniumBrickStairs.get(), 
-		SoulBlocks.FyrisedSandGrass.get(), soul_forest.soulForestChestContents.titaniumTowerChestContent);
-	this.slatetowerGen = new WorldGenTower(SoulBlocks.SlateBrick.get(), SoulBlocks.SlateBrickStairs.get(), 
-		SoulBlocks.BogGrass.get(), soul_forest.soulForestChestContents.slateTowerChestContent);
-	this.darkAltarGen = new WorldGenDarkAltar();
-	this.grapetreeGen = new WorldGenGrapeTree(false);
-	this.hardwoodtreeGen = new WorldGenTallTrees(this.randomGenerator, SoulBlocks.HardwoodLeaves.get(), SoulBlocks.HardwoodLog.get(), 
-		SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get());
-	this.frozentreeGen = new WorldGenTallTrees(this.randomGenerator, SoulBlocks.IceLeaves.get(), SoulBlocks.IceLog.get(), 
-		SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get());
-	this.soultreeGen = new WorldGenSoulTrees();
-	this.shrubGen = new WorldGenSoulShrub(SoulBlocks.SoulLeaves.get(), SoulBlocks.SoulLog.get());
-	this.soulbushGen = new WorldGenSoulBush(SoulBlocks.SoulLog.get(), SoulBlocks.SoulLeaves.get(), 
-		SoulBlocks.BogGrass.get(), SoulBlocks.BogDirt.get(), 2);
-	this.fyrisedbushGen = new WorldGenSoulBush(SoulBlocks.HardwoodLog.get(), SoulBlocks.HardwoodLeaves.get(), 
-		SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get(), 2);
-	this.cantaloupeGen = new WorldGenCantaloupe(SoulBlocks.PlantCantaloupe.get());
-	this.grapesapplingGen = new WorldGenSapplingGrape(SoulBlocks.SaplingGrape.get());
-	this.fireblossomGen =  new WorldGenPlant(SoulBlocks.Fireblossom.get());
-	this.shinaiGen =  new WorldGenPlant(SoulBlocks.FrozenShinai.get());
-	this.vineplantGen =  new WorldGenPlant(SoulBlocks.Vineplant.get());
-	this.lakeGen = new WorldGenSoulLakes(SoulBlocks.SoulWaterMoving.get());
-	this.bogwaterGen = new WorldGenPeatBogWater(SoulBlocks.SoulWaterMoving.get());
-	this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), this.blockToPlaceWaterIn, true);
-	this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), this.blockToPlaceWaterIn, true);
-	this.soulfireGen = new WorldGenSoulFire();
-	this.baneberryVineGen = new WorldGenSoulVine(SoulBlocks.Baneberry.get());
-	this.blueberryVineGen = new WorldGenSoulVine(SoulBlocks.Blueberry.get());
-	this.blackberryVineGen = new WorldGenSoulVine(SoulBlocks.Blackberry.get());
-	this.cranberryVineGen = new WorldGenSoulVine(SoulBlocks.Cranberry.get());
-	this.raspberryVineGen = new WorldGenSoulVine(SoulBlocks.Raspberry.get());
-	this.razzberryVineGen = new WorldGenSoulVine(SoulBlocks.Razzberry.get());
-	this.strawberryVineGen = new WorldGenSoulVine(SoulBlocks.Strawberry.get());        
-	this.thebiome = biomeGenBaseMarona;
+    public TheBiomeDeco(BiomeGenBase biomeGenBaseMarona){
+		super();
+		this.randomGenerator = new Random();
+		this.icetowerGen = new WorldGenTower(SoulBlocks.IceBrick.get(), SoulBlocks.IceBrickStairs.get(), 
+			SoulBlocks.SoulSnowTop.get(), soul_forest.soulForestChestContents.iceTowerChestContent);
+		this.titaniumtowerGen = new WorldGenTower(SoulBlocks.TitaniumBrick.get(), SoulBlocks.TitaniumBrickStairs.get(), 
+			SoulBlocks.FyrisedSandGrass.get(), soul_forest.soulForestChestContents.titaniumTowerChestContent);
+		this.slatetowerGen = new WorldGenTower(SoulBlocks.SlateBrick.get(), SoulBlocks.SlateBrickStairs.get(), 
+			SoulBlocks.BogGrass.get(), soul_forest.soulForestChestContents.slateTowerChestContent);
+		this.darkAltarGen = new WorldGenDarkAltar();
+		this.grapetreeGen = new WorldGenGrapeTree(false);
+		this.hardwoodtreeGen = new WorldGenTallTrees(this.randomGenerator, SoulBlocks.HardwoodLeaves.get(), SoulBlocks.HardwoodLog.get(), 
+			SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get());
+		this.frozentreeGen = new WorldGenTallTrees(this.randomGenerator, SoulBlocks.IceLeaves.get(), SoulBlocks.IceLog.get(), 
+			SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get());
+		this.soultreeGen = new WorldGenSoulTrees();
+		this.shrubGen = new WorldGenSoulShrub(SoulBlocks.SoulLeaves.get(), SoulBlocks.SoulLog.get());
+		this.soulbushGen = new WorldGenSoulBush(SoulBlocks.SoulLog.get(), SoulBlocks.SoulLeaves.get(), 
+			SoulBlocks.BogGrass.get(), SoulBlocks.BogDirt.get(), 2);
+		this.fyrisedbushGen = new WorldGenSoulBush(SoulBlocks.HardwoodLog.get(), SoulBlocks.HardwoodLeaves.get(), 
+			SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get(), 2);
+		this.cantaloupeGen = new WorldGenCantaloupe(SoulBlocks.PlantCantaloupe.get());
+		this.grapesapplingGen = new WorldGenSapplingGrape(SoulBlocks.SaplingGrape.get());
+		this.fireblossomGen =  new WorldGenPlant(SoulBlocks.Fireblossom.get());
+		this.shinaiGen =  new WorldGenPlant(SoulBlocks.FrozenShinai.get());
+		this.vineplantGen =  new WorldGenPlant(SoulBlocks.Vineplant.get());
+		this.lakeGen = new WorldGenSoulLakes(SoulBlocks.SoulWaterMoving.get());
+		this.bogwaterGen = new WorldGenPeatBogWater(SoulBlocks.SoulWaterMoving.get());
+		this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), this.blockToPlaceWaterIn, true);
+		this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), this.blockToPlaceWaterIn, true);
+		this.soulfireGen = new WorldGenSoulFire(SoulBlocks.SoulFire.get());
+		this.baneberryVineGen = new WorldGenSoulVine(SoulBlocks.Baneberry.get());
+		this.blueberryVineGen = new WorldGenSoulVine(SoulBlocks.Blueberry.get());
+		this.blackberryVineGen = new WorldGenSoulVine(SoulBlocks.Blackberry.get());
+		this.cranberryVineGen = new WorldGenSoulVine(SoulBlocks.Cranberry.get());
+		this.raspberryVineGen = new WorldGenSoulVine(SoulBlocks.Raspberry.get());
+		this.razzberryVineGen = new WorldGenSoulVine(SoulBlocks.Razzberry.get());
+		this.strawberryVineGen = new WorldGenSoulVine(SoulBlocks.Strawberry.get());        
+		this.thebiome = biomeGenBaseMarona;
     }
 
     @Override
-    public void decorateChunk(World par1World, Random par2Random, BiomeGenBase base, int par3, int par4){
-	if (this.currentWorld != null){
-	    //System.out.println("Allready decorating!!");
-	}
-	else{
-	    this.currentWorld = par1World;
-	    this.randomGenerator = par2Random;
-	    this.chunk_X = par3;
-	    this.chunk_Z = par4;
-	    this.genDecorations(base);
-	    this.currentWorld = null;
-	    this.randomGenerator = null;
-	}
+    public void decorate(World worldIn, Random random, BiomeGenBase base, BlockPos pos){
+		if (this.currentWorld != null){
+		    //System.out.println("Allready decorating!!");
+		}
+		else{
+		    this.currentWorld = worldIn;
+		    this.randomGenerator = random;
+		    this.chunk_X = pos.getX();
+		    this.chunk_Z = pos.getY();
+		    this.genDecorations(base);
+		    this.currentWorld = null;
+		    this.randomGenerator = null;
+		}
     }
 
     @Override
     public void genDecorations(BiomeGenBase base) {
-	MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(this.currentWorld, this.randomGenerator, this.chunk_X, this.chunk_Z));
-
-	//structures
-	for (int g1 = 0; g1 < this.icetowersperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.icetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.slatetowersperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.slatetowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	if(this.titaniumtowersperchunk > 0){
-	    if(this.randomGenerator.nextInt(32) <= this.titaniumtowersperchunk){
-		int g2 = chunk_X + randomGenerator.nextInt(16);
-		int h1 = randomGenerator.nextInt(128);
-		int g3 = chunk_Z + randomGenerator.nextInt(16);
-		this.titaniumtowerGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	    }
-	}
-	if(this.darkaltarsperchunk > 0){
-	    if(this.randomGenerator.nextInt(40) <= this.darkaltarsperchunk){
-		int g2 = chunk_X + randomGenerator.nextInt(16);
-		int h1 = randomGenerator.nextInt(128);
-		int g3 = chunk_Z + randomGenerator.nextInt(16);
-		this.darkAltarGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	    }
-	}
-
-	//grass
-	for (int g1 = 0; g1 < this.tallgrassperchunk * 2; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.tallgrassGen = soul_forest.getRandomWorldGenForGrass(randomGenerator, this.tallgrasstype);
-	    this.tallgrassGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.bushesperchunk * 2; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.bushesGen = soul_forest.getRandomWorldGenForGrass(randomGenerator, 4);
-	    this.bushesGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	//trees
-	for (int g1 = 0; g1 < this.grapetreeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = this.randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.grapetreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.hardwoodtreeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = this.randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.hardwoodtreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.soultreeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = this.randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.soultreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.frozentreeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = this.randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.frozentreeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	//vines
-	for (int g1 = 0; g1 < this.baneberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.baneberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.blackberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.blackberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.blueberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.cranberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.cranberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.blueberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.raspberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.raspberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.razzberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.razzberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.strawberryvineperchunk; g1++)
-	{
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.strawberryVineGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}       
-	//plants
-	for (int g1 = 0; g1 < this.cantaloupeperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.cantaloupeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}     
-	for (int g1 = 0; g1 < this.shrubperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(64);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(64);
-	    this.shrubGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.soulbushperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.soulbushGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.fyrisedbushperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.fyrisedbushGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.grapesapplingperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.grapesapplingGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}		
-	for (int g1 = 0; g1 < this.fireblossomsperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.fireblossomGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.shinaiperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(32);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(32);
-	    this.shinaiGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-	for (int g1 = 0; g1 < this.vineplantperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(24);
-	    int h1 = this.randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(24);
-	    this.vineplantGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}
-
-	//water\lava\fire
-	for (int g1 = 0; g1 < this.lakesperchunk; g1++){
-            int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
-            int h1 = randomGenerator.nextInt(128);
-            int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
-            this.lakeGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-        }
-        for (int g1 = 0; g1 < this.waterfallsperchunk; g1++){
-        	int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
-        	int h1 = randomGenerator.nextInt(108) + 10;
-            int g3 = chunk_Z + randomGenerator.nextInt(16);
-            this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), this.blockToPlaceWaterIn, true);
-            this.waterfallGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-        }      
-        for (int g1 = 0; g1 < this.lavafallsperchunk; g1++){
-        	int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
-        	int h1 = randomGenerator.nextInt(108) + 10;
-            int g3 = chunk_Z + randomGenerator.nextInt(16);
-            this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), this.blockToPlaceWaterIn, true);
-            this.lavafallGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-        }
-	for (int g1 = 0; g1 < this.bogwaterperchunk * 30; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(8);
-	    int h1 = randomGenerator.nextInt(98) + 25;
-	    int g3 = chunk_Z + randomGenerator.nextInt(8);
-	    this.bogwaterGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}     
-	for (int g1 = 0; g1 < this.soulfiresperchunk; g1++){
-	    int g2 = chunk_X + randomGenerator.nextInt(16);
-	    int h1 = randomGenerator.nextInt(128);
-	    int g3 = chunk_Z + randomGenerator.nextInt(16);
-	    this.soulfireGen.generate(currentWorld, randomGenerator, g2, h1, g3);
-	}		    	
-	MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, chunk_X, chunk_Z));		
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(this.currentWorld, this.randomGenerator, new BlockPos(this.chunk_X, 0, this.chunk_Z)));
+	
+		//structures
+		for (int g1 = 0; g1 < this.icetowersperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(16);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(16);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.icetowerGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.slatetowersperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(16);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(16);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.slatetowerGen.generate(currentWorld, randomGenerator, position);
+		}
+		if(this.titaniumtowersperchunk > 0){
+		    if(this.randomGenerator.nextInt(32) <= this.titaniumtowersperchunk){
+				int g2 = chunk_X + randomGenerator.nextInt(16);
+				int h1 = randomGenerator.nextInt(128);
+				int g3 = chunk_Z + randomGenerator.nextInt(16);
+				BlockPos position = new BlockPos(g2, h1, g3);
+				this.titaniumtowerGen.generate(currentWorld, randomGenerator, position);
+		    }
+		}
+		if(this.darkaltarsperchunk > 0){
+		    if(this.randomGenerator.nextInt(40) <= this.darkaltarsperchunk){
+				int g2 = chunk_X + randomGenerator.nextInt(16);
+				int h1 = randomGenerator.nextInt(128);
+				int g3 = chunk_Z + randomGenerator.nextInt(16);
+				BlockPos position = new BlockPos(g2, h1, g3);
+				this.darkAltarGen.generate(currentWorld, randomGenerator, position);
+		    }
+		}
+	
+		//grass
+		for (int g1 = 0; g1 < this.tallgrassperchunk * 2; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(16);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(16);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.tallgrassGen = soul_forest.getRandomWorldGenForGrass(randomGenerator, this.tallgrasstype);
+		    this.tallgrassGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.bushesperchunk * 2; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.bushesGen = soul_forest.getRandomWorldGenForGrass(randomGenerator, 4);
+		    this.bushesGen.generate(currentWorld, randomGenerator, position);
+		}
+		//trees
+		for (int g1 = 0; g1 < this.grapetreeperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = this.randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(16);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.grapetreeGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.hardwoodtreeperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = this.randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(16);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.hardwoodtreeGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.soultreeperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = this.randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.soultreeGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.frozentreeperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = this.randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.frozentreeGen.generate(currentWorld, randomGenerator, position);
+		}
+		//vines
+		for (int g1 = 0; g1 < this.baneberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.baneberryVineGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.blackberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.blackberryVineGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.blueberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.cranberryVineGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.cranberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.blueberryVineGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.raspberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.raspberryVineGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.razzberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.razzberryVineGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.strawberryvineperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.strawberryVineGen.generate(currentWorld, randomGenerator, position);
+		}       
+		//plants
+		for (int g1 = 0; g1 < this.cantaloupeperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.cantaloupeGen.generate(currentWorld, randomGenerator, position);
+		}     
+		for (int g1 = 0; g1 < this.shrubperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(64);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(64);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.shrubGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.soulbushperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.soulbushGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.fyrisedbushperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.fyrisedbushGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.grapesapplingperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.grapesapplingGen.generate(currentWorld, randomGenerator, position);
+		}		
+		for (int g1 = 0; g1 < this.fireblossomsperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.fireblossomGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.shinaiperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(32);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(32);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.shinaiGen.generate(currentWorld, randomGenerator, position);
+		}
+		for (int g1 = 0; g1 < this.vineplantperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(24);
+		    int h1 = this.randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(24);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.vineplantGen.generate(currentWorld, randomGenerator, position);
+		}
+	
+		//water\lava\fire
+		for (int g1 = 0; g1 < this.lakesperchunk; g1++){
+	            int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	            int h1 = randomGenerator.nextInt(128);
+	            int g3 = chunk_Z + randomGenerator.nextInt(16) + 8;
+	            BlockPos position = new BlockPos(g2, h1, g3);
+	            this.lakeGen.generate(currentWorld, randomGenerator, position);
+	        }
+	        for (int g1 = 0; g1 < this.waterfallsperchunk; g1++){
+	        	int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	        	int h1 = randomGenerator.nextInt(108) + 10;
+	            int g3 = chunk_Z + randomGenerator.nextInt(16);
+	            BlockPos position = new BlockPos(g2, h1, g3);
+	            this.waterfallGen = new WorldGenSoulWaterfalls(SoulBlocks.SoulWaterMoving.get(), this.blockToPlaceWaterIn, true);
+	            this.waterfallGen.generate(currentWorld, randomGenerator, position);
+	        }      
+	        for (int g1 = 0; g1 < this.lavafallsperchunk; g1++){
+	        	int g2 = chunk_X + randomGenerator.nextInt(16) + 8;
+	        	int h1 = randomGenerator.nextInt(108) + 10;
+	            int g3 = chunk_Z + randomGenerator.nextInt(16);
+	            BlockPos position = new BlockPos(g2, h1, g3);
+	            this.lavafallGen = new WorldGenSoulWaterfalls(Block.getBlockFromName("flowing_lava"), this.blockToPlaceWaterIn, true);
+	            this.lavafallGen.generate(currentWorld, randomGenerator, position);
+	        }
+		for (int g1 = 0; g1 < this.bogwaterperchunk * 30; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(8);
+		    int h1 = randomGenerator.nextInt(98) + 25;
+		    int g3 = chunk_Z + randomGenerator.nextInt(8);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.bogwaterGen.generate(currentWorld, randomGenerator, position);
+		}     
+		for (int g1 = 0; g1 < this.soulfiresperchunk; g1++){
+		    int g2 = chunk_X + randomGenerator.nextInt(16);
+		    int h1 = randomGenerator.nextInt(128);
+		    int g3 = chunk_Z + randomGenerator.nextInt(16);
+		    BlockPos position = new BlockPos(g2, h1, g3);
+		    this.soulfireGen.generate(currentWorld, randomGenerator, position);
+		}		    	
+		MinecraftForge.EVENT_BUS.post(new DecorateBiomeEvent.Pre(currentWorld, randomGenerator, new BlockPos(chunk_X, 0, chunk_Z)));		
     }
 }

@@ -8,11 +8,9 @@ import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.world.World;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
-public class ItemSoulFood extends ItemFood
-{
+public class ItemSoulFood extends ItemFood{
     /** Number of ticks to run while 'EnumAction'ing until result. */
     public final int itemUseDuration;
 
@@ -42,6 +40,12 @@ public class ItemSoulFood extends ItemFood
     /** probably of the set potion effect occurring */
     private float potionEffectProbability;
 
+    public final String textureName;
+    
+    public String getName(){
+    	return this.textureName;
+    }
+    
     /**
      * 
      * @param par1Id the itemID
@@ -52,26 +56,24 @@ public class ItemSoulFood extends ItemFood
      * @param par6UnlName Unlocalized Name
      * @param par7IngName In game Name
      */
-    public ItemSoulFood(int par2duration, int par3healAmmount, float par4saturation, boolean par5WolfsFavMeat, String par6UnlName)
-    {
+    public ItemSoulFood(int par2duration, int par3healAmmount, float par4saturation, boolean par5WolfsFavMeat, String par6UnlName){
         super(par2duration, par5WolfsFavMeat);
         this.itemUseDuration = par2duration;
         this.healAmount = par3healAmmount;
         this.saturationModifier = par4saturation;
         this.isWolfsFavoriteMeat = par5WolfsFavMeat;
-        this.setUnlocalizedName(par6UnlName);
-        GameRegistry.registerItem(this, par6UnlName, soul_forest.MODID);
+        this.setUnlocalizedName(soul_forest.MODID + "_" + par6UnlName);
+        this.textureName = par6UnlName;
+        GameRegistry.registerItem(this, par6UnlName);
         
         this.setCreativeTab(soul_forest.tabSoulBerries);
     }
 
-    public ItemSoulFood(int par2duration, int par3, boolean par4, String par5unlName)
-    {
+    public ItemSoulFood(int par2duration, int par3, boolean par4, String par5unlName){
         this(par2duration, par3, 0.6F, par4, par5unlName);
     }
 
-    public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-    {
+    public ItemStack onEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer){
         --par1ItemStack.stackSize;
         par3EntityPlayer.getFoodStats().addStats(this.healAmount, this.saturationModifier);
         par2World.playSoundAtEntity(par3EntityPlayer, "random.burp", 0.5F, par2World.rand.nextFloat() * 0.1F + 0.9F);
@@ -79,10 +81,8 @@ public class ItemSoulFood extends ItemFood
         return par1ItemStack;
     }
 
-    protected void onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-    {
-        if (!par2World.isRemote && this.potionId > 0 && par2World.rand.nextFloat() < this.potionEffectProbability)
-        {
+    protected void onFoodEaten(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer){
+        if (!par2World.isRemote && this.potionId > 0 && par2World.rand.nextFloat() < this.potionEffectProbability){
             par3EntityPlayer.addPotionEffect(new PotionEffect(this.potionId, this.potionDuration * 20, this.potionAmplifier));
         }
     }
@@ -90,50 +90,43 @@ public class ItemSoulFood extends ItemFood
     /**
      * How long it takes to use or consume an item
      */
-    public int getMaxItemUseDuration(ItemStack par1ItemStack)
-    {
+    public int getMaxItemUseDuration(ItemStack par1ItemStack){
         return 32;
     }
 
     /**
      * returns the action that specifies what animation to play when the items is being used
      */
-    public EnumAction getItemUseAction(ItemStack par1ItemStack)
-    {
-        return EnumAction.eat;
+    public EnumAction getItemUseAction(ItemStack par1ItemStack){
+        return EnumAction.EAT;
     }
 
     /**
      * Called whenever this item is equipped and the right mouse button is pressed. Args: itemStack, world, entityPlayer
      */
-    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer)
-    {
-        if (par3EntityPlayer.canEat(this.alwaysEdible))
-        {
+    public ItemStack onItemRightClick(ItemStack par1ItemStack, World par2World, EntityPlayer par3EntityPlayer){
+        if (par3EntityPlayer.canEat(this.alwaysEdible)){
             par3EntityPlayer.setItemInUse(par1ItemStack, this.getMaxItemUseDuration(par1ItemStack));
         }
 
         return par1ItemStack;
     }
 
-    public int getHealAmount()
-    {
+    public int getHealAmount(){
         return this.healAmount;
     }
 
     /**
      * gets the saturationModifier of the ItemFood
      */
-    public float getSaturationModifier()
-    {
+    public float getSaturationModifier(){
         return this.saturationModifier;
     }
 
     /**
      * Whether wolves like this food (true for raw and cooked porkchop).
      */
-    public boolean isWolfsFavoriteMeat()
-    {
+    public boolean isWolfsFavoriteMeat(){
         return this.isWolfsFavoriteMeat;
     }
 
@@ -141,8 +134,7 @@ public class ItemSoulFood extends ItemFood
      * sets a potion effect on the item. Args: int potionId, int duration (will be multiplied by 20), int amplifier,
      * float probability of effect happening
      */
-    public ItemSoulFood setPotionEffect(int par1, int par2, int par3, float par4)
-    {
+    public ItemSoulFood setPotionEffect(int par1, int par2, int par3, float par4){
         this.potionId = par1;
         this.potionDuration = par2;
         this.potionAmplifier = par3;
@@ -153,10 +145,8 @@ public class ItemSoulFood extends ItemFood
     /**
      * Set the field 'alwaysEdible' to true, and make the food edible even if the player don't need to eat.
      */
-    public ItemSoulFood setAlwaysEdible()
-    {
+    public ItemSoulFood setAlwaysEdible(){
         this.alwaysEdible = true;
         return this;
     }
 }
-

@@ -1,5 +1,7 @@
 package com.Mod_Ores.Blocks.Special;
 
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 
 import com.Mod_Ores.soul_forest;
@@ -9,22 +11,30 @@ import com.Mod_Ores.Init.SoulBlocks;
 import com.Mod_Ores.Init.Config.SoulConfig;
 
 public class SoulFireFrozenHearth extends SoulFire {
+	
+    public final String textureName;
+	
+	public String getName(){
+    	return this.textureName;
+    }
 
     public SoulFireFrozenHearth(String Unlname) {
-	super(Unlname);
+    	super(Unlname);
+    	this.setUnlocalizedName(soul_forest.MODID + "_" + Unlname);
+    	this.textureName = Unlname;
     }
     
     @Override
-    public void onBlockAdded(World par1World, int par2, int par3, int par4){
-	System.out.println("Current world ID : " + par1World.provider.dimensionId);
-	System.out.println(((TeleportBlockFrozenHearth)SoulBlocks.TeleporterFrozenHearth.get()).tryToCreatePortal(par1World, par2, par3, par4));
-        if (par1World.provider.dimensionId == SoulConfig.SoulForestID && par1World.getBlock(par2, par3 - 1, par4) != SoulBlocks.TurquoiseBlock.get()){
-            if(((TeleportBlockFrozenHearth)SoulBlocks.TeleporterFrozenHearth.get()).tryToCreatePortal(par1World, par2, par3, par4)){
-                if (!par1World.doesBlockHaveSolidTopSurface(par1World, par2, par3 - 1, par4) && !this.canNeighborBurn(par1World, par2, par3, par4)){
-                    par1World.setBlockToAir(par2, par3, par4);
+    public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state){
+	System.out.println("Current world ID : " + worldIn.provider.getDimensionId());
+	System.out.println(((TeleportBlockFrozenHearth)SoulBlocks.TeleporterFrozenHearth.get()).tryToCreatePortal(worldIn, pos.getX(), pos.getY(), pos.getZ()));
+        if (worldIn.provider.getDimensionId() == SoulConfig.SoulForestID && worldIn.getBlockState(pos.down()).getBlock() != SoulBlocks.TurquoiseBlock.get()){
+            if(((TeleportBlockFrozenHearth)SoulBlocks.TeleporterFrozenHearth.get()).tryToCreatePortal(worldIn, pos.getX(), pos.getY(), pos.getZ())){
+                if (!worldIn.doesBlockHaveSolidTopSurface(worldIn, pos.down()) && !this.canNeighborCatchFire(worldIn, pos)){
+                	worldIn.setBlockToAir(pos);
                 }
                 else{
-                    par1World.scheduleBlockUpdate(par2, par3, par4, this, this.tickRate(par1World) + par1World.rand.nextInt(10));
+                	worldIn.scheduleBlockUpdate(pos, this.getDefaultState().getBlock(), this.tickRate(worldIn) + worldIn.rand.nextInt(10), 1);
                 }
             }
         }

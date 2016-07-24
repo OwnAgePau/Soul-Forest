@@ -21,17 +21,4 @@ public class ClientPacketHandler implements INetHandler{
 	// TODO Auto-generated method stub
 
     }
-
-    @Override
-    public void onConnectionStateTransition(EnumConnectionState var1,
-	    EnumConnectionState var2) {
-	// TODO Auto-generated method stub
-
-    }
-
-    @Override
-    public void onNetworkTick() {
-	// TODO Auto-generated method stub
-
-    }
 }

@@ -1,0 +1,10 @@
+# THIS IS THE BLOCKSTATE FILE. IT GOES IN THE assets/soulforest/blockstates/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "variants": {
+        "type=Sapling_soul": { "model": "soulforest:BlockSoulSappling_Sappling_soul" },
+		"type=Sappling_hardwood": { "model": "soulforest:BlockSoulSappling_Sappling_hardwood" },
+		"type=Sapling_frozen": { "model": "soulforest:BlockSoulSappling_Sappling_frozen" }
+    }
+}

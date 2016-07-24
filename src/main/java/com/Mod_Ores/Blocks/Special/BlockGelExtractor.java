@@ -7,28 +7,34 @@ import javax.swing.Icon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.client.renderer.texture.IIconRegister;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
+import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.IIcon;
+import net.minecraft.tileentity.TileEntityFurnace;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Blocks.TileEntities.TileEntityGelExtractor;
+import com.Mod_Ores.Init.SoulBlocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
-public class BlockGelExtractor extends BlockContainer
-{
+public class BlockGelExtractor extends BlockContainer{
+	
+	public static final PropertyDirection FACING = PropertyDirection.create("facing", EnumFacing.Plane.HORIZONTAL);
+	
     /**
      * Is the random generator used by furnace to drop the inventory contents in random directions.
      */
@@ -39,17 +45,23 @@ public class BlockGelExtractor extends BlockContainer
      * furnace block changes from idle to active and vice-versa.
      */
     private static boolean keepGelExtractorInventory;
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
     private IIcon gelExtractorIconTop;
     @SideOnly(Side.CLIENT)
-    private IIcon gelExtractorIconFront;
+    private IIcon gelExtractorIconFront;*/
+    
+    public final String textureName;
+	
+	public String getName(){
+    	return this.textureName;
+    }
 
-    public BlockGelExtractor(String Unlname)
-    {
+    public BlockGelExtractor(String Unlname){
         super(Material.rock);
         this.setCreativeTab(soul_forest.tabSoulBlocks);
+        this.setUnlocalizedName(soul_forest.MODID + "_" + Unlname);
+        this.textureName = Unlname;
 		GameRegistry.registerBlock(this, Unlname);
-		setBlockName(Unlname);
     }
 
     /**
@@ -63,54 +75,42 @@ public class BlockGelExtractor extends BlockContainer
     /**
      * Called whenever the block is added into the world. Args: world, x, y, z
      */
-    public void onBlockAdded(World par1World, int par2, int par3, int par4)
-    {
-        super.onBlockAdded(par1World, par2, par3, par4);
-        this.setDefaultDirection(par1World, par2, par3, par4);
+    public void onBlockAdded(World par1World, BlockPos pos, IBlockState state){
+        super.onBlockAdded(par1World, pos, state);
+        this.setDefaultFacing(par1World, pos, state);
     }
 
     /**
      * set a blocks direction
      */
-    private void setDefaultDirection(World par1World, int par2, int par3, int par4)
-    {
-        if (!par1World.isRemote)
-        {
-            Block l = par1World.getBlock(par2, par3, par4 - 1);
-            Block i1 = par1World.getBlock(par2, par3, par4 + 1);
-            Block j1 = par1World.getBlock(par2 - 1, par3, par4);
-            Block k1 = par1World.getBlock(par2 + 1, par3, par4);
-            byte b0 = 3;
+    private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state){
+        if (!worldIn.isRemote){
+            Block block = worldIn.getBlockState(pos.north()).getBlock();
+            Block block1 = worldIn.getBlockState(pos.south()).getBlock();
+            Block block2 = worldIn.getBlockState(pos.west()).getBlock();
+            Block block3 = worldIn.getBlockState(pos.east()).getBlock();
+            EnumFacing enumfacing = (EnumFacing)state.getValue(FACING);
 
-            if (l.func_149730_j() && !i1.func_149730_j())
-            {
-                b0 = 3;
+            if (enumfacing == EnumFacing.NORTH && block.isFullBlock() && !block1.isFullBlock()){
+                enumfacing = EnumFacing.SOUTH;
+            }
+            else if (enumfacing == EnumFacing.SOUTH && block1.isFullBlock() && !block.isFullBlock()){
+                enumfacing = EnumFacing.NORTH;
+            }
+            else if (enumfacing == EnumFacing.WEST && block2.isFullBlock() && !block3.isFullBlock()){
+                enumfacing = EnumFacing.EAST;
+            }
+            else if (enumfacing == EnumFacing.EAST && block3.isFullBlock() && !block2.isFullBlock()){
+                enumfacing = EnumFacing.WEST;
             }
 
-            if (i1.func_149730_j() && !l.func_149730_j())
-            {
-                b0 = 2;
-            }
-
-            if (j1.func_149730_j() && !k1.func_149730_j())
-            {
-                b0 = 5;
-            }
-
-            if (k1.func_149730_j() && !j1.func_149730_j())
-            {
-                b0 = 4;
-            }
-
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, b0, 2);
+            worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
         }
     }
 
-    @SideOnly(Side.CLIENT)
+    /*@SideOnly(Side.CLIENT)
 
-    /**
-     * From the specified side and block metadata retrieves the blocks texture. Args: side, metadata
-     */
+
     @Override
     public IIcon getIcon(int par1, int par2)
     {
@@ -119,30 +119,26 @@ public class BlockGelExtractor extends BlockContainer
 
     @SideOnly(Side.CLIENT)
 
-    /**
-     * When this method is called, your block should register all the icons it needs with the given IconRegister. This
-     * is the only chance you get to register icons.
-     */
     @Override
     public void registerBlockIcons(IIconRegister par1IconRegister)
     {
         this.blockIcon = par1IconRegister.registerIcon("soulforest:Gel_extractor_side");
         this.gelExtractorIconFront = par1IconRegister.registerIcon("soulforest:Gel_extractor_front");
         this.gelExtractorIconTop = par1IconRegister.registerIcon("soulforest:Gel_extractor_top");
-    }
+    }*/
 
     /**
      * Called upon block activation (right click on the block.)
      */
-    public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, int par6, float par7, float par8, float par9)
-    {
-        TileEntity tileEntity = world.getTileEntity(x, y, z);
-        if (tileEntity == null || player.isSneaking()) {
-                return false;
-        }
-
-        player.openGui(soul_forest.instance, 2, world, x, y, z);
-        return true;
+    @Override
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumFacing side, float hitX, float hitY, float hitZ){
+		Block i = worldIn.getBlockState(pos).getBlock();
+		if (i != SoulBlocks.GelExtractor.get() || playerIn.isSneaking()) {
+		    return false;
+		}
+	
+		playerIn.openGui(soul_forest.instance, 2, worldIn, pos.getX(), pos.getY(), pos.getZ());
+		return true;
     }
 
     /**
@@ -224,88 +220,30 @@ public class BlockGelExtractor extends BlockContainer
     /**
      * Called when the block is placed in the world.
      */
-    public void onBlockPlacedBy(World par1World, int par2, int par3, int par4, EntityLivingBase par5EntityLivingBase, ItemStack par6ItemStack)
-    {
-        int l = MathHelper.floor_double((double)(par5EntityLivingBase.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack){
+        worldIn.setBlockState(pos, state.withProperty(FACING, placer.getHorizontalFacing().getOpposite()), 2);
 
-        if (l == 0)
-        {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 2, 2);
-        }
+        if (stack.hasDisplayName()){
+            TileEntity tileentity = worldIn.getTileEntity(pos);
 
-        if (l == 1)
-        {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 5, 2);
-        }
-
-        if (l == 2)
-        {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 3, 2);
-        }
-
-        if (l == 3)
-        {
-            par1World.setBlockMetadataWithNotify(par2, par3, par4, 4, 2);
-        }
-
-        if (par6ItemStack.hasDisplayName())
-        {
-            ((TileEntityGelExtractor)par1World.getTileEntity(par2, par3, par4)).setGuiDisplayName(par6ItemStack.getDisplayName());
+            if (tileentity instanceof TileEntityFurnace){
+                ((TileEntityFurnace)tileentity).setCustomInventoryName(stack.getDisplayName());
+            }
         }
     }
 
     /**
      * ejects contained items into the world, and notifies neighbours of an update, as appropriate
      */
-    public void breakBlock(World par1World, int par2, int par3, int par4, Block par5, int par6)
-    {
-        if (!keepGelExtractorInventory)
-        {
-        	TileEntityGelExtractor tileentityfurnace = (TileEntityGelExtractor)par1World.getTileEntity(par2, par3, par4);
-
-            if (tileentityfurnace != null)
-            {
-                for (int j1 = 0; j1 < tileentityfurnace.getSizeInventory(); ++j1)
-                {
-                    ItemStack itemstack = tileentityfurnace.getStackInSlot(j1);
-
-                    if (itemstack != null)
-                    {
-                        float f = this.gelExtractorRandom.nextFloat() * 0.8F + 0.1F;
-                        float f1 = this.gelExtractorRandom.nextFloat() * 0.8F + 0.1F;
-                        float f2 = this.gelExtractorRandom.nextFloat() * 0.8F + 0.1F;
-
-                        while (itemstack.stackSize > 0)
-                        {
-                            int k1 = this.gelExtractorRandom.nextInt(21) + 10;
-
-                            if (k1 > itemstack.stackSize)
-                            {
-                                k1 = itemstack.stackSize;
-                            }
-
-                            itemstack.stackSize -= k1;
-                            EntityItem entityitem = new EntityItem(par1World, (double)((float)par2 + f), (double)((float)par3 + f1), (double)((float)par4 + f2), new ItemStack(itemstack.getItem(), k1, itemstack.getItemDamage()));
-
-                            if (itemstack.hasTagCompound())
-                            {
-                                entityitem.getEntityItem().setTagCompound((NBTTagCompound)itemstack.getTagCompound().copy());
-                            }
-
-                            float f3 = 0.05F;
-                            entityitem.motionX = (double)((float)this.gelExtractorRandom.nextGaussian() * f3);
-                            entityitem.motionY = (double)((float)this.gelExtractorRandom.nextGaussian() * f3 + 0.2F);
-                            entityitem.motionZ = (double)((float)this.gelExtractorRandom.nextGaussian() * f3);
-                            par1World.spawnEntityInWorld(entityitem);
-                        }
-                    }
-                }
-
-                par1World.func_147453_f(par2, par3, par4, par5);
+    public void breakBlock(World worldIn, BlockPos pos, IBlockState state){
+        if (!this.keepGelExtractorInventory){
+            TileEntity tileentity = worldIn.getTileEntity(pos);
+            if (tileentity instanceof TileEntityFurnace){
+                InventoryHelper.dropInventoryItems(worldIn, pos, (TileEntityFurnace)tileentity);
+                worldIn.updateComparatorOutputLevel(pos, this);
             }
         }
-
-        super.breakBlock(par1World, par2, par3, par4, par5, par6);
+        super.breakBlock(worldIn, pos, state);
     }
 
     /**
@@ -321,9 +259,9 @@ public class BlockGelExtractor extends BlockContainer
      * If hasComparatorInputOverride returns true, the return value from this is used instead of the redstone signal
      * strength when this block inputs to a comparator.
      */
-    public int getComparatorInputOverride(World par1World, int par2, int par3, int par4, int par5)
+    public int getComparatorInputOverride(World par1World, BlockPos pos)
     {
-        return Container.calcRedstoneFromInventory((IInventory)par1World.getTileEntity(par2, par3, par4));
+        return Container.calcRedstone(par1World.getTileEntity(pos));
     }
 
     //@SideOnly(Side.CLIENT)

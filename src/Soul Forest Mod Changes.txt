@@ -1,0 +1,48 @@
+Changes:
+
+
+To Do :
+
+
+//- gel extractor, putting gel in pots (9 gels per pot) check if recipe is [0] = SoulItems.BlueMoltenGel, [1] = soulItems.GelPot
+//then start extrating gel to count a ammount up to 9, when 9 replace [1] with GelPotFille-	
+- silver armour different effect
+- slime king drops boots which let you jump high
+- no (more night and day), put weather off
+add grow limit to custom vines (onUpdateTick)
+- remove soul miner achievement when mining silver
+- decrease tin and copper vein size
+- aquamarine, mining faster underwater, bubble particles
+- chromite, fire particles
+- tanzanite, 
+
+- more mob spawners
+- ice armour
+- spawn eggs
+- burned shard onRightClick grows fireblossom into a firetree
+{}- dark porphyry, dark brick
+fix portal (spawn in small area underground, spawn in overworld in the middle of the ground) and texture
+fix tall grass
+make grape sapling drop
+wooden Planks for all the custom wood + stairs + slabs
+titanium Brick + Stairs + Slabs
+porphyry Brick stairs + slabs
+slate Brick stairs + slabs
+bauxite Brick Stairs + Slabs
+ice Brick Stairs + Slabs
+make texture for Mochan Eagle
+make texture for firefly
+make mobs (mochan eagle, firefly, furivoli)
+add ladders to ice towers
+add mob rotations
+add grass spread
+add seeds in game for bog tall grass and a purpose for the crops
+add new weapons
+add bosses
+more achievements
+change custom water so that it is no longer material.water (make custom enum)
+randomize soul tree a bit more
+
+[- carpenter to craft wooden stuff
+- smelter to craft hot metal bars
+- forge to craft tools above wood] Side mod

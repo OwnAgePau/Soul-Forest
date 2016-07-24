@@ -4,16 +4,22 @@ import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.Mod_Ores.soul_forest;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
-
 public class SoulWood extends Block{  
+	
+	public final String textureName;
+	
+	public String getName(){
+		return this.textureName;
+	}
+	
     /**
      * SoulWood Block Constructor
      * @param id this is the Block ID
@@ -24,23 +30,23 @@ public class SoulWood extends Block{
      * @param LightValue sets the blocks light value
      */
     public SoulWood(String Unlname, float Hardness, float Resistance){ //id - item ID, UName - Unlocalized Name, IGName - IngameName
-	super(Material.wood); //This super will load item ID and UName
-	setCreativeTab(soul_forest.tabSoulBlocks);
-	setBlockName(Unlname);
-	setHardness(Hardness); // Default 3.0F
-	setResistance(Resistance); // Default 2F		  
-	setStepSound(Block.soundTypeWood);
-	GameRegistry.registerBlock(this, Unlname);
+		super(Material.wood); //This super will load item ID and UName
+		setCreativeTab(soul_forest.tabSoulBlocks);
+		setHardness(Hardness); // Default 3.0F
+		setResistance(Resistance); // Default 2F		  
+		setStepSound(Block.soundTypeWood);
+		this.setUnlocalizedName(soul_forest.MODID + "_" + Unlname);
+		this.textureName = Unlname;
+		GameRegistry.registerBlock(this, Unlname);
     }
 
     @Override
     public int quantityDropped(Random par1Random) {
-	return 1;
+    	return 1;
     }
 
     @Override
-    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant) {
-	return false;
+    public boolean canSustainPlant(IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plant) {
+    	return false;
     }
 }
-

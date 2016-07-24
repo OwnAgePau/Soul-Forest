@@ -30,42 +30,41 @@ import com.Mod_Ores.Mobs.AI.EntityAITeleport;
 public class EntityIceQueenIllusion extends EntityMob{
     
     public EntityIceQueenIllusion(World par1World){
-	super(par1World);
-	this.setCustomNameTag(this.getCommandSenderName());
-	this.tasks.addTask(0, new EntityAITeleport(this, EntityPlayer.class));
-	this.tasks.addTask(2, new EntityAIWander(this, 0.2F));
-	this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
+		super(par1World);
+		this.setCustomNameTag(this.getCommandSenderName());
+		this.tasks.addTask(0, new EntityAITeleport(this, EntityPlayer.class));
+		this.tasks.addTask(2, new EntityAIWander(this, 0.2F));
+		this.tasks.addTask(3, new EntityAIWatchClosest(this, EntityPlayer.class, 8.0F));
     }
 
-    @Override
     public String getCommandSenderName() {
-	return "Ice Queen";
+    	return "Ice Queen";
     }
 
     /**
      * Gets how bright this entity is.
      */
     public float getBrightness(float par1){
-	return 4.0F;
+    	return 4.0F;
     }
 
     /**
      * Returns true if the newer Entity AI code should be run
      */
     public boolean isAIEnabled(){
-	return true;
+    	return true;
     }
 
     // Set max health and attack damage
     @Override
     protected void applyEntityAttributes(){
-	super.applyEntityAttributes();
-	this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(SoulConfigCreatures.iceQueenHealth);
-	this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(SoulConfigCreatures.iceQueenDamage);
+		super.applyEntityAttributes();
+		this.getEntityAttribute(SharedMonsterAttributes.maxHealth).setBaseValue(SoulConfigCreatures.iceQueenHealth);
+		this.getEntityAttribute(SharedMonsterAttributes.attackDamage).setBaseValue(SoulConfigCreatures.iceQueenDamage);
     }
 
     public boolean attackEntityAsMob(Entity par1Entity){
-	return true;
+    	return true;
     }
 
     /**
@@ -73,41 +72,34 @@ public class EntityIceQueenIllusion extends EntityMob{
      */
     @Override
     protected Item getDropItem(){
-	return SoulItems.FrostShard.get();
+    	return SoulItems.FrostShard.get();
     }
 
     @Override
     public void onKillEntity(EntityLivingBase par1EntityLivingBase){
-	super.onKillEntity(par1EntityLivingBase);
-	this.dropRareDrop(2);
+		super.onKillEntity(par1EntityLivingBase);
+		this.dropRareDrop(2);
     }
 
-    @Override
     protected void dropRareDrop(int par1){
-	switch (this.rand.nextInt(2))
-	{
-	case 0:
-	    this.dropItem(SoulItems.FrozenRod.get(), 3);
-	    break;
-	case 1:
-	    this.dropItem(SoulItems.FrostShard.get(), 2);
-	    break;
-	}
+		if(this.rand.nextInt(2) == 0){
+			this.dropItem(SoulItems.FrostShard.get(), 2);
+		}
     } 
     
     @Override
     public boolean attackEntityFrom(DamageSource source, float damage) {
-        if (this.isEntityInvulnerable()){
+        if (this.isEntityInvulnerable(source)){
             return false;
         }
         else if (super.attackEntityFrom(source, damage)){
             Entity entity = source.getEntity();
             if(entity instanceof EntityPlayer){
-        	EntityPlayer player = (EntityPlayer)entity;
-        	player.attackEntityFrom(DamageSource.causeMobDamage(this), (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getBaseValue() / 1.2F);
-        	player.addPotionEffect(new PotionEffect(Potion.blindness.getId(), 100, 2));
-        	this.setDead();
-        	return true;
+	        	EntityPlayer player = (EntityPlayer)entity;
+	        	player.attackEntityFrom(DamageSource.causeMobDamage(this), (float)this.getEntityAttribute(SharedMonsterAttributes.attackDamage).getBaseValue() / 1.2F);
+	        	player.addPotionEffect(new PotionEffect(Potion.blindness.getId(), 100, 2));
+	        	this.setDead();
+	        	return true;
             }
         }
         return false;

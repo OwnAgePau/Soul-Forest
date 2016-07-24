@@ -6,14 +6,12 @@ import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
 
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Blocks.Recipes.GelExtractorRecipes;
 import com.Mod_Ores.EventHandlers.CraftingHandler;
 import com.Mod_Ores.Init.SoulItems;
-
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
 
 public class SlotGem extends Slot{
     private EntityPlayer thePlayer;

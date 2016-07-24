@@ -7,8 +7,7 @@ import net.minecraft.item.ItemPotion;
 
 import com.google.common.base.Optional;
 
-public class SoulItems 
-{
+public class SoulItems {
 	public static Optional<? extends Item> AquamarineAxe              = Optional.absent();
 	public static Optional<? extends Item> BronzeAxe              = Optional.absent();
 	public static Optional<? extends Item> ChromiteAxe              = Optional.absent();

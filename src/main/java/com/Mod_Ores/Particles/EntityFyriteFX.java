@@ -2,14 +2,12 @@ package com.Mod_Ores.Particles;
 
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.world.World;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
 
 @SideOnly(Side.CLIENT)
-public class EntityFyriteFX extends EntityFX
-{
-    public EntityFyriteFX(World par1World, double par2, double par4, double par6, double par8, double par10, double par12)
-    {
+public class EntityFyriteFX extends EntityFX{
+    public EntityFyriteFX(World par1World, double par2, double par4, double par6, double par8, double par10, double par12){
         super(par1World, par2, par4, par6, par8, par10, par12);
         //float f = this.rand.nextFloat() * 0.1F + 0.2F;
         this.particleRed = 0.3F;
@@ -28,8 +26,7 @@ public class EntityFyriteFX extends EntityFX
     /**
      * Called to update the entity's position/logic.
      */
-    public void onUpdate()
-    {
+    public void onUpdate(){
         this.prevPosX = this.posX;
         this.prevPosY = this.posY;
         this.prevPosZ = this.posZ;
@@ -38,8 +35,7 @@ public class EntityFyriteFX extends EntityFX
         this.motionY *= 0.99D;
         this.motionZ *= 0.99D;
 
-        if (this.particleMaxAge-- <= 0)
-        {
+        if (this.particleMaxAge-- <= 0){
             this.setDead();
         }
     }

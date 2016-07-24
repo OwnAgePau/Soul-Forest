@@ -2,14 +2,12 @@ package com.Mod_Ores;
 
 import org.lwjgl.input.Keyboard;
 
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.client.registry.ClientRegistry;
-import cpw.mods.fml.common.eventhandler.SubscribeEvent;
-import cpw.mods.fml.common.gameevent.InputEvent.KeyInputEvent;
-import cpw.mods.fml.common.gameevent.TickEvent.ClientTickEvent;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.client.settings.KeyBinding;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.gameevent.TickEvent.ClientTickEvent;
 
 public class SoulForestKeyHandler {
 
@@ -27,23 +25,23 @@ public class SoulForestKeyHandler {
     public static final KeyBinding[] keys = new KeyBinding[desc.length];
 
     public SoulForestKeyHandler() {
-	for (int i = 0; i < desc.length; ++i) {
-	    keys[i] = new KeyBinding(desc[i], keyValues[i], "key.tooldetail.category");
-	    ClientRegistry.registerKeyBinding(keys[i]);
+		for (int i = 0; i < desc.length; ++i) {
+		    keys[i] = new KeyBinding(desc[i], keyValues[i], "key.tooldetail.category");
+		    ClientRegistry.registerKeyBinding(keys[i]);
+		}
 	}
-    }
-    /**
-     * KeyInputEvent is in the FML package, so we must register to the FML event bus
-     */
-    @SubscribeEvent
-    public void onKeyInput(ClientTickEvent event) {
-	if(Keyboard.getEventKey() == keys[CUSTOM_INV].getKeyCode()){
-	    if(Keyboard.getEventKeyState()){
-        	this.isKeyPressed = true;
-	    }
-	    else{
-		this.isKeyPressed = false;	
-	    }
-	}
+	    /**
+	     * KeyInputEvent is in the FML package, so we must register to the FML event bus
+	     */
+	@SubscribeEvent
+	public void onKeyInput(ClientTickEvent event) {
+		if(Keyboard.getEventKey() == keys[CUSTOM_INV].getKeyCode()){
+		    if(Keyboard.getEventKeyState()){
+	        	this.isKeyPressed = true;
+		    }
+		    else{
+			this.isKeyPressed = false;	
+		    }
+		}
     }
 }

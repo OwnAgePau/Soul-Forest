@@ -1,4 +1,4 @@
-package com.Mod_Ores.Blocks;
+/*package com.Mod_Ores.Blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlockWithMetadata;
@@ -14,4 +14,5 @@ public class BlockSoulWithMetaData extends ItemBlockWithMetadata {
     public String getUnlocalizedName(ItemStack stack) {
         return this.getUnlocalizedName() + "_" + stack.getItemDamage();
     }
-}
+}*/
+// TODO Check if this is still needed???

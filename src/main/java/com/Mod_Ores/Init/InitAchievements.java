@@ -2,10 +2,8 @@ package com.Mod_Ores.Init;
 
 import net.minecraft.stats.Achievement;
 import net.minecraftforge.common.AchievementPage;
-import cpw.mods.fml.common.registry.LanguageRegistry;
 
-public class InitAchievements 
-{
+public class InitAchievements {
 	// Achievements	
 	public static Achievement soulForest;	
 	

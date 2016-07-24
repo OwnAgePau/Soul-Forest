@@ -7,16 +7,15 @@ import com.Mod_Ores.Init.SoulBlocks;
 import com.Mod_Ores.Init.Config.SoulConfigCreatures;
 import com.Mod_Ores.Mobs.Entity.EntityFurivoli;
 
-public class BiomeGenDarkCaverns extends BiomeGenBase
-{
+public class BiomeGenDarkCaverns extends BiomeGenBase{
+	
 	private WorldGenerator theWorldGenerator;
 	private TheBiomeDeco customBiomeDecorator;
 	
-    public BiomeGenDarkCaverns(int par1)
-    {
+    public BiomeGenDarkCaverns(int par1){
         super(par1);
-        this.topBlock = SoulBlocks.FyrisedSandGrass.get();
-        this.fillerBlock = SoulBlocks.FyrisedSand.get();
+        this.topBlock = SoulBlocks.FyrisedSandGrass.get().getDefaultState();
+        this.fillerBlock = SoulBlocks.FyrisedSand.get().getDefaultState();
 
         spawnableMonsterList.clear();
         spawnableCreatureList.clear();
@@ -32,4 +31,3 @@ public class BiomeGenDarkCaverns extends BiomeGenBase
         customBiomeDecorator.titaniumtowersperchunk = 1;
     }
 }
-

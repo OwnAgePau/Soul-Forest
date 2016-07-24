@@ -17,14 +17,12 @@ public class GroundhogEvent extends EntityEvent {
      * All children of this event are fired on the {@link MinecraftForge#EVENT_BUS}.
      **/
 
-    public GroundhogEvent(EntityGroundhog entity)
-    {
-	super(entity);
+    public GroundhogEvent(EntityGroundhog entity){
+    	super(entity);
     }
 
-    public EntityGroundhog getSummoner()
-    {
-	return (EntityGroundhog) entity;
+    public EntityGroundhog getSummoner(){
+    	return (EntityGroundhog) entity;
     }
 
     /**
@@ -52,28 +50,26 @@ public class GroundhogEvent extends EntityEvent {
      **/
     @HasResult
     public static class SummonAidEvent extends GroundhogEvent {
-	/**
-	 * Populate this field to have a custom zombie instead of a normal zombie summoned
-	 */
-	public EntityGroundhog customSummonedAid;
-
-	public final World world;
-	public final int x;
-	public final int y;
-	public final int z;
-	public final EntityLivingBase attacker;
-	public final double summonChance;
-
-	public SummonAidEvent(EntityGroundhog entity, World world, int x, int y, int z, EntityLivingBase attacker, double summonChance)
-	{
-	    super(entity);
-	    this.world = world;
-	    this.x = x;
-	    this.y = y;
-	    this.z = z;
-	    this.attacker = attacker;
-	    this.summonChance = summonChance;
-	}
-
+		/**
+		 * Populate this field to have a custom zombie instead of a normal zombie summoned
+		 */
+		public EntityGroundhog customSummonedAid;
+	
+		public final World world;
+		public final int x;
+		public final int y;
+		public final int z;
+		public final EntityLivingBase attacker;
+		public final double summonChance;
+	
+		public SummonAidEvent(EntityGroundhog entity, World world, int x, int y, int z, EntityLivingBase attacker, double summonChance){
+		    super(entity);
+		    this.world = world;
+		    this.x = x;
+		    this.y = y;
+		    this.z = z;
+		    this.attacker = attacker;
+		    this.summonChance = summonChance;
+		}
     }
 }

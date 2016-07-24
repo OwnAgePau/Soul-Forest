@@ -4,34 +4,43 @@ import java.util.Random;
 
 import net.minecraft.block.BlockBreakable;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumFacing;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IPlantable;
-import net.minecraftforge.common.util.ForgeDirection;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Init.SoulBlocks;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 public class BlockSoulIce extends BlockBreakable{
+	
+	public final String textureName;
+	
+	public String getName(){
+		return this.textureName;
+	}
     
     public BlockSoulIce(String unlName){
-        super("soulforest:soul_ice", Material.ice, false);
+        super(Material.ice, false); // "soulforest:soul_ice", 
         this.slipperiness = 1.0F;
         this.setHardness(0.2F);
         this.setTickRandomly(true);
         this.setCreativeTab(soul_forest.tabSoulBlocks);
-	this.setStepSound(this.soundTypeMetal);
-	GameRegistry.registerBlock(this, unlName);
-	this.setBlockName(unlName);
+		this.setStepSound(this.soundTypeMetal);
+		this.setUnlocalizedName(soul_forest.MODID + "_" + unlName);
+		this.textureName = unlName;
+		GameRegistry.registerBlock(this, unlName);
     }
 
     @SideOnly(Side.CLIENT)
@@ -49,32 +58,33 @@ public class BlockSoulIce extends BlockBreakable{
      * Returns true if the given side of this block type should be rendered, if the adjacent block is at the given
      * coordinates.  Args: blockAccess, x, y, z, side
      */
-    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, int par2, int par3, int par4, int par5){
-        return super.shouldSideBeRendered(par1IBlockAccess, par2, par3, par4, 1 - par5);
+    public boolean shouldSideBeRendered(IBlockAccess par1IBlockAccess, BlockPos pos, EnumFacing side){
+        return super.shouldSideBeRendered(par1IBlockAccess, pos, side.UP);
     }
 
     /**
      * Called when the player destroys a block with an item that can harvest it. (i, j, k) are the coordinates of the
      * block and l is the block's subtype/damage.
      */
-    public void harvestBlock(World par1World, EntityPlayer par2EntityPlayer, int par3, int par4, int par5, int par6){
+    public void harvestBlock(World worldIn, EntityPlayer player, BlockPos pos, IBlockState state, TileEntity te){
+    	super.harvestBlock(worldIn, player, pos, state, te);
         //par2EntityPlayer.addStat(StatList.mineBlockStatArray[this], 1);
-        par2EntityPlayer.addExhaustion(0.025F);
+    	player.addExhaustion(0.025F);
 
-        if (this.canSilkHarvest() && EnchantmentHelper.getSilkTouchModifier(par2EntityPlayer)){
-            ItemStack itemstack = this.createStackedBlock(par6);
+        if (this.canSilkHarvest() && EnchantmentHelper.getSilkTouchModifier(player)){
+            ItemStack itemstack = this.createStackedBlock(state);
 
             if (itemstack != null){
-                this.dropBlockAsItem(par1World, par3, par4, par5, itemstack);
+                this.dropBlockAsItem(worldIn, pos, state , 0);
             }
         }
         else{
-            int i1 = EnchantmentHelper.getFortuneModifier(par2EntityPlayer);
-            this.dropBlockAsItem(par1World, par3, par4, par5, par6, i1);
-            Material material = par1World.getBlock(par3, par4 - 1, par5).getMaterial();
+            int i1 = EnchantmentHelper.getFortuneModifier(player);
+            this.dropBlockAsItem(worldIn, pos, state, i1);
+            Material material = worldIn.getBlockState(pos.down()).getBlock().getMaterial();
 
             if (material.blocksMovement() || material.isLiquid()){
-                par1World.setBlock(par3, par4, par5, SoulBlocks.SoulWaterMoving.get());
+            	worldIn.setBlockState(pos, SoulBlocks.SoulWaterMoving.get().getDefaultState());
             }
         }
     }
@@ -89,14 +99,15 @@ public class BlockSoulIce extends BlockBreakable{
     /**
      * Ticks the block if it's been scheduled
      */
-    public void updateTick(World par1World, int par2, int par3, int par4, Random par5Random){
-    	if(par1World.getBiomeGenForCoords(par2, par3).temperature >= 0.5F){
-            this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-            par1World.setBlock(par2, par3, par4, SoulBlocks.SoulWaterMoving.get());
+    @Override
+    public void updateTick(World par1World, BlockPos pos, IBlockState state, Random par5Random){
+    	if(par1World.getBiomeGenForCoords(pos).temperature >= 0.5F){
+            this.dropBlockAsItem(par1World, pos, state, 0);
+            par1World.setBlockState(pos, SoulBlocks.SoulWaterMoving.get().getDefaultState());
         }
-    	if(par1World.getBlock(par2, par3 + 1, par4) != Blocks.air){
-    	    this.dropBlockAsItem(par1World, par2, par3, par4, par1World.getBlockMetadata(par2, par3, par4), 0);
-            par1World.setBlock(par2, par3, par4, SoulBlocks.SoulWaterMoving.get());
+    	if(par1World.getBlockState(pos.up()).getBlock() != Blocks.air){
+    	    this.dropBlockAsItem(par1World,pos, state, 0);
+            par1World.setBlockState(pos, SoulBlocks.SoulWaterMoving.get().getDefaultState());
     	}
     }
 
@@ -109,7 +120,7 @@ public class BlockSoulIce extends BlockBreakable{
     }
     
     @Override
-    public boolean canSustainPlant(IBlockAccess world, int x, int y, int z, ForgeDirection direction, IPlantable plant) {
+    public boolean canSustainPlant(IBlockAccess world, BlockPos pos, EnumFacing direction, IPlantable plant) {
     	return false;
     }
 }

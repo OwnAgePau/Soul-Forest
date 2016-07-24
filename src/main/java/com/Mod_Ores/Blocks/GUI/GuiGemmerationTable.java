@@ -5,16 +5,15 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
 
 import org.lwjgl.opengl.GL11;
 
 import com.Mod_Ores.Blocks.Containers.ContainerGemble;
 import com.Mod_Ores.Blocks.Containers.ContainerGemmeration;
 import com.Mod_Ores.Blocks.Containers.ContainerIceWorkbench;
-
-import cpw.mods.fml.client.FMLClientHandler;
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
 public class GuiGemmerationTable extends GuiContainer{	

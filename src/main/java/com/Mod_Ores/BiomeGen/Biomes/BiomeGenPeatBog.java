@@ -6,14 +6,12 @@ import com.Mod_Ores.Init.SoulBlocks;
 import com.Mod_Ores.Init.Config.SoulConfigCreatures;
 import com.Mod_Ores.Mobs.Entity.EntityGroundhog;
 
-public class BiomeGenPeatBog extends BiomeGenBase
-{    
+public class BiomeGenPeatBog extends BiomeGenBase{    
     private TheBiomeDeco customBiomeDecorator;
-    public BiomeGenPeatBog(int par1)
-    {
+    public BiomeGenPeatBog(int par1){
         super(par1);
-        this.topBlock = SoulBlocks.BogGrass.get();
-        this.fillerBlock = SoulBlocks.BogDirt.get();
+        this.topBlock = SoulBlocks.BogGrass.get().getDefaultState();
+        this.fillerBlock = SoulBlocks.BogDirt.get().getDefaultState();
 
         spawnableMonsterList.clear();
         spawnableCreatureList.clear();

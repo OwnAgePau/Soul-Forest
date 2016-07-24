@@ -3,6 +3,8 @@ package com.Mod_Ores;
 import java.util.ArrayList;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
 /**
@@ -25,7 +27,7 @@ public interface IScollectable{
      * @param z The Z Position
      * @return If this is collectable, and onSheared should be called.
      */
-    public boolean isCollectable(ItemStack item, World world, int x, int y, int z);
+    public boolean isCollectable(ItemStack item, World world, BlockPos pos);
 
     /**
      * Performs the shear function on this object.
@@ -46,5 +48,5 @@ public interface IScollectable{
      * @param fortune The fortune level of the shears being used
      * @return A ArrayList containing all items from this collecting. Possible to be null.
      */
-    public ArrayList<ItemStack> onCollected(ItemStack item, World world, int x, int y, int z, int fortune);
+    public ArrayList<ItemStack> onCollected(ItemStack item, IBlockAccess world, BlockPos pos, int fortune);
 }

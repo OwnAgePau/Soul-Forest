@@ -12,11 +12,17 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
-import cpw.mods.fml.common.registry.GameRegistry;
-import cpw.mods.fml.common.registry.LanguageRegistry;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemSoulShovel extends ItemSpade{
+	
     private Item.ToolMaterial mat;
+    
+    public final String textureName;
+    
+    public String getName(){
+    	return this.textureName;
+    }
 
     /**
      * ItemSoulShovel Constructor
@@ -26,30 +32,31 @@ public class ItemSoulShovel extends ItemSpade{
      * @param EnumToolMaterial This will set the tools material
      */
     public ItemSoulShovel(String Unlname, Item.ToolMaterial material, int level){
-	super(material);
-	setCreativeTab(soul_forest.tabSoulTools);
-	setUnlocalizedName(Unlname);
-	GameRegistry.registerItem(this, Unlname, soul_forest.MODID);
-	this.mat = material;
-	this.setHarvestLevel("shovel", level);
-	InitItems.soulShovels.add(this);
+		super(material);
+		this.setCreativeTab(soul_forest.tabSoulTools);
+		this.setUnlocalizedName(soul_forest.MODID + "" + Unlname);
+		GameRegistry.registerItem(this, Unlname);
+		this.textureName = Unlname;
+		this.mat = material;
+		this.setHarvestLevel("shovel", level);
+		InitItems.soulShovels.add(this);
     }
 
     @Override
     public void addInformation(ItemStack par1ItemStack, EntityPlayer par2EntityPlayer, List par3List, boolean par4) {
-	int uses = mat.getMaxUses();
-	float eff = mat.getEfficiencyOnProperMaterial();
-	int ench = mat.getEnchantability();
-	int harvl = mat.getHarvestLevel();
-	int damage = (uses - par1ItemStack.getItemDamage());
-	if(SoulForestKeyHandler.isKeyPressed){
-	    par3List.add("\u00A73Max Uses : " + damage + "/" + uses);
-	    par3List.add("\u00A72Efficiency : " + eff);
-	    par3List.add("\u00A74Enchantability : " + ench);
-	    par3List.add("\u00A76Harvest Level : " + harvl);
-	}
-	else{
-	    par3List.add("Press " + Keyboard.getKeyName(SoulForestKeyHandler.keyValues[SoulForestKeyHandler.CUSTOM_INV]) + " to show more details.");
-	}
+		int uses = mat.getMaxUses();
+		float eff = mat.getEfficiencyOnProperMaterial();
+		int ench = mat.getEnchantability();
+		int harvl = mat.getHarvestLevel();
+		int damage = (uses - par1ItemStack.getItemDamage());
+		if(SoulForestKeyHandler.isKeyPressed){
+		    par3List.add("\u00A73Max Uses : " + damage + "/" + uses);
+		    par3List.add("\u00A72Efficiency : " + eff);
+		    par3List.add("\u00A74Enchantability : " + ench);
+		    par3List.add("\u00A76Harvest Level : " + harvl);
+		}
+		else{
+		    par3List.add("Press " + Keyboard.getKeyName(SoulForestKeyHandler.keyValues[SoulForestKeyHandler.CUSTOM_INV]) + " to show more details.");
+		}
     }
 }

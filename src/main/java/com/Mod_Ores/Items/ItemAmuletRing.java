@@ -4,11 +4,11 @@ import java.util.List;
 
 import com.Mod_Ores.soul_forest;
 
-import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class ItemAmuletRing extends Item{
     
@@ -16,33 +16,38 @@ public class ItemAmuletRing extends Item{
     private String amuletType;
     private String amuletDescription;
     
+    public final String textureName;
+    
+    public String getName(){
+    	return this.textureName;
+    }
+    
     public ItemAmuletRing(String unlname, int durability, String name, String description){
-	this.registerItem(unlname, durability);
-	this.amuletType = name;
-	this.amuletDescription = description;
+		this.registerItem(unlname, durability);
+		this.amuletType = name;
+		this.amuletDescription = description;
+		this.textureName = unlname;
     }
  
     public ItemAmuletRing(String unlname, int durability, String name, EnumRarity rarity, String description){
-	this.registerItem(unlname, durability);
-	this.rarity = rarity;
-	this.amuletType = name;
-	this.amuletDescription = description;
+    	this(unlname, durability, name, description);
+		this.rarity = rarity;
     }
     
     private void registerItem(String unlname, int durability){
-	this.setCreativeTab(soul_forest.tabAmulets);
-	setUnlocalizedName(unlname);
-	GameRegistry.registerItem(this, unlname, soul_forest.MODID);
-	this.setMaxDamage(durability);
+		this.setCreativeTab(soul_forest.tabAmulets);
+		this.setUnlocalizedName(soul_forest.MODID + "_" + unlname);
+		GameRegistry.registerItem(this, unlname);
+		this.setMaxDamage(durability);
     }
 
     public EnumRarity getRarity(ItemStack par1ItemStack){
-	if(this.rarity != null){
-	    return this.rarity;
-	}
-	else{
-	    return EnumRarity.common;
-	}
+		if(this.rarity != null){
+		    return this.rarity;
+		}
+		else{
+		    return EnumRarity.COMMON;
+		}
     }
     
     @Override

@@ -1,4 +1,4 @@
-package com.Mod_Ores.NEI;
+/*package com.Mod_Ores.NEI;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -37,12 +37,12 @@ public class IceWorkBenchRecipeHandler extends TemplateRecipeHandler {
 
     @Override
     public String getRecipeName() {
-	return "Ice Workbench";
+    	return "Ice Workbench";
     }
 
     @Override
     public String getGuiTexture() {
-	return GuiIceCrafting.TEXTURE.toString();
+    	return GuiIceCrafting.TEXTURE.toString();
     }
     
     public class CachedShapedRecipe extends CachedRecipe{
@@ -59,11 +59,6 @@ public class IceWorkBenchRecipeHandler extends TemplateRecipeHandler {
             this(recipe.recipeWidth, recipe.recipeHeight, recipe.recipeItems, recipe.getRecipeOutput());
         }
 
-        /**
-         * @param width
-         * @param height
-         * @param items  an ItemStack[] or ItemStack[][]
-         */
         public void setIngredients(int width, int height, Object[] items) {
             for (int x = 0; x < width; x++) {
                 for (int y = 0; y < height; y++) {
@@ -218,4 +213,4 @@ public class IceWorkBenchRecipeHandler extends TemplateRecipeHandler {
 
         return true;
     }
-}
+}*/

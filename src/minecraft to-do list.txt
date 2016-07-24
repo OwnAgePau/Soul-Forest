@@ -6,6 +6,9 @@ Changes:
 - Added a bunch of new achievements to fill the gap between the soul forest and the frozen dimension and to give more of a direction of what to build since there are some very usefull crafting tables there!
 - Added a donation button for people who are willing to donate!
 
+- Halved the amount of sounds the Furivoli produced to reduce lag when being around these creatures.
+- Changed the gap between being too far or too close to the ice queen for her to teleport bigger.
+
 
 To-do:
 

@@ -31,8 +31,6 @@ import com.Mod_Ores.Items.Tools.ItemSoulSword;
 import com.Mod_Ores.Items.Tools.ItemWarAxe;
 import com.Mod_Ores.Mobs.Entity.EntityKingKotek;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-
 public class GembleCraftingRecipes{
     /** The static instance of this class */
     private static final GembleCraftingRecipes instance = new GembleCraftingRecipes();
@@ -53,27 +51,27 @@ public class GembleCraftingRecipes{
      * 
      */
     private GembleCraftingRecipes(){	
-	this.addShapelessRecipe(new ItemStack(Blocks.obsidian, 1), new Object[] {SoulItems.CitrineAmuletStone.get(), Blocks.diamond_block});
-	this.addShapelessRecipe(new ItemStack(Blocks.diamond_block, 1), new Object[] {SoulItems.CitrineAmuletStone.get(), Blocks.gold_block});   
-	this.addShapelessRecipe(new ItemStack(Blocks.gold_block, 1), new Object[] {SoulItems.CitrineAmuletStone.get(), Blocks.iron_block});
-	this.addShapelessRecipe(new ItemStack(SoulBlocks.BronzeBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.TinBlock.get()});   
-	this.addShapelessRecipe(new ItemStack(SoulBlocks.BronzeBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.CopperBlock.get()});
-	this.addShapelessRecipe(new ItemStack(SoulBlocks.SilverBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.BronzeBlock.get()});
-	this.addShapelessRecipe(new ItemStack(SoulBlocks.CobaltBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.SilverBlock.get()});
-	this.addShapelessRecipe(new ItemStack(SoulBlocks.BlackdiamondBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.SteelBlock.get()});
-	this.addShapelessRecipe(new ItemStack(SoulBlocks.OnyxBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.CobaltBlock.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.BurnedMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.BurnedShard.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.EnlightedMagicFragmentHalf.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.LightShard.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.FrozenMagicFragmentHalf.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.FrostShard.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.StrengthMagicFragmentHalf.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.StrengthShard.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.BurnedMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.BurnedMagicFragment.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.EnlightedMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.EnlightedMagicFragmentHalf.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.FrozenMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.FrozenMagicFragmentHalf.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.StrengthMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.StrengthMagicFragmentHalf.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.EnlightedMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.EnlightedMagicFragment.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.FrozenMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.FrozenMagicFragment.get()});
-	this.addShapelessRecipe(new ItemStack(SoulItems.StrengthMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.StrengthMagicFragment.get()});
-	
+		this.addShapelessRecipe(new ItemStack(Blocks.obsidian, 1), new Object[] {SoulItems.CitrineAmuletStone.get(), Blocks.diamond_block});
+		this.addShapelessRecipe(new ItemStack(Blocks.diamond_block, 1), new Object[] {SoulItems.CitrineAmuletStone.get(), Blocks.gold_block});   
+		this.addShapelessRecipe(new ItemStack(Blocks.gold_block, 1), new Object[] {SoulItems.CitrineAmuletStone.get(), Blocks.iron_block});
+		this.addShapelessRecipe(new ItemStack(SoulBlocks.BronzeBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.TinBlock.get()});   
+		this.addShapelessRecipe(new ItemStack(SoulBlocks.BronzeBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.CopperBlock.get()});
+		this.addShapelessRecipe(new ItemStack(SoulBlocks.SilverBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.BronzeBlock.get()});
+		this.addShapelessRecipe(new ItemStack(SoulBlocks.CobaltBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.SilverBlock.get()});
+		this.addShapelessRecipe(new ItemStack(SoulBlocks.BlackdiamondBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.SteelBlock.get()});
+		this.addShapelessRecipe(new ItemStack(SoulBlocks.OnyxBlock.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulBlocks.CobaltBlock.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.BurnedMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.BurnedShard.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.EnlightedMagicFragmentHalf.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.LightShard.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.FrozenMagicFragmentHalf.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.FrostShard.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.StrengthMagicFragmentHalf.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.StrengthShard.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.BurnedMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.BurnedMagicFragment.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.EnlightedMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.EnlightedMagicFragmentHalf.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.FrozenMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.FrozenMagicFragmentHalf.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.StrengthMagicFragment.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.StrengthMagicFragmentHalf.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.EnlightedMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.EnlightedMagicFragment.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.FrozenMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.FrozenMagicFragment.get()});
+		this.addShapelessRecipe(new ItemStack(SoulItems.StrengthMagicFragmentAdv.get(), 1), new Object[] {SoulItems.CitrineAmuletStone.get(), SoulItems.StrengthMagicFragment.get()});
+		
     	Collections.sort(this.recipes, new GembleTableRecipeSorter(this));
     }
     
@@ -91,8 +89,7 @@ public class GembleCraftingRecipes{
         if (par2ArrayOfObj[i] instanceof String[]){
             String[] astring = (String[])((String[])par2ArrayOfObj[i++]);
 
-            for (int l = 0; l < astring.length; ++l)
-            {
+            for (int l = 0; l < astring.length; ++l){
                 String s1 = astring[l];
                 ++k;
                 j = s1.length();
@@ -193,12 +190,11 @@ public class GembleCraftingRecipes{
 
         if (i == 2 && itemstack == itemstack1 && itemstack.stackSize == 1 && itemstack1.stackSize == 1 && itemstack.getItem().isRepairable()){
             Item item = itemstack.getItem();
-            int k = item.getMaxDamage() - itemstack.getItemDamageForDisplay();
-            int l = item.getMaxDamage() - itemstack1.getItemDamageForDisplay();
+            int k = item.getMaxDamage() - itemstack.getItemDamage();
+            int l = item.getMaxDamage() - itemstack1.getItemDamage();
             int i1 = k + l + item.getMaxDamage() * 5 / 100;
             int j1 = item.getMaxDamage() - i1;
-            if (j1 < 0)
-            {
+            if (j1 < 0){
                 j1 = 0;
             }
 

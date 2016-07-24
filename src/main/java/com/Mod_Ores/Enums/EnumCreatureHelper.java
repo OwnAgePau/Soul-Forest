@@ -14,22 +14,22 @@ import com.Mod_Ores.Mobs.Entity.EntitySnowCreeper;
 
 public class EnumCreatureHelper {	
     public static EnumSoulCreatureAttribute getSoulCreatureAttribute(EntityLivingBase par1Entity){
-	if(par1Entity instanceof EntityKotek || par1Entity instanceof EntityKingKotek){
-	    return EnumSoulCreatureAttribute.SOUL;
-	}
-	else if(par1Entity instanceof EntityFurivoli){
-	    return EnumSoulCreatureAttribute.FIRE;
-	}
-	else if(par1Entity instanceof EntityEnt || par1Entity instanceof EntityIceFairy || 
-		par1Entity instanceof EntitySnowCreeper || par1Entity instanceof EntityIceQueen || 
-		par1Entity instanceof EntityIceQueenIllusion){
-	    return EnumSoulCreatureAttribute.FROST;
-	}
-	else if(par1Entity instanceof EntityGroundhog){
-	    return EnumSoulCreatureAttribute.GROUND;
-	}
-	else{
-	    return EnumSoulCreatureAttribute.UNDEFINED;
-	}		
+		if(par1Entity instanceof EntityKotek || par1Entity instanceof EntityKingKotek){
+		    return EnumSoulCreatureAttribute.SOUL;
+		}
+		else if(par1Entity instanceof EntityFurivoli){
+		    return EnumSoulCreatureAttribute.FIRE;
+		}
+		else if(par1Entity instanceof EntityEnt || par1Entity instanceof EntityIceFairy || 
+			par1Entity instanceof EntitySnowCreeper || par1Entity instanceof EntityIceQueen || 
+			par1Entity instanceof EntityIceQueenIllusion){
+		    return EnumSoulCreatureAttribute.FROST;
+		}
+		else if(par1Entity instanceof EntityGroundhog){
+		    return EnumSoulCreatureAttribute.GROUND;
+		}
+		else{
+		    return EnumSoulCreatureAttribute.UNDEFINED;
+		}		
     }
 }

@@ -22,22 +22,22 @@ public class GenLayerBiomeSoulForest extends GenLayerSoulForest {
     };
 
     protected List<BiomeEntry> weightedBiomes = Arrays.asList(
-	    new BiomeEntry(soul_forest.SoulForest, 9),
-	    new BiomeEntry(soul_forest.PeatBog, 9),
-	    new BiomeEntry(soul_forest.BlackForest, 9),
-	    new BiomeEntry(soul_forest.DarkCaverns, 9),
-	    new BiomeEntry(soul_forest.MaronaWoods, 9),
-	    new BiomeEntry(soul_forest.SoulShrubbery, 9),
-	    new BiomeEntry(soul_forest.FyrisedShrubbery, 9)
+		    new BiomeEntry(soul_forest.SoulForest, 9),
+		    new BiomeEntry(soul_forest.PeatBog, 9),
+		    new BiomeEntry(soul_forest.BlackForest, 9),
+		    new BiomeEntry(soul_forest.DarkCaverns, 9),
+		    new BiomeEntry(soul_forest.MaronaWoods, 9),
+		    new BiomeEntry(soul_forest.SoulShrubbery, 9),
+		    new BiomeEntry(soul_forest.FyrisedShrubbery, 9)
 	    );
 
     public GenLayerBiomeSoulForest(long seed, GenLayerSoulForest genlayer) {
-	super(seed);
-	this.parent = genlayer;
+		super(seed);
+		this.parent = genlayer;
     }
 
     public GenLayerBiomeSoulForest(long seed) {
-	super(seed);
+    	super(seed);
     }
 
     /*protected BiomeEntry getWeightedBiomeEntry(BiomeManager.BiomeType type){
@@ -62,25 +62,25 @@ public class GenLayerBiomeSoulForest extends GenLayerSoulForest {
 
     @Override
     public int[] getInts(int par1, int par2, int par3, int par4){
-	int[] var5 = this.parent.getInts(par1, par2, par3, par4);
-	int[] var6 = IntCache.getIntCache(par3 * par4);
-
-	for (int var7 = 0; var7 < par4; ++var7){
-	    for (int var8 = 0; var8 < par3; ++var8){
-		this.initChunkSeed((long)(var8 + par1), (long)(var7 + par2));
-		int var9 = var5[var8 + var7 * par3];
-		var6[var8 + var7 * par3] = getWeightedBiomeFromList(this.weightedBiomes);
-	    }
-	}
-	return var6;
+		int[] var5 = this.parent.getInts(par1, par2, par3, par4);
+		int[] var6 = IntCache.getIntCache(par3 * par4);
+	
+		for (int var7 = 0; var7 < par4; ++var7){
+		    for (int var8 = 0; var8 < par3; ++var8){
+				this.initChunkSeed((long)(var8 + par1), (long)(var7 + par2));
+				int var9 = var5[var8 + var7 * par3];
+				var6[var8 + var7 * par3] = getWeightedBiomeFromList(this.weightedBiomes);
+		    }
+		}
+		return var6;
     }
 
     private int getWeightedBiomeFromList(List<BiomeEntry> biomeList){
-	int totalWeight = WeightedRandom.getTotalWeight(biomeList);
-	long randomLong = this.nextLong(totalWeight / 10);
-	int randomNr = (int)randomLong * 10;
-	BiomeEntry entry = (BiomeEntry)WeightedRandom.getItem(biomeList, randomNr);
-	int biomeID = entry.biome.biomeID;
-	return ((BiomeEntry)WeightedRandom.getItem(biomeList, (int)this.nextLong(WeightedRandom.getTotalWeight(biomeList) / 10) * 10)).biome.biomeID;
+		int totalWeight = WeightedRandom.getTotalWeight(biomeList);
+		long randomLong = this.nextLong(totalWeight / 10);
+		int randomNr = (int)randomLong * 10;
+		BiomeEntry entry = (BiomeEntry)WeightedRandom.getRandomItem(biomeList, randomNr);
+		int biomeID = entry.biome.biomeID;
+		return ((BiomeEntry)WeightedRandom.getRandomItem(biomeList, (int)this.nextLong(WeightedRandom.getTotalWeight(biomeList) / 10) * 10)).biome.biomeID;
     }
 }

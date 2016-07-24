@@ -9,16 +9,14 @@ import com.Mod_Ores.Mobs.Entity.EntityEnt;
 import com.Mod_Ores.Mobs.Entity.EntityIceFairy;
 import com.Mod_Ores.Mobs.Entity.EntitySnowCreeper;
 
-public class BiomeGenFrostCaves extends BiomeGenBase
-{
+public class BiomeGenFrostCaves extends BiomeGenBase{
 	private WorldGenerator theWorldGenerator;
 	private TheBiomeDeco customBiomeDecorator;
 	
-    public BiomeGenFrostCaves(int par1)
-    {
+    public BiomeGenFrostCaves(int par1){
         super(par1);
-        this.topBlock = SoulBlocks.SoulSnowTop.get();
-        this.fillerBlock = SoulBlocks.SoulSnowBottom.get();
+        this.topBlock = SoulBlocks.SoulSnowTop.get().getDefaultState();
+        this.fillerBlock = SoulBlocks.SoulSnowBottom.get().getDefaultState();
 
         spawnableMonsterList.clear();
         spawnableCreatureList.clear();

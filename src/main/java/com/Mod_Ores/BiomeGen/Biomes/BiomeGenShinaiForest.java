@@ -8,15 +8,13 @@ import com.Mod_Ores.Mobs.Entity.EntityEnt;
 import com.Mod_Ores.Mobs.Entity.EntityFurivoli;
 import com.Mod_Ores.Mobs.Entity.EntitySnowCreeper;
 
-public class BiomeGenShinaiForest extends BiomeGenBase
-{
+public class BiomeGenShinaiForest extends BiomeGenBase{
 	private TheBiomeDeco customBiomeDecorator;
 	
-    public BiomeGenShinaiForest(int par1)
-    {
+    public BiomeGenShinaiForest(int par1){
         super(par1);
-        this.topBlock = SoulBlocks.FrozenGrass.get();
-        this.fillerBlock = SoulBlocks.BogDirt.get();
+        this.topBlock = SoulBlocks.FrozenGrass.get().getDefaultState();
+        this.fillerBlock = SoulBlocks.BogDirt.get().getDefaultState();
 
         spawnableMonsterList.clear();
         spawnableCreatureList.clear();
@@ -33,4 +31,3 @@ public class BiomeGenShinaiForest extends BiomeGenBase
         this.customBiomeDecorator.tallgrassperchunk = 50;
     }
 }
-

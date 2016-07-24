@@ -31,8 +31,6 @@ import com.Mod_Ores.Items.Tools.ItemSoulSword;
 import com.Mod_Ores.Items.Tools.ItemWarAxe;
 import com.Mod_Ores.Mobs.Entity.EntityKingKotek;
 
-import cpw.mods.fml.common.registry.GameRegistry;
-
 public class GemmingCraftingRecipes{
     /** The static instance of this class */
     private static final GemmingCraftingRecipes instance = new GemmingCraftingRecipes();
@@ -94,8 +92,7 @@ public class GemmingCraftingRecipes{
         if (par2ArrayOfObj[i] instanceof String[]){
             String[] astring = (String[])((String[])par2ArrayOfObj[i++]);
 
-            for (int l = 0; l < astring.length; ++l)
-            {
+            for (int l = 0; l < astring.length; ++l){
                 String s1 = astring[l];
                 ++k;
                 j = s1.length();
@@ -196,12 +193,11 @@ public class GemmingCraftingRecipes{
 
         if (i == 2 && itemstack == itemstack1 && itemstack.stackSize == 1 && itemstack1.stackSize == 1 && itemstack.getItem().isRepairable()){
             Item item = itemstack.getItem();
-            int k = item.getMaxDamage() - itemstack.getItemDamageForDisplay();
-            int l = item.getMaxDamage() - itemstack1.getItemDamageForDisplay();
+            int k = item.getMaxDamage() - itemstack.getItemDamage();
+            int l = item.getMaxDamage() - itemstack1.getItemDamage();
             int i1 = k + l + item.getMaxDamage() * 5 / 100;
             int j1 = item.getMaxDamage() - i1;
-            if (j1 < 0)
-            {
+            if (j1 < 0){
                 j1 = 0;
             }
 

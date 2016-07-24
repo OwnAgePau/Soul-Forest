@@ -10,9 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerDestroyItemEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
-import cpw.mods.fml.common.gameevent.PlayerEvent.ItemSmeltedEvent;
-import cpw.mods.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.common.gameevent.PlayerEvent.ItemCraftedEvent;
 
 public class SlotGembleCrafting extends Slot{
     /** The craft matrix inventory linked to this result slot. */
@@ -27,16 +25,16 @@ public class SlotGembleCrafting extends Slot{
     private int amountCrafted;
 
     public SlotGembleCrafting(EntityPlayer par1EntityPlayer, IInventory par2IInventory, IInventory par3IInventory, int par4, int par5, int par6){
-	super(par3IInventory, par4, par5, par6);
-	this.thePlayer = par1EntityPlayer;
-	this.craftMatrix = par2IInventory;
+		super(par3IInventory, par4, par5, par6);
+		this.thePlayer = par1EntityPlayer;
+		this.craftMatrix = par2IInventory;
     }
 
     /**
      * Check if the stack is a valid item for this slot. Always true beside for the armor slots.
      */
     public boolean isItemValid(ItemStack par1ItemStack){
-	return false;
+    	return false;
     }
 
     /**
@@ -44,11 +42,11 @@ public class SlotGembleCrafting extends Slot{
      * stack.
      */
     public ItemStack decrStackSize(int par1){
-	if (this.getHasStack()){
-	    this.amountCrafted += Math.min(par1, this.getStack().stackSize);
-	}
-
-	return super.decrStackSize(par1);
+		if (this.getHasStack()){
+		    this.amountCrafted += Math.min(par1, this.getStack().stackSize);
+		}
+	
+		return super.decrStackSize(par1);
     }
 
     /**
@@ -56,90 +54,90 @@ public class SlotGembleCrafting extends Slot{
      * internal count then calls onCrafting(item).
      */
     protected void onCrafting(ItemStack par1ItemStack, int par2){
-	this.amountCrafted += par2;
-	this.onCrafting(par1ItemStack);
+		this.amountCrafted += par2;
+		this.onCrafting(par1ItemStack);
     }
 
     /**
      * the itemStack passed in is the output - ie, iron ingots, and pickaxes, not ore and wood.
      */
     protected void onCrafting(ItemStack par1ItemStack){
-	par1ItemStack.onCrafting(this.thePlayer.worldObj, this.thePlayer, this.amountCrafted);
-	this.amountCrafted = 0;
+		par1ItemStack.onCrafting(this.thePlayer.worldObj, this.thePlayer, this.amountCrafted);
+		this.amountCrafted = 0;
     }
     
     private int getDamage(){
-	// Calculate amount of damage given to the stone.
-	int damage = 0;
-	ItemStack input = null;
-	ItemStack repairStack = null;
-	if(this.craftMatrix.getStackInSlot(0) != null && this.craftMatrix.getStackInSlot(1) != null){
-	    input = this.craftMatrix.getStackInSlot(0);
-	    if(input.getItem() == SoulItems.CitrineAmuletStone.get()){
-		repairStack = this.craftMatrix.getStackInSlot(1);
-	    }
-	    else{
-		input = this.craftMatrix.getStackInSlot(1);
-		repairStack = this.craftMatrix.getStackInSlot(0);
-	    }
-	} 
-	if(input != null){
-	    int maxDamage = input.getMaxDamage();
-	    damage = maxDamage / 5;
-	}
-	return damage;
+		// Calculate amount of damage given to the stone.
+		int damage = 0;
+		ItemStack input = null;
+		ItemStack repairStack = null;
+		if(this.craftMatrix.getStackInSlot(0) != null && this.craftMatrix.getStackInSlot(1) != null){
+		    input = this.craftMatrix.getStackInSlot(0);
+		    if(input.getItem() == SoulItems.CitrineAmuletStone.get()){
+		    	repairStack = this.craftMatrix.getStackInSlot(1);
+		    }
+		    else{
+				input = this.craftMatrix.getStackInSlot(1);
+				repairStack = this.craftMatrix.getStackInSlot(0);
+		    }
+		} 
+		if(input != null){
+		    int maxDamage = input.getMaxDamage();
+		    damage = maxDamage / 5;
+		}
+		return damage;
     }
 
     public void onPickupFromSlot(EntityPlayer par1EntityPlayer, ItemStack par2ItemStack){
-	int damage = this.getDamage();
-	ItemCraftedEvent itemCrafted = new ItemCraftedEvent(thePlayer, par2ItemStack, craftMatrix);
-	soul_forest.craftHandler.onCrafting(itemCrafted);
-
-	this.onCrafting(par2ItemStack);
-
-	for (int i = 0; i < this.craftMatrix.getSizeInventory(); ++i){
-	    ItemStack itemstack1 = this.craftMatrix.getStackInSlot(i);            
-	    if (itemstack1 != null){
-		this.craftMatrix.decrStackSize(i, 1);
-
+		int damage = this.getDamage();
+		ItemCraftedEvent itemCrafted = new ItemCraftedEvent(thePlayer, par2ItemStack, craftMatrix);
+		soul_forest.craftHandler.onCrafting(itemCrafted);
+	
+		this.onCrafting(par2ItemStack);
+	
+		for (int i = 0; i < this.craftMatrix.getSizeInventory(); ++i){
+		    ItemStack itemstack1 = this.craftMatrix.getStackInSlot(i);            
+		    if (itemstack1 != null){
+				this.craftMatrix.decrStackSize(i, 1);
 		
-		if (itemstack1.isItemStackDamageable() && itemstack1.getItemDamage() + damage >= itemstack1.getMaxDamage()){
-		    MinecraftForge.EVENT_BUS.post(new PlayerDestroyItemEvent(thePlayer, itemstack1));
-		    itemstack1 = null;
-		}
-
-		if(itemstack1 != null){
-		    if (!itemstack1.getItem().doesContainerItemLeaveCraftingGrid(itemstack1)){
-			if (this.craftMatrix.getStackInSlot(i) == null){
-			    this.craftMatrix.setInventorySlotContents(i, itemstack1);
-			    if(itemstack1.getItem() == SoulItems.CitrineAmuletStone.get()){
-				itemstack1.setItemDamage(itemstack1.getItemDamage() + damage);
-			    }
-			}
-			else{
-			    this.thePlayer.dropPlayerItemWithRandomChoice(itemstack1, false);
-			}
-		    }	
-
-		    if (itemstack1.getItem().hasContainerItem()){
-			ItemStack itemstack2 = itemstack1.getItem().getContainerItem(itemstack1);
-
-			if (itemstack2.isItemStackDamageable() && itemstack2.getItemDamage() > itemstack2.getMaxDamage()){
-			    MinecraftForge.EVENT_BUS.post(new PlayerDestroyItemEvent(thePlayer, itemstack2));
-			    itemstack2 = null;
-			}
-
-			if (itemstack2 != null && (!itemstack1.getItem().doesContainerItemLeaveCraftingGrid(itemstack1) || !this.thePlayer.inventory.addItemStackToInventory(itemstack2))){
-			    if (this.craftMatrix.getStackInSlot(i) == null){
-				this.craftMatrix.setInventorySlotContents(i, itemstack2);
-			    }
-			    else{
-				this.thePlayer.dropPlayerItemWithRandomChoice(itemstack2, false);
-			    }
-			}
+				
+				if (itemstack1.isItemStackDamageable() && itemstack1.getItemDamage() + damage >= itemstack1.getMaxDamage()){
+				    MinecraftForge.EVENT_BUS.post(new PlayerDestroyItemEvent(thePlayer, itemstack1));
+				    itemstack1 = null;
+				}
+		
+				if(itemstack1 != null){
+				    if (!this.thePlayer.inventory.addItemStackToInventory(itemstack1)){
+						if (this.craftMatrix.getStackInSlot(i) == null){
+						    this.craftMatrix.setInventorySlotContents(i, itemstack1);
+						    if(itemstack1.getItem() == SoulItems.CitrineAmuletStone.get()){
+						    	itemstack1.setItemDamage(itemstack1.getItemDamage() + damage);
+						    }
+						}
+						else{
+						    this.thePlayer.dropPlayerItemWithRandomChoice(itemstack1, false);
+						}
+					}	
+			
+					if (itemstack1.getItem().hasContainerItem()){
+						ItemStack itemstack2 = itemstack1.getItem().getContainerItem(itemstack1);
+			
+						if (itemstack2.isItemStackDamageable() && itemstack2.getItemDamage() > itemstack2.getMaxDamage()){
+						    MinecraftForge.EVENT_BUS.post(new PlayerDestroyItemEvent(thePlayer, itemstack2));
+						    itemstack2 = null;
+						}
+			
+						if (itemstack2 != null && (!this.thePlayer.inventory.addItemStackToInventory(itemstack1) || !this.thePlayer.inventory.addItemStackToInventory(itemstack2))){
+						    if (this.craftMatrix.getStackInSlot(i) == null){
+						    	this.craftMatrix.setInventorySlotContents(i, itemstack2);
+						    }
+						    else{
+						    	this.thePlayer.dropPlayerItemWithRandomChoice(itemstack2, false);
+						    }
+						}
+				    }
+				}
 		    }
 		}
-	    }
-	}
     }
 }

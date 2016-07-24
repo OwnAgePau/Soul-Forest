@@ -7,6 +7,8 @@ import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.StatCollector;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.fml.relauncher.Side;
 
 import org.lwjgl.opengl.GL11;
 
@@ -14,17 +16,13 @@ import com.Mod_Ores.Blocks.Containers.ContainerGelExtractor;
 import com.Mod_Ores.Blocks.TileEntities.TileEntityGelExtractor;
 import com.Mod_Ores.Init.SoulItems;
 
-import cpw.mods.fml.relauncher.Side;
-import cpw.mods.fml.relauncher.SideOnly;
-
 @SideOnly(Side.CLIENT)
 public class GuiGelExtractor extends GuiContainer{
     public static final ResourceLocation TEXTURE = new ResourceLocation("soulforest", "textures/gui/gelextractor.png");
     private TileEntityGelExtractor gelExtractorInventory;
     private int onOffint = 0;
     
-    public GuiGelExtractor(InventoryPlayer par1InventoryPlayer, TileEntityGelExtractor par2TileEntityGelextractor)
-    {
+    public GuiGelExtractor(InventoryPlayer par1InventoryPlayer, TileEntityGelExtractor par2TileEntityGelextractor){
         super(new ContainerGelExtractor(par1InventoryPlayer, par2TileEntityGelextractor));
         this.gelExtractorInventory = par2TileEntityGelextractor;
     }
@@ -73,8 +71,12 @@ public class GuiGelExtractor extends GuiContainer{
 	    this.drawTexturedModalRect(k + 58, l + 41, 176, 14, i1 + 1, 3); // Arrow
         
         itemRender.zLevel = 100.0F;
-        itemRender.renderItemAndEffectIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), new ItemStack(SoulItems.BlueMoltenGel.get()), k + 8, l + 24);
-        itemRender.renderItemAndEffectIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), new ItemStack(SoulItems.GelPot.get()), k + 153, l + 22);
+        // TODO Check which one of the 2 or something else is how to render it
+        itemRender.renderItemAndEffectIntoGUI(new ItemStack(SoulItems.BlueMoltenGel.get()), k + 8, l + 24);
+        itemRender.renderItemOverlayIntoGUI(this.fontRendererObj, new ItemStack(SoulItems.GelPot.get()), k + 153, l + 22, "");
+        
+        //itemRender.renderItemAndEffectIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), new ItemStack(SoulItems.BlueMoltenGel.get()), k + 8, l + 24);
+        //itemRender.renderItemAndEffectIntoGUI(this.fontRendererObj, this.mc.getTextureManager(), new ItemStack(SoulItems.GelPot.get()), k + 153, l + 22);
         itemRender.zLevel = 0.0F;
     }
 }

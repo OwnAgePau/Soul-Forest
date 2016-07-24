@@ -6,15 +6,13 @@ import com.Mod_Ores.Init.SoulBlocks;
 import com.Mod_Ores.Init.Config.SoulConfigCreatures;
 import com.Mod_Ores.Mobs.Entity.EntityFurivoli;
 
-public class BiomeGenBlackForest extends BiomeGenBase
-{
+public class BiomeGenBlackForest extends BiomeGenBase{
 	private TheBiomeDeco customBiomeDecorator;
 	
-    public BiomeGenBlackForest(int par1)
-    {
+    public BiomeGenBlackForest(int par1){
         super(par1);
-        this.topBlock = SoulBlocks.FyrisedSandGrass.get();
-        this.fillerBlock = SoulBlocks.FyrisedSand.get();
+        this.topBlock = SoulBlocks.FyrisedSandGrass.get().getDefaultState();
+        this.fillerBlock = SoulBlocks.FyrisedSand.get().getDefaultState();
 
         spawnableMonsterList.clear();
         spawnableCreatureList.clear();
@@ -29,4 +27,3 @@ public class BiomeGenBlackForest extends BiomeGenBase
         customBiomeDecorator.hardwoodtreeperchunk = 15;
     }
 }
-
