@@ -4,6 +4,11 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "soulforest:blocks/Frozen_grass"
+        "down": "soulforest:blocks/Bog_dirt",
+        "up": "soulforest:blocks/Frozen_grass_top",
+        "north": "soulforest:blocks/Frozen_grass_side",
+        "east": "soulforest:blocks/Frozen_grass_side",
+        "south": "soulforest:blocks/Frozen_grass_side",
+        "west": "soulforest:blocks/Frozen_grass_side"
     }
 }

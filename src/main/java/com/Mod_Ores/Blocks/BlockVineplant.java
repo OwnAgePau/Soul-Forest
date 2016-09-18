@@ -13,6 +13,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
@@ -130,6 +131,7 @@ public class BlockVineplant extends Block implements IPlantable{
      * Is this block (a) opaque and (b) a full 1m cube?  This determines whether or not to render the shared face of two
      * adjacent blocks and also whether the player can attach torches, redstone wire, etc to this block.
      */
+    @Override
     public boolean isOpaqueCube(){
     	return false;
     }
@@ -140,17 +142,17 @@ public class BlockVineplant extends Block implements IPlantable{
     }
 
     /**
-     * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
-     */
-    public boolean renderAsNormalBlock(){
-    	return false;
-    }
-
-    /**
      * The type of render function that is called for this block
      */
+    @Override
     public int getRenderType(){
-    	return 1;
+    	return 3;
+    }
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+    public EnumWorldBlockLayer getBlockLayer(){
+        return EnumWorldBlockLayer.CUTOUT;
     }
 
     @SideOnly(Side.CLIENT)

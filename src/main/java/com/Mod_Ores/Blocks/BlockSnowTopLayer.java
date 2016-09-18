@@ -2,6 +2,7 @@ package com.Mod_Ores.Blocks;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
@@ -31,24 +32,23 @@ public class BlockSnowTopLayer extends Block{
 		this.textureName = Unlname;
     }
 
-    /*@Override
-    public int idDropped(int par1, Random par2Random, int par3)
-    {
-        return SoulConfigBlocks.thickSnowID;
-    }*/
     /**
-     * Returns a bounding box from the pool of bounding boxes (this means this box can change after the pool has been
-     * cleared to be reused)
+     * Allows you to walk through this block
      */
-    public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4){
-    	return null;
+    @Override
+    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state){
+        return null;
     }
-    /**
-     * Triggered whenever an entity collides with this block (enters into the block). Args: world, x, y, z, entity
-     */
-    public void onEntityCollidedWithBlock(World par1World, int par2, int par3, int par4, Entity par5Entity){
-    	((BlockSnowTopLayer) par5Entity).setInWeb();
+
+    @Override
+    public boolean isBlockSolid(IBlockAccess worldIn, BlockPos pos, EnumFacing side){
+        return false;
     }
+    
+    public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn){
+    	((BlockSnowTopLayer) entityIn).setInWeb();
+    }
+    
     /**
      * If this block doesn't render as an ordinary block it will return False (examples: signs, buttons, stairs, etc)
      */

@@ -1,11 +1,11 @@
 package com.Mod_Ores.Init;
 
+import java.util.List;
 import java.util.Random;
 
 import net.minecraft.block.Block;
 import net.minecraftforge.fluids.Fluid;
 
-import com.Mod_Ores.Blocks.Special.BlockSoulSlab;
 import com.google.common.base.Optional;
 
 public class SoulBlocks {
@@ -100,6 +100,29 @@ public class SoulBlocks {
     public static Optional<? extends Block> Slate                         = Optional.absent();
     public static Optional<? extends Block> Bauxite                         = Optional.absent();
     public static Optional<? extends Block> BauxiteMossy                         = Optional.absent();
+    
+    public static Optional<? extends Block> PorphyryBrickSlab 				= Optional.absent();
+    public static Optional<? extends Block> SlateBrickSlab 					= Optional.absent();
+    public static Optional<? extends Block> TitaniumBrickSlab 				= Optional.absent();
+    public static Optional<? extends Block> BauxiteBrickSlab				= Optional.absent();
+    public static Optional<? extends Block> IceBrickSlab 					= Optional.absent();
+    public static Optional<? extends Block> SoulwoodSlab 					= Optional.absent();
+    public static Optional<? extends Block> FrozenwoodSlab 					= Optional.absent();
+    public static Optional<? extends Block> HardwoodSlab 					= Optional.absent();
+    
+    public static Optional<? extends Block> PorphyryBrickDoubleSlab 				= Optional.absent();
+    public static Optional<? extends Block> SlateBrickDoubleSlab 					= Optional.absent();
+    public static Optional<? extends Block> TitaniumBrickDoubleSlab 				= Optional.absent();
+    public static Optional<? extends Block> BauxiteBrickDoubleSlab				= Optional.absent();
+    public static Optional<? extends Block> IceBrickDoubleSlab 					= Optional.absent();
+    public static Optional<? extends Block> SoulwoodDoubleSlab 					= Optional.absent();
+    public static Optional<? extends Block> FrozenwoodDoubleSlab 					= Optional.absent();
+    public static Optional<? extends Block> HardwoodDoubleSlab 					= Optional.absent();
+    
+    public static Optional[] slabs = new Optional[]{ 
+    	BauxiteBrickSlab, BauxiteBrickDoubleSlab, IceBrickSlab, IceBrickDoubleSlab, PorphyryBrickSlab, 
+    	PorphyryBrickDoubleSlab, SlateBrickSlab, SlateBrickDoubleSlab, TitaniumBrickSlab, TitaniumBrickDoubleSlab, 
+    	SoulwoodSlab, SoulwoodDoubleSlab, FrozenwoodSlab, FrozenwoodDoubleSlab, HardwoodSlab, HardwoodDoubleSlab};
 
     public static Optional<? extends Block> LateriteGrass                         = Optional.absent();
     public static Optional<? extends Block> LateriteDirt                         = Optional.absent();

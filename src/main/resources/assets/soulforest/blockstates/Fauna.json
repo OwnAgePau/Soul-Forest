@@ -1,0 +1,14 @@
+# THIS IS THE BLOCKSTATE FILE. IT GOES IN THE assets/soulforest/blockstates/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "variants": {
+	    "variant=Bush": { "model": "soulforest:Bush" },
+        "variant=Bog_grass_tall_grey": { "model": "soulforest:Bog_grass_tall_grey" },
+        "variant=Bog_grass_tall_green": { "model": "soulforest:Bog_grass_tall_green" },
+        "variant=Bog_grass_tall_dark": { "model": "soulforest:Bog_grass_tall_dark" },
+		"variant=Bog_grass_tall_purple": { "model": "soulforest:Bog_grass_tall_purple" },
+		"variant=Frozen_tallgrass": { "model": "soulforest:Frozen_tallgrass" },
+        "normal": { "model": "soulforest:Bog_grass_tall_green" }
+    }
+}

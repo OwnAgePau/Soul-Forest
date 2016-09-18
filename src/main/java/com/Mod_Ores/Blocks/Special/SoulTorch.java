@@ -65,9 +65,10 @@ public class SoulTorch extends BlockTorch{
     /**
      * The type of render function that is called for this block
      */
+    /*@Override
     public int getRenderType(){
         return 2;
-    }
+    }*/
 
     @SideOnly(Side.CLIENT)
     public void randomDisplayTick(World worldIn, BlockPos pos, IBlockState state, Random rand){

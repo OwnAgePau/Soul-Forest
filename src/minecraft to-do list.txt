@@ -1,20 +1,33 @@
 Changes:
 - Changed harvestlevel of Black Diamond, Onyx, Titanium and especially Uranium back to 4 (it was 5 so you would have to get a Fyrised Pickaxe before you could even get to the Soul Forest)
-- Changed Frost related items no longer can be found in titanium tower or slate tower chest rooms.
+- Changed Frost related items to no longer be able to be found in titanium or slate tower chest rooms.
 - Added descriptions to the Amulet Stones & Rings
 - Fixed mining silver ore no longer gives you the "First Uncut Found" achievement.
 - Added a bunch of new achievements to fill the gap between the soul forest and the frozen dimension and to give more of a direction of what to build since there are some very usefull crafting tables there!
 - Added a donation button for people who are willing to donate!
+- Fixed: The frost wand now actually shoots frost shards!!!!!
 
 - Halved the amount of sounds the Furivoli produced to reduce lag when being around these creatures.
-- Changed the gap between being too far or too close to the ice queen for her to teleport bigger.
+- Changed the gap between being too far or too close to the ice queen for her to teleport to a bigger range.
 
 
 To-do:
 
-- Frost shards should only be found in ice towers and not the other various, with other words it should only be acquired in the Frozen Dimension.
+- [x]Frost shards should only be found in ice towers and not the other various, with other words it should only be acquired in the Frozen Dimension.
 
-- Fix block lag and lag around Furivoli's!
+- [x]Fix block lag and lag around Furivoli's!
+
+- Fix custom fire block rendering.
+- Fix custom water rendering.
+- Fix custom slab rendering (inventory).
+- Fix custom fauna rendering.
+- Fix custom torch rendering.
+- Fix custom wooden slabs naming.
+- Fix throwing daggers (crashing) & projectiles (make it like the frost shard which now magically works).
+- Fix all custom mobs.
+- Fix custom portal block sizes.
+- [x]Fix custom crafting tables (gemcutter, gel extractor), something to do with properties.
+- [x]Fix custom crafting table rendering (gemcutter, gel extractor)
 
 - Ice queen remove walls check
 - Change the shape of the teleporter(s)
@@ -44,7 +57,8 @@ To-do:
 - Offset van ice fairy ff naar kijken
 - Add mineral spawning frequenty to the config (maybe)
 - Add Ice fairies will now attack snow creepers.
-- [x]Paypal en/of adfly opzetten
+- [x]Paypal en
+- adfly opzetten
 - Create custom GUI for gemble table, gemming table and gemmeration table.
 - [?]To get the bottom thick soul snow block to change to soul snow, let thick soul snow also be a soul snow block but use a boolean to set whether u can drop through it and to change its texture slightly.
 - [OPT]soul tree random leave colour (case can be heavily optimised), orange and pink leaves (PLEASE REMOVE)

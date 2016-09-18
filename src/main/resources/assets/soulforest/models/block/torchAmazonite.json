@@ -2,8 +2,31 @@
 # Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
 
 {
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "soulforest:blocks/torchAmazonite"
-    }
+	"ambientocclusion": false,
+    "elements": [
+        {   "from": [ 7, 0, 7 ],
+            "to": [ 9, 10, 9 ],
+            "shade": false,
+            "faces": {
+                "down": { "uv": [ 7, 13, 9, 15 ], "texture": "soulforest:blocks/torchAmazonite" },
+                "up":   { "uv": [ 7,  6, 9,  8 ], "texture": "soulforest:blocks/torchAmazonite" }
+            }
+        },
+        {   "from": [ 7, 0, 0 ],
+            "to": [ 9, 16, 16 ],
+            "shade": false,
+            "faces": {
+                "west": { "uv": [ 0, 0, 16, 16 ], "texture": "soulforest:blocks/torchAmazonite" },
+                "east": { "uv": [ 0, 0, 16, 16 ], "texture": "soulforest:blocks/torchAmazonite" }
+            }
+        },
+        {   "from": [ 0, 0, 7 ],
+            "to": [ 16, 16, 9 ],
+            "shade": false,
+            "faces": {
+                "north": { "uv": [ 0, 0, 16, 16 ], "texture": "soulforest:blocks/torchAmazonite" },
+                "south": { "uv": [ 0, 0, 16, 16 ], "texture": "soulforest:blocks/torchAmazonite" }
+            }
+        }
+    ]
 }

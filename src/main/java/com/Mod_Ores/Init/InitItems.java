@@ -1,12 +1,16 @@
 package com.Mod_Ores.Init;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.*;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
+import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidContainerRegistry;
 import net.minecraftforge.fluids.FluidRegistry;
 
@@ -170,7 +174,7 @@ public class InitItems {
 		SoulItems.RazzberryJuice = 			Optional.of(new ItemSoulFood(32, 3, 4F, false, "Razzberry_juice"));	
 		SoulItems.RazzberryPie = 			Optional.of(new ItemSoulFood(32, 8, 4F, false, "Razzberry_pie"));
 		SoulItems.StrawberryPie = 			Optional.of(new ItemSoulFood(32, 8,  4F, false, "Strawberry_pie"));	
-		SoulItems.Wine = 					Optional.of(new ItemSoulFood(32, 0, 4F, false, "Wine").setPotionEffect(15, 8, 10, 4).setUnlocalizedName("Wine"));
+		SoulItems.Wine = 					Optional.of(new ItemSoulFood(32, 0, 4F, false, "Wine").setPotionEffect(15, 8, 10, 4));
 	
 		// Ingots		
 		SoulItems.BronzeIngot = 			Optional.of(new ItemSoulIngot("Bronze_ingot"));
@@ -297,7 +301,13 @@ public class InitItems {
 		SoulItems.SoulBucket = 				Optional.of(new ItemBlackBucket(Blocks.air, "bucketSoul"));	
 		SoulItems.BucketSoulWater = 		Optional.of(new ItemBlackBucket(SoulBlocks.SoulWaterMoving.get(), "bucketSoulWater").setContainerItem(SoulItems.SoulBucket.get()));
 		SoulItems.ItemVineplant = 			Optional.of(new ItemVineplant(SoulBlocks.Vineplant.get(), "ItemVineplant"));
-		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("soul_water_flow", 
+		
+		Object[] fluids = FluidRegistry.getRegisteredFluids().keySet().toArray();
+		for(int i = 0; i < fluids.length; i++){
+			String name = (String)fluids[i];
+		}
+		
+		FluidContainerRegistry.registerFluidContainer(FluidRegistry.getFluidStack("soul_water", 
 			FluidContainerRegistry.BUCKET_VOLUME), 
 			new ItemStack(SoulItems.BucketSoulWater.get()), 
 			new ItemStack(SoulItems.SoulBucket.get()));

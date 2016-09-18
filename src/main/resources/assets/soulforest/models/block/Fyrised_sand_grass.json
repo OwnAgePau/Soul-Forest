@@ -1,0 +1,14 @@
+# THIS IS THE BLOCK MDOEL FILE. IT GOES IN THE assets/soulforest/models/block/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "soulforest:blocks/Fyrised_sand",
+        "up": "soulforest:blocks/Fyrised_sand_top",
+        "north": "soulforest:blocks/Fyrised_sand_side",
+        "east": "soulforest:blocks/Fyrised_sand_side",
+        "south": "soulforest:blocks/Fyrised_sand_side",
+        "west": "soulforest:blocks/Fyrised_sand_side"
+    }
+}

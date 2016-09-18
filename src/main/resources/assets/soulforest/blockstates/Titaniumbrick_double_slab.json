@@ -1,0 +1,9 @@
+# THIS IS THE BLOCKSTATE FILE. IT GOES IN THE assets/soulforest/blockstates/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "variants": {
+	    "variant=false": { "model": "soulforest:Titaniumbrick" },
+        "variant=true": { "model": "soulforest:Titaniumbrick" }
+    }
+}

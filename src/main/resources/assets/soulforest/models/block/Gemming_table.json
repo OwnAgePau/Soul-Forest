@@ -1,0 +1,14 @@
+# THIS IS THE BLOCK MDOEL FILE. IT GOES IN THE assets/soulforest/models/block/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "down": "blocks/obsidian",
+        "up": "soulforest:blocks/Gemming_top",
+        "north": "soulforest:blocks/Gemming_side",
+        "east": "soulforest:blocks/Gemming_side",
+        "south": "soulforest:blocks/Gemming_side",
+        "west": "soulforest:blocks/Gemming_side"
+    }
+}

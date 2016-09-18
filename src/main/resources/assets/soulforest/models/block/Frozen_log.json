@@ -4,6 +4,11 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "soulforest:blocks/Frozen_log"
+        "down": "soulforest:blocks/Frozen_log_top",
+        "up": "soulforest:blocks/Frozen_log_top",
+        "north": "soulforest:blocks/Frozen_log_side",
+        "east": "soulforest:blocks/Frozen_log_side",
+        "south": "soulforest:blocks/Frozen_log_side",
+        "west": "soulforest:blocks/Frozen_log_side"
     }
 }

@@ -1,0 +1,15 @@
+# THIS IS THE BLOCK MDOEL FILE. IT GOES IN THE assets/soulforest/models/block/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "parent": "block/cube",
+    "textures": {
+		"down": "soulforest:blocks/Ice_workbench_top",
+        "up": "soulforest:blocks/Ice_workbench_top",
+        "north": "soulforest:blocks/Ice_workbench_side",
+        "east": "soulforest:blocks/Ice_workbench_side",
+        "south": "soulforest:blocks/Ice_workbench_side",
+        "west": "soulforest:blocks/Ice_workbench_side",
+		particle": "blocks/dirt"
+    }
+}

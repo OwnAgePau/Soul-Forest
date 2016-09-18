@@ -1,0 +1,12 @@
+# THIS IS THE BLOCKSTATE FILE. IT GOES IN THE assets/soulforest/blockstates/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+	"variants": {
+        "facing=east": { "model": "soulforest:Gel_extractor" },
+        "facing=south": { "model": "soulforest:Gel_extractor", "y": 90 },
+        "facing=west": { "model": "soulforest:Gel_extractor", "y": 180 },
+        "facing=north": { "model": "soulforest:Gel_extractor", "y": 270 },
+        "normal": { "model": "soulforest:Gel_extractor" }
+    }
+}

@@ -2,7 +2,29 @@
 # Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
 
 {
-    "variants": {
-        "normal": { "model": "soulforest:torchAmazonite" }
-    }
+    "forge_marker": 1,
+	"defaults": {
+		"model": "soulforest:torchAmazonite_wall",
+		"textures": {
+			"torch": "soulforest:blocks/torchAmazonite"
+		},
+		"transform": "forge:default-item"
+	},
+	"variants": {
+		"facing": {
+			"up": {
+				"model": "soulforest:torchAmazonite"
+			},
+			"north": { "y": 270},
+			"east": { "y": 0 },
+			"south": { "y": 90 },
+			"west": { "y": 180 }
+		},
+		"inventory": [{
+			"model": "builtin/generated",
+			"textures": {
+				"layer0": "soulforest:blocks/torchAmazonite"
+			}
+		}]
+	}
 }

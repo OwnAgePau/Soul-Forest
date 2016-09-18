@@ -16,10 +16,11 @@ public class BlockSoulStairs extends BlockStairs {
 	}
 
     public BlockSoulStairs(Block p_i45428_1_, int p_i45428_2_, String unlName, CreativeTabs tab) {
-		super(p_i45428_1_.getDefaultState());
+		super(p_i45428_1_.getStateFromMeta(0));
 		GameRegistry.registerBlock(this, unlName);
 		this.setUnlocalizedName(soul_forest.MODID + "_" + unlName);
+		this.useNeighborBrightness = true;
 		this.textureName = unlName;
-		super.setCreativeTab(tab);
+		this.setCreativeTab(tab);
     }
 }

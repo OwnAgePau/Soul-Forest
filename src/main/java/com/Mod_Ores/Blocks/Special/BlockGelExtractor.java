@@ -7,7 +7,9 @@ import javax.swing.Icon;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
@@ -58,12 +60,39 @@ public class BlockGelExtractor extends BlockContainer{
 
     public BlockGelExtractor(String Unlname){
         super(Material.rock);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.setCreativeTab(soul_forest.tabSoulBlocks);
         this.setUnlocalizedName(soul_forest.MODID + "_" + Unlname);
         this.textureName = Unlname;
 		GameRegistry.registerBlock(this, Unlname);
     }
 
+    protected BlockState createBlockState(){
+        return new BlockState(this, new IProperty[]{FACING});
+    }
+    
+    public IBlockState getStateFromMeta( int meta ){
+        EnumFacing enumfacing = EnumFacing.getFront(meta);
+        if (enumfacing.getAxis() == EnumFacing.Axis.Y){
+            enumfacing = EnumFacing.NORTH;
+        }
+        return this.getDefaultState().withProperty(FACING, enumfacing);
+    }
+
+    /* Here the EnumFacing is translated into a metadata value(0-15)
+     * so it can be stored. You can store up to 16 different states alone
+     * in metadata, but no more. If you need more consider using a tile
+     * entity alongside the metadata for more flexiblity
+     */
+    public int getMetaFromState( IBlockState state ){
+        return (( EnumFacing )state.getValue( FACING )).getIndex();
+    }
+    
+    @Override
+    public int getRenderType() {
+    	  return 3;
+    }
+    
     /**
      * Returns the ID of the items to drop on destruction.
      */

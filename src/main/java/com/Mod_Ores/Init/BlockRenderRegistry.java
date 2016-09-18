@@ -1,13 +1,17 @@
 package com.Mod_Ores.Init;
 
+import jline.internal.Log;
+
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Blocks.*;
 import com.Mod_Ores.Blocks.Special.*;
+import com.Mod_Ores.Blocks.Special.Slab.SoulSlab;
 import com.Mod_Ores.Items.*;
 import com.Mod_Ores.Items.Armor.*;
 import com.Mod_Ores.Items.Tools.*;
 import com.Mod_Ores.Dimension.SoulForest.*;
 import com.Mod_Ores.Dimension.FrozenHearth.*;
+import com.google.common.base.Optional;
 
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
@@ -43,6 +47,7 @@ public class BlockRenderRegistry {
 		reg(SoulBlocks.Turquoiseore.get(), 0, ((SoulOre)SoulBlocks.Turquoiseore.get()).getName());
 		reg(SoulBlocks.Uraniumore.get(), 0, ((SoulOre)SoulBlocks.Uraniumore.get()).getName());
 		reg(SoulBlocks.Violetore.get(), 0, ((SoulOre)SoulBlocks.Violetore.get()).getName());
+		reg(SoulBlocks.Whiteopalore.get(), 0, ((SoulOre)SoulBlocks.Whiteopalore.get()).getName());
 		reg(SoulBlocks.Chromiteore.get(), 0, ((SoulOre)SoulBlocks.Chromiteore.get()).getName());
 		reg(SoulBlocks.Cobaltore.get(), 0, ((SoulOre)SoulBlocks.Cobaltore.get()).getName());
 		reg(SoulBlocks.Copperore.get(), 0, ((SoulOre)SoulBlocks.Copperore.get()).getName());
@@ -150,7 +155,7 @@ public class BlockRenderRegistry {
 		
 		reg(SoulBlocks.Vineplant.get(), 0, ((BlockVineplant)SoulBlocks.Vineplant.get()).getName());
 		reg(SoulBlocks.VineplantTop.get(), 0, ((BlockVineplant)SoulBlocks.VineplantTop.get()).getName());
-		
+				
 		reg(SoulBlocks.Baneberry.get(), 0, ((SoulVine)SoulBlocks.Baneberry.get()).getName());
 		reg(SoulBlocks.Blackberry.get(), 0, ((SoulVine)SoulBlocks.Blackberry.get()).getName());
 		reg(SoulBlocks.Blueberry.get(), 0, ((SoulVine)SoulBlocks.Blueberry.get()).getName());
@@ -169,6 +174,35 @@ public class BlockRenderRegistry {
 		reg(SoulBlocks.TurquoiseTorch.get(), 0, ((SoulTorch)SoulBlocks.TurquoiseTorch.get()).getName());
 		reg(SoulBlocks.VioletTorch.get(), 0, ((SoulTorch)SoulBlocks.VioletTorch.get()).getName());
 		reg(SoulBlocks.WhiteOpalTorch.get(), 0, ((SoulTorch)SoulBlocks.WhiteOpalTorch.get()).getName());
+		
+		reg(SoulBlocks.BauxiteBrickStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.BauxiteBrickStairs.get()).getName());
+		reg(SoulBlocks.IceBrickStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.IceBrickStairs.get()).getName());
+		reg(SoulBlocks.SlateBrickStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.SlateBrickStairs.get()).getName());
+		reg(SoulBlocks.PorphyryBrickStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.PorphyryBrickStairs.get()).getName());
+		reg(SoulBlocks.TitaniumBrickStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.TitaniumBrickStairs.get()).getName());
+		reg(SoulBlocks.BauxiteBrickStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.BauxiteBrickStairs.get()).getName());
+		
+		reg(SoulBlocks.HardwoodStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.HardwoodStairs.get()).getName());
+		reg(SoulBlocks.SoulStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.SoulStairs.get()).getName());
+		reg(SoulBlocks.IceStairs.get(), 0, ((BlockSoulStairs)SoulBlocks.IceStairs.get()).getName());
+		
+		String[] faunaVariants = new String[BlockSoulFaunaGround.grassTypes.length];
+		for(int i = 0; i < BlockSoulFaunaGround.grassTypes.length; i++){
+			faunaVariants[i] = BlockSoulFaunaGround.grassTypes[i];
+			reg(SoulBlocks.Fauna.get(), i, BlockSoulFaunaGround.grassTypes[i]);
+			//System.out.print(i + ", " + BlockSoulFaunaGround.grassTypes[i]);
+		}
+		regItemVariants(faunaVariants, (BlockSoulFaunaGround)SoulBlocks.Fauna.get());
+		
+		String[] variantNames = new String[InitBlocks.slabNames.length];
+		for(int i = 0; i < InitBlocks.slabNames.length; i++){
+			SoulSlab slab = (SoulSlab)SoulBlocks.slabs[i * 2].get();
+			SoulSlab doubleSlab = (SoulSlab)SoulBlocks.slabs[i * 2 + 1].get();
+			reg(slab, i * 2, slab.getName());
+			reg(doubleSlab, i * 2 + 1, doubleSlab.getName());
+			variantNames[i] = slab.getName();
+		}
+		regItemVariants(variantNames, (SoulSlab)SoulBlocks.slabs[0].get());
 	}
 	
 	public static void registerItems(){
@@ -418,9 +452,7 @@ public class BlockRenderRegistry {
 	}
 	
 	public static void reg(Block block, int meta, String blockName) {
-		RenderItem renderItem = Minecraft.getMinecraft().getRenderItem();
-		renderItem.getItemModelMesher().register(Item.getItemFromBlock(block), meta, 
-				new ModelResourceLocation(soul_forest.MODID + ":" + blockName, "inventory"));
+		reg(Item.getItemFromBlock(block), meta, blockName);
 	}
 	
 	public static void reg(Item item, int meta, String itemName) {
@@ -429,15 +461,15 @@ public class BlockRenderRegistry {
 				new ModelResourceLocation(soul_forest.MODID + ":" + itemName, "inventory"));
 	}
 	
-	public static void registerBlockRenderer() {
+	/*public static void registerBlockRenderer() {
 	    reg(SoulBlocks.SaplingGrape.get(), 0, "block_properties_white");
 	    reg(SoulBlocks.SaplingGrape.get(), 1, "block_properties_black");
-	}
-	
-	public static void regItemVariants(String[] variants, Block block, Class baseClass){
+	}*/
+		
+	public static void regItemVariants(String[] variants, Block block){
 		ResourceLocation[] resLoc = new ResourceLocation[variants.length];
 		for (int i = 0; i < variants.length; i++){
-			resLoc[i] = new ResourceLocation(soul_forest.MODID + ":" + baseClass.toString() + "_" + variants[i]);
+			resLoc[i] = new ResourceLocation(soul_forest.MODID + ":" + variants[i]);
 		}
 		ModelBakery.registerItemVariants(Item.getItemFromBlock(block), resLoc);
 	}

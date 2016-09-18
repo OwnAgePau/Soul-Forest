@@ -42,7 +42,6 @@ public class TeleportBlockSoulForest extends BlockBreakable{
         this.setUnlocalizedName(soul_forest.MODID + "_" + Unlname);
         this.textureName = Unlname;
 		GameRegistry.registerBlock(this, Unlname);
-		//setBlockName(Unlname);
     }
 
     /**

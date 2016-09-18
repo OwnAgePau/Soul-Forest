@@ -1,9 +1,10 @@
-package com.Mod_Ores.Blocks.Special;
+/*package com.Mod_Ores.Blocks.Special;
 
 import java.util.List;
 import java.util.Random;
 
 import com.Mod_Ores.soul_forest;
+import com.Mod_Ores.Blocks.Special.Slab.SoulSlab;
 import com.Mod_Ores.Init.SoulBlocks;
 
 import net.minecraft.block.material.MapColor;
@@ -29,12 +30,6 @@ public class BlockSoulSlab extends SoulSlab{
 	 public static final PropertyEnum<BlockSoulSlab.EnumType> VARIANT = PropertyEnum.<BlockSoulSlab.EnumType>create("variant", BlockSoulSlab.EnumType.class);
 
 	    
-    /*public static final String[] TEXTURES = new String[] {"titanium_brick", "porphyry_brick", "slate_brick", "bauxitebrick", "icebrick"};
-    @SideOnly(Side.CLIENT)
-    private IIcon icon;
-    private static final String __OBFID = "CL_00000320";
-    private IIcon[] iconArray = new IIcon[1];*/
-
     public BlockSoulSlab(String unlName){
         super(Material.rock);
         this.setCreativeTab(CreativeTabs.tabBlock);
@@ -53,9 +48,6 @@ public class BlockSoulSlab extends SoulSlab{
         this.setDefaultState(iblockstate.withProperty(VARIANT, BlockSoulSlab.EnumType.STONE));
     }
 
-    /**
-     * Get the Item that this Block should drop when harvested.
-     */
     public Item getItemDropped(IBlockState state, Random rand, int fortune){
         return Item.getItemFromBlock(Blocks.stone_slab);
     }
@@ -65,9 +57,7 @@ public class BlockSoulSlab extends SoulSlab{
         return Item.getItemFromBlock(Blocks.stone_slab);
     }
 
-    /**
-     * Returns the slab block name with the type associated with it
-     */
+
     public String getUnlocalizedName(int meta){
         return super.getUnlocalizedName() + "." + BlockSoulSlab.EnumType.byMetadata(meta).getUnlocalizedName();
     }
@@ -80,9 +70,6 @@ public class BlockSoulSlab extends SoulSlab{
         return BlockSoulSlab.EnumType.byMetadata(stack.getMetadata() & 7);
     }
 
-    /**
-     * returns a list of blocks with the same ID, but different meta (eg: wood returns 4 blocks)
-     */
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list){
         if (itemIn != Item.getItemFromBlock(Blocks.double_stone_slab)){
@@ -94,9 +81,6 @@ public class BlockSoulSlab extends SoulSlab{
         }
     }
 
-    /**
-     * Convert the given metadata into a BlockState for this Block
-     */
     public IBlockState getStateFromMeta(int meta){
         IBlockState iblockstate = this.getDefaultState().withProperty(VARIANT, BlockSoulSlab.EnumType.byMetadata(meta & 7));
 
@@ -110,9 +94,6 @@ public class BlockSoulSlab extends SoulSlab{
         return iblockstate;
     }
 
-    /**
-     * Convert the BlockState into the correct metadata value
-     */
     public int getMetaFromState(IBlockState state){
         int i = 0;
         i = i | ((BlockSoulSlab.EnumType)state.getValue(VARIANT)).getMetadata();
@@ -133,17 +114,10 @@ public class BlockSoulSlab extends SoulSlab{
         return this.isDouble() ? new BlockState(this, new IProperty[] {SEAMLESS, VARIANT}): new BlockState(this, new IProperty[] {HALF, VARIANT});
     }
 
-    /**
-     * Gets the metadata of the item this Block can drop. This method is called when the block gets destroyed. It
-     * returns the metadata of the dropped item based on the old metadata of the block.
-     */
     public int damageDropped(IBlockState state){
         return ((BlockSoulSlab.EnumType)state.getValue(VARIANT)).getMetadata();
     }
 
-    /**
-     * Get the MapColor for this Block and the given BlockState
-     */
     public MapColor getMapColor(IBlockState state){
         return ((BlockSoulSlab.EnumType)state.getValue(VARIANT)).func_181074_c();
     }
@@ -215,4 +189,4 @@ public class BlockSoulSlab extends SoulSlab{
 		// TODO Auto-generated method stub
 		return super.isFullBlock();
 	}
-}
+}*/

@@ -15,8 +15,10 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumWorldBlockLayer;
 import net.minecraft.util.IStringSerializable;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.world.World;
@@ -34,9 +36,9 @@ import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.BiomeGen.WorldGenGrapeTree;
 import com.Mod_Ores.Init.SoulBlocks;
 
-public class BlockSoulSapling extends Block implements IMetaBlockName{
+public class BlockSoulSapling extends Block{
     
-    public static final PropertyEnum<BlockSoulSapling.EnumType> TYPE = PropertyEnum.<BlockSoulSapling.EnumType>create("type", BlockSoulSapling.EnumType.class);
+    //public static final PropertyEnum<BlockSoulSapling.EnumType> TYPE = PropertyEnum.<BlockSoulSapling.EnumType>create("type", BlockSoulSapling.EnumType.class);
     public static final PropertyInteger STAGE = PropertyInteger.create("stage", 0, 1);
 
 	//@SideOnly(Side.CLIENT)
@@ -64,18 +66,44 @@ public class BlockSoulSapling extends Block implements IMetaBlockName{
 		this.theGenerator = theGenerator;
 		this.textureName = unlName;
 		this.setUnlocalizedName(soul_forest.MODID + "_" + unlName);
-		GameRegistry.registerBlock(this, ItemBlockMeta.class, unlName);
-		this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumType.GRAPE)); // TODO this might be different for every variant
+		GameRegistry.registerBlock(this, unlName);
+		//this.setDefaultState(this.blockState.getBaseState().withProperty(TYPE, EnumType.SOUL)); // TODO this might be different for every variant
     }
     
     @Override
+    public int getRenderType() {
+    	  return 3;
+    }
+
+    /*@Override
     public void getSubBlocks(Item itemIn, CreativeTabs tab, List list) {
     	for(int i = 0; i < BlockSoulSapling.EnumType.values().length; i++){
     		list.add(new ItemStack(itemIn, 1, i));
     	}
+    }*/
+    
+    @SideOnly(Side.CLIENT)
+    @Override
+    public EnumWorldBlockLayer getBlockLayer(){
+        return EnumWorldBlockLayer.CUTOUT;
     }
 
-    /**
+    @Override
+    public AxisAlignedBB getCollisionBoundingBox(World worldIn, BlockPos pos, IBlockState state){
+        return null;
+    }
+
+    @Override
+    public boolean isOpaqueCube(){
+        return false;
+    }
+
+    @Override
+    public boolean isFullCube(){
+        return false;
+    }
+
+	/**
      * Gets passed in the blockID of the block below and supposed to return true if its allowed to grow on the type of
      * blockID passed in. Args: blockID
      */
@@ -177,7 +205,7 @@ public class BlockSoulSapling extends Block implements IMetaBlockName{
 		}
     }
     
-    @Override
+    /*@Override
     protected BlockState createBlockState() {
         return new BlockState(this, new IProperty[] { TYPE });
     }
@@ -196,7 +224,7 @@ public class BlockSoulSapling extends Block implements IMetaBlockName{
     @Override
     public int damageDropped(IBlockState state) {
         return getMetaFromState(state);
-    }
+    }*/
 
     @SideOnly(Side.CLIENT)
 
@@ -206,8 +234,8 @@ public class BlockSoulSapling extends Block implements IMetaBlockName{
 		return null;
 	}*/
     
-	 public static enum EnumType implements IStringSerializable{
-		 	GRAPE(0, "Sapling_soul"),
+	 /*public static enum EnumType implements IStringSerializable{
+		 	SOUL(0, "Sapling_soul"),
 		    HARDWOOD(1, "Sapling_hardwood"),
 		 	FROZEN(2, "Sapling_frozen");
 
@@ -232,9 +260,9 @@ public class BlockSoulSapling extends Block implements IMetaBlockName{
 		    public String toString() {
 		        return getName();
 		    }
-	 }
+	 }*/
 
-	@Override
+	/*@Override
 	public String getSpecialName(ItemStack stack) {
 		return EnumType.values()[stack.getItemDamage()].getName();
 	}
@@ -245,7 +273,7 @@ public class BlockSoulSapling extends Block implements IMetaBlockName{
 			values[i] = BlockSoulSapling.EnumType.values()[i].toString();
 		}
 		return values;
-	}
+	}*/
 	
 	@Override
 	public ItemStack getPickBlock(MovingObjectPosition target, World world, BlockPos pos) {

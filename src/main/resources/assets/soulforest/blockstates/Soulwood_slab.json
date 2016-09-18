@@ -1,0 +1,9 @@
+# THIS IS THE BLOCKSTATE FILE. IT GOES IN THE assets/soulforest/blockstates/ folder.
+# Generated using sheenrox82's JSON File Generator for Minecraft 1.8.
+
+{
+    "variants": {
+        "half=bottom,variant=false": { "model": "soulforest:Soulwood_bottom_slab" },
+        "half=top,variant=false": { "model": "soulforest:Soulwood_upper_slab" }
+    }
+}

@@ -3,6 +3,7 @@ package com.Mod_Ores.Blocks.Special;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Dimension.FrozenHearth.TeleportBlockFrozenHearth;

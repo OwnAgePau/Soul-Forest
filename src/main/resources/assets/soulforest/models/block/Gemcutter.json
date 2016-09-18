@@ -4,6 +4,11 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "soulforest:blocks/Gemcutter"
+        "down": "soulforest:blocks/Gemcutter_top",
+        "up": "soulforest:blocks/Gemcutter_top",
+        "north": "soulforest:blocks/Gemcutter",
+        "east": "soulforest:blocks/Gemcutter_side",
+        "south": "soulforest:blocks/Gemcutter",
+        "west": "soulforest:blocks/Gemcutter_side"
     }
 }

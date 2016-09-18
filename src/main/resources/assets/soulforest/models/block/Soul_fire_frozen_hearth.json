@@ -4,6 +4,6 @@
 {
     "parent": "block/cube_all",
     "textures": {
-        "all": "soulforest:blocks/Soul_fire_frozen_hearth"
+        "all": "soulforest:blocks/Soul_fire"
     }
 }

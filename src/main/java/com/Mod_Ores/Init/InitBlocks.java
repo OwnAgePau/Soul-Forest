@@ -19,6 +19,11 @@ import com.Mod_Ores.BiomeGen.WorldGenGrapeTree;
 import com.Mod_Ores.BiomeGen.WorldGenTallTrees;
 import com.Mod_Ores.Blocks.*;
 import com.Mod_Ores.Blocks.Special.*;
+import com.Mod_Ores.Blocks.Special.Fluid.SoulWaterFlowing;
+import com.Mod_Ores.Blocks.Special.Slab.ItemSoulSlab;
+import com.Mod_Ores.Blocks.Special.Slab.SoulDoubleSlab;
+import com.Mod_Ores.Blocks.Special.Slab.SoulHalfSlab;
+import com.Mod_Ores.Blocks.Special.Slab.SoulSlab;
 import com.Mod_Ores.Blocks.TileEntities.*;
 import com.Mod_Ores.Dimension.FrozenHearth.TeleportBlockFrozenHearth;
 import com.Mod_Ores.Dimension.SoulForest.TeleportBlockSoulForest;
@@ -26,6 +31,10 @@ import com.google.common.base.Optional;
 
 public class InitBlocks {
     private static Random rand;
+    
+	public static String[] slabNames = new String[]{
+		"Bauxitebrick", "Icebrick", "Porphyrybrick", "Slatebrick", "Titaniumbrick", "Soulwood", "Frozenwood", "Hardwood"
+	};
 
     public static void init(){
 		initializeBlocks();
@@ -89,33 +98,38 @@ public class InitBlocks {
 		SoulBlocks.SlateBrick =  			Optional.of(new SoulBlock("Slatebrick", 5.0F, 2F, false, Material.rock));  	
 		SoulBlocks.TitaniumBrick =  		Optional.of(new SoulBlock("Titaniumbrick", 7.0F, 2F, false, Material.iron));  	
 	
-		//Slabs
-		//SoulBlocks.SoulHalfSlab =  			Optional.of(((SoulHalfslab)new SoulStep("Soul_half_slab", 4.0F, 2F, false, false)).setBlockTextureName(soul_forest.MODID + ":soulhalfslab"));
-		//SoulBlocks.SoulDoubleSlab =  			Optional.of(((SoulHalfslab)new SoulStep("Soul_double_slab", 4.0F, 2F, false, true)).setBlockTextureName(soul_forest.MODID + ":soulhalfslab"));
-	
-		SoulBlocks.SoulHalfSlab = 			Optional.of((new SoulStep("half_slab", 7.0F, 2F, false)));
-		SoulBlocks.SoulDoubleSlab = 		Optional.of((new BlockSoulSlab("double_slab")));
+		// Slabs & Double Slabs
+		for (int i = 0; i < slabNames.length; i++) {
+            SoulSlab slab = new SoulHalfSlab(i, 4.0f, 2);
+            SoulSlab doubleSlab = new SoulDoubleSlab(i, 4.0f, 2);
+            SoulBlocks.slabs[2 * i] = Optional.of(slab);
+            SoulBlocks.slabs[2 * i + 1] = Optional.of(doubleSlab);
+            GameRegistry.registerBlock(slab, ItemSoulSlab.class, slab.getId(), slab, doubleSlab, false);
+            GameRegistry.registerBlock(doubleSlab, ItemSoulSlab.class, doubleSlab.getId(), slab, doubleSlab, true);
+        }
 	
 		//Complex Blocks
-		SoulBlocks.IceWorkbench =  			Optional.of(new BlockIceWorkbench("Ice_workbench_side").setHardness(4.0F).setStepSound(Block.soundTypeMetal));		
+		SoulBlocks.IceWorkbench =  			Optional.of(new BlockIceWorkbench("Ice_workbench").setHardness(4.0F).setStepSound(Block.soundTypeMetal));		
 		SoulBlocks.GemcutterIdle =  		Optional.of((new BlockGemcutterBench("Gemcutter", false)).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks));	
 		SoulBlocks.GemcutterActive = 		Optional.of((new BlockGemcutterBench("Gemcutter_active", true)).setHardness(4.0F).setStepSound(Block.soundTypeMetal));	
 		SoulBlocks.SoulFire = 				Optional.of((new SoulFire("Soul_fire")).setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone));
-		SoulBlocks.SoulFireFrozenHearth = 	Optional.of((new SoulFireFrozenHearth("Soul_fire_frozen")).setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone));
+		SoulBlocks.SoulFireFrozenHearth = 	Optional.of((new SoulFireFrozenHearth("Soul_fire_frozen_hearth")).setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone));
 		SoulBlocks.Teleporter =   			Optional.of((new TeleportBlockSoulForest("Blueish_dizzling_portal_passage").setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone)));  
 		SoulBlocks.TeleporterFrozenHearth = Optional.of((new TeleportBlockFrozenHearth("Blueish_dizzling_portal_passage_2").setHardness(4.5F).setResistance(5.0F).setStepSound(Block.soundTypeStone)));  
-		SoulBlocks.GelExtractor =			Optional.of((new BlockGelExtractor("Gelextractor")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks));
+		SoulBlocks.GelExtractor =			Optional.of((new BlockGelExtractor("Gel_extractor")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks));
 		SoulBlocks.GemmerationTable =		Optional.of((new BlockGemmerationTable("Gemmeration_table")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks));
 		SoulBlocks.GemmingTable =			Optional.of((new BlockGemmingTable("Gemming_table")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks));
 		SoulBlocks.GembleTable =			Optional.of((new BlockGembleTable("Gemble_table")).setHardness(4.0F).setStepSound(Block.soundTypeMetal).setCreativeTab(soul_forest.tabSoulBlocks));
 	
 		//Water
 		// TODO No Idea how this is supposed to work just yet
-		SoulBlocks.SoulWaterMovingFluid = 	Optional.of((new Fluid("Soul_water_flow", new ResourceLocation("blocks/soul_water_flow"), new ResourceLocation("blocks/Soul_Water"))));
+		SoulBlocks.SoulWaterMovingFluid = 	Optional.of((new Fluid("soul_water", new ResourceLocation("blocks/Soul_Water_Flow"), new ResourceLocation("blocks/Soul_Water"))));
 		FluidRegistry.registerFluid(SoulBlocks.SoulWaterMovingFluid.get());
-		SoulBlocks.SoulWaterMoving = 		Optional.of(new SoulWaterFlowing(SoulBlocks.SoulWaterMovingFluid.get(), "Soul_water_flow"));	
-		//SoulBlocks.SoulWater =			Optional.of((new SoulWaterStationary("Soul Water Still")).setBlockTextureName(soul_forest.MODID + ":Soul_Water"));
-	
+		//SoulBlocks.SoulWaterMovingFluid = 	Optional.of(createFluid("Soul_Water", soul_forest.MODID + ":" + "blocks/Soul_Water", true).setLuminosity(10).setDensity(1600).setViscosity(100));
+		//SoulBlocks.SoulWater =				Optional.of(new SoulWaterStationary("Soul_water_still"));
+		SoulBlocks.SoulWaterMoving = 		Optional.of(new SoulWaterFlowing(SoulBlocks.SoulWaterMovingFluid.get(), "Soul_Water_Flow"));	
+		
+		
 		//Ice
 		SoulBlocks.SoulIce = 				Optional.of(new BlockSoulIce("Soul_ice"));
 	
@@ -127,11 +141,11 @@ public class InitBlocks {
 		SoulBlocks.BauxiteMossy =  			Optional.of(new SoulBlock("Mossy_Bauxite", 3.5F, 2F, false, Material.rock));   
 	
 		//Grass & Dirt - used in Soul Forest & Marona Woods biome
-		SoulBlocks.LateriteGrass =  		Optional.of((new BlockLateriteGrass("Laterite_grass_side")).setHardness(0.6F).setStepSound(Block.soundTypeGrass));  	
+		SoulBlocks.LateriteGrass =  		Optional.of((new BlockLateriteGrass("Laterite_grass")).setHardness(0.6F).setStepSound(Block.soundTypeGrass));  	
 		SoulBlocks.LateriteDirt =  			Optional.of((new BlockSoulDirt("Laterite")).setHardness(0.6F).setStepSound(Block.soundTypeGrass));  
 	
 		//Grass & Dirt - used in Soul Forest & Marona Woods biome
-		SoulBlocks.FyrisedSandGrass =  		Optional.of((new BlockFyrisedSand("Fyrised_sand_side")).setHardness(0.5F).setStepSound(Block.soundTypeSand));  	
+		SoulBlocks.FyrisedSandGrass =  		Optional.of((new BlockFyrisedSand("Fyrised_sand_grass")).setHardness(0.5F).setStepSound(Block.soundTypeSand));  	
 		SoulBlocks.FyrisedSand =  			Optional.of((new BlockSoulDirt("Fyrised_sand")).setHardness(0.5F).setStepSound(Block.soundTypeGrass));  
 	
 		//Snow	- used in Frost Caves & Frozen Plains biome
@@ -155,7 +169,6 @@ public class InitBlocks {
 		SoulBlocks.SoulPlanks =  			Optional.of((new SoulWood("Soulwood_planks", 2F, 4F)));  
 		SoulBlocks.IcePlanks = 				Optional.of((new SoulWood("Frozenwood_planks", 2F, 4F)));
 	
-		// Plants	
 		//Logs			
 		SoulBlocks.HardwoodLog = 			Optional.of((new BlockSoulLog("Hardwood_log", 4.0F)));
 		SoulBlocks.SoulLog = 				Optional.of((new BlockSoulLog("Soul_log", 4.0F)));
@@ -170,13 +183,7 @@ public class InitBlocks {
 		SoulBlocks.SoulLeavesYellow = 		Optional.of((new BlockSoulLeaves("Soul_leaves_yellow", 0.5F, 1.0F)));
 		SoulBlocks.SoulLeavesBlue = 		Optional.of((new BlockSoulLeaves("Soul_leaves_blue", 0.5F, 1.0F)));
 		SoulBlocks.IceLeaves = 				Optional.of((new BlockSoulLeaves("Frozen_leaves", 0.5F, 1.0F)));
-	
-		//Sapplings
-		SoulBlocks.SaplingHardwood = 		Optional.of((new BlockSoulSapling("Sapling_hardwood", SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get(), new WorldGenTallTrees(new Random(), SoulBlocks.HardwoodLeaves.get(), SoulBlocks.HardwoodLog.get(), 
-												SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get())).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries)));
-		SoulBlocks.SaplingFrozen = 			Optional.of((new BlockSoulSapling("Sapling_frozen", SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get(), new WorldGenTallTrees(new Random(), SoulBlocks.IceLeaves.get(), SoulBlocks.IceLog.get(), 
-												SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get())).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries)));
-	
+			
 		//Flowers
 		SoulBlocks.PlantCantaloupe = 		Optional.of((BlockSoulPlant)(new BlockSoulPlant("Cantaloupe_flower")).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries));
 		SoulBlocks.Fireblossom = 			Optional.of((BlockSoulPlant)(new BlockSoulPlant("Fireblossom")).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries));
@@ -225,7 +232,7 @@ public class InitBlocks {
 		// Staris (wood)
 		SoulBlocks.HardwoodStairs = 			Optional.of(new BlockSoulStairs(SoulBlocks.HardwoodPlanks.get(), 0, "Hardwood_stairs", soul_forest.tabSoulBlocks));  	
 		SoulBlocks.SoulStairs = 			Optional.of(new BlockSoulStairs(SoulBlocks.SoulPlanks.get(), 0, "Soul_stairs", soul_forest.tabSoulBlocks));  	
-		SoulBlocks.IceStairs = 				Optional.of(new BlockSoulStairs(SoulBlocks.IcePlanks.get(), 0, "Frozen_stairs", soul_forest.tabSoulBlocks));  	
+		SoulBlocks.IceStairs = 				Optional.of(new BlockSoulStairs(SoulBlocks.IcePlanks.get(), 0, "Ice_stairs", soul_forest.tabSoulBlocks));  	
 	
 		SoulBlocks.Chromiteore =  			Optional.of((new SoulOre(1, 2, "Chromiteore", 3.0F, 2F, false)));
 		SoulBlocks.Cobaltore =  			Optional.of((new SoulOre(1, 3, "Cobaltore", 4.0F, 2F, true)));
@@ -235,6 +242,11 @@ public class InitBlocks {
 		SoulBlocks.Tanzaniteore =  			Optional.of((new SoulOre(1, 2, "Tanzaniteore", 3.0F, 2F, false)));
 		SoulBlocks.Tinore =  				Optional.of((new SoulOre(1, 0, "Tinore", 3.0F, 2F, false)));
 		
+		//Sapplings
+		SoulBlocks.SaplingHardwood = 		Optional.of((new BlockSoulSapling("Sapling_hardwood", SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get(), new WorldGenTallTrees(new Random(), SoulBlocks.HardwoodLeaves.get(), SoulBlocks.HardwoodLog.get(), 
+												SoulBlocks.FyrisedSandGrass.get(), SoulBlocks.FyrisedSand.get())).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries)));
+		SoulBlocks.SaplingFrozen = 			Optional.of((new BlockSoulSapling("Sapling_frozen", SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get(), new WorldGenTallTrees(new Random(), SoulBlocks.IceLeaves.get(), SoulBlocks.IceLog.get(), 
+												SoulBlocks.FrozenGrass.get(), SoulBlocks.BogDirt.get())).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries)));
 		SoulBlocks.SaplingGrape = 			Optional.of((new BlockSoulSapling("Sapling_soul", SoulBlocks.LateriteGrass.get(), SoulBlocks.LateriteDirt.get(), new WorldGenGrapeTree(true)).setHardness(0.0F).setStepSound(Block.soundTypeGrass).setCreativeTab(soul_forest.tabSoulBerries)));
 	    
 		BlockSoulLeaves grapeleaves = (BlockSoulLeaves)SoulBlocks.GrapesLeaves.get();
