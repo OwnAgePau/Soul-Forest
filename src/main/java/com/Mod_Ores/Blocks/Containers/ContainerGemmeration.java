@@ -1,5 +1,10 @@
 package com.Mod_Ores.Blocks.Containers;
 
+import java.util.Iterator;
+import java.util.Map;
+
+import net.minecraft.enchantment.Enchantment;
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
@@ -61,18 +66,31 @@ public class ContainerGemmeration extends Container{
 	if(result != null){
 	    ItemStack input = null;
 	    ItemStack input2 = null;
-	    if(this.getSlot(0).getStack() != null){
-		input = this.getSlot(0).getStack();
+	    if(this.getSlot(2).getStack() != null){
+		input = this.getSlot(2).getStack(); // Top Slot
 	    } 
-	    if(this.getSlot(1).getStack() != null){
+	    if(this.getSlot(1).getStack() != null){ // Bottom Slot
 		input2 = this.getSlot(1).getStack();
 	    }
+	    System.out.println(input + ", " + input2);
 	    if(input != null && input2 != null){
+		// Check if the JetAmuletStone is put into the bottom or the top spot.
 		if(input.getItem() != SoulItems.JetAmuletStone.get()){
+		    // Repair the result by 1/5 of the Supplied item to be repaired (so it always repairs 1/5th of the damage)
 		    result.setItemDamage(input.getItemDamage() - (input.getMaxDamage() / 5)); // Get Amount of Repair at once
+		    if(input2.getItemDamage() <= 0){
+			Map map = EnchantmentHelper.getEnchantments(input);
+			System.out.println(map.keySet().size() + ", " + input.getItem().getUnlocalizedName());
+			EnchantmentHelper.setEnchantments(map, result);
+		    }
 		}
 		else{
 		    result.setItemDamage(input2.getItemDamage() - (input2.getMaxDamage() / 5));
+		    if(input.getItemDamage() <= 0){
+			Map map = EnchantmentHelper.getEnchantments(input2);
+			System.out.println(map.keySet().size() + ", " + input2.getItem().getUnlocalizedName());
+			EnchantmentHelper.setEnchantments(map, result);
+		    }
 		}
 	    }
 	}

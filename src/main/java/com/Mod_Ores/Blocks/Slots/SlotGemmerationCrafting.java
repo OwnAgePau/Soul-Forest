@@ -3,6 +3,7 @@ package com.Mod_Ores.Blocks.Slots;
 import com.Mod_Ores.soul_forest;
 import com.Mod_Ores.Init.SoulItems;
 
+import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
@@ -88,6 +89,11 @@ public class SlotGemmerationCrafting extends Slot{
 	    for(String toolClass : repair.getToolClasses(repairStack)){
 		int lvl = repair.getHarvestLevel(repairStack, toolClass);
 		damage = lvl * (input.getMaxDamage() / 10);
+	    }
+	    
+	    ItemStack stack = new ItemStack(repair, 1);
+	    if(EnchantmentHelper.getEnchantments(stack).size() > 0){
+		damage = input.getMaxDamage();
 	    }
 	}
 	return damage;
